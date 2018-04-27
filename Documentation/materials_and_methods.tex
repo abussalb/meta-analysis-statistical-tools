@@ -1,0 +1,191 @@
+% adding the line below for Multifile document support with LatexTools Sublime package 
+%!TEX root = manuscript.tex
+
+% Materials and Methods
+
+\section{Materials and Methods}
+
+\subsection{Select the studies}
+
+A systematic review was conducted in order to identify studies to include in the update of \citet{Cortese2016} and in the analysis of factors. 
+On one hand, search terms were entered in Pubmed and on the other hand all articles previously included in meta-analysis were identified. 
+Then duplicates were removed and only studies available in English, German or French describing trials on \gls{nfb} treatment for \gls{adhd} 
+were selected. Subjects had to be diagnosed \gls{adhd} based on DSM-4 \citep{DSM-4}, DSM-5 \citep{DSM-5}, ICD-10 \citep{ICD101993} criteria or 
+according to an expert psychiatrist. Studies that included more than eight subjects in each study group as well as subjects younger than 
+25 years old were kept. Eventually, if the remaining articles provided enough data to compute required metrics for the following analysis, they were 
+included. The last step was to apply the inclusion criteria of \citet{Cortese2016} in order to replicate and update this meta-analysis.  
+
+\subsection{Extract data} 
+
+In included studies, the severity of \gls{adhd} symptoms have been assessed by parents and, when available, by teachers. \citet{Cortese2016} 
+and \citet{Micoulaud2014} defined parents as \gls{mprox} raters who are not blind to the treatment of their child, as opposed to 
+teachers who are considered as \gls{pblind} raters. We decided to follow these definitions for the work on the meta-analysis and for the 
+analysis of factors. Efficacy of \gls{nfb} was given for the following outcomes on clinical scales when available: inattention, 
+hyperactivity/impulsivity and total scores. Nevertheless, the factors analysis was performed only with the total score reported on clinical scales.
+
+\subsection{Perform a meta-analysis}
+
+Meta-analysis is a powerful tool that enables to quantify the effect of a treatment by combining results from several studies thanks to 
+an \gls{es}.\gls{es} represents the difference between two groups and since it is a standardized measure, it can be calculated for different 
+studies and then combined into an overall summary as detailed below and described precisely in the Supplemental material.
+
+To conduct meta-analysis, different software exist: for instance \citet{Cortese2016} used RevMan 5.3 \citep{RevMan} which computes the \gls{es} and its 
+variance of each included study by applying the formula presented in \citet{Morris2008}. However, in order to compute the variance of the \gls{es}, 
+the pooled within-group Pearson correlation $\rho$ (i.e the pre-post correlation) was required 
+\citep{James2013}. In our case, this correlation was not known and the raw data were not available so we took an
+ approximation: \citet{Balk2012} found that a value of 0.5 yields values closer to those computed with the right value of the correlation. 
+In this replication of the work of \citeauthor{Cortese2016}, the same
+formulas are used \citep{Borenstein2009} but instead of using RevMan, a Python code was developed in order to perform the meta-analysis. To increase 
+replicability and transparency and promote open science, we provide the full raw data used for this research as well as the Python code 
+developed available on a Github repository; it is tested with \citet{Cortese2016} raw data to show that same results were found and could 
+be used for replication and expansion of this work. The toolbox could also be used to run any similar meta-analysis.  
+ 
+\subsection{Replicate and update a meta-analysis}
+
+\citeauthor{Cortese2016} work was replicated following the previously described steps implemented in the Python code. Besides using the Python 
+code instead of RevMan, we choose to bring two major changes:
+\begin{description}
+\item the \gls{es} of \citeauthor{Arnold2014} study is computed from the post-test clinical values taken after the 40 sessions were completed 
+contrary to \citet{Cortese2016} who had used the results after 12 sessions of \gls{nfb} because final values were not available;
+\item the \gls{es} computed from teachers' assessments for \citet{Steiner2014} rely on the BOSS Classroom Observation \citep{Shapiro2010} whereas 
+another scale more often used \citep{Christiansen2014, Bluschke2016} and which is the revision of the Conners Rating Scale Revised \citep{Conners1998} 
+whose reliability has been studied \citep{Collett2003}. Thus we decided to compute the \gls{es} based on the results from the Conners.  
+\end{description} 
+
+As suggested in \citet{Cortese2016} we performed two subgroups analysis: first, \gls{se}, the weighted average of all the \gls{es}, was calculated with only studies following 
+standard protocol as defined by \citet{Arns2014} and second with studies whose participants take low-dose or no medication during the trial. 
+These analysis were performed with the choices described above. 
+
+Eventually, the new studies conformed to the inclusion criteria defined by \citeauthor{Cortese2016} were added to the replication of the meta-analysis. 
+
+\subsection{Detect factors influencing the Neurofeedback}
+
+The second step of this work consisted in determining the factors that possibly influence the efficacy of \gls{nfb} using various statistical
+ methods described below. 
+
+\subsubsection{Identify and pre-process factors}
+
+There are arguably 3 types of factors influencing the measured efficacy of an intervention: methodological, technical and linked to the quality of acquisition.
+Factors were chosen based on what was typically reported in the literature and presumed to influence \gls{es}.
+\begin{description}
+\item \textit{methodological biases}: the presence of a control group, the psychostimulants intake during \gls{nfb} treatment, the age bounds of children, the blinding of assessors, 
+the randomization of subjects, and the approval by an \gls{irb};
+\item \textit{technical factors}: the protocol used (\gls{scp}, \gls{smr}, 
+theta up, beta up in frontal areas, theta down), the presence of a transfer phase during \gls{nfb} training, the possibility to train at home 
+or at school with a transfer card reminding of the \gls{nfb} session, the ocular artifacts correction, the artifact correction based on amplitude, 
+the type of thresholding reward, the number of \gls{nfb} sessions, the sessions frequency during a week, the session length and the treatment length;
+\item \textit{quality of acquisition} the presence of one or more active electrode and the \gls{eeg} quality. 
+This last factor was an indicator between 1 and 3: if \gls{eeg} was recorded and processed in poor conditions then the indicator would be 1. 
+Besides, if the article didn't precise the recording conditions, the factor would be set to 1. To get an indicator bigger than 1, several 
+points had to be satisfied:
+\begin{description}
+\item \textit{the type of electrodes used}: AgCl/Gel and Gold/Gel are preferable;
+\item \textit{check of the electrode contact quality trough the amplifier impedance acquisition mode}: impedance must be $<$ 40k$\Omega$.  
+\item \textit{the amplifier used}: those that are conformed to European norms (such as Thera Prax \textregistered 
+Neuroconn and Eemagine EE-430) are preferable or whose reliability is known.
+\end{description}
+\end{description}
+
+To prevent any bias, the names of these factors were hidden during the analysis and were only revealed once the data 
+analysis and results were accepted as valid: this included choice of variable
+normalization and validation of model hypothesis as detailed below.
+
+The pre-processing of factors for the analysis included the following steps: factors for which there were too many missing observations, 
+arbitrarily set to more than 20\% of the total of observations, were removed from the analysis. Furthermore, if a factor have more than 
+80\% similar observations it was removed as well. Since some of the independent variables were categorical, they were coded in dummies
+meaning that the presence of the factor is represented by a 1 and the its absence by 0. Independent variables are standardized, 
+except when the decision tree is performed. 
+
+\subsubsection{Associate independent factors to effect sizes}
+
+To compute this \gls{es}, means of total \gls{adhd} score given by parents and teachers were used. Besides, in case studies provided results 
+for more than one behavioral scale, \gls{es} were computed for each one. The \gls{es} computed in this analysis was different from the one 
+used previously for the replication and updating of \citet{Cortese2016}. Indeed, here we focused on the effect of the treatment within 
+a group as defined by \citet{Cohen1988}, definition of the \gls{es} that was already used in the literature \citep{Arns2009, Maurizio2014, 
+Strehl2017}. This \gls{es} enables to quantify the efficacy of \gls{nfb} inside the treatment group. as presented in \cref{eq:factors_effect_size_within_subject}.
+
+\begin{equation}
+\label{eq:factors_effect_size_within_subject}
+\text{ES} = \frac{M_{\text{post},T} - M_{\text{pre},T}}  { \sqrt{ \frac{\text{SD}_{\text{pre},T} + \text{SD}_{\text{post},T}} {2} } }.
+\end{equation} 
+
+The \gls{es} was then considered as a dependent variable to be explained by the factors identified using the following three methods, which were 
+implemented in the Scikit-Learn Python \citep{Pedregosa2011} and the Statsmodels Python\citep{Seabold2010} libraries:
+\begin{description}
+	\item weighted multiple linear regression \gls{wls} \citep{Montgomery2012}; 
+	\item sparsity-regularized linear regression with \gls{lasso} \citep{Tibshirani1996};
+	\item decision tree \citep{Quinlan1986}.
+\end{description}
+
+The most often used linear regression analysis is the \gls{ols} but here we applied the \gls{wls} as described in \cref{eq:factors_model_WLS}: a 
+weight was assigned to each observation in order to take into account the fact that some observations came from the same study because studies 
+may provide several scales. Besides, the weight is function of the sample size as well: because of their different sample sizes, studies are not 
+equivalent and should be analyzed accordingly. That's why the weight corresponds to the ratio between the experiment group's sample size of the study and 
+the number of behavioral scales available in the study. We also run the analysis
+ with \gls{ols} method to assess the impact of the weights on the results. 
+
+\begin{equation}
+\label{eq:factors_model_WLS}
+\textbf{W}y = \textbf{WX}\beta + \epsilon .
+\end{equation}
+
+$\textbf{X}$ is a $(n \times p)$ full rank matrix and represents $n$ observations on each $p-1$ independent variables and an 
+intercept term, $\beta$ is a $(p \times 1)$ vector of associated regression coefficients, $\textbf{W}$ is a $(n \times n)$ diagonal 
+matrix with weights, $y$ is a $(n \times 1)$ vector of dependent variables and $\epsilon$ is a $(n \times 1)$ vector of errors.
+
+The aim of the \gls{wls} is to estimate the vector of coefficients $\beta$ by minimizing the \gls{wrss} as presented in \cref{eq:factors_WRSS}:
+
+\begin{equation}
+\label{eq:factors_WRSS}
+\text{WRSS} = \sum_{i=1}^{n} w_i \Big(y_i - \beta_{0} - \sum_{j=1}^{p}\beta_{j}x_{ij}\Big)^2 .
+\end{equation}
+
+Thanks to a t-test, we could conclude if coefficients were significantly different from 0 (the p-value had 
+inferior to 0.05). If this was the case, then the associated factor had an influence on \gls{nfb} results. Moreover, if the coefficient was 
+negative then its associated factor improve the effect of \gls{nfb}. 
+
+However, before interpreting the results of the \gls{wls}, the assumptions of this model had to be checked (distribution of the residuals are normal,
+the moment matrix $\mathbf{{X}^{T}W^{T}WX}$ must be full rank, the fit had to be significant and the independent variables had to be uncorrelated).
+
+The second method applied was the sparsity-regularized linear regression: \gls{lasso}. This method is able to perform variable selection 
+in the linear model thanks to $\ell-1$-norm applied on the coefficients. The coefficients $\beta_j$ are obtained by minimizing the term 
+presented in \cref{eq:factors_lasso-minimization}:
+
+\begin{equation}
+\label{eq:factors_lasso-minimization}
+\sum_{i=1}^{n} \Big(y_i - \beta_{0} - \sum_{j=1}^{p}\beta_{j}x_{ij}\Big)^2 + \lambda \sum_{j=1}^{p}|\beta_{j}| .
+\end{equation} 
+
+$\lambda$ is the tuning parameter: as it increases, more coefficients are set to zero. The optimal tuning parameter was determined 
+by a leave-one-out cross-validation. This method retains $n$ - 1 observations as the validation data for testing the model and the 
+remaining observation is used as training data. The cross-validation process is then repeated $n$ times with each of the observation 
+used exactly once as the testing data. For each fold, the \gls{mse} on the test set was computed and eventually, the $n$ results can 
+be averaged to produce a single observation that enables to find the optimal $\lambda$: it corresponds to the abscissa of the minimum
+value of the \gls{mse} on the mean fold computed for a large range of $\lambda$ \citep{James2013}. 
+
+Eventually, the last method used to determine factors influencing \gls{nfb} was the decision tree. It broke down a dataset into smaller
+and smaller subsets based on the \gls{mse}. The final tree was a tree with decision nodes and leaf nodes. A decision node has two or 
+more branches. Leaf node (terminal node) represents a decision on the dependent target (the \gls{es}). The topmost decision node (root node)
+in a tree corresponds to the best predictor. Besides the lower a factor is situated in the tree, the less reliable it is because the split is
+run on a smaller subset. 
+
+No weights are applied when running the \gls{lasso} and the decision tree because the option is not implemented in the 
+Python methods used in our analysis. 
+
+
+% words number = 1806
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

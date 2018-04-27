@@ -1,0 +1,132 @@
+% adding the line below for Multifile document support with LatexTools Sublime package 
+%!TEX root = manuscript.tex
+
+\section{Supplemental material}
+
+\subsection{Perform a meta analysis}
+
+To perform the meta-analysi several steps must be followed. First the choice of the model: this analysis is based on either one of the following 
+statistical models \citep{Borenstein2009}:
+\begin{description}
+    \item \textit{The fixed-effect model}: the true \gls{es} (i.e the \gls{es} that would be observed with an infinitely 
+		large sample size) is the same for all the studies in the analysis. The differences between the actually observed \gls{es}s 
+		are due to sampling errors;
+    \item \textit{The random-effects model}: the true \gls{es} could vary from study to study. The differences between the observed
+		\gls{es}s are due to sampling errors but also to the various designs of the studies (for instance the number of participants or the implementation).
+\end{description}
+
+In the present case, although the studies included into the meta-analysis met the same criteria, they remained different from each other 
+on various points, so the random effects model was more appropriate than the fixed-effect model.  
+
+\subsubsection{Compute the effect size of each study}
+
+First, the scores presented in the articles were extracted and the \gls{es} of each study as defined in \citet{Morris2008} 
+was computed as in \cref{eq:metareview_effect_size}:
+
+\begin{equation}
+\label{eq:metareview_effect_size}
+\text{ES} = c_p \left[ \frac{(M_{\text{post},T} - M_{\text{pre},T}) - (M_{\text{post},C} - M_{\text{pre},C}) }{\text{SD}_{\text{pre}}} \right ].
+\end{equation} 
+An \gls{es} is exactly equivalent to a z-score of a standard normal distribution, it is computed as mean pre- to post-treatment 
+score change in the \gls{nfb} group ($M_{\text{pre},T}$, $M_{\text{post},T}$) minus the mean pre- to post- treatment score change 
+in the control group ($M_{\text{pre},C}$, $M_{\text{post},C}$), divided by the pooled pretest standard deviation ($SD_{\text{pre}}$) 
+defined as \cref{eq:stats_metareview_std_pre}:
+
+\begin{equation}
+\label{eq:stats_metareview_std_pre}
+\text{SD}_{\text{pre}} = \sqrt{\frac{(n_T - 1)\text{SD}_{\text{pre},T}^2 + (n_C - 1)\text{SD}_{\text{pre},C}^2} {n_T + n_C - 2}},
+\end{equation}
+where $\text{SD}_{t,G}$ indicates the standard deviation for group $G$ at time $t$ and $n_G$ defines the sample size of each group; 
+$c_p$ is a bias adjustment typically used for small sample sizes and defined as \cref{eq:metareview_correction_factor}:
+
+\begin{equation}
+\label{eq:metareview_correction_factor}
+\text{cp} =  1 - \frac{3} {4(n_T + n_C - 2) - 1}. 
+\end{equation} 
+
+The means (first statistical moments) correspond to the mean average score over all scores given by raters to assess the \gls{adhd} symptoms. 
+The standard deviations of the means correspond to the squared root of the second statistical moment, the variance. The variance measures how
+ far a set of numbers are spread out from their average value. 
+
+\subsubsection{Compute the variance of each effect size}
+
+Then, the variance of each \gls{es} was computed as described in \cref{eq:metareview_variance_ES} \citep{Morris2008}:
+\begin{equation}
+\label{eq:metareview_variance_ES}
+\sigma^2(\text{ES}) = c_p^2 \left (\frac{n_T + n_C - 2} {n_T + n_C - 4} \right ) \left  [ \frac{2(1-\rho)(n_T + n_C)} {n_Tn_C} + \text{ES}^2 \right ] - \text{ES}^2.
+\end{equation} 
+
+To compute the variance of the \gls{es}, the pooled within-group Pearson correlation $\rho$ (i.e the pre-post correlation) was required as described in \cref{eq:metareview_within_group_pearson_correlation} \citep{James2013}:
+
+\begin{equation}
+\label{eq:metareview_within_group_pearson_correlation}
+\rho =  \frac{ \sum_{i=1}^{n} (\text{pre}_i - \mu_{\text{pre}})(\text{post}_i - \mu_{\text{post}}) } { \sqrt{ \sum_{i=1}^{n} (\text{pre}_i - \mu_{\text{pre}})^2} \sqrt{\sum_{i=1}^{n} (\text{post}_i - \mu_{\text{post}})^2} }, 
+\end{equation}
+where $n$ is the number of patients included in a study, $pre_i$, $post_i$ are score values for patient $i$ at pre- and post-test 
+respectively, and $\mu_{pre}$, $\mu_{post}$ the mean scores over all patients. It is a measure of linear correlation between two variables. 
+A value of 1 means that there is a positive correlation whereas a value of -1 means a negative correlation. When $\rho=0$, there is no
+ linear correlation \citep{James2013}. In our case, this correlation was not known and the raw data were not available so we took an
+ approximation: \citet{Balk2012} found that a value of 0.5 yields values closer to those computed with the right value of the correlation. 
+
+Once variances were obtained with \cref{eq:metareview_variance_ES}, we could compute the standard error and the 95\% confidence interval of each \gls{es}. 
+
+\subsubsection{Compute the weight of each study}
+
+To compute the \gls{se} a weight must be assigned to each study. To obtain them several steps must be followed. At first, the fixed-effects model 
+weight $w_{fixed}$ of each study $k$ was computed as defined in \citet{Borenstein2009} described in \cref{eq:metareview_weight_fixed_study}: 
+
+\begin{equation}
+\label{eq:metareview_weight_fixed_study}
+w_{\text{fixed}_k} = \frac{1}{\sigma^2(\text{ES}_k)}.
+\end{equation} 
+
+Nevertheless, we chose to use the random effects model, so the weights associated to this model are different. To compute them, the between-studies 
+variance $\tau^2$ is required. It was calculated in three steps described in \cref{eq:metareview_Q}, \cref{eq:metareview_C} and \cref{eq:metareview_Tau} 
+\citep{Borenstein2009}:
+
+\begin{equation}
+\label{eq:metareview_Q}
+Q = \sum_{k=1}^{K} (w_{\text{fixed}_k} \text{ES}_k^2),
+\end{equation}
+
+\begin{equation}
+\label{eq:metareview_C}
+C = \sum_{k=1}^{K} (w_{\text{fixed}_k} - \frac{ \sum_{k=1}^{K} (w_{\text{fixed}_k})^2 } { \sum_{k=1}^{K} (w_{\text{fixed}_k}) },
+\end{equation}
+with $K$ the total number of included studies.
+
+\begin{equation}
+\label{eq:metareview_Tau}
+\tau^2 = \frac{Q - \text{df}}{C},
+\end{equation}
+with $\text{df} = K - 1$ the degrees of freedom.
+
+The random-effects model takes into account the differences between the studies, so the weights are equal to the inverse of the addition between the 
+within-study variance (the variance of the \gls{es}) and the between-studies variance as presented in \cref{eq:metareview_weight_study}:
+
+\begin{equation}
+\label{eq:metareview_weight_study}
+w_k = \frac{1}{\sigma^2(\text{ES}_k) + \tau^2}.
+\end{equation} 
+
+\subsubsection{Compute the summary effect}
+
+Eventually, the weighted average of the $K$ \gls{es} was computed to obtain the \gls{se} as described in 
+\cref{eq:metareview_summary_effect} \citep{Borenstein2009}:
+
+\begin{equation}
+\label{eq:metareview_summary_effect}
+\text{Se} = \frac{\sum_{k=1}^{K} w_k \text{ES}_k} {\sum_{k=1}^{K} w_k}.
+\end{equation} 
+
+Once the \gls{se}  is obtained, we can compute its variance, its standard error, its 95\% confidence interval, its p-value, 
+and $I^2$ estimating effects size's between studies heterogeneity. 
+
+\subsection{Scales used for replication}
+
+\begin{table}[h!]
+  \centering
+  \caption{Clinical scales used to update \citet{Cortese2016} with our choices and the two new articles.}
+\input{tables/table_meta_review_clinical_scales}
+  \label{Table:Table_mr_clinical_scales_update_cortese}
+\end{table}
