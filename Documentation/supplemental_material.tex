@@ -1,9 +1,71 @@
 % adding the line below for Multifile document support with LatexTools Sublime package 
 %!TEX root = manuscript.tex
+\documentclass[12pt,a4paper,english]{article}
 
-\section{Supplemental material}
 
-\subsection{Perform a meta analysis}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+% Quotes 
+\usepackage[square]{natbib}
+\bibliographystyle{abbrvnat}
+
+% For hyperlinks in the pdf 
+\usepackage{hyperref}
+
+% Glossaries
+\usepackage[acronym]{glossaries}
+
+% Font Helvetica
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[T1]{fontenc}
+
+% Margins
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry}
+
+% For pictures in the pdf
+\usepackage{graphicx}
+
+% For tables
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+
+% For ref with figure, table or equation before the number
+\usepackage{cleveref}
+
+% landscape page
+\usepackage{lscape}
+
+
+
+% This is for me to comment
+
+% Not using the pdfcomment package but it is an interesting one  
+%\usepackage[author={Louis Mayaud}]{pdfcomment}
+
+% Select what to do with todonotes: 
+% \usepackage[disable]{todonotes} % notes not showed
+\usepackage[draft]{todonotes}   % notes showed
+
+% Select what to do with command \comment:  
+% \newcommand{\comment}[1]{}  %comment not showed
+\newcommand{\comment}[1]
+{\par {\bfseries \color{blue} #1 \par}} %comment showed
+
+
+\input{glossaries}
+
+\begin{document}
+
+
+
+\title{Supplemental material}
+\date{}
+\maketitle
+
+
+\section{Perform a meta analysis}
 
 To perform the meta-analysi several steps must be followed. First the choice of the model: this analysis is based on either one of the following 
 statistical models \citep{Borenstein2009}:
@@ -18,7 +80,7 @@ statistical models \citep{Borenstein2009}:
 In the present case, although the studies included into the meta-analysis met the same criteria, they remained different from each other 
 on various points, so the random effects model was more appropriate than the fixed-effect model.  
 
-\subsubsection{Compute the effect size of each study}
+\subsection{Compute the effect size of each study}
 
 First, the scores presented in the articles were extracted and the \gls{es} of each study as defined in \citet{Morris2008} 
 was computed as in \cref{eq:metareview_effect_size}:
@@ -48,7 +110,7 @@ The means (first statistical moments) correspond to the mean average score over 
 The standard deviations of the means correspond to the squared root of the second statistical moment, the variance. The variance measures how
  far a set of numbers are spread out from their average value. 
 
-\subsubsection{Compute the variance of each effect size}
+\subsection{Compute the variance of each effect size}
 
 Then, the variance of each \gls{es} was computed as described in \cref{eq:metareview_variance_ES} \citep{Morris2008}:
 \begin{equation}
@@ -70,7 +132,7 @@ A value of 1 means that there is a positive correlation whereas a value of -1 me
 
 Once variances were obtained with \cref{eq:metareview_variance_ES}, we could compute the standard error and the 95\% confidence interval of each \gls{es}. 
 
-\subsubsection{Compute the weight of each study}
+\subsection{Compute the weight of each study}
 
 To compute the \gls{se} a weight must be assigned to each study. To obtain them several steps must be followed. At first, the fixed-effects model 
 weight $w_{fixed}$ of each study $k$ was computed as defined in \citet{Borenstein2009} described in \cref{eq:metareview_weight_fixed_study}: 
@@ -109,7 +171,7 @@ within-study variance (the variance of the \gls{es}) and the between-studies var
 w_k = \frac{1}{\sigma^2(\text{ES}_k) + \tau^2}.
 \end{equation} 
 
-\subsubsection{Compute the summary effect}
+\subsection{Compute the summary effect}
 
 Eventually, the weighted average of the $K$ \gls{es} was computed to obtain the \gls{se} as described in 
 \cref{eq:metareview_summary_effect} \citep{Borenstein2009}:
@@ -122,7 +184,9 @@ Eventually, the weighted average of the $K$ \gls{es} was computed to obtain the 
 Once the \gls{se}  is obtained, we can compute its variance, its standard error, its 95\% confidence interval, its p-value, 
 and $I^2$ estimating effects size's between studies heterogeneity. 
 
-\subsection{Scales used for replication}
+\clearpage
+
+\section{Scales used for replication}
 
 \begin{table}[h!]
   \centering
@@ -130,3 +194,9 @@ and $I^2$ estimating effects size's between studies heterogeneity.
 \input{tables/table_meta_review_clinical_scales}
   \label{Table:Table_mr_clinical_scales_update_cortese}
 \end{table}
+
+\clearpage
+
+\bibliography{bibliography}
+
+\end{document}

@@ -34,6 +34,7 @@ variance of each included study by applying the formula presented in \citet{Morr
 the pooled within-group Pearson correlation $\rho$ (i.e the pre-post correlation) was required 
 \citep{James2013}. In our case, this correlation was not known and the raw data were not available so we took an
  approximation: \citet{Balk2012} found that a value of 0.5 yields values closer to those computed with the right value of the correlation. 
+
 In this replication of the work of \citeauthor{Cortese2016}, the same
 formulas are used \citep{Borenstein2009} but instead of using RevMan, a Python code was developed in order to perform the meta-analysis. To increase 
 replicability and transparency and promote open science, we provide the full raw data used for this research as well as the Python code 
@@ -60,21 +61,23 @@ Eventually, the new studies conformed to the inclusion criteria defined by \cite
 
 \subsection{Detect factors influencing the Neurofeedback}
 
-The second step of this work consisted in determining the factors that possibly influence the efficacy of \gls{nfb} using various statistical
+The second step of this work consisted in determining the factors that possibly influence the efficacy of \gls{nfb} using the three statistical
  methods described below. 
 
 \subsubsection{Identify and pre-process factors}
 
-There are arguably 3 types of factors influencing the measured efficacy of an intervention: methodological, technical and linked to the quality of acquisition.
+There are arguably 5 types of factors influencing the measured efficacy of an intervention: methodological, technical and linked to the quality of acquisition.
 Factors were chosen based on what was typically reported in the literature and presumed to influence \gls{es}.
 \begin{description}
-\item \textit{methodological biases}: the presence of a control group, the psychostimulants intake during \gls{nfb} treatment, the age bounds of children, the blinding of assessors, 
+\item \textit{signal quality}: the ocular artifacts correction and the artifact correction based on amplitude; 
+\item \textit{population}: the psychostimulants intake during \gls{nfb} treatment and the age bounds of children;
+\item \textit{methodological biases}: the presence of a control group, the blinding of assessors, 
 the randomization of subjects, and the approval by an \gls{irb};
-\item \textit{technical factors}: the protocol used (\gls{scp}, \gls{smr}, 
+\item \textit{\gls{nfb} implementation}: the protocol used (\gls{scp}, \gls{smr}, 
 theta up, beta up in frontal areas, theta down), the presence of a transfer phase during \gls{nfb} training, the possibility to train at home 
-or at school with a transfer card reminding of the \gls{nfb} session, the ocular artifacts correction, the artifact correction based on amplitude, 
+or at school with a transfer card reminding of the \gls{nfb} session, 
 the type of thresholding reward, the number of \gls{nfb} sessions, the sessions frequency during a week, the session length and the treatment length;
-\item \textit{quality of acquisition} the presence of one or more active electrode and the \gls{eeg} quality. 
+\item \textit{quality of acquisition}: the presence of one or more active electrode and the \gls{eeg} quality. 
 This last factor was an indicator between 1 and 3: if \gls{eeg} was recorded and processed in poor conditions then the indicator would be 1. 
 Besides, if the article didn't precise the recording conditions, the factor would be set to 1. To get an indicator bigger than 1, several 
 points had to be satisfied:
@@ -102,7 +105,7 @@ To compute this \gls{es}, means of total \gls{adhd} score given by parents and t
 for more than one behavioral scale, \gls{es} were computed for each one. The \gls{es} computed in this analysis was different from the one 
 used previously for the replication and updating of \citet{Cortese2016}. Indeed, here we focused on the effect of the treatment within 
 a group as defined by \citet{Cohen1988}, definition of the \gls{es} that was already used in the literature \citep{Arns2009, Maurizio2014, 
-Strehl2017}. This \gls{es} enables to quantify the efficacy of \gls{nfb} inside the treatment group. as presented in \cref{eq:factors_effect_size_within_subject}.
+Strehl2017}. This \gls{es} enables to quantify the efficacy of \gls{nfb} inside the treatment group as presented in \cref{eq:factors_effect_size_within_subject}.
 
 \begin{equation}
 \label{eq:factors_effect_size_within_subject}
@@ -140,12 +143,12 @@ The aim of the \gls{wls} is to estimate the vector of coefficients $\beta$ by mi
 \text{WRSS} = \sum_{i=1}^{n} w_i \Big(y_i - \beta_{0} - \sum_{j=1}^{p}\beta_{j}x_{ij}\Big)^2 .
 \end{equation}
 
-Thanks to a t-test, we could conclude if coefficients were significantly different from 0 (the p-value had 
-inferior to 0.05). If this was the case, then the associated factor had an influence on \gls{nfb} results. Moreover, if the coefficient was 
-negative then its associated factor improve the effect of \gls{nfb}. 
+Thanks to a t-test, we could conclude if coefficients were significantly different from 0 (p-value 
+inferior to 0.05). If this is the case, then the associated factor has probably an influence on \gls{nfb} results. Moreover, if the coefficient is 
+negative then its associated factor may improve the effect of \gls{nfb}. 
 
-However, before interpreting the results of the \gls{wls}, the assumptions of this model had to be checked (distribution of the residuals are normal,
-the moment matrix $\mathbf{{X}^{T}W^{T}WX}$ must be full rank, the fit had to be significant and the independent variables had to be uncorrelated).
+However, before interpreting the results of the \gls{wls}, the assumptions of this model had to be checked (distribution of the residuals was normal,
+the moment matrix $\mathbf{{X}^{T}W^{T}WX}$ was full rank, the fit was significant and the independent variables were uncorrelated).
 
 The second method applied was the sparsity-regularized linear regression: \gls{lasso}. This method is able to perform variable selection 
 in the linear model thanks to $\ell-1$-norm applied on the coefficients. The coefficients $\beta_j$ are obtained by minimizing the term 
