@@ -127,7 +127,7 @@ session length and number of sessions are more variable across studies than sess
   \label{Figure:factors_analysis_boxplots}
 \end{figure}
 
-The first method used to detect the influencing factors was the \gls{wls}. First the assumptions inherent to this method were checked: 
+The first method used to detect the influencing factors was the \gls{wls}. First, the assumptions inherent to this method were checked: 
 \begin{description}
 	\item the moment matrix $\mathbf{{X}^{T}W^{T}WX}$ was invertible;
   \item no apparent correlation between the continuous independent variables was found; 
@@ -151,7 +151,7 @@ the protocol theta down and the artifact correction based on amplitude with an a
 A negative coefficient meant that the factor was in favor of the \gls{nfb}. Here, among the factors whose coefficient is significantly 
 different from 0, a long treatment, a blind rater, including a transfer phase, and correcting artifact thanks to the amplitude appear 
 to have a negative influence on the \gls{nfb} performance. Conversely, an \gls{irb} approval, a high number of sessions per week, a theta
-down protocol and an EEG quality of 2 seemed to lead to more efficacy. 
+down protocol and an EEG quality of 2 seem to lead to more efficacy. 
 
 Next, a \gls{lasso} regression was conducted in order to perform variables selection among the factors. As the first step, the tuning 
 parameter $\lambda$ was obtained by leave one out cross validation. 
@@ -190,7 +190,7 @@ were less and less reliable.
 \end{figure}
 
 The different methods do not detect exactly the same factors but many are common as presented in \cref{Table:table_factors_analysis_results_summary},
- in particular the treatment length, the assessment by a blind rater and and \gls{eeg} quality of 2 are returned by the three methods. Besides, 
+ in particular the treatment length, the assessment by a blind rater and \gls{eeg} quality of 2 which are returned by the three methods. Besides, 
 the methods agree on the direction of the influence of these factors. However, it is more difficult to interpret the influence of the factors 
 returned only by one or two methods. For instance, both \gls{wls} and \gls{lasso} find that  
 relying on the amplitude of the signal to correct artifacts, and including a transfer phase seem not to improve the \gls{adhd} symptoms. 

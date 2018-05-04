@@ -17,7 +17,7 @@ First, relying on the Conners-3 \citep{Conners2008} instead of the BOSS Classroo
 for teachers ratings seems preferable because this scale is more often used \citep{Christiansen2014, 
 Bluschke2016} and is the revision of the Conners Rating Scale Revised \citep{Conners1998} whose reliability has been studied 
 \citep{Collett2003}. However, relying on one or the other scale did not 
-change the significance of the s\gls{es} whatever the outcome studied.
+change the significance of the \gls{es} whatever the outcome studied.
 
 Second, to compute the \gls{es} of \citet{Arnold2014} we used the values at post-test
 whereas \citeauthor{Cortese2016} calculated it with ratings 
@@ -36,19 +36,19 @@ were controversial and the fact that - for the reasons mentioned earlier - diffe
 it turns out that the impact on the meta-analysis results are minimal and do not change the statistical significance of any outcome. 
 Consequently, the completion of the meta-analysis with studies published since the publication of his work were done with the choices: 
 \begin{description} 
-	\item To compute the \gls{es} of \citet{Arnold2014} the values at post-test were used.
-	\item The scores reported by teachers on the Conners-3 in \citeauthor{Steiner2014}'s study were taken into account instead of these of 
-	the BOSS Classroom Observation.
-	\item Results were obtained with the Python code.
+	\item to compute the \gls{es} of \citet{Arnold2014} the values at post-test were used;
+	\item the scores reported by teachers on the Conners-3 in \citeauthor{Steiner2014}'s study were taken into account instead of these of 
+	the BOSS Classroom Observation;
+	\item results were obtained with the Python code.
 \end{description} 
 
 The addition of the two new studies \citep{Strehl2017, Baumeister2016} further confirms those results. Indeed, 
 the significance does not change for any outcome: \gls{se} found remains significant for parents' scores and 
 non-significant for teachers. 
 
-Adding two more studies increases the significance of the sensitivity analysis ran by \citeauthor{Cortese2016}. 
-Most interestingly, the \gls{es} from the subset of studies corresponding to standard protocols of \gls{nfb} as 
-defined by \citet{Arns2014}. While \citeauthor{Cortese2016} found that this subset tend to perform better, particularly
+Adding two more studies increases the significance of the sensitivity analysis ran by \citeauthor{Cortese2016}, 
+most interestingly, the \gls{se} from the subset of studies corresponding to standard protocols of \gls{nfb} as 
+defined by \citet{Arns2014}. While \citeauthor{Cortese2016} found that this subset tends to perform better, particularly
  on the \gls{pblind} outcome, adding two studies confirms this result on the total score with a p-value of 0.043. 
 Despite the obvious heterogeneity of the studies included in this subset (particularly in terms of protocol used), 
 this result suggests a positive relation between the features of this \emph{standard} design and \gls{nfb} performance.
@@ -59,13 +59,13 @@ Besides, the amplitude of the clinical scale at baseline suggests that teachers 
 the condition and are therefore less likely to see a change (prone to type II error).
 
 Along with this article, the Python code and raw data are provided in order to facilitate a potential replication of this work
-(available on the Github repository).  
+(available on the GitHub repository).  
 
 % 573 words
 
 \subsection{Identify factors influencing the Neurofeedback}
 
-Description and analysis of \gls{nfb} implementation was subject to several studies \citep{Arns2014, Enriquez2017, Vernon2004} 
+Description and analysis of \gls{nfb} implementation was subject to several studies \citep{Arns2014, Enriquez2017, Vernon2004, Jeunet2018} 
 but to our knowledge none used statistical tools to detect the influence of methodological, clinical and technical factors 
 on such a wide range of studies. 
 
@@ -84,7 +84,8 @@ and non-blind raters are due to the placebo effect, the part of the decision tre
 non-blind raters may enable us to detect the factors affected by the placebo effect. 
 Thus, two factors linked to the perception of the treatment (treatment length and session length)
 are present in this part of the tree whereas no such factors are returned for 
-the \gls{pblind} part of the tree.
+the \gls{pblind} part of the tree. However, if these factors are really linked to the placebo effect, we can expect that
+the more \gls{nfb} sessions and the longer the treatment, the higher the \gls{es}. Yet, we observe the opposite.
 
 The treatment length varied more than the session pace and the age bounds of included children between the included studies as shown 
 by the boxplot of standardized values \cref{Figure:factors_analysis_boxplots}, so detecting it as an influencing factor may have 
@@ -124,7 +125,7 @@ does not preclude a combined and personalized strategy (offer the right protocol
 further improve performance. 
 
 It would have been interesting to study the influence of some other factors such as the delay between brain state and feedback signal as well as the type of \gls{nfb} game used 
-but these information are rarely available in studies and also . Besides, to add more reliability to these results it should be preferable to add more studies, 
+but these information are rarely available in studies. Besides, to add more reliability to these results it should be preferable to add more studies, 
 particularly studies with teachers assessments (considered as \gls{pblind}). 
 
 % words number = 849
