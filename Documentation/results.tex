@@ -45,22 +45,22 @@ the following results were computed with the Python code.
 The replication of \citet{Cortese2016} was conducted by applying the following choices and the results obtained are presented 
 in \cref{Table:meta_review_comparison_revman_and_python_with_choices}:
 
-\begin{description}
-    \item To compute the \gls{es} for \citet{Arnold2014}, \citet{Cortese2016} took as post-test values the assessments after 12 \gls{nfb} sessions
+\begin{itemize}
+    \item to compute the \gls{es} for \citet{Arnold2014}, \citet{Cortese2016} took as post-test values the assessments after 12 \gls{nfb} sessions
 		because results at post-test were not available. In our case, we used the values at post-test (i.e after the 40 sessions). With these values, 
-		we find smaller \gls{es} than \citet{Cortese2016}.  
-    \item Different results for teachers' assessments were found for \cite{Steiner2014} because we decided not to use the same scale 
+		we find smaller \gls{es} than \citet{Cortese2016};  
+    \item different results for teachers' assessments were found for \cite{Steiner2014} because we decided not to use the same scale 
 		as \citet{Cortese2016}. Indeed, \citet{Cortese2016} relied on the BOSS Classroom Observation \citep{Shapiro2010} to compute \gls{es}
 		for teachers' ratings even if this scale is not as used as other scales provided in this study. That's why we decided to conduct our analysis
 		with a more common scale which has been part of studies assessing the pros and cons of different ADHD scales \citep{Epstein2012, Collett2003}: The Conners. 
 		Besides, this scale was already used in this study to compute the \gls{es} for the parents' ratings. 
 		Using this scale leads to higher \gls{es} in attention but not in total and hyperactivity. Moreover, this different choice of 
-		scale does not affect the significance of the summary effects.
-		\item Eventually, there is a slight overall difference between \gls{es} computed by \citet{Cortese2016} and those yielded by our Python 
+		scale does not affect the significance of the summary effects;
+		\item eventually, there is a slight overall difference between \gls{es} computed by \citet{Cortese2016} and those yielded by our Python 
 		code maybe due to the fact that the correcting factor for small sample $cp$ is not applied in our work. Besides, as mentioned earlier, 
 		there is a little difference in some \gls{es}' standard error explained by the use of a pre-post correlation value  of 0.5 
 		while computing the variance of the \gls{es}. These two discrepancies does not change the significance of the summary effect.
-\end{description}
+\end{itemize}
 
 \begin{table}[h!]
   \centering
@@ -128,12 +128,12 @@ session length and number of sessions are more variable across studies than sess
 \end{figure}
 
 The first method used to detect the influencing factors was the \gls{wls}. First, the assumptions inherent to this method were checked: 
-\begin{description}
+\begin{itemize}
 	\item the moment matrix $\mathbf{{X}^{T}W^{T}WX}$ was invertible;
   \item no apparent correlation between the continuous independent variables was found; 
   \item the fit was significant as shown by the F-statistic (prob(F-statistic) = 2.21e-10); 
   \item the residuals were normally distributed as demonstrated by the skew (-0.166), kurtosis (2.85) and the Omnibus test (prob(Omnibus) = 0.84).
-\end{description}
+\end{itemize}
 
 Since these assumptions are satisfied, we can be rather confident in the \gls{wls} results presented in \cref{Table:factors_analysis_wls_results}. 
 We find that 8 factors are significantly different from zero for an adjusted R-squared of 0.74. When applying the \gls{ols} the assumptions of the 
