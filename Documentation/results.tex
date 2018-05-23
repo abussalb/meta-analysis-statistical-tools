@@ -8,22 +8,20 @@
 
 \subsection{Systematic review}
 
-Search terms entered in Pubmed returned 152 results during the last check on December 14, 2017 and 28 articles included in previous
+Search terms entered in Pubmed returned $152$ results during the last check on December 14, 2017 and 28 articles included in previous
  meta-analysis on \gls{nfb} were identified. After the selection process illustrated in \cref{Figure:systematic_review_workflow}, 
-31 studies were included in the factors analysis and 15 in the update of \citet{Cortese2016}. 
+ $31$ studies were included in the factors analysis and $15$ in the meta-analysis.
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=1.0\linewidth]{figures/meta_review_factors_analysis_how_studies_are_included_no_colors_2-columns_fitting_ima}
-  \caption{Flow diagram of selection of studies (last search on December 14, 2017).}
+  \caption{Flow diagram of selection of studies (last search on December 14, 2017). The forlast subset of study exactly corresponds to the studies included in \citet{Cortese2016} and more recent work meeting the same criteria. The last subset ($k=31$) corresponds to the same criterai without the requirement for the presence of a controlled group.}
   \label{Figure:systematic_review_workflow}
 \end{figure}
 
-\subsection{Replicate a meta-analysis}
+\subsection{Meta-analysis}
 
-Contrary to \citet{Cortese2016}, the Python code returns a negative \gls{es} when the clinical trial is in favor of \gls{nfb}. 
-The \gls{se} whose p-value $<$ 0.05 was considered statistically significant. 
-
+\comment{move to supplemental material everything related to the descripiton and validation of your tool box - it is not a new scientific result}.
 First, when using the \gls{es} found by \citet{Cortese2016} thanks to RevMan \citep{RevMan}, and then performed the following steps 
 of meta-analysis with the Python code, we observe no major differences between these results and those obtained with RevMan \citep{RevMan} 
 as listed in \cref{Table:meta_review_comparison_between_revman_python}. The minor discrepancies, especially observed at the p-values level,
