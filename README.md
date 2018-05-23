@@ -3,9 +3,14 @@ This repository describes and offers a module for running traditional meta-analy
 
 The repository has the following structure:
 * src
-* tests
+** metaanalysis: metaanalysis and plots
+** saob: systematic analysis of biaises
+** stats: standard statistical tools commonly used for metaanalysis
+* tests: unitary tests and validation compatible with pytest
 * documentation
-** original article: the tex source code of the original manuscript;
+** html package documentation
+** html of the original article 
+** tex source of original article
 
 Please feel free to re-use, suggest improvement, and contributes. 
 Please cite *Bussalb et al. (complete ref here)*.
