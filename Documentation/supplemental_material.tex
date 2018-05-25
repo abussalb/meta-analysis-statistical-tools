@@ -98,7 +98,7 @@ defined as \cref{eq:stats_metareview_std_pre}:
 \label{eq:stats_metareview_std_pre}
 \text{SD}_{\text{pre}} = \sqrt{\frac{(n_T - 1)\text{SD}_{\text{pre},T}^2 + (n_C - 1)\text{SD}_{\text{pre},C}^2} {n_T + n_C - 2}},
 \end{equation}
-where $\text{SD}_{t,G}$ indicates the standard deviation for group $G$ at time $t$ and $n_G$ defines the sample size of each group; 
+where $\text{SD}_{t,G}$ indicates the standard deviation\comment{why not $\sigma$?} for group $G$ at time $t$ and $n_G$ defines the sample size of each group; 
 $c_p$ is a bias adjustment typically used for small sample sizes and defined as \cref{eq:metareview_correction_factor}:
 
 \begin{equation}
@@ -106,13 +106,13 @@ $c_p$ is a bias adjustment typically used for small sample sizes and defined as 
 \text{cp} =  1 - \frac{3} {4(n_T + n_C - 2) - 1}. 
 \end{equation} 
 
-The means (first statistical moments) correspond to the mean average score over all scores given by raters to assess the \gls{adhd} symptoms. 
-The standard deviations of the means correspond to the squared root of the second statistical moment, the variance. The variance measures how
+The mean correspond to the mean average score over all scores given by raters to assess the \gls{adhd} symptoms. 
+\comment{you can assume people are familiar with the definition of the mean and std, and variance} The variance measures how
  far a set of numbers are spread out from their average value. 
 
 \subsection{Compute the variance of each effect size}
 
-Then, the variance of each \gls{es} was computed as described in \cref{eq:metareview_variance_ES} \citep{Morris2008}:
+Then, the variance of each \gls{es} was computed as described in \comment{you don't need to explicitely reference the equation if it is in your sentence. Good to give it a label though even if you don't use it. This doesn't hold ofr figures and table that \emph{always} should be explicitely referenced in the body of your text. This is because, the equation belongs to your sentence. you can correct this throughout your manucript. }\citep{Morris2008}:
 \begin{equation}
 \label{eq:metareview_variance_ES}
 \sigma^2(\text{ES}) = c_p^2 \left (\frac{n_T + n_C - 2} {n_T + n_C - 4} \right ) \left  [ \frac{2(1-\rho)(n_T + n_C)} {n_Tn_C} + \text{ES}^2 \right ] - \text{ES}^2.
@@ -122,7 +122,15 @@ To compute the variance of the \gls{es}, the pooled within-group Pearson correla
 
 \begin{equation}
 \label{eq:metareview_within_group_pearson_correlation}
-\rho =  \frac{ \sum_{i=1}^{n} (\text{pre}_i - \mu_{\text{pre}})(\text{post}_i - \mu_{\text{post}}) } { \sqrt{ \sum_{i=1}^{n} (\text{pre}_i - \mu_{\text{pre}})^2} \sqrt{\sum_{i=1}^{n} (\text{post}_i - \mu_{\text{post}})^2} }, 
+\rho =  \frac{ 
+  \sum_{i=1}^{n} \(\text{pre}_i - \mu_{\text{pre}}\)\(\text{post}_i - \mu_{\text{post}}\) 
+} { 
+  \sqrt{ 
+    \sum_{i=1}^{n} \(\text{pre}_i - \mu_{\text{pre}}\)^2
+  } 
+  \sqrt{
+    \sum_{i=1}^{n} \(\text{post}_i - \mu_{\text{post}}\)^2} 
+},
 \end{equation}
 where $n$ is the number of patients included in a study, $pre_i$, $post_i$ are score values for patient $i$ at pre- and post-test 
 respectively, and $\mu_{pre}$, $\mu_{post}$ the mean scores over all patients. It is a measure of linear correlation between two variables. 
