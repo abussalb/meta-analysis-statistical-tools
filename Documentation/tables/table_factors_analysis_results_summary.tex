@@ -1,31 +1,31 @@
 \begin{center}
-\begin{tabular}{ p{4cm} p{4cm} p{4cm} p{3cm} }
+\begin{tabular}{ p{3cm} p{3cm} p{3cm} p{2cm} p{2cm} p{2cm}}
 \toprule
-\multicolumn{2}{c}{Independent variables (factors)} & Influence on the \gls{nfb} \\
-\cmidrule(lr){1-2}\cmidrule(lr){3-3}
-\multirow{ 2}{*}{ \textit{Signal quality} } & \gls{eog} correction & 0 \\ 
-& artifact correction based on amplitude & - - \\ 
-\cmidrule(lr){1-2}\cmidrule(lr){3-3}
-\multirow{ 3}{*}{ \textit{Methodological} } & \textbf{\gls{pblind}} & - - -  \\ 
-& randomization & + \\  
-& \gls{irb} & ++ \\  
-\cmidrule(lr){1-2}\cmidrule(lr){3-3}
-\multirow{ 3}{*}{ \textit{Population} } & age max & 0 \\
-& age min & + \\
-& on drugs & - \\
-\cmidrule(lr){1-2}\cmidrule(lr){3-3}
-\multirow{ 9}{*}{ \textit{\gls{nfb} implementation} } & number of sessions  & 0 \\
-& session length & - \\
-& \textbf{treatment length} & - - - \\
-& session pace & ++ \\ 
-& \gls{smr} & - - \\
-& beta up central & 0 \\  
-& theta down & ++ \\
-& \gls{scp} & - \\ 
-& transfer phase & - - \\
-\cmidrule(lr){1-2}\cmidrule(lr){3-3}
-\multirow{ 2}{*}{ \textit{Quality of acquisition} } & more than one active electrode & 0 \\ 
-& \textbf{\gls{eeg} quality 2} & +++ \\  
+\multicolumn{2}{c}{ \shortstack{Independent \\ variables (factors)} } & \shortstack{ \gls{wls} \\ (p-value) } & \gls{lasso} & \shortstack{Decision \\ Tree} \\
+\midrule
+\multirow{ 2}{*}{ \textit{Signal quality} } & \gls{eog} correction & \hskip 0.08in-0.078 (0.41) &  \hskip 0.12in0.00 & / \\ 
+& artifact correction based on amplitude & \hskip 0.12in\textbf{0.15(0.040)} & \hskip 0.12in\textbf{0.047} & / \\ 
+\midrule
+\multirow{ 3}{*}{ \textit{Methodological} } & \gls{pblind} & \hskip 0.12in\textbf{0.10 (0.043)} & \hskip 0.12in\textbf{0.11} & \textbf{selected} \\ 
+& randomization & \hskip 0.12in0.0069 (0.92) & \hskip 0.12in\textbf{0.032} & / \\  
+& \gls{irb} & \hskip 0.08in\textbf{-0.29 (0.00)} & \hskip 0.08in\textbf{-0.15} & / \\  
+\midrule
+\multirow{ 3}{*}{ \textit{Population} } & age max & \hskip 0.08in-0.090 (0.16) & \hskip 0.12in0.00 & / \\
+& age min & \hskip 0.08in-0.055 (0.37) & \hskip 0.12in0.00 & \textbf{selected }\\
+& on drugs & \hskip 0.12in0.069 (0.42) & \hskip 0.12in\textbf{0.032} & / \\
+\midrule
+\multirow{ 9}{*}{ \textit{ \shortstack{\gls{nfb} \\ implementation} } } & number of sessions  & \hskip 0.08in-0.0075 (0.92) & \hskip 0.12in0.00 & / \\
+& session length & \hskip 0.12in0.17 (0.17) & \hskip 0.12in0.00 & \textbf{selected} \\
+& treatment length & \hskip 0.12in\textbf{0.57 (0.00)} & \hskip 0.12in\textbf{0.33} & \textbf{selected} \\
+& session pace & \hskip 0.08in\textbf{-0.25 (0.00)} & \hskip 0.08in\textbf{-0.14} & / \\ 
+& \gls{smr} & \hskip 0.08in-0.063 (0.41) & \hskip 0.12in\textbf{0.061} & \textbf{selected} \\
+& beta up central & \hskip 0.08in-0.027 (0.72) & \hskip 0.12in0.00 & / \\  
+& theta down & \hskip 0.08in\textbf{-0.29 (0.014)} & \hskip 0.08in\textbf{-0.051} & / \\
+& \gls{scp} & \hskip 0.08in-0.099 (0.50) & \hskip 0.12in\textbf{0.10} & / \\ 
+& transfer phase & \hskip 0.12in\textbf{0.27 (0.032)} & \hskip 0.12in\textbf{0.11} & / \\
+\midrule
+\multirow{ 2}{*}{ \textit{ \shortstack{Quality of \\ acquisition} } } & more than one active electrode & \hskip 0.12in0.064 (0.36) & \hskip 0.12in0.00 & / \\ 
+& \gls{eeg} quality 2 & \hskip 0.08in\textbf{-0.36 (0.00)} & \hskip 0.08in\textbf{-0.23} & \textbf{selected} \\  
 \bottomrule
 \end{tabular}
 \end{center}

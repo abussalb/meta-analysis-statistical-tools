@@ -67,6 +67,18 @@
 
 \section{Perform a meta analysis}
 
+To conduct meta-analysis, different software exist: for instance \citet{Cortese2016} used RevMan 5.3 \citep{RevMan} which computes the \gls{es} and its 
+variance of each included study by applying the formula presented in \citet{Morris2008}. However, in order to compute the variance of the \gls{es}, 
+the pooled within-group Pearson correlation $\rho$ (i.e the pre-post correlation) was required 
+\citep{James2013}. In our case, this correlation was not known and the raw data were not available so we took an
+ approximation: \citet{Balk2012} found that a value of 0.5 yields values closer to those computed with the right value of the correlation. 
+
+In this replication of the work of \citeauthor{Cortese2016}, the same
+formulas are used \citep{Borenstein2009} but instead of using RevMan, a Python code was developed in order to perform the meta-analysis. To increase 
+replicability and transparency and promote open science, we provide the full raw data used for this research as well as the Python code 
+developed available on a GitHub repository [put ref]; it is tested with \citet{Cortese2016} raw data to show that same results were found and could 
+be used for replication and expansion of this work. The toolbox could also be used to run any similar meta-analysis. 
+
 To perform the meta-analysi several steps must be followed. First the choice of the model: this analysis is based on either one of the following 
 statistical models \citep{Borenstein2009}:
 \begin{itemize}
@@ -184,6 +196,24 @@ Eventually, the weighted average of the $K$ \gls{es} was computed to obtain the 
 Once the \gls{se}  is obtained, we can compute its variance, its standard error, its 95\% confidence interval, its p-value, 
 and $I^2$ estimating effects size's between studies heterogeneity. 
 
+
+\section{Associate independent factors to effect sizes}
+
+However, before interpreting the results of the \gls{wls}, the assumptions of this model had to be checked (distribution of the residuals was normal,
+the moment matrix $\mathbf{{X}^{T}W^{T}WX}$ was full rank, the fit was significant and the independent variables were uncorrelated). Mettre les valeurs !
+
+\subsection{Cross validation}
+
+This method retains $n$ - 1 observations as the validation data for testing the model and the 
+remaining observation is used as training data. The cross-validation process is then repeated $n$ times with each of the observation 
+used exactly once as the testing data. For each fold, the \gls{mse} on the test set was computed and eventually, the $n$ results can 
+be averaged to produce a single observation that enables to find the optimal $\lambda$: it corresponds to the abscissa of the minimum
+value of the \gls{mse} on the mean fold computed for a large range of $\lambda$ \citep{James2013}. 
+
+\comment{which weights are we talking about here? it's not so much the the option is not implemnted than the frameworks don't easily account for this - move this comment to supplemental material}
+No weights are applied when running the \gls{lasso} and the decision tree because the option is not implemented in the 
+Python methods used in our analysis. 
+
 \clearpage
 
 \section{Scales used for replication}
@@ -194,6 +224,58 @@ and $I^2$ estimating effects size's between studies heterogeneity.
 \input{tables/table_meta_review_clinical_scales}
   \label{Table:Table_mr_clinical_scales_update_cortese}
 \end{table}
+
+
+\section{Results}
+
+First, when using the \gls{es} found by \citet{Cortese2016} thanks to RevMan \citep{RevMan}, and then performed the following steps 
+of meta-analysis with the Python code, we observe no major differences between these results and those obtained with RevMan \citep{RevMan} 
+as listed in \cref{Table:meta_review_comparison_between_revman_python}. The minor discrepancies, especially observed at the p-values level,
+are due to our choice to always use a pre-post correlation of 0.5 when computing the variance of each \gls{es}. Moreover, a sensitivity 
+analysis was conducted to ensure the minor impact of the pre-post correlation value: when it varies between 0.2 and 0.8 the significance 
+of the \gls{se} does not change. 
+
+\begin{table}[h!]
+  \centering
+  \caption{Comparison between \citet{Cortese2016} results obtained with RevMan \citep{RevMan} and those obtained with the Python code. Summary 
+	effects and their corresponding p-value in parenthesis are presented. With the Python program, a negative summary effect is in favor of \gls{nfb}.}
+\input{tables/table_meta_review_comparison_revman_python}
+  \label{Table:meta_review_comparison_between_revman_python}
+\end{table}
+
+Thanks to the previous step, we can conclude that the Python code yields results close to those returned by RevMan \citet{RevMan}, so all 
+the following results were computed with the Python code.
+
+Besides, as mentioned earlier, 
+		there is a little difference in some \gls{es}' standard error explained by the use of a pre-post correlation value  of 0.5 
+		while computing the variance of the \gls{es}. These two discrepancies does not change the significance of the summary effect.
+		
+		
+		
+To assess the variability of each factor, box plots of their standardized values were displayed in \cref{Figure:factors_analysis_boxplots}: treatment length, 
+session length and number of sessions are more variable across studies than session pace, minimum and maximum age.  
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.5]{figures/factors_analysis_boxplot_no_colors_no_two_columns}
+  \caption{Boxplots of the standardized values of each continuous factor.}
+  \label{Figure:factors_analysis_boxplots}
+\end{figure}
+
+
+%The first method used to detect the influencing factors was the \gls{wls}. First, the assumptions inherent to this method were checked: 
+%\begin{itemize}
+	%\item the moment matrix $\mathbf{{X}^{T}W^{T}WX}$ was invertible;
+  %\item no apparent correlation between the continuous independent variables was found; 
+  %\item the fit was significant as shown by the F-statistic (prob(F-statistic) = 2.21e-10); 
+  %\item the residuals were normally distributed as demonstrated by the skew (-0.166), kurtosis (2.85) and the Omnibus test (prob(Omnibus) = 0.84).
+%\end{itemize} % to suppress and add in Supplemental material?
+
+Since these assumptions are satisfied, we can be rather confident in the \gls{wls} results presented in. ols the assumptions of the 
+model are satisfied too and
+
+$\lambda$ corresponds to the abscissa of the minimum of the \gls{mse} on the mean fold computed on $\lambda$ values ranging from very 
+small to very big, covering the full range of scenarios from the null model to the least square fit.
 
 \clearpage
 

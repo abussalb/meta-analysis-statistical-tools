@@ -8,202 +8,161 @@
 
 \subsection{Systematic review}
 
-Search terms entered in Pubmed returned $152$ results during the last check on December 14, 2017 and 28 articles included in previous
- meta-analysis on \gls{nfb} were identified. After the selection process illustrated in \cref{Figure:systematic_review_workflow}, 
- $31$ studies were included in the factors analysis and $15$ in the meta-analysis.
+Search terms entered in Pubmed returned 152 results during the last check on December 14, 2017 and 28 articles included in previous
+meta-analysis on \gls{nfb} were identified. After the selection process illustrated in \cref{Figure:systematic_review_workflow}, 
+31 studies were included in the \gls{saob} and 15 in the meta-analysis as summarized in \cref{Table:table_factors_analysis_meta_analysis_list_studies}.
+The 31 studies selected for the \gls{saob} correspond to \citeauthor{Cortese2016}'s criteria to the exception of a need for a control group since 
+we are computing the within subject \gls{es}.  
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=1.0\linewidth]{figures/meta_review_factors_analysis_how_studies_are_included_no_colors_2-columns_fitting_ima}
-  \caption{Flow diagram of selection of studies (last search on December 14, 2017). The forlast subset of study exactly corresponds to the studies included in \citet{Cortese2016} and more recent work meeting the same criteria. The last subset ($k=31$) corresponds to the same criterai without the requirement for the presence of a controlled group.}
+  \caption{Flow diagram of selection of studies (last search on December 14, 2017). The forlast subset of study exactly corresponds to the 
+	studies included in \citet{Cortese2016} and more recent work meeting the same criteria. 
+	The last subset ($k$=31) corresponds to the same criteria without the requirement for the presence of a control group.}
   \label{Figure:systematic_review_workflow}
 \end{figure}
 
-\subsection{Meta-analysis}
-
-\comment{move to supplemental material everything related to the descripiton and validation of your tool box - it is not a new scientific result}.
-First, when using the \gls{es} found by \citet{Cortese2016} thanks to RevMan \citep{RevMan}, and then performed the following steps 
-of meta-analysis with the Python code, we observe no major differences between these results and those obtained with RevMan \citep{RevMan} 
-as listed in \cref{Table:meta_review_comparison_between_revman_python}. The minor discrepancies, especially observed at the p-values level,
- are due to our choice to always use a pre-post correlation of 0.5 when computing the variance of each \gls{es}. Moreover, a sensitivity 
-analysis was conducted to ensure the minor impact of the pre-post correlation value: when it varies between 0.2 and 0.8 the significance 
-of the \gls{se} does not change. 
-
 \begin{table}[h!]
   \centering
-  \caption{Comparison between \citet{Cortese2016} results obtained with RevMan \citep{RevMan} and those obtained with the Python code. Summary 
-	effects and their corresponding p-value in parenthesis are presented. With the Python program, a negative summary effect is in favor of \gls{nfb}.}
-\input{tables/table_meta_review_comparison_revman_python}
-  \label{Table:meta_review_comparison_between_revman_python}
+  \caption{List of all studies included in the three different analysis. $^a$ Studies originally included in \citet{Cortese2016}
+	(search on August 30, 2015), $^b$ studies satisfying \citet{Cortese2016}'s criteria (search on December 14, 2017), $^c$ studies 
+	satisfying \citet{Cortese2016}'s criteria to the exception of the part relative to the control group (search on December 14, 2017).}
+  \input{tables/table_factors_analysis_meta_analysis_list_studies}
+  \label{Table:table_factors_analysis_meta_analysis_list_studies}
 \end{table}
 
-Thanks to the previous step, we can conclude that the Python code yields results close to those returned by RevMan \citet{RevMan}, so all 
-the following results were computed with the Python code. 
+\subsection{Replicate a meta-analysis}
 
-The replication of \citet{Cortese2016} was conducted by applying the following choices and the results obtained are presented 
+The Python module created in order to perform a meta-analysis was successfully validated as describes in the Supplemental Materials and made available online.
+So all the following results were computed with the Python code. 
+
+The replication and the following update of \citeauthor{Cortese2016} was conducted by applying the following choices and the results obtained are presented 
 in \cref{Table:meta_review_comparison_revman_and_python_with_choices}:
 
 \begin{itemize}
     \item to compute the \gls{es} for \citet{Arnold2014}, \citet{Cortese2016} took as post-test values the assessments after 12 \gls{nfb} sessions
-		because results at post-test were not available. In our case, we used the values at post-test (i.e after the 40 sessions). With these values, 
+		because results at post-test were not available. In our case, we use the values at post-test (i.e after the 40 sessions). With these values, 
 		we find smaller \gls{es} than \citet{Cortese2016};  
-    \item different results for teachers' assessments were found for \cite{Steiner2014} because we decided not to use the same scale 
-		as \citet{Cortese2016}. Indeed, \citet{Cortese2016} relied on the BOSS Classroom Observation \citep{Shapiro2010} to compute \gls{es}
+    \item different results for teachers' assessments are found for \cite{Steiner2014} because we decided not to use the same scale 
+		as \citeauthor{Cortese2016}. Indeed, \citeauthor{Cortese2016} relied on the BOSS Classroom Observation \citep{Shapiro2010} to compute \gls{es}
 		for teachers' ratings even if this scale is not as used as other scales provided in this study. That's why we decided to conduct our analysis
 		with a more common scale which has been part of studies assessing the pros and cons of different ADHD scales \citep{Epstein2012, Collett2003}: The Conners. 
-		Besides, this scale was already used in this study to compute the \gls{es} for the parents' ratings. 
+		Besides, this scale is already used in this study to compute the \gls{es} for the parents' ratings. 
 		Using this scale leads to higher \gls{es} in attention but not in total and hyperactivity. Moreover, this different choice of 
-		scale does not affect the significance of the summary effects;
-		\item eventually, there is a slight overall difference between \gls{es} computed by \citet{Cortese2016} and those yielded by our Python 
-		code maybe due to the fact that the correcting factor for small sample $cp$ is not applied in our work. Besides, as mentioned earlier, 
-		there is a little difference in some \gls{es}' standard error explained by the use of a pre-post correlation value  of 0.5 
-		while computing the variance of the \gls{es}. These two discrepancies does not change the significance of the summary effect.
+		scale does not affect the significance of the summary effects.
 \end{itemize}
 
 \begin{table}[h!]
   \centering
   \caption{Comparison between \citet{Cortese2016} results obtained with RevMan \citep{RevMan} and those obtained with the Python code with our 
-	choices applied. Summary effects and their corresponding p-value (in parenthesis) are presented. With the Python program, a negative summary 
-	effect is in favor of \gls{nfb}.}
+	choices applied. Summary effects and their corresponding p-value (in parenthesis) are presented. With the Python program, a negative \gls{se}
+	is in favor of \gls{nfb}.}
 \input{tables/table_meta_review_comparison_revman_and_python_with_choices}
   \label{Table:meta_review_comparison_revman_and_python_with_choices}
 \end{table}
 
+Consequently, the rest of this work was carried with the following choices:
+\begin{itemize}
+    \item values used to compute \gls{es} from \citeauthor{Arnold2014} correspond to the scores at post-test (after the 40 sessions of \gls{nfb};  
+    \item to compute the \gls{es} based on teachers' assessments, we used the Conners because this scale is more common.
+\end{itemize}
+
 \subsection{Update a meta-analysis}
 
-The next step consisted in extend \citet{Cortese2016} meta-analysis by adding the two new articles \citep{Strehl2017, Baumeister2016} found 
-during the systematic review. \citet{Baumeister2016} provided results only for parents total outcome whereas \citet{Strehl2017} gave teachers 
+The next step consists in extend \citeauthor{Cortese2016} meta-analysis by adding the two new articles \citep{Strehl2017, Baumeister2016} found 
+during the systematic review. \citet{Baumeister2016} provides results only for parents total outcome whereas \citet{Strehl2017} gives teachers 
 and parents' assessments for all outcomes. In spite of favorable results for \gls{nfb}, particularly on parents' assessments, adding these two 
-new studies does not change either the magnitude or the significance of the summary effect for any outcome whatever the raters or the choices made 
-as summed up in \cref{Table:meta_review_comparison_revman_plus_new_and_python_new_plus_with_choices}.
+new studies does not change either the magnitude or the significance of the \gls{se} for any outcome whatever the raters
+as illustrated in \cref{Figure:meta_review_forest_plots_update_meta_analysis_our_choices_no_colors_2-columns_fitting_image}. 
  
-\clearpage
-\begin{landscape}
-\begin{table}[h!]
-\centering
-\caption{Comparison between \citet{Cortese2016} results obtained with RevMan \citep{RevMan} with and without the two new articles and 
-those obtained with the Python code with our choices applied plus the two new articles. Summary effects and their corresponding p-value 
-(in parenthesis) are presented. With the Python program, a negative summary effect is in favor of \gls{nfb}.}
-\input{tables/table_meta_review_comparison_revman_plus_new_and_python_new_plus_with_choices} 
-  \label{Table:meta_review_comparison_revman_plus_new_and_python_new_plus_with_choices}
-\end{table}
-\end{landscape}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=1.0\linewidth]{figures/meta_review_forest_plots_update_meta_analysis_our_choices_no_colors_2-columns_fitting_image}
+  \caption{Forest plots obtained on the dataset "Update meta-analysis" with the Python code. A negative \gls{es} is in favor of \gls{nfb}. 
+	The blue squares correspond to the \gls{es}, the blue diamond to the \gls{se} and the green line to the confidence interval.}
+  \label{Figure:meta_review_forest_plots_update_meta_analysis_our_choices_no_colors_2-columns_fitting_image}
+\end{figure}
 
-Next, we ran the analysis on two specific subgroups: on the one hand only studies following standard protocol defined by \citet{Arns2014}
+Next, we run the analysis on two specific subgroups: on the one hand only studies following standard protocol defined by \citet{Arns2014}
 are selected and on the other hand only studies forbidding participants to take medication during the clinical trial are included. 
 
 Regarding the standard protocol subgroup, \citet{Cortese2016} found all the outcomes significant except for the hyperactivity symptoms 
 rated by teachers. However, when adding \citep{Strehl2017} results, we find no significance for the inattention symptoms assessed by 
-teachers as well (p-value = 0.10 when following \citeauthor{Cortese2016}'s choices and 0.11 with our choices). 
+teachers as well (p-value = 0.11). 
 As for the low/no medication subgroup, summary effects are not significant except for the inattention symptoms assessed by parents (p-value = 0.013). 
 Besides, the differences in \citet{Arnold2014} values causes a loss of significance in 
-hyperactivity outcome for parents (p-value = 0.066) compared to \citet{Cortese2016} (p-value = 0.016). The two new studies were not included in this subgroup because 
-subjects are taking psychostimulants during the trial.
+hyperactivity outcome for parents (p-value = 0.066) compared to \citet{Cortese2016} (p-value = 0.016). The two new studies are not 
+included in this subgroup because subjects are taking psychostimulants during the trial.
 
-All the scales used to compute the effect sizes following our choices are summarized in Supplemental material.
+All the scales used to compute the effect sizes following our choices are summarized in the Supplemental Materials.
 
 \subsection{Detect factors influencing the Neurofeedback}
 
-This analysis was performed on 31 trials assessing the efficacy of \gls{nfb} as presented in \cref{Table:table_factors_analysis_list_of_included_studies}. 
-Among the 25 factors selected, 6 were removed because there were either too many missing observations or they were too homogeneous: beta up frontal, 
+This analysis is performed on 31 trials assessing the efficacy of \gls{nfb} as presented in \cref{Table:table_factors_analysis_meta_analysis_list_studies}. 
+Among the 25 factors selected, 6 are removed because there are either too many missing observations or they were too homogeneous: beta up frontal, 
 the use of a transfer card, the type of threshold for the rewards (incremental or fixed), the EEG quality equal to 3 and presence of a control group. 
 
-To assess the variability of each factor, box plots of their standardized values were displayed in \cref{Figure:factors_analysis_boxplots}: treatment length, 
-session length and number of sessions are more variable across studies than session pace, minimum and maximum age.      
+The \gls{es} within subjects is computed for all available clinical scales of each study and then factors are associated with the computed \gls{es}
+thanks to three different methods: the \gls{wls}, the \gls{lasso} and the decision tree. The global results are presented in \cref{Table:factors_analysis_wls_results}
+where we observe that the techniques used do not return exactly the same factors. Thus, the more methods identified a factor, the more confident we can be in
+the results.  
 
 \begin{table}[h!]
   \centering
-  \caption{List of included studies to perform the factors analysis.}
-  \input{tables/table_factors_analysis_list_of_included_studies}
-  \label{Table:table_factors_analysis_list_of_included_studies}
-\end{table}
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.5]{figures/factors_analysis_boxplot_no_colors_no_two_columns}
-  \caption{Boxplots of the standardized values of each continuous factor.}
-  \label{Figure:factors_analysis_boxplots}
-\end{figure}
-
-The first method used to detect the influencing factors was the \gls{wls}. First, the assumptions inherent to this method were checked: 
-\begin{itemize}
-	\item the moment matrix $\mathbf{{X}^{T}W^{T}WX}$ was invertible;
-  \item no apparent correlation between the continuous independent variables was found; 
-  \item the fit was significant as shown by the F-statistic (prob(F-statistic) = 2.21e-10); 
-  \item the residuals were normally distributed as demonstrated by the skew (-0.166), kurtosis (2.85) and the Omnibus test (prob(Omnibus) = 0.84).
-\end{itemize}
-
-Since these assumptions are satisfied, we can be rather confident in the \gls{wls} results presented in \cref{Table:factors_analysis_wls_results}. 
-We find that 8 factors are significantly different from zero for an adjusted R-squared of 0.74. When applying the \gls{ols} the assumptions of the 
-model are satisfied too and the same factors are returned as significant except the transfer phase, 
-the protocol theta down and the artifact correction based on amplitude with an adjusted R-squared of 0.42. 
-
-\begin{table}[h!]
-  \centering
-  \caption{Results of the \gls{wls}. A p-value $<$ 0.05 means that the coefficient of the corresponding factor is significantly different from $0$ (in bold). 
+  \caption{Results of the \gls{wls}, \gls{lasso} and decision tree. For the \gls{wls}, a p-value $<$ 0.05 (in bold) means that the coefficient of 
+	the corresponding factor is significantly different from 0. For the \gls{lasso}, factors not set to 0 (in bold) are selected. 
 	When the value of the coefficient is negative, the corresponding factor may lead to better \gls{nfb} results.}
-  \input{tables/table_factors_analysis_wls_results}
-  \label{Table:factors_analysis_wls_results}
+  \input{tables/table_factors_analysis_results_summary}
+  \label{Table:table_factors_analysis_results_summary}
 \end{table}
 
-A negative coefficient meant that the factor was in favor of the \gls{nfb}. Here, among the factors whose coefficient is significantly 
-different from 0, a long treatment, a blind rater, including a transfer phase, and correcting artifact thanks to the amplitude appear 
-to have a negative influence on the \gls{nfb} performance. Conversely, an \gls{irb} approval, a high number of sessions per week, a theta
-down protocol and an EEG quality of 2 seem to lead to more efficacy. 
-
-Next, a \gls{lasso} regression was conducted in order to perform variables selection among the factors. As the first step, the tuning 
-parameter $\lambda$ was obtained by leave one out cross validation. 
-$\lambda$ corresponds to the abscissa of the minimum of the \gls{mse} on the mean fold computed on $\lambda$ values ranging from very 
-small to very big, covering the full range of scenarios from the null model to the least square fit.
-
-The penalty applied leads to the selection of 12 factors as summed up in \cref{Table:table_factors_analysis_lasso_results}.
-\begin{table}[h!]
-  \centering
-  \caption{Results of the \gls{lasso}. Factors different from 0 are selected (in bold). When the value of the coefficient is negative, the corresponding 
-	factor may lead to better \gls{nfb} results.}
-  \input{tables/table_factors_analysis_lasso_results}
-  \label{Table:table_factors_analysis_lasso_results}
-\end{table}
-
-With this method, a negative coefficient corresponds also to favorable factors. Thus, having several sessions per week, being approved 
-by an \gls{irb}, a protocol theta down, and an EEG quality of 2 seem to improve the results of the \gls{nfb}. 
-On the contrary, a blind rater, a long treatment, randomizing the groups, a \gls{scp} and \gls{smr} protocols, being on drugs during the trial, correcting 
-artifact based on the amplitude of the signal, and including a transfer phase during the session appear to be factors with a negative influence.
+First, after applying the \gls{wls}, we find that 8 factors are significantly different from zero for an adjusted R-squared of 0.74. 
+When applying the \gls{ols}, the same factors are returned as significant except the transfer phase, the protocol theta down and the artifact correction
+based on amplitude with an adjusted R-squared of 0.42. The \gls{lasso} regression selects significant factors by setting to 0 the others: 12 factors 
+are different from 0 here. With these two methods, a negative coefficient means that the factor is in favor of the \gls{nfb}.
 
 Eventually, the decision tree presented in \cref{Figure:factors_analysis_decision_tree_results} splits the dataset based on the factor leading to the
- smallest \gls{mse}. The best predictor is the one at the top of the tree: in our case it is the \gls{pblind}. So, the dataset is divided in two subsets: 
-43 samples where the assessments were reported by non-blind raters and 19 samples based on blind ratings. This last subset, where the \gls{se} is smaller 
-than the one obtained for non-blind raters, is split on the age min criteria: it appeares that the lower the age, the better the results. Regarding 
-the side of the tree where the raters are non-blind, the next factor leading to the smallest \gls{mse} is the treatment length. A smaller treatment
- length seems to lead to better \gls{nfb} results. In that case, the EEG quality 2 enables to break down the subset and according to these results
- if this factor is respected in studies it seems to lead to higher \gls{se}. The lower we get into the tree, the less samples are available, so results 
-were less and less reliable.
+smallest \gls{mse}. The best predictor is the one at the top of the tree: in our case it is the \gls{pblind}. Five other factors also splits the subsets. 
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=1.0\linewidth]{figures/factors_analysis_decision_tree_results_no_colors_2-columns_fitting_image}
-  \caption{Decision Tree obtained with the factors. The criteria to minimize was the \gls{mse}. For the dummy variables, a value of $1$ meant
-	that the factor was observed in the study. The value corresponded to the value of the dependent variable.}
+  \caption{Decision Tree obtained with the factors. The criteria to minimize was the \gls{mse}. For the dummy variables, a value of $1$ means
+	that the factor is observed in the study. The value corresponds to the dependent variable.}
   \label{Figure:factors_analysis_decision_tree_results}
 \end{figure}
 
-The different methods do not detect exactly the same factors but many are common as presented in \cref{Table:table_factors_analysis_results_summary},
- in particular the treatment length, the assessment by a blind rater and \gls{eeg} quality of 2 which are returned by the three methods. Besides, 
+We can notice that several factors are common to the three methods, in particular the treatment length, the assessment 
+by a blind rater and \gls{eeg} quality of 2 which are returned by the three methods. Besides, 
 the methods agree on the direction of the influence of these factors. However, it is more difficult to interpret the influence of the factors 
 returned only by one or two methods. For instance, both \gls{wls} and \gls{lasso} find that  
 relying on the amplitude of the signal to correct artifacts, and including a transfer phase seem not to improve the \gls{adhd} symptoms. 
-However, the \gls{irb} approval, a theta down protocol, and a high number of sessions per week appear to 
+Conversely, the \gls{irb} approval, a theta down protocol, and a high number of sessions per week appear to 
 positively influence the results. The decision tree and \gls{lasso} have in common the protocol \gls{smr}: it is associated with lower \gls{es}.
 Five factors are returned by only one of the methods: the minimal age of the children, being on drugs 
-during \gls{nfb} treatment, randomizing the groups and the \gls{scp} protocol.  
+during \gls{nfb} treatment, randomizing the groups and the \glspl{scp} protocol. 
 
-\begin{table}[h!]
-  \centering
-  \caption{Summary of the results obtained with the three methods. The type of sign describes the direction of the influence on the \gls{nfb} 
-	results ($+$ for a positive effect and a $-$ for a negative one). The number of signs illustrates the number of methods who finds the factor 
-	as influencing. Factors returned by 3, 2 and 1 methods influence the \gls{nfb} with respectively high, moderate and poor confidence.}
-  \input{tables/table_factors_analysis_results_summary}
-  \label{Table:table_factors_analysis_results_summary}
-\end{table}
+%A negative coefficient means that the factor is in favor of the \gls{nfb}. Here, among the factors whose coefficient is significantly 
+%different from 0, a long treatment, a blind rater, including a transfer phase, and correcting artifact thanks to the amplitude appear 
+%to have a negative influence on the \gls{nfb} performance. Conversely, an \gls{irb} approval, a high number of sessions per week, a theta
+%down protocol and an EEG quality of 2 seem to lead to more efficacy. 
+
+%With this method, a negative coefficient corresponds also to favorable factors. Thus, having several sessions per week, being approved 
+%by an \gls{irb}, a protocol theta down, and an EEG quality of 2 seem to improve the results of the \gls{nfb}. 
+%On the contrary, a blind rater, a long treatment, randomizing the groups, a \glspl{scp} and \gls{smr} protocols, being on drugs during the trial, correcting 
+%artifact based on the amplitude of the signal, and including a transfer phase during the session appear to be factors with a negative influence.
+
+ 
+
+%So, the dataset is divided in two subsets: 
+%43 samples where the assessments were reported by non-blind raters and 19 samples based on blind ratings. This last subset, where the \gls{se} is smaller 
+%than the one obtained for non-blind raters, is split on the age min criteria: it appeares that the lower the age, the better the results. Regarding 
+%the side of the tree where the raters are non-blind, the next factor leading to the smallest \gls{mse} is the treatment length. A smaller treatment
+ %length seems to lead to better \gls{nfb} results. In that case, the EEG quality 2 enables to break down the subset and according to these results
+ %if this factor is respected in studies it seems to lead to higher \gls{se}. The lower we get into the tree, the less samples are available, so results 
+%were less and less reliable.
+
+ 
 
 % words number = 1635

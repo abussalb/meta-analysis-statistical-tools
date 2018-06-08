@@ -5,68 +5,83 @@
 
 \section{Introduction} 
 
-\gls{adhd} is a common psychiatric disorder of childhood with an estimated prevalence of about 5\% in school-aged children yielding to an 
-estimated 2.5 millions of children in Europe \citep{DSM-5}. This neurodevelopmental disorder is characterized by impaired attention and/or hyperactivity/impulsivity, symptoms which may persist 
-in adulthood with clinical significance which makes \gls{adhd} a life-long problem for many patients \citep{Faraone2006}. The diagnosis of \gls{adhd} primarily relies of questionaire-based clinical evaluation \citep{DSM5}, which can be supported with objective assessment metrics of executive function \citep{tova*, cpt*, sart*}. On the contrary, objective markers of brain function using \gls{eeg}, \gls{fmri}, or \gls{pet} could not successfully improve diagnosis \cite{nebafda*, neba*} at the individual level but proved significantly different on the population. More specifically, these studies allowed to identify specific neurophysiological phenotypes of \gls{adhd}: this was particularly reported with \gls{eeg} recordings \citep{loo2017}. For instance, \gls{adhd} patients where found to show an increase in theta waves (4-8Hz) in the frontal area whereas there are less beta waves (12-32Hz) and \gls{smr} (13-15Hz) in the central area \citep{Monastra2005, Matouvsek1984,
- Janzen1995}.
- \comment{Not sure how, this paragraph is structured. I would take the message we carved for your SOFTAL presentation: 1. What is it? 2. Prevalence/incidence, 3. Consequences (social and financial), 4. diagnosis methods (introduce limitation of biomarkers), 5. Existing treatment and their limitation. Then only introduce NFB with its origins. You will find interesting material and references in the CER document. }
+\gls{adhd} is a common psychiatric disorder of childhood characterized by impaired attention and/or hyperactivity/impulsivity, 
+symptoms which may persist in adulthood with clinical significance which makes \gls{adhd} a life-long problem for many patients 
+\citep{Faraone2006}. The prevalence of \gls{adhd} is about 5\% in school-aged children yielding to an estimated 2.5 millions of 
+children in Europe \citep{DSM-5}. \gls{adhd} has an impact on the children well being because many of them may have low self 
+esteem \citep{Shaw2005} and underachieve at school \citep{Barry2002} but parents are also affected by this situation \citep{Harpin2005}: 
+they are often stigmatized due to the fact that for many, the behavior of children with \gls{adhd} is solely explained by bad 
+parenting. Besides \gls{adhd} has a financial cost: it is estimated at between \$12,005 and \$17,458 per individual annually \citep{Pelham2007}. 
 
-\gls{nfb} is a noninvasive technique based on behavioral therapy that aims to reduce the \gls{adhd} symptoms.
- The brain is trained to improve its own regulation by providing real-time video/audio information 
-about its electrical activity measured from scalp electrodes \citep{Arns2015, Steffert2010}.
-\comment{Please take the chronic pain paper for description of NFB}
+The diagnosis of \gls{adhd} primarily relies on questionnaire-based clinical evaluation \citep{DSM-5}, which can be supported 
+with objective assessment metrics of executive function such as the \gls{tova} \citep{Forbes1998}, the \gls{cpt} \citep{Barkley1991} 
+and the \gls{sart} \citep{Robertson1997}. On the contrary, objective markers of brain function using \gls{eeg}, \gls{fmri}, or \gls{pet}
+could not successfully improve diagnosis \citep{Neba} at the individual level but proved significantly different on the 
+population. More specifically, these studies allowed to identify specific neurophysiological phenotypes of \gls{adhd}: 
+this was particularly reported with \gls{eeg} recordings \citep{loo2017}. For instance, \gls{adhd} patients were found to show 
+an increase in theta waves (4-8Hz) in the frontal area whereas there are less beta waves (12-32Hz) and \gls{smr} (13-15Hz) 
+in the central area \citep{Monastra2005, Matouvsek1984, Janzen1995}.  
+ 
+Among all existing treatments, the most widely used is the psychostimulants, e.g. \gls{mph}, which has been proven to be 
+efficacious \citep{Taylor2014, Storebo2015}. However, the long-term effects when taking psychostimulants
+are not established: it seems that the decrease of \gls{adhd} symptoms does not persist when the patient stops the treatment
+\citep{DuPaul1998, Swanson2001, Jensen1999}. Moreover, \gls{adhd} children under medication commonly suffer from side effects
+such as loss of appetite and sleep problems but no serious adverse events have been reported \citep{Storebo2015, Cooper2011}. 
+These drawbacks make some parents and clinicians reluctant to choose such medications, so they turn to drug-free
+treatment options such as dietary changes \citep{Belanger2009} and behavioral therapy which are in most of cases less efficient \citep{Sonuga-Barke2013}.
+
+\gls{nfb} is a noninvasive technique based on behavioral therapy that aims to reduce the \gls{adhd} symptoms \citep{Arns2015, Steffert2010}.
+It is a self-paced brain neuromodulation technique that represents one's brain activity in real-time using auditory or 
+visual modulations, on which learning paradigms can be applied such as operant conditioning or voluntary control.
+To deliver this intervention, neurophysiological time series must be recorded and analyzed in real-time and implemented in serious games 
+leveraging learning paradigms. To that effect, recorded brain signals are analyzed to extract a real time representations of the activity 
+of a population of neurons involved in attentional networks to which learning paradigms are applied, which is translated into a visual 
+or auditory cues. The sensory feedback constitutes the rewards mechanism that promotes learning using a well-known operant conditioning protocol. 
+The operant conditioning principle will enable the child to repeat more and more easily this task and thanks to the natural neuronal plasticity,
+a neuronal reorganization is observed \citep{VanDoren2017}. 
 
 In case of \gls{adhd}, several \gls{nfb} protocols have been proposed and investigated to decrease the symptoms: 
 \begin{itemize}
 	\item protocols based on frequency band training: a child can be asked to enhance his \gls{smr} 
 	while suppressing theta or beta \citep{Lubar1976}, or he can have to enhance beta
 	while suppressing theta (this scenario is known as \gls{tbr}) \citep{Arns2013};
-	\item protocol based on the \gls{scp} training which consists in the regulation of cortical excitation 
+	\item protocol based on the \glspl{scp} training which consists in the regulation of cortical excitation 
 	thresholds by focusing on activity generated by external cues 
-	(similar to \gls{erps}) \citep{Heinrich2004, Banaschewski2007}; 
-	\item protocol based on \gls{erps} (P300) \citep{Fouillen2017}: \gls{adhd} children have a reduced P300 
-	amplitude so it can be considered as a specific neurophysiological marker 
-	of selective attention. 
+	(similar to \glspl{erp}) \citep{Heinrich2004, Banaschewski2007}; 
+	\item protocol based on \glspl{erp} (P300) \citep{Fouillen2017}: \gls{adhd} children have a reduced P300 
+	amplitude so it can be considered as a specific neurophysiological marker of selective attention. 
 \end{itemize} 
 
-Thus, during \gls{nfb} sessions, the child has to concentrate in order to modify his cerebral waves: 
-if he manages to change correctly his \gls{eeg} patterns, he will be rewarded thank to 
-a positive visual or auditive feedback. The operant conditioning principle will enable the 
-child to repeat more and more easily this task and thanks to the natural neuronal plasticity,
- a neuronal reorganization is observed \citep{VanDoren2017}. 
- \comment{here again, I am not a big fan of this explanation. Also, it stould anyway come one paragraph up. I don't think they have to `concentrate' necessarily. I'd rather talk about real time specific representation of a population of neurons invovled in attentional networks to which learning paradigms are applied. -> see chronic pain paper.}
+Shortly after the discovery of the brain's electric activity by Hans Berger in 1924, \citet{Durup1935} proved it could be voluntarily modulated. 
+The first indication of its therapeutic potential came forty years later when \citet{Sterman1974} serendipitously found the training of \gls{smr} 
+activity to reduce the incidence of epileptic crisis in kerozen-exposed cats. The technique, then known as \gls{nfb} quickly became investigated in 
+various fields of neuropsychiatry including, most notably, \gls{adhd} and resulting in a relatively large body of scientific literature 
+\citep{Lubar1976, Rossiter1995, Linden1996, Maurizio2014}. Subsequently, its efficacy on the core symptoms of \gls{adhd} (inattention, hyperactivity 
+and impulsivity) has been subject to several meta-analytic studies \citep{Loo2005, Lofthouse2012, Arns2009, Micoulaud2014, Sonuga-Barke2013}. 
 
-Shortly after the discovery of the brain's electric activity by \citet{Berger1924*}, \citet*{Durrup1935} proved it could be voluntarily modulated. The first indication of its therapetuci potential came forty years later when citet{sterman197*} sarendipitously found the training of \gls{smr} activity to reduce the incidence of epileptic crisis in kerozen-exposed cats. The technique, then known as \gls{nfb} quickly became investigated in various fields of neuropsychiatry including, most notably, \gls{adhd} and resulting in a relatively large body of scientific literature \citep{Lubar1976, Rossiter1995, Linden1996, Maurizio2014}. Subsequently,its efficacy on the core symptoms of \gls{adhd} (inattention, hyperactivity and impulsivity) has been subject to several meta-analytic studies \citep{Loo2005, Lofthouse2012, Arns2009, Micoulaud2014, 
-Sonuga-Barke2013}.   
+%\comment{Not sure how, this paragraph is structured. I would take the message we carved for your SOFTAL presentation: 1. What is it? 2. Prevalence/incidence, 3. Consequences (social and financial), 4. diagnosis methods (introduce limitation of biomarkers), 5. Existing treatment and their limitation. Then only introduce NFB with its origins. You will find interesting material and references in the CER document. }
 
-\comment{wrap tex source or not but be consistent - I suggest wrapping because it makes the modification of your source easier. Otherwise, you alsways have to change position of the carriage return.}
+%\comment{wrap tex source or not but be consistent - I suggest wrapping because it makes the modification of your source easier. Otherwise, you alsways have to change position of the carriage return.}
+
 The most recent meta-analysis solely on the efficacy of \gls{nfb} has been conducted by \citet{Cortese2016} in 
-which 13 studies are included. Although only \gls{rcts} \comment{there is a management of plurals in glossaries package - your should check it out} are selected, the authors of 
+which 13 studies are included. Although only \glspl{rct} are selected, the authors of 
 this meta-analysis have made some choices which have been debated by the community in particular by 
-\citet{Micoulaud2016} who has criticized the use of a uncommon behavioral scale provided by \citet{Steiner2014}
+\citet{Micoulaud2016} who criticized the use of a uncommon behavioral scale provided by \citet{Steiner2014}
  for the teachers' assessments and the inclusion of a pilot study carried out by \citet{Arnold2014} in the meta-analysis. 
 
-Meta-analysis have a particularly important impact on the \gls{nfb} domain, which is 
-characterized by a clinical literature that is tremendously heterogeneous in terms 
-of methods. Therefore, when a meta-analysis seems to present loopholes, it is important to
- make sure the choices made are wise and that the study was well conducted.\comment{to me this argument is biaised. Any meta-analysis should answer this criteria, not only those that are giving the answer you don't prefer. I would more simply say, because of the publication of new research meeting Cortese's inclusion criteria we decided to update his work and take the opportunity to investigate some of his choices. } 
-While we mostly agree with \citet{Cortese2016}, we decided to replicate the methods he suggested
- to a few exceptions. Indeed, we have investigated the limitations
- of his work and amended as detailed below. So we replicated and updated this existing meta-analysis 
-with new-found studies matching \citet{Cortese2016} inclusion criteria.  
+Because of the publication of new researches meeting \citeauthor{Cortese2016}'s inclusion criteria, we decided to update his work and take 
+the opportunity to investigate some choices that later proved controversial. Eventually, we extended the analysis with a \gls{saob} taking 
+advantage of studies technical and methodological high heterogeneity rather than suffering from it. Indeed, the \gls{nfb} 
+domain is characterized by a clinical literature that is tremendously heterogeneous: studies differ on a methodological 
+point of view (randomization and presence of a blind assessor for instance), but also on the \gls{nfb} implementation (number of sessions,
+session and treatment length and type of protocol for example) and on the acquisition and pre-processing of the \gls{eeg}. Since we supposed that the 
+methodological and technical choices made by authors may lead to various \gls{nfb} results, we propose here to identify which of the factors 
+independently influence the reported \gls{es} thanks to adequate statistical tools.
 
-This first step underlines the fact that performing a meta-analysis is complex because of the heterogeneity 
-of the studies published on \gls{nfb}. Indeed, they differ on many points such as for instance trial
- methodology and \gls{nfb} implementation. So even if all included studies are conformed to an 
-inclusion criteria, they remain different from each other. Since we supposed 
-that the choices made by authors may lead to various \gls{nfb} results, we extended the replication 
-and updating of \citet{Cortese2016} to a broader set of studies and used 
-adequate statistical tools to take advantage of the heterogeneity of the methodological implementations 
-(both clinical and technical) in order to identify which of the factors 
-independently influence the reported \gls{es}. 
-\comment{This last paragraph is not very clear for me either even though I know what you did and why. I would clearly split your point as follow: 1. we wanted to replicate Cortese's work in the light of recently published clinical work meeting his inclusion/selection criteria, 2. this was a good opportunity to study the sensitivity of his methodological choices that were questioned, and finally 3. given the large heterogeneity of the studies included in the analysis (detail the heterogeneity and give some specifics in the intro) we decided to offer a new framework for the analysis so as to benefit from it - rather than it constitutiong a major limitation of the work.  }
 
-% number of words: 639
+%\comment{This last paragraph is not very clear for me either even though I know what you did and why. I would clearly split your point as follow: 1. we wanted to replicate Cortese's work in the light of recently published clinical work meeting his inclusion/selection criteria, 2. this was a good opportunity to study the sensitivity of his methodological choices that were questioned, and finally 3. given the large heterogeneity of the studies included in the analysis (detail the heterogeneity and give some specifics in the intro) we decided to offer a new framework for the analysis so as to benefit from it - rather than it constitutiong a major limitation of the work.  }
+
+% number of words: 821
 
 
 
