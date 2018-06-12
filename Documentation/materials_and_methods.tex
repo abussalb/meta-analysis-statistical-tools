@@ -38,20 +38,19 @@ in their design relative to: the inclusion criteria, the intervention, the prese
 Because studies occasionally use slight variations of a clinical scales and because the populations and 
 control groups might vary in their nature, the scores are typically standardized before being pooled. 
 The between \gls{es} is one of such standardized metrics, which we implemented in this paper as described 
-in the Supplemental Materials \comment{add exact reference here}. The work was carried with an open-source 
+in the Supplemental Materials \citep{add exact reference here}. The work was carried with an open-source 
 Python package developed for this work that offers a more transparent approach to the choice or parameters 
 and increases replicability. This package was benchmark against RevMan v5.3 \citep{RevMan}
 by replicating \citet{Cortese2016}'s work and obtaining the same results. The code is made fully available 
-on a GitHub repository \cite{} including raw data for everyone to review its implementation, update it, and 
+on a GitHub repository \cite{add exact reference here} including raw data for everyone to review its implementation, update it, and 
 use it for different projects. 
  
 Before updating the \citet{Cortese2016} work with recently published clinical work meeting his inclusion criteria 
-\citep{Strehl2017, Baumeister2016} and studies having since updated their results \citep{Arnold2014}, we decided to
-run a sensitivity analysis investigating choices that later proved controversial \citep{Micoulaud2016}. Altogether, 
-the changes investigated in our update included the following:
+\citep{Strehl2017, Baumeister2016}, we decided to run a sensitivity analysis investigating choices that later 
+proved controversial \citep{Micoulaud2016}. Altogether, the changes investigated in our update included the following:
 \begin{itemize}
-\item the \gls{es} of \citeauthor{Arnold2014} study is computed from the post-test clinical values taken after the 40 sessions were completed 
-contrary to \citet{Cortese2016} who had used the results after 12 sessions of \gls{nfb} because final values were not available;
+\item the \gls{es} of \citeauthor{Arnold2014} study is computed from the post-test clinical values taken after the completion of the 40 sessions 
+contrary to \citet{Cortese2016} who used the results after 12 sessions of \gls{nfb} because final values were not available;
 \item the \gls{es} computed from teachers' assessments for \citet{Steiner2014} rely on the BOSS Classroom Observation \citep{Shapiro2010} whereas 
 another scale more often used \citep{Christiansen2014, Bluschke2016} and which is the revision of the Conners Rating Scale Revised \citep{Conners1998} 
 and whose reliability has been studied \citep{Collett2003} was provided. Thus we decided to compute the \gls{es} based on the results from the Conners.  
@@ -68,7 +67,7 @@ These analysis were performed with the choices described above.
 While revisiting the work carried on meta-analysis, it became apparent that the studies pooled together where highly heterogeneous 
 in terms of methodological and practical implementation. For instance, all \gls{nfb} interventions were pooled together irrelevant to the 
 quality of the acquisition, the level excreted on real time data quality, and the trained neuromarker. 
-Likewise, the methodological implementations varied significantly, requiring the `subgroup' analysis (low drug, standard protocols) 
+Likewise, the methodological implementations varied significantly, requiring the 'subgroup' analysis (low drug, standard protocols) 
 that are somewhat arbitrary. To circumvent these limitations, we implemented a novel approach taking advantage of the studies heterogeneity 
 rather than suffering from it. In this setting, the within-\gls{es} of each intervention is considered as a dependent variable that
 methodological and technical biases try to explain using standard statistical tools. The results of such analysis should enable us to identify 
@@ -96,13 +95,13 @@ Besides, if the article didn't precise the recording conditions, the factor woul
 points had to be satisfied:
 \begin{itemize}
   \item \emph{the type of electrodes used}: \gls{agcl}/Gel and \gls{au}/Gel;
-  \item \emph{check of the electrode contact quality trough the amplifier impedance acquisition mode}: inter-electrode impedance must be smaller than $ 40k \Omega$;  
-\item \emph{the amplifier used}: those that are conformed to European norms (such as Thera Prax \textregistered 
+  \item \emph{check of the electrode contact quality trough the amplifier impedance acquisition mode}: inter-electrode impedance must be smaller than $40k \Omega$;  
+  \item \emph{the amplifier used}: those that are conformed to European norms (such as Thera Prax \textregistered 
 Neuroconn and Eemagine EE-430) are preferable or whose reliability is known.
 \end{itemize}
 \end{itemize}
 
-We provide in Supplemental Material \ref{} the raw data extracted from the publications. To prevent any bias, the names of these factors
+We provide in the Github repository \ref{} the raw data extracted from the publications. To prevent any bias, the names of these factors
 were hidden during the entire analysis so that the data scientist (AB) was fully blind to them. The variable names were only revealed once the data 
 analysis and results were accepted as valid: this included choice of variable normalization and validation of model hypothesis as detailed below.
 
@@ -116,18 +115,18 @@ and its absence by 0. All variables were standardized, except when the decision 
 \subsubsection{Associate independent factors to effect sizes}
 
 To compute this \gls{es}, means of total \gls{adhd} score given by parents and teachers were used. Besides, in case studies provided results 
-for more than one behavioral scale, \gls{es} were computed for each one. The \gls{es} computed in this analysis was different from the one 
-used previously for the replication and updating of \citet{Cortese2016}. Indeed, here we focused on the effect of the treatment within 
-a group as defined by \citet{Cohen1988}, definition of the \gls{es} that was already used in the literature \citep{Arns2009, Maurizio2014, 
-Strehl2017}. This \gls{es} enables to quantify the efficacy of \gls{nfb} inside the treatment group 
-%\comment{generally speaking try to insert your equations as part of the sentence you write. 
-%The equation can finish with comma or period but also need to link with previous sentence}
+for more than one behavioral scale, \gls{es} were computed for each one as 
 
 \begin{equation}
 \label{eq:factors_effect_size_within_subject}
 \text{ES} = \frac{M_{\text{post},T} - M_{\text{pre},T}}{\sqrt{\frac{\sigma_{\text{pre},T}^2 + \sigma_{\text{post},T}^2}{2}}},
 \end{equation} 
 where $M_{t,T}$ is the mean of clinical scale taken at time $t$ (pre-test or post-test) and for treatment $T$ and $\sigma$ similarly represents its standard deviation.
+
+The \gls{es} computed in this analysis was different from the one 
+used previously for the replication and updating of \citet{Cortese2016}. Indeed, here we focused on the effect of the treatment within 
+a group as defined by \citet{Cohen1988}, definition of the \gls{es} that was already used in the literature \citep{Arns2009, Maurizio2014, 
+Strehl2017}. This \gls{es} enables to quantify the efficacy of \gls{nfb} inside the treatment group 
 
 The \gls{es} was then considered as a dependent variable to be explained by the factors identified using the following three methods, which were 
 implemented in the Scikit-Learn Python \citep[0.18.1]{Pedregosa2011} and the Statsmodels Python \citep[0.8.0]{Seabold2010} libraries:
@@ -185,8 +184,8 @@ and smaller subsets using at each iteration a variable and a threshold chosen to
 with $\hat{y}$ the predicted values.
 Eventually, a tree is composed of several nodes and leafs, the importance of which is decreasing from the top node. 
 
-These methods are different from each others, so we compared their results.
-% words number = 
+These methods are intrinsically different from each others, so we compared their results.
+
 
 
 
