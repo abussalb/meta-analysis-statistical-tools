@@ -64,8 +64,9 @@
 \date{}
 \maketitle
 
+\section{Materials and methods}
 
-\section{Perform a meta analysis}
+\subsection{Perform a meta analysis}
 
 To conduct meta-analysis, different software exist: for instance \citet{Cortese2016} used RevMan 5.3 \citep{RevMan} which computes the \gls{es} and its 
 variance of each included study by applying the formula presented in \citet{Morris2008}. However, in order to compute the variance of the \gls{es}, 
@@ -73,89 +74,78 @@ the pooled within-group Pearson correlation $\rho$ (i.e the pre-post correlation
 \citep{James2013}. In our case, this correlation was not known and the raw data were not available so we took an
  approximation: \citet{Balk2012} found that a value of 0.5 yields values closer to those computed with the right value of the correlation. 
 
-In this replication of the work of \citeauthor{Cortese2016}, the same
-formulas are used \citep{Borenstein2009} but instead of using RevMan, a Python code was developed in order to perform the meta-analysis. To increase 
-replicability and transparency and promote open science, we provide the full raw data used for this research as well as the Python code 
-developed available on a GitHub repository [put ref]; it is tested with \citet{Cortese2016} raw data to show that same results were found and could 
-be used for replication and expansion of this work. The toolbox could also be used to run any similar meta-analysis. 
+In this replication of the work of \citeauthor{Cortese2016}, the same formulas are used \citep{Borenstein2009} but instead of using RevMan, 
+a Python code was developed in order to perform the meta-analysis. To increase replicability and transparency and promote open science, we 
+provide the full raw data used for this research as well as the Python code on a GitHub repository [put ref]; it is tested
+with \citet{Cortese2016} raw data to show that same results were found and could be used for replication and expansion of this work. The toolbox
+could also be used to run any similar meta-analysis. 
 
-To perform the meta-analysi several steps must be followed. First the choice of the model: this analysis is based on either one of the following 
+To perform the meta-analysis several steps must be followed. First the choice of the model: this analysis is based on either one of the following 
 statistical models \citep{Borenstein2009}:
 \begin{itemize}
-    \item \textit{the fixed-effect model}: the true \gls{es} (i.e the \gls{es} that would be observed with an infinitely 
+    \item \emph{the fixed-effect model}: the true \gls{es} (i.e the \gls{es} that would be observed with an infinitely 
 		large sample size) is the same for all the studies in the analysis. The differences between the actually observed \gls{es}s 
 		are due to sampling errors;
-    \item \textit{the random-effects model}: the true \gls{es} could vary from study to study. The differences between the observed
-		\gls{es}s are due to sampling errors but also to the various designs of the studies (for instance the number of participants or the implementation).
+    \item \emph{the random-effects model}: the true \gls{es} could vary from study to study. The differences between the observed
+		\glspl{es} are due to sampling errors but also to the various designs of the studies (for instance the number of participants or the implementation).
 \end{itemize}
 
-In the present case, although the studies included into the meta-analysis met the same criteria, they remained different from each other 
-on various points, so the random effects model was more appropriate than the fixed-effect model.  
+In the present case, although the studies included into the meta-analysis meet the same criteria, they remain different from each other 
+on various points, so the random effects model is more appropriate than the fixed-effect model.  
 
 \subsection{Compute the effect size of each study}
 
 First, the scores presented in the articles were extracted and the \gls{es} of each study as defined in \citet{Morris2008} 
-was computed as in \cref{eq:metareview_effect_size}:
+was computed 
 
 \begin{equation}
 \label{eq:metareview_effect_size}
-\text{ES} = c_p \left[ \frac{(M_{\text{post},T} - M_{\text{pre},T}) - (M_{\text{post},C} - M_{\text{pre},C}) }{\text{SD}_{\text{pre}}} \right ].
+\text{ES} = c_p \left[ \frac{(M_{\text{post},T} - M_{\text{pre},T}) - (M_{\text{post},C} - M_{\text{pre},C}) }{\sigma_{\text{pre}}} \right ].
 \end{equation} 
 An \gls{es} is exactly equivalent to a z-score of a standard normal distribution, it is computed as mean pre- to post-treatment 
 score change in the \gls{nfb} group ($M_{\text{pre},T}$, $M_{\text{post},T}$) minus the mean pre- to post- treatment score change 
-in the control group ($M_{\text{pre},C}$, $M_{\text{post},C}$), divided by the pooled pretest standard deviation ($SD_{\text{pre}}$) 
-defined as \cref{eq:stats_metareview_std_pre}:
+in the control group ($M_{\text{pre},C}$, $M_{\text{post},C}$), divided by the pooled pre-test standard deviation ($\sigma_{\text{pre}}$) 
 
 \begin{equation}
 \label{eq:stats_metareview_std_pre}
-\text{SD}_{\text{pre}} = \sqrt{\frac{(n_T - 1)\text{SD}_{\text{pre},T}^2 + (n_C - 1)\text{SD}_{\text{pre},C}^2} {n_T + n_C - 2}},
+\sigma_{\text{pre}} = \sqrt{\frac{(n_T - 1)\sigma_{\text{pre},T}^2 + (n_C - 1)\sigma_{\text{pre},C}^2} {n_T + n_C - 2}},
 \end{equation}
-where $\text{SD}_{t,G}$ indicates the standard deviation\comment{why not $\sigma$?} for group $G$ at time $t$ and $n_G$ defines the sample size of each group; 
-$c_p$ is a bias adjustment typically used for small sample sizes and defined as \cref{eq:metareview_correction_factor}:
+
+where $\sigma_{t,G}$ indicates the standard deviation for group $G$ at time $t$ and $n_G$ defines the sample size of each group; 
+$c_p$ is a bias adjustment typically used for small sample sizes
 
 \begin{equation}
 \label{eq:metareview_correction_factor}
-\text{cp} =  1 - \frac{3} {4(n_T + n_C - 2) - 1}. 
+c_p =  1 - \frac{3} {4(n_T + n_C - 2) - 1}. 
 \end{equation} 
-
-The mean correspond to the mean average score over all scores given by raters to assess the \gls{adhd} symptoms. 
-\comment{you can assume people are familiar with the definition of the mean and std, and variance} The variance measures how
- far a set of numbers are spread out from their average value. 
 
 \subsection{Compute the variance of each effect size}
 
-Then, the variance of each \gls{es} was computed as described in \comment{you don't need to explicitely reference the equation if it is in your sentence. Good to give it a label though even if you don't use it. This doesn't hold ofr figures and table that \emph{always} should be explicitely referenced in the body of your text. This is because, the equation belongs to your sentence. you can correct this throughout your manucript. }\citep{Morris2008}:
+Then, the variance of each \gls{es} was computed \citep{Morris2008}
 \begin{equation}
 \label{eq:metareview_variance_ES}
 \sigma^2(\text{ES}) = c_p^2 \left (\frac{n_T + n_C - 2} {n_T + n_C - 4} \right ) \left  [ \frac{2(1-\rho)(n_T + n_C)} {n_Tn_C} + \text{ES}^2 \right ] - \text{ES}^2.
 \end{equation} 
 
-To compute the variance of the \gls{es}, the pooled within-group Pearson correlation $\rho$ (i.e the pre-post correlation) was required as described in \cref{eq:metareview_within_group_pearson_correlation} \citep{James2013}:
+To compute the variance of the \gls{es}, the pooled within-group Pearson correlation $\rho$ (i.e the pre-post correlation) was required 
+\citep{James2013}:
 
 \begin{equation}
 \label{eq:metareview_within_group_pearson_correlation}
-\rho =  \frac{ 
-  \sum_{i=1}^{n} \(\text{pre}_i - \mu_{\text{pre}}\)\(\text{post}_i - \mu_{\text{post}}\) 
-} { 
-  \sqrt{ 
-    \sum_{i=1}^{n} \(\text{pre}_i - \mu_{\text{pre}}\)^2
-  } 
-  \sqrt{
-    \sum_{i=1}^{n} \(\text{post}_i - \mu_{\text{post}}\)^2} 
-},
+\rho =  \frac{ \sum_{i=1}^{n} (\text{pre}_i - \mu_{\text{pre}})(\text{post}_i - \mu_{\text{post}}) } { \sqrt{ \sum_{i=1}^{n} (\text{pre}_i - \mu_{\text{pre}})^2} \sqrt{\sum_{i=1}^{n} (\text{post}_i - \mu_{\text{post}})^2} }, 
 \end{equation}
 where $n$ is the number of patients included in a study, $pre_i$, $post_i$ are score values for patient $i$ at pre- and post-test 
 respectively, and $\mu_{pre}$, $\mu_{post}$ the mean scores over all patients. It is a measure of linear correlation between two variables. 
 A value of 1 means that there is a positive correlation whereas a value of -1 means a negative correlation. When $\rho=0$, there is no
- linear correlation \citep{James2013}. In our case, this correlation was not known and the raw data were not available so we took an
- approximation: \citet{Balk2012} found that a value of 0.5 yields values closer to those computed with the right value of the correlation. 
+linear correlation. In our case, this correlation was not known and the raw data were not available so we took an
+approximation: \citet{Balk2012} found that a value of 0.5 yields values close to those computed with the right value of the correlation. 
 
 Once variances were obtained with \cref{eq:metareview_variance_ES}, we could compute the standard error and the 95\% confidence interval of each \gls{es}. 
 
 \subsection{Compute the weight of each study}
 
 To compute the \gls{se} a weight must be assigned to each study. To obtain them several steps must be followed. At first, the fixed-effects model 
-weight $w_{fixed}$ of each study $k$ was computed as defined in \citet{Borenstein2009} described in \cref{eq:metareview_weight_fixed_study}: 
+weight $w_{fixed}$ of each study $k$ was computed as defined in \citet{Borenstein2009}: 
 
 \begin{equation}
 \label{eq:metareview_weight_fixed_study}
@@ -184,7 +174,7 @@ with $K$ the total number of included studies.
 with $\text{df} = K - 1$ the degrees of freedom.
 
 The random-effects model takes into account the differences between the studies, so the weights are equal to the inverse of the addition between the 
-within-study variance (the variance of the \gls{es}) and the between-studies variance as presented in \cref{eq:metareview_weight_study}:
+within-study variance (the variance of the \gls{es}) and the between-studies variance
 
 \begin{equation}
 \label{eq:metareview_weight_study}
@@ -198,33 +188,15 @@ Eventually, the weighted average of the $K$ \gls{es} was computed to obtain the 
 
 \begin{equation}
 \label{eq:metareview_summary_effect}
-\text{Se} = \frac{\sum_{k=1}^{K} w_k \text{ES}_k} {\sum_{k=1}^{K} w_k}.
+\text{SE} = \frac{\sum_{k=1}^{K} w_k \text{ES}_k} {\sum_{k=1}^{K} w_k}.
 \end{equation} 
 
 Once the \gls{se}  is obtained, we can compute its variance, its standard error, its 95\% confidence interval, its p-value, 
 and $I^2$ estimating effects size's between studies heterogeneity. 
 
+\subsection{Scales used for the meta-analysis}
 
-\section{Associate independent factors to effect sizes}
-
-However, before interpreting the results of the \gls{wls}, the assumptions of this model had to be checked (distribution of the residuals was normal,
-the moment matrix $\mathbf{{X}^{T}W^{T}WX}$ was full rank, the fit was significant and the independent variables were uncorrelated). Mettre les valeurs !
-
-\subsection{Cross validation}
-
-This method retains $n$ - 1 observations as the validation data for testing the model and the 
-remaining observation is used as training data. The cross-validation process is then repeated $n$ times with each of the observation 
-used exactly once as the testing data. For each fold, the \gls{mse} on the test set was computed and eventually, the $n$ results can 
-be averaged to produce a single observation that enables to find the optimal $\lambda$: it corresponds to the abscissa of the minimum
-value of the \gls{mse} on the mean fold computed for a large range of $\lambda$ \citep{James2013}. 
-
-\comment{which weights are we talking about here? it's not so much the the option is not implemnted than the frameworks don't easily account for this - move this comment to supplemental material}
-No weights are applied when running the \gls{lasso} and the decision tree because the option is not implemented in the 
-Python methods used in our analysis. 
-
-\clearpage
-
-\section{Scales used for replication}
+All scales used for the meta-analysis are summarized here in order to facilitate the replication of this work.
 
 \begin{table}[h!]
   \centering
@@ -234,7 +206,33 @@ Python methods used in our analysis.
 \end{table}
 
 
+\subsection{Associate independent factors to effect sizes}
+
+Three different methods were used to perform the \gls{saob}:
+\begin{itemize}
+	\item weighted multiple linear regression (\gls{wls}) \citep{Montgomery2012}; 
+	\item sparsity-regularized linear regression with \gls{lasso} \citep{Tibshirani1996};
+	\item decision tree \citep{Quinlan1986}.
+\end{itemize}
+
+However, before interpreting the results of the \gls{wls}, the assumptions of this model had to be checked (distribution of the residuals was normal,
+the moment matrix was full rank, the fit was significant and the independent variables were uncorrelated). 
+
+To perform the \gls{lasso}, the tuning parameter $\lambda$ has to be determined. To do so, we used the leave-one-out cross validation method. 
+This method retains 1 observation as the validation data for testing the model and the 
+remaining $n$ - 1 observations are used as training data. The cross-validation process is then repeated $n$ times with each of the observation 
+used exactly once as the testing data. For each fold, the \gls{mse} on the test set was computed and eventually, the $n$ results can 
+be averaged to produce a single observation that enables to find the optimal $\lambda$: it corresponds to the abscissa of the minimum
+value of the \gls{mse} on the mean fold computed for a large range of $\lambda$ \citep{James2013}. 
+
+No weights are applied when running the \gls{lasso} and the decision tree because the frameworks don't easily account for this.
+
+
+\clearpage
+
 \section{Results}
+
+\subsection{Perform a meta-analysis}
 
 First, when using the \gls{es} found by \citet{Cortese2016} thanks to RevMan \citep{RevMan}, and then performed the following steps 
 of meta-analysis with the Python code, we observe no major differences between these results and those obtained with RevMan \citep{RevMan} 
@@ -251,39 +249,32 @@ of the \gls{se} does not change.
   \label{Table:meta_review_comparison_between_revman_python}
 \end{table}
 
-Thanks to the previous step, we can conclude that the Python code yields results close to those returned by RevMan \citet{RevMan}, so all 
-the following results were computed with the Python code.
+Thanks to the previous step, we can conclude that the Python code yields results close to those returned by RevMan \citet{RevMan}, so we decide to
+use this code to perform our meta-analysis.		
 
-Besides, as mentioned earlier, 
-		there is a little difference in some \gls{es}' standard error explained by the use of a pre-post correlation value  of 0.5 
-		while computing the variance of the \gls{es}. These two discrepancies does not change the significance of the summary effect.
-		
-		
+\subsection{Detect factors influencing the Neurofeedback}
 		
 To assess the variability of each factor, box plots of their standardized values were displayed in \cref{Figure:factors_analysis_boxplots}: treatment length, 
 session length and number of sessions are more variable across studies than session pace, minimum and maximum age.  
 
 \begin{figure}[h!]
-  \centering
+	\center
   \includegraphics[scale=0.5]{figures/factors_analysis_boxplot_no_colors_no_two_columns}
   \caption{Boxplots of the standardized values of each continuous factor.}
   \label{Figure:factors_analysis_boxplots}
 \end{figure}
 
+\subsection{Assumptions for applying linear regression}
 
-%The first method used to detect the influencing factors was the \gls{wls}. First, the assumptions inherent to this method were checked: 
-%\begin{itemize}
-	%\item the moment matrix $\mathbf{{X}^{T}W^{T}WX}$ was invertible;
-  %\item no apparent correlation between the continuous independent variables was found; 
-  %\item the fit was significant as shown by the F-statistic (prob(F-statistic) = 2.21e-10); 
-  %\item the residuals were normally distributed as demonstrated by the skew (-0.166), kurtosis (2.85) and the Omnibus test (prob(Omnibus) = 0.84).
-%\end{itemize} % to suppress and add in Supplemental material?
+The first method used to detect the influencing factors was the \gls{wls}. The assumptions inherent to this method are checked: 
+\begin{itemize}
+	\item the moment matrix $\mathbf{{X}^{T}W^{T}WX}$ was invertible;
+  \item no apparent correlation between the continuous independent variables was found; 
+  \item the fit was significant as shown by the F-statistic (prob(F-statistic) = 2.81e-10); 
+  \item the residuals were normally distributed as demonstrated by the skew (-0.15), kurtosis (2.81) and the Omnibus test (prob(Omnibus) = 0.87).
+\end{itemize} 
 
-Since these assumptions are satisfied, we can be rather confident in the \gls{wls} results presented in. ols the assumptions of the 
-model are satisfied too and
-
-$\lambda$ corresponds to the abscissa of the minimum of the \gls{mse} on the mean fold computed on $\lambda$ values ranging from very 
-small to very big, covering the full range of scenarios from the null model to the least square fit.
+These assumptions are also satisfied for the \gls{ols}.
 
 \clearpage
 
