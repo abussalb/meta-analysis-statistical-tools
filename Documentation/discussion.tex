@@ -7,10 +7,6 @@
 \section{Discussion}
 
 \subsection{Perform the meta-analysis}
-%\comment{generally and throughout the manuscript, I would try to talk about a meta-analysis and not always about replication. 
-%Instead, I would in the methods and introduction explain what we are doing and why: updating the work with new evidence
-%, taking choice from the lastes work (Corstese) and challenging some of his choices that proved contraversial.
- %Then, I would stick to describing the results without always refering to Cortese - it is know your work with your hypothesis and choices} 
 In the meta-analysis performed here, we challenged some choices made by \citeauthor{Cortese2016}, 
 which proved controversial: the computation of \gls{es} based on an unusual scale \citep{Steiner2014} and the inclusion 
 of a pilot study \citep{Arnold2014} whose final results weren't available at the time \citeauthor{Cortese2016} 
@@ -74,14 +70,8 @@ linear and accounts for variables interaction which is not the case for the two 
 \citep{dwyer2007}, meaning that a small change in the data can cause an important change in the structure of the optimal decision tree.
 
 Nevertheless, despite these differences between the methods, several factors are selected by at least two methods and among them 3 are
-consistently identified by all the methods with the same influence direction: if the rater is probably blind to the treatment, the
+consistently identified by all the methods with the same direction of influence: if the rater is probably blind to the treatment, the
 treatment length, and the EEG quality. 
-
-%The interpretation of factors returned only by two methods is less reliable. Keeping that in mind, it was interesting 
-%to study the direction of their effect though: an \gls{irb} approval seems preferable implying that a well-conducted study 
-%seems to lead to favorable results; a high session pace, so a more intensive training, appears to lead to better results,
-%and the artifact correction based on amplitude do not seem to be an appropriate method to remove the artifacts and the \gls{smr} protocol
-%appears not to be the best approach. 
 
 Surprisingly, the number of sessions is not found as a significant influencing factor by any method, 
 which is somewhat in contradiction with existing literature. For instance, \citet{Enriquez2017} insisted on the 
@@ -90,10 +80,10 @@ performing less than 20 \gls{nfb} sessions lead to smaller effects. Indeed \cite
 changes in the \gls{eeg} and behavioral performance occurred after a minimum of 20 sessions, but he also points out the fact that the
 location of the \gls{nfb} training may had an important influence. Nevertheless, in our study, regardless of the significance of 
 the number of sessions, the coefficient found by the \gls{wls} is negative, meaning that as expected,
-the more sessions performed the more efficient the \gls{nfb} seem to be. 
+the more sessions performed the more efficient the \gls{nfb} seems to be. 
 
 The type of protocol is not identified by all the three methods but it seems to influence the \gls{nfb} results according to 2 methods,  
-in particular the theta down which appeared more efficient and \gls{smr} which conversely seems associated with lower \gls{es}. We expected 
+in particular the theta down protocol which appears more efficient and \gls{smr} protocol which conversely seems associated with lower \gls{es}. We expected 
 more precised results on the protocols criteria because this point is central in \gls{nfb} as pointed out by \citet{Vernon2004}.
 A possible explanation is that all these protocols are equally efficacious to the populations they were offered to and 
 thereby do not constitute a significant explanatory factor. This result, however, does not preclude a combined and personalized strategy 
@@ -111,39 +101,40 @@ for treatment intensity, which means that a treatment that is short in length (a
 is more likely to succeed. This hypothesis is back-up by the fact that the variable \emph{session pace} (number of sessions per week) 
 is also associated with larger \gls{es} according to the \gls{wls} and \gls{lasso}. 
 
-As expected, the assessment of symptoms by non-blind raters leads to more favorable results than by blind raters, 
+As expected, the assessment of symptoms by non-blind raters leads to more favorable results than by \gls{pblind} raters - 
 result observed in several meta-analysis \citep{Cortese2016, Micoulaud2014}. 
 
 We decided to investigate more precisely this factor, in order to determine if this observation can be solely explained by
-the placebo effect. First, to assess the impact of the placebo effect, we rely on the results of the decision tree which splits
-the dataset in two subsets: on one hand 43 observations corresponding to \gls{mprox} raters assessments and on the other hand 
-19 observations corresponding to \gls{pblind}. If the differences observed between \gls{pblind} and \gls{mprox} raters are due
-to the placebo effect, we can expect to find in the \gls{mprox} part of the decision tree factors linked to the perception 
-of the treatment. It is, indeed the case: session and treatment length are returned but if these factors are really linked to the 
-placebo effect, we can expect that the longer the session and the treatment, the higher the \gls{es}. Yet, we observe the opposite: 
-it is not in favor of the presence of the placebo effect. 
+the placebo effect. First, to assess the impact of the placebo effect, we rely on the results of the decision tree 
+presented in \cref{Figure:factors_analysis_decision_tree_results} which splits the dataset in two subsets: on one hand 43 observations corresponding 
+to \gls{mprox} raters assessments and on the other hand 19 observations corresponding to \gls{pblind}. If the differences observed 
+between \gls{pblind} and \gls{mprox} raters are due to the placebo effect, we can expect to find in the \gls{mprox} part of the decision 
+tree factors linked to the perception of the treatment. It is, indeed the case: session and treatment length are returned but if
+these factors are really linked to the placebo effect, we can expect that the longer the session and the treatment, the higher the \gls{es}. 
+Yet, we observe the opposite: it is not in favor of the presence of the placebo effect. 
 
-Another way to highlight a possible placebo effect, is to focus on the difference between \gls{pblind} and \gls{mprox} raters at pre-test 
-first and then at post-test. The differences of ratings between teachers and parents have been prone to different studies \citep{Sollie2013, Narad2015}
+Another way to highlight a possible placebo effect, is to focus on the difference between \gls{pblind} and \gls{mprox} raters first at pre-test 
+and then at post-test. The differences of ratings between teachers and parents have been prone to different studies \citep{Sollie2013, Narad2015}
 which note that teachers are more susceptible to give lower scores especially on younger children. We also observe that fact on most of the studies included 
-in our analysis as illustrated in \cref{Figure:???????}.  
+in our analysis as illustrated in \cref{Figure:discussion_on_placebo_effect_colors_2-columns_fitting_image}.  
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=1.0\linewidth]{figures/??????}
-  \caption{Pre-test and post-test scores given by Parents \gls{mprox} in blue and teachers \gls{pblind} in green.}
-  \label{Figure:??????}
+  \includegraphics[width=1.0\linewidth]{figures/discussion_on_placebo_effect_colors_2-columns_fitting_image}
+  \caption{Pre-test and post-test scores given by Parents (\gls{mprox}) in blue and teachers (\gls{pblind}) in green. Studies have to satisfy
+	\citeauthor{Cortese2016}'s inclusion criteria and provide teachers and parents scores on the same scale. Two configurations: (a) teachers don’t see the symptoms at 
+	pre-test so they can’t see any improvement at post-test, (b) teachers see the symptoms at pre-test and don’t see any improvement at post-test.}
+  \label{Figure:discussion_on_placebo_effect_colors_2-columns_fitting_image}
 \end{figure} 
 
 Thus, these results suggest that \gls{pblind} assessments can hardly be used to assess placebo as they seem to be more blind
-to symptoms rather than to intervention.
+to symptoms rather than to intervention. In the absence of ethically and technically feasible sham \gls{nfb} protocols, it seems preferable 
+that evidence of control, learning, and specific changes (correlation with symptoms) are used to determine the mode of action further 
+(neuromarker analysis).      
 
-In the absence of ethically and technically feasible sham \gls{nfb} protocols, it seems preferable that evidence of control, learning, and specific
-changes (correlation with symptoms) be used to determine the mode of action further (neuromarker analysis).      
-
-%It would have been interesting to study the influence of some other factors such as the delay between brain state and feedback 
-%signal as well as the type of \gls{nfb} game used but these information are rarely available in studies. Besides, 
-%to add more reliability to these results it should be preferable to add more studies, 
-%particularly studies with teachers assessments (considered as \gls{pblind}). 
+It would have been interesting to study the influence of some other factors such as the delay between brain state and feedback 
+signal as well as the type of \gls{nfb} game used, but these information are rarely available in studies. Besides, 
+to add more reliability to these results it should be preferable to add more studies, 
+particularly studies with teachers assessments (considered as \gls{pblind}). 
 
 % words number = 849
