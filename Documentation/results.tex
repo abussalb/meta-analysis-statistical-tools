@@ -6,7 +6,7 @@
 
 \section{Results}
 
-\subsection{Systematic review}
+\subsection{Studies selected}
 
 Search terms entered in Pubmed returned 152 results during the last check on December 14, 2017 and 28 articles included in previous
 meta-analysis on \gls{nfb} were identified. After the selection process illustrated in \cref{Figure:systematic_review_workflow}, 
@@ -16,10 +16,13 @@ we are computing the within subject \gls{es}.
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=1.0\linewidth]{figures/meta_review_factors_analysis_how_studies_are_included_no_colors_2-columns_fitting_ima}
-  \caption{Flow diagram of selection of studies (last search on December 14, 2017). The forlast subset of study exactly corresponds to the 
-	studies included in \citet{Cortese2016} and more recent work meeting the same criteria. 
-	The last subset ($k$=31) corresponds to the same criteria without the requirement for the presence of a control group.}
+  %\fbox{\includegraphics[width=1.2\textwidth]{figures/meta_review_factors_analysis_how_studies_are_included_no_colors_2-columns_fitting_ima} }
+	\includegraphics[width=1\textwidth]{figures/Image3} 
+  \caption{Flow diagram of selection of studies (last search on December 14, 2017).  
+	The subset (a) corresponds to the \citeauthor{Cortese2016}'s inclusion criteria without the requirement for the presence of a control group. The number
+	of patients is only equal to the subjects in the \gls{nfb} groups.
+	The subset (b) exactly corresponds to the studies included in \citet{Cortese2016} and more recent work meeting the same criteria. Here, the number of patients includes all patients
+	whatever their group.}
   \label{Figure:systematic_review_workflow}
 \end{figure}
 
@@ -56,8 +59,9 @@ in \cref{Table:meta_review_comparison_revman_and_python_with_choices}:
 \begin{table}[h!]
   \centering
   \caption{Comparison between \citet{Cortese2016} results obtained with RevMan \citep{RevMan} and those obtained with the Python code with our 
-	choices applied. \glspl{se} and their corresponding p-value (in parenthesis) are presented. With the Python program, a negative \gls{se}
-	is in favor of \gls{nfb}.}
+	choices applied ($^a$ post-test values for \citeauthor{Arnold2014} are obtained after 40 sessions of \gls{nfb} and Conners scale is used for \citeauthor{Steiner2014}
+	teachers' outcomes). \glspl{se} and their corresponding p-value (in parenthesis) are presented. With the Python program, a negative \gls{se}
+	is in favor of \gls{nfb} unlike \citeauthor{Cortese2016}.}
 \input{tables/table_meta_review_comparison_revman_and_python_with_choices}
   \label{Table:meta_review_comparison_revman_and_python_with_choices}
 \end{table}
@@ -78,7 +82,7 @@ as illustrated in \cref{Figure:meta_review_forest_plots_update_meta_analysis_our
   \centering
   \includegraphics[width=1.0\linewidth]{figures/meta_review_forest_plots_update_meta_analysis_our_choices_no_colors_2-columns_fitting_image}
   \caption{Forest plots obtained on the dataset "Update meta-analysis" with the Python code. A negative \gls{es} is in favor of \gls{nfb}. 
-	The blue squares correspond to the \gls{es}, the blue diamond to the \gls{se} and the green line to the confidence interval.}
+	The blue squares correspond to the \gls{es}, the blue diamond to the \gls{se} and the green line to the 95\% confidence interval.}
   \label{Figure:meta_review_forest_plots_update_meta_analysis_our_choices_no_colors_2-columns_fitting_image}
 \end{figure}
 
@@ -109,8 +113,8 @@ the results.
 \begin{table}[h!]
   \centering
   \caption{Results of the \gls{wls}, \gls{lasso} and decision tree. For the \gls{wls}, a p-value $<$ 0.05 (in bold) means that the coefficient of 
-	the corresponding factor is significantly different from 0. For the \gls{lasso}, factors not set to 0 (in bold) are selected. 
-	When the value of the coefficient is negative, the corresponding factor may lead to better \gls{nfb} results.}
+	the corresponding factor is significantly different from 0. For the \gls{lasso}, factors not set to 0 (in bold) are selected. For the decision tree,
+	the place of the factor in the tree is precised. When the value of the coefficient is negative, the corresponding factor may lead to better \gls{nfb} results.}
   \input{tables/table_factors_analysis_results_summary}
   \label{Table:table_factors_analysis_results_summary}
 \end{table}
@@ -127,7 +131,8 @@ smallest \gls{mse}. The best predictor is the one at the top of the tree: in our
   \centering
   \includegraphics[width=1.0\linewidth]{figures/factors_analysis_decision_tree_results_no_colors_2-columns_fitting_image}
   \caption{Decision Tree obtained with the factors. The criteria to minimize was the \gls{mse}. For the dummy variables, a value of 1 means
-	that the factor is observed in the study. The term value corresponds to the dependent variable.}
+	that the factor is observed in the study. The term value corresponds to the dependent variables. The importance of nodes and leafs is decreasing
+	from the root node.}
   \label{Figure:factors_analysis_decision_tree_results}
 \end{figure}
 

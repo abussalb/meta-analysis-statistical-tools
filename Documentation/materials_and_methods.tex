@@ -7,7 +7,7 @@
 
 \subsection{Studies selection}
 
-Search terms were entered in Pubmed and studies included in previous meta-analysis were identified. Among these studies, those which
+Search terms described in Supplemental Material were entered in Pubmed and studies included in previous meta-analysis were identified. Among these studies, those that
 satisfied each of these points were selected:
 \begin{itemize}
 	\item assess \gls{nfb} efficacy; 
@@ -76,10 +76,10 @@ and possibly technical factors (e.g.\ a good control on real time data quality i
 
 \subsubsection{Identify and pre-process factors}
 
-We classify the factors influencing the efficacy of \gls{nfb} in 5 categories: methodological, technical, characteristics of the included
+We classified the factors influencing the efficacy of \gls{nfb} in 5 categories: methodological, technical, characteristics of the included
 population, representative of the quality of acquisition and of the signal. 
-Factors were chosen based on what was typically reported in the literature and presumed to influence \gls{es}.
-%\comment{you may want to prefer `description' rather than itemize.}
+Factors were chosen based on what was typically reported in the literature and presumed to influence \gls{es} and categorized as follow:
+
 \begin{itemize}
 \item \emph{signal quality}: the ocular artifacts correction and the artifact correction based on amplitude; 
 \item \emph{population}: the psychostimulants intake during \gls{nfb} treatment and the age bounds of children;
@@ -95,9 +95,9 @@ Besides, if the article didn't precise the recording conditions, the factor woul
 points had to be satisfied:
 \begin{itemize}
   \item \emph{the type of electrodes used}: \gls{agcl}/Gel and \gls{au}/Gel;
-  \item \emph{check of the electrode contact quality trough the amplifier impedance acquisition mode}: inter-electrode impedance must be smaller than $40k \Omega$;  
-  \item \emph{the amplifier used}: those that are conformed to European norms (such as Thera Prax \textregistered 
-Neuroconn and Eemagine EE-430) are preferable or whose reliability is known.
+  \item \emph{check of the electrode contact quality trough the amplifier impedance acquisition mode}: inter-electrode impedance must be smaller than $40k\Omega$;  
+  \item \emph{the amplifier used}: those that are conformed to European norms (such as Thera Prax\textregistered, by NeuroConn\copyright,
+	Germany \citep{NeuroCare} and Eemagine\copyright, Germany \citep{Eemagine}) are preferable or whose reliability is known.
 \end{itemize}
 \end{itemize}
 
@@ -136,55 +136,24 @@ implemented in the Scikit-Learn Python \citep[0.18.1]{Pedregosa2011} and the Sta
 	\item decision tree \citep{Quinlan1986}.
 \end{itemize}
 
-The most often used linear regression analysis is the \gls{ols} but here we applied the \gls{wls} as described in \cref{eq:factors_model_WLS}: a 
+The most often used linear regression analysis is the \gls{ols} but here we applied the \gls{wls}: a 
 weight was assigned to each observation in order to take into account the fact that some observations came from the same study because studies 
 may provide several scales. Besides, the weight was a function of the sample size as well: because of their different sample sizes,
 studies were not equivalent and should be analyzed accordingly. That's why the weight corresponded to the ratio between the experiment group's sample size of the study and 
 the number of behavioral scales available in the study. We also ran the analysis with \gls{ols} method to assess the impact of the weights on the results. 
 
-\begin{equation}
-\label{eq:factors_model_WLS}
-\textbf{W}y = \textbf{WX}\beta + \epsilon.
-\end{equation}
+The aim of the \gls{wls} is to estimate the regression coefficients. A significant coefficient (meaning significantly different from 0) indicates 
+that the associated factor has probably an influence on \gls{nfb} efficacy and the sign of the coefficient indicates the direction of the effect.
 
-$\textbf{X}$ is a $(n \times p)$ full rank matrix and represents $n$ observations on each $p-1$ independent variables and an 
-intercept term, $\beta$ is a $(p \times 1)$ vector of associated regression coefficients, $\textbf{W}$ is a $(n \times n)$ diagonal 
-matrix with weights, $y$ is a $(n \times 1)$ vector of dependent variables and $\epsilon$ is a $(n \times 1)$ vector of errors.
-
-The aim of the \gls{wls} is to estimate the vector of coefficients $\beta$ by minimizing the \gls{wrss}
-
-\begin{equation}
-\label{eq:factors_WRSS}
-\text{WRSS} = \sum_{i=1}^{n} w_i \Big(y_i - \beta_{0} - \sum_{j=1}^{p}\beta_{j}x_{ij}\Big)^2.
-\end{equation}
-
-A significant coefficient (meaning significantly different from 0) indicates that the associated factor had probably an influence on \gls{nfb} efficacy and the sign 
-of the coefficient indicates the direction of the effect.
-
-The second method applied was the \gls{lasso}, which naturally incorporates variable selection 
-in the linear model thanks to $\ell-1$-norm applied on the coefficients. The coefficients $\hat{\beta}_j$ are obtained by minimizing the term
-
-\begin{equation}
-\label{eq:factors_lasso-minimization}
-\hat{\beta} = \argmin_\beta \sum_{i=1}^{n} \Big(y_i - \beta_{0} - \sum_{j=1}^{p}\beta_{j}x_{ij}\Big)^2 + \lambda \sum_{j=1}^{p}|\beta_{j}|,
-\end{equation} 
-
-where $\lambda$ is the regularization parameter setting more coefficients to zero as it increases. The optimal tuning parameter was determined 
-by a leave-one-out cross-validation. A coefficient not set at zero means that the associated factor may have an influence on \gls{nfb} and once again,
-the sign of the coefficient indicates the direction of the effect.
+The second method applied was the \gls{lasso}, that naturally incorporates variable selection 
+in the linear model thanks to $\ell-1$-norm applied on the coefficients. A coefficient not set at zero means that 
+the associated factor may have an influence on \gls{nfb} and once again, the sign of the coefficient indicates the direction of the effect.
 
 Eventually, the last method used to determine factors influencing \gls{nfb} was the decision tree \citep{Quinlan1986}, a non linear method. It brakes down a dataset into smaller
-and smaller subsets using at each iteration a variable and a threshold chosen to optimize a simple \gls{mse} criteria 
+and smaller subsets using at each iteration a variable and a threshold chosen to optimize a simple \gls{mse} criteria \citep{James2013}. A tree is composed of several 
+nodes and leafs, the importance of which is decreasing from the top node called root node. 
 
-\begin{equation}
-\label{eq:factors_decision_tree_mse}
-\text{MSE} = \frac{1}{n}\sum_{i=1}^{n} \Big(\hat{y}_i - {y}_i\Big)^2,
-\end{equation}
-
-with $\hat{y}$ the predicted values.
-Eventually, a tree is composed of several nodes and leafs, the importance of which is decreasing from the top node. 
-
-These methods are intrinsically different from each others, so we compared their results.
+These methods are intrinsically different from each others, so we compared their results. They are more precisely described in the Supplemental Material.
 
 
 
