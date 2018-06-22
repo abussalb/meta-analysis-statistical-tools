@@ -16,7 +16,6 @@ we are computing the within subject \gls{es}.
 
 \begin{figure}[h!]
   \centering
-  %\fbox{\includegraphics[width=1.2\textwidth]{figures/meta_review_factors_analysis_how_studies_are_included_no_colors_2-columns_fitting_ima} }
 	\includegraphics[width=1\textwidth]{figures/meta_review_factors_analysis_how_studies_are_included_no_colors_2-columns_fitting_ima} 
   \caption{Flow diagram of selection of studies (last search on December 14, 2017).  
 	The subset (a) corresponds to the \citeauthor{Cortese2016}'s inclusion criteria without the requirement for the presence of a control group. The number
@@ -90,8 +89,9 @@ Next, we run the analysis on two specific subgroups: on the one hand only studie
 are selected and on the other hand only studies forbidding participants to take medication during the clinical trial are included. 
 
 Regarding the standard protocol subgroup, \citet{Cortese2016} found all the outcomes significant except for the hyperactivity symptoms 
-rated by teachers. However, when adding \citep{Strehl2017} results, we find no significance for the inattention symptoms assessed by 
-teachers as well (p-value = 0.11). 
+rated by teachers (p-value = 0.11). However, when adding \citep{Strehl2017} results, we find no significance for the inattention symptoms assessed by 
+teachers as well (p-value = 0.11). The \gls{se} for the total outcome assessed by teachers remains significant even with the addition of the two new
+\glspl{rct} (p-value = 0.43).
 As for the low/no medication subgroup, \glspl{se} are not significant except for the inattention symptoms assessed by parents (p-value = 0.013). 
 Besides, the differences in \citet{Arnold2014} values causes a loss of significance in 
 hyperactivity outcome for parents (p-value = 0.066) compared to \citet{Cortese2016} (p-value = 0.016). The two new studies are not 
@@ -130,8 +130,7 @@ smallest \gls{mse}. The best predictor is the one at the top of the tree: in our
 \begin{figure}[h!]
   \centering
   \includegraphics[width=1.0\linewidth]{figures/factors_analysis_decision_tree_results_no_colors_2-columns_fitting_image}
-  \caption{Decision Tree obtained with the factors. The criteria to minimize was the \gls{mse}. For the dummy variables, a value of 1 means
-	that the factor is observed in the study. The term value corresponds to the dependent variables. The importance of nodes and leafs is decreasing
+  \caption{Decision Tree obtained. The criteria to minimize was the \gls{mse}. The importance of nodes and leafs is decreasing
 	from the root node.}
   \label{Figure:factors_analysis_decision_tree_results}
 \end{figure}

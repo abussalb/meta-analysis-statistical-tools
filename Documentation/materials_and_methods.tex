@@ -42,7 +42,7 @@ in the Supplemental Materials \citep{add exact reference here}. The work was car
 Python package developed for this work that offers a more transparent approach to the choice or parameters 
 and increases replicability. This package was benchmark against RevMan v5.3 \citep{RevMan}
 by replicating \citet{Cortese2016}'s work and obtaining the same results. The code is made fully available 
-on a GitHub repository \cite{add exact reference here} including raw data for everyone to review its implementation, update it, and 
+on a GitHub repository \citep{Bussalb2018} including raw data for everyone to review its implementation, update it, and 
 use it for different projects. 
  
 Before updating the \citet{Cortese2016} work with recently published clinical work meeting his inclusion criteria 
@@ -101,7 +101,7 @@ points had to be satisfied:
 \end{itemize}
 \end{itemize}
 
-We provide in the Github repository \ref{} the raw data extracted from the publications. To prevent any bias, the names of these factors
+We provide in the Github repository \citep{Bussalb2018} the raw data extracted from the publications. To prevent any bias, the names of these factors
 were hidden during the entire analysis so that the data scientist (AB) was fully blind to them. The variable names were only revealed once the data 
 analysis and results were accepted as valid: this included choice of variable normalization and validation of model hypothesis as detailed below.
 
@@ -109,8 +109,6 @@ The pre-processing of factors for the analysis included the following steps: fac
 arbitrarily set to more than 20\% of the total of observations, were removed from the analysis. Furthermore, if a factor had more than 
 80\% similar observations it was removed as well. Categorical variables were coded as dummies meaning that the presence of the factor was represented by a 1 
 and its absence by 0. All variables were standardized, except when the decision tree was performed. 
-
-%\comment{be consistent with the use of time in your manuscript. I would use past tense for introduction and  materials and methods. Present for the rest.}
 
 \subsubsection{Associate independent factors to effect sizes}
 
@@ -145,13 +143,13 @@ the number of behavioral scales available in the study. We also ran the analysis
 The aim of the \gls{wls} is to estimate the regression coefficients. A significant coefficient (meaning significantly different from 0) indicates 
 that the associated factor has probably an influence on \gls{nfb} efficacy and the sign of the coefficient indicates the direction of the effect.
 
-The second method applied was the \gls{lasso}, that naturally incorporates variable selection 
+The second linear method applied was the \gls{lasso}, that naturally incorporates variable selection 
 in the linear model thanks to $\ell-1$-norm applied on the coefficients. A coefficient not set at zero means that 
 the associated factor may have an influence on \gls{nfb} and once again, the sign of the coefficient indicates the direction of the effect.
 
-Eventually, the last method used to determine factors influencing \gls{nfb} was the decision tree \citep{Quinlan1986}, a non linear method. It brakes down a dataset into smaller
-and smaller subsets using at each iteration a variable and a threshold chosen to optimize a simple \gls{mse} criteria \citep{James2013}. A tree is composed of several 
-nodes and leafs, the importance of which is decreasing from the top node called root node. 
+Eventually, the last method used to determine factors influencing \gls{nfb} was the decision tree \citep{Quinlan1986}, a hierarchical and non linear method.
+It brakes down a dataset into smaller and smaller subsets using at each iteration a variable and a threshold chosen to optimize a simple \gls{mse} 
+criteria \citep{James2013}. A tree is composed of several nodes and leafs, the importance of which is decreasing from the top node called root node. 
 
 These methods are intrinsically different from each others, so we compared their results. They are more precisely described in the Supplemental Material.
 

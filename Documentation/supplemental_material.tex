@@ -93,7 +93,7 @@ Study OR Study OR Trial OR randomized trial) AND (neurofeedback OR “EEG biofee
 
 \subsection{Perform a meta analysis}
 
-To conduct meta-analysis, different software exist: for instance \citet{Cortese2016} used RevMan 5.3 \citep{RevMan} which computes the \gls{es} and its 
+To conduct meta-analysis, different software exist: for instance \citet{Cortese2016} used RevMan 5.3 \citep{RevMan} that computes the \gls{es} and its 
 variance of each included study by applying the formula presented in \citet{Morris2008}. However, in order to compute the variance of the \gls{es}, 
 the pooled within-group Pearson correlation $\rho$ (i.e the pre-post correlation) was required 
 \citep{James2013}. In our case, this correlation was not known and the raw data were not available so we took an
@@ -101,7 +101,7 @@ the pooled within-group Pearson correlation $\rho$ (i.e the pre-post correlation
 
 In this replication of the work of \citeauthor{Cortese2016}, the same formulas are used \citep{Borenstein2009} but instead of using RevMan, 
 a Python code was developed in order to perform the meta-analysis. To increase replicability and transparency and promote open science, we 
-provide the full raw data used for this research as well as the Python code on a GitHub repository [put ref]; it is tested
+provide the full raw data used for this research as well as the Python code on a GitHub repository \citep{Bussalb2018}; it is tested
 with \citet{Cortese2016} raw data to show that same results were found and could be used for replication and expansion of this work. The toolbox
 could also be used to run any similar meta-analysis. 
 
@@ -261,7 +261,7 @@ The aim of the \gls{wls} is to estimate the vector of coefficients $\beta$ by mi
 A significant coefficient (meaning significantly different from 0) indicates that the associated factor had probably an influence on \gls{nfb} efficacy and the sign 
 of the coefficient indicates the direction of the effect.
 
-The second method applied was the \gls{lasso}, which naturally incorporates variable selection 
+The second method applied was the \gls{lasso} that naturally incorporates variable selection 
 in the linear model thanks to $\ell-1$-norm applied on the coefficients. The coefficients $\hat{\beta}_j$ are obtained by minimizing the term
 
 \begin{equation}
