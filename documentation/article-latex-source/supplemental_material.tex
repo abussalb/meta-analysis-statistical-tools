@@ -52,6 +52,8 @@
 % for guillemets
 \usepackage[T1]{fontenc}
 
+% for abs values
+\usepackage{commath}
 
 
 % This is for me to comment
@@ -100,9 +102,9 @@ the pooled within-group Pearson correlation $\rho$ (i.e the pre-post correlation
 \citep{James2013}. In our case, this correlation was not known and the raw data were not available so we took an
  approximation: \citet{Balk2012} found that a value of 0.5 yields values closer to those computed with the right value of the correlation. 
 
-In this replication of the work of \citeauthor{Cortese2016}, the same formulas are used \citep{Borenstein2009} but instead of using RevMan, 
+In this replication of the work of \citeauthor{Cortese2016}, the same formulas were used \citep{Borenstein2009} but instead of using RevMan, 
 a Python code was developed in order to perform the meta-analysis. To increase replicability and transparency and promote open science, we 
-provide the full raw data used for this research as well as the Python code on a GitHub repository \citep{Bussalb2018}; it is tested
+provide the full raw data used for this research as well as the Python code on a GitHub repository \citep{Bussalb2018}; it was tested
 with \citet{Cortese2016} raw data to show that same results were found and could be used for replication and expansion of this work. The toolbox
 could also be used to run any similar meta-analysis. 
 
@@ -116,8 +118,8 @@ statistical models \citep{Borenstein2009}:
 		\glspl{es} are due to sampling errors but also to the various designs of the studies (for instance the number of participants or the implementation).
 \end{itemize}
 
-In the present case, although the studies included into the meta-analysis meet the same criteria, they remain different from each other 
-on various points, so the random effects model is more appropriate than the fixed-effect model.  
+In the present case, although the studies included into the meta-analysis met the same criteria, they remained different from each other 
+on various points, so the random effects model was more appropriate than the fixed-effect model.  
 
 \subsection{Compute the effect size of each study}
 
@@ -153,7 +155,7 @@ Then, the variance of each \gls{es} was computed \citep{Morris2008}
 \sigma^2(\text{ES}) = c_p^2 \left (\frac{n_T + n_C - 2} {n_T + n_C - 4} \right ) \left  [ \frac{2(1-\rho)(n_T + n_C)} {n_Tn_C} + \text{ES}^2 \right ] - \text{ES}^2.
 \end{equation} 
 
-To compute the variance of the \gls{es}, the pooled within-group Pearson correlation $\rho$ (i.e the pre-post correlation) was required 
+To compute the variance of the \gls{es}, the pooled within-group Pearson correlation $\rho$ (i.e the pre-post correlation) is required 
 \citep{James2013}:
 
 \begin{equation}
@@ -164,7 +166,7 @@ where $n$ is the number of patients included in a study, $pre_i$, $post_i$ are s
 respectively, and $\mu_{pre}$, $\mu_{post}$ the mean scores over all patients. It is a measure of linear correlation between two variables. 
 A value of 1 means that there is a positive correlation whereas a value of -1 means a negative correlation. When $\rho=0$, there is no
 linear correlation. In our case, this correlation was not known and the raw data were not available so we took an
-approximation: \citet{Balk2012} found that a value of 0.5 yields values close to those computed with the right value of the correlation. 
+approximation: \citet{Balk2012} found that a value of 0.5 yielded values close to those computed with the right value of the correlation. 
 
 Once variances were obtained with \ref{eq:metareview_variance_ES}, we could compute the standard error and the 95\% confidence interval of each \gls{es}. 
 
@@ -189,7 +191,7 @@ Q = \sum_{k=1}^{K} (w_{\text{fixed}_k} \text{ES}_k^2),
 
 \begin{equation}
 \label{eq:metareview_C}
-C = \sum_{k=1}^{K} (w_{\text{fixed}_k} - \frac{ \sum_{k=1}^{K} (w_{\text{fixed}_k})^2 } { \sum_{k=1}^{K} (w_{\text{fixed}_k}) },
+C = \sum_{k=1}^{K} w_{\text{fixed}_k} - \frac{ \sum_{k=1}^{K} (w_{\text{fixed}_k})^2 } { \sum_{k=1}^{K} w_{\text{fixed}_k} },
 \end{equation}
 with $K$ the total number of included studies.
 
@@ -259,7 +261,7 @@ in the linear model thanks to $\ell-1$-norm applied on the coefficients. The coe
 
 \begin{equation}
 \label{eq:factors_lasso-minimization}
-\hat{\beta} = \argmin_\beta \sum_{i=1}^{n} \Big(y_i - \beta_{0} - \sum_{j=1}^{p}\beta_{j}x_{ij}\Big)^2 + \lambda \sum_{j=1}^{p}|\beta_{j}|,
+\hat{\beta} = \argmin_\beta \sum_{i=1}^{n} \Big(y_i - \beta_{0} - \sum_{j=1}^{p}\beta_{j}x_{ij}\Big)^2 + \lambda \sum_{j=1}^{p}\abs{\beta_{j}},
 \end{equation} 
 
 where $\lambda$ is the regularization parameter setting more coefficients to zero as it increases. The optimal tuning parameter was determined 
@@ -281,39 +283,39 @@ and smaller subsets using at each iteration a variable and a threshold chosen to
 
 with $\hat{y}$ the predicted values.
 
-No weights are applied when running the \gls{lasso} and the decision tree because the frameworks don't easily account for this.
+No weights were applied when running the \gls{lasso} and the decision tree.
 
 \section{Results}
 
 \subsection{Perform a meta-analysis}
 
 First, when using the \gls{es} found by \citet{Cortese2016} thanks to RevMan \citep{RevMan}, and then performed the following steps 
-of meta-analysis with the Python code, we observe no major differences between these results and those obtained with RevMan \citep{RevMan} 
+of meta-analysis with the Python code, we observed no major differences between these results and those obtained with RevMan \citep{RevMan} 
 as listed in \ref{Table:meta_review_comparison_between_revman_python}. The minor discrepancies, especially observed at the p-values level,
-are due to our choice to always use a pre-post correlation of 0.5 when computing the variance of each \gls{es}. Moreover, a sensitivity 
-analysis was conducted to ensure the minor impact of the pre-post correlation value: when it varies between 0.2 and 0.8 the significance 
-of the \gls{se} does not change. 
+were due to our choice to always use a pre-post correlation of 0.5 when computing the variance of each \gls{es}. Moreover, a sensitivity 
+analysis was conducted to ensure the minor impact of the pre-post correlation value: when it varied between 0.2 and 0.8 the significance 
+of the \gls{se} did not change. 
 
-Thanks to the previous step, we can conclude that the Python code yields results close to those returned by RevMan \citet{RevMan}, so we decide to
+Thanks to the previous step, we could conclude that the Python code yielded results close to those returned by RevMan \citet{RevMan}, so we decided to
 use this code to perform our meta-analysis.		
 
 \subsection{Detect factors influencing the Neurofeedback}
 		
 To assess the variability of each factor, box plots of their standardized values were displayed in \ref{Figure:factors_analysis_boxplots}: treatment length, 
-session length and number of sessions are more variable across studies than session pace, minimum and maximum age.  
+session length and number of sessions were more variable across studies than session pace, minimum and maximum age.  
 
 
 \subsection{Assumptions for applying linear regression}
 
-The first method used to detect the influencing factors was the \gls{wls}. The assumptions inherent to this method are checked: 
+The first method used to detect the influencing factors was the \gls{wls}. The assumptions inherent to this method were checked: 
 \begin{itemize}
-	\item the moment matrix $\mathbf{{X}^{T}W^{T}WX}$ was invertible;
+	\item the moment matrix ${\textbf{X}}^{T}\textbf{W}^{T}\textbf{WX}$ was invertible;
   \item no apparent correlation between the continuous independent variables was found; 
   \item the fit was significant as shown by the F-statistic (prob(F-statistic) = 2.81e-10); 
   \item the residuals were normally distributed as demonstrated by the skew (-0.15), kurtosis (2.81) and the Omnibus test (prob(Omnibus) = 0.87).
 \end{itemize} 
 
-These assumptions are also satisfied for the \gls{ols}.
+These assumptions were also satisfied for the \gls{ols}.
 
 \clearpage
 
@@ -325,7 +327,7 @@ These assumptions are also satisfied for the \gls{ols}.
 
 \begin{figure}[h!]
 	\center
-  \includegraphics[scale=0.5]{figures/factors_analysis_boxplot_no_colors_no_two_columns}
+  \includegraphics[scale=0.5]{figures/factors_analysis_boxplot_no_colors_no_two_columns.png}
   \caption{Boxplots of the standardized values of each continuous factor.}
   \label{Figure:factors_analysis_boxplots}
 \end{figure}

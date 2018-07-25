@@ -9,8 +9,8 @@
 \subsection{Studies selected}
 
 Search terms entered in Pubmed returned 152 results during the last check on December 14, 2017 and 28 articles included in previous
-meta-analysis on \gls{nfb} were identified. After the selection process illustrated in \cref{Figure:systematic_review_workflow}, 
-31 studies were included in the \gls{saob} and 15 in the meta-analysis as summarized in \cref{Table:table_factors_analysis_meta_analysis_list_studies}.
+meta-analysis on \gls{nfb} were identified. After the selection process illustrated in \ref{Figure:systematic_review_workflow}, 
+31 studies were included in the \gls{saob} and 15 in the meta-analysis as summarized in \ref{Table:table_factors_analysis_meta_analysis_list_studies}.
 The 31 studies selected for the \gls{saob} followed the \citeauthor{Cortese2016}'s criteria to the exception of the control group point. 
 Indeed, since we computed the effect size within the \gls{nfb} group, we did not need a control group.
 
@@ -20,7 +20,7 @@ The Python module created in order to perform a meta-analysis was successfully v
 So all the following results were computed with the Python code. 
 
 The replication and the update of \citeauthor{Cortese2016}'s study was conducted by applying the choices described in the Materials and Methods part 
-and the results obtained are presented in \cref{Table:meta_review_comparison_revman_and_python_with_choices}:
+and the results obtained are presented in \ref{Table:meta_review_comparison_revman_and_python_with_choices}:
 
 \begin{itemize}
     \item when computing the \gls{es} for \citet{Arnold2014} with the values after 40 sessions of \gls{nfb}, we found smaller \gls{es} than \citet{Cortese2016};  
@@ -32,7 +32,7 @@ The next step consisted in extend \citeauthor{Cortese2016} meta-analysis by addi
 during the systematic review. \citet{Baumeister2016} provided results only for parents total outcome whereas \citet{Strehl2017} gave teachers 
 and parents' assessments for all outcomes. In spite of favorable results for \gls{nfb}, particularly on parents' assessments, adding these two 
 new studies did not change either the magnitude or the significance of the \gls{se} for any outcome whatever the raters
-as illustrated in \cref{Figure:meta_review_forest_plots_update_meta_analysis_our_choices_no_colors_2-columns_fitting_image}. 
+as illustrated in \ref{Figure:meta_review_forest_plots_update_meta_analysis_our_choices_no_colors_2-columns_fitting_image}. 
  
 We then ran the analysis on two specific subgroups: one gathering studies following the standard protocol defined by \citet{Arns2014}
 and a second one only studies including participants without drug during the clinical trial. 
@@ -51,12 +51,12 @@ All the scales used to compute the \gls{es} following our choices are summarized
 
 \subsection{Detect factors influencing the Neurofeedback}
 
-The analysis was performed on 31 trials assessing the efficacy of \gls{nfb} as presented in \cref{Table:table_factors_analysis_meta_analysis_list_studies}. 
+The analysis was performed on 31 trials assessing the efficacy of \gls{nfb} as presented in \ref{Table:table_factors_analysis_meta_analysis_list_studies}. 
 Among the 25 factors selected, 6 were removed for too many missing or too homogeneous observations: beta up in frontal areas, 
 the use of a transfer card, the type of threshold for the rewards (incremental or fixed), the EEG quality equal to 3 and the presence of a control group. 
 
 The \gls{es} within subjects was computed for all available clinical scales of each study and then factors were associated with the computed \gls{es}
-thanks to three different methods: the \gls{wls}, the \gls{lasso} and the decision tree. The global results were presented in \cref{Table:table_factors_analysis_results_summary},
+thanks to three different methods: the \gls{wls}, the \gls{lasso} and the decision tree. The global results were presented in \ref{Table:table_factors_analysis_results_summary},
 which highlighted the fact that the techniques used did not select similar factors. Thus, the more methods identified a factor, the more confident we could be in
 the results.  
 
@@ -65,7 +65,7 @@ When applying the \gls{ols}, the same factors were significant except the transf
 based on amplitude with an adjusted R-squared of 0.42. The \gls{lasso} regression selected significant factors by setting to 0 the factors that did
 not explain the model, here 12 factors better predicted the model. With these two methods, a negative coefficient meant that the factor was in favor of the \gls{nfb}.
 
-Eventually, the decision tree presented in \cref{Figure:factors_analysis_decision_tree_results} split the dataset based on the factor leading to the
+Eventually, the decision tree presented in \ref{Figure:factors_analysis_decision_tree_results} split the dataset based on the factor leading to the
 smallest \gls{mse}. The best predictor was the one at the top of the tree: in our case it was the \gls{pblind}. Five other factors also split the subsets,  
 however, the lower we got into the tree, the less samples were available, so results were less and less reliable.
 
