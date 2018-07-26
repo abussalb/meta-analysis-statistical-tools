@@ -1,0 +1,25 @@
+systematic\_analysis\_of\_biases package
+========================================
+
+
+systematic\_analysis\_of\_biases.import\_csv\_for\_factors module
+-----------------------------------------------------------------
+
+.. automodule:: systematic_analysis_of_biases.import_csv_for_factors
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+systematic\_analysis\_of\_biases.perform\_systematic\_analysis\_of\_bias module
+-------------------------------------------------------------------------------
+
+.. note:: Effect sizes computed for each study correspond to the effect sizes within subjects. 
+          Thus, the effect size is computed from the pre and post test values of the treatment group. So here a control group is not neccessary.
+
+.. automodule:: systematic_analysis_of_biases.perform_systematic_analysis_of_bias
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+.. note:: An example of the use of this package is proposed in ``example\systematic-analysis-of-biases``. Data is available to review and update the work presented in *Bussalb et al.*.
