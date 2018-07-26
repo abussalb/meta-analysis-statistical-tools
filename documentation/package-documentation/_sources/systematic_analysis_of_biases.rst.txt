@@ -13,9 +13,6 @@ systematic\_analysis\_of\_biases.import\_csv\_for\_factors module
 systematic\_analysis\_of\_biases.perform\_systematic\_analysis\_of\_bias module
 -------------------------------------------------------------------------------
 
-.. note:: Effect sizes computed for each study correspond to the effect sizes within subjects. 
-          Thus, the effect size is computed from the pre and post test values of the treatment group. So here a control group is not neccessary.
-
 .. automodule:: systematic_analysis_of_biases.perform_systematic_analysis_of_bias
     :members:
     :undoc-members:

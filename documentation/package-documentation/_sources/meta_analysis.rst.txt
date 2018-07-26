@@ -13,9 +13,6 @@ meta\_analysis.import\_csv\_for\_meta\_analysis module
 meta\_analysis.perform\_meta\_analysis module
 ---------------------------------------------
 
-.. note:: Effect sizes computed for each study correspond to the effect sizes between subjects. 
-          Thus, the studies included in the meta-analysis must be controlled and provide pre and post scores for treatment and control groups.
-
 .. automodule:: meta_analysis.perform_meta_analysis
     :members:
     :undoc-members:

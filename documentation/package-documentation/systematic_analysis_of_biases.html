@@ -55,72 +55,125 @@
 <code class="descclassname">systematic_analysis_of_biases.import_csv_for_factors.</code><code class="descname">import_csv</code><span class="sig-paren">(</span><em>csv_file</em><span class="sig-paren">)</span><a class="headerlink" href="#systematic_analysis_of_biases.import_csv_for_factors.import_csv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Imports data from a csv file containing parents and sometimes teachers&#8217; severity assessments of ADHD in children and factor values. 
 This csv file contains all the data required to perform the SAOB.</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd><dl class="first last docutils">
-<dt>csv_file (str): name or localisation of the csv file that contains all the values of clinical trials required to perform teh SAOB.</dt>
-<dd><dl class="first last docutils">
-<dt>The csv file must have a specific form: </dt>
-<dd><ul class="first last simple">
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>csv_file: str</strong></p>
+<blockquote>
+<div><p>Name or localisation of the csv file that contains all the values of clinical trials required to perform teh SAOB.
+The csv file must have a specific form:</p>
+<ul class="simple">
 <li>eight first columns: Author, Year, Score Name, Number of patients, Raters (Parents or Teachers), Time (pre and post), Mean, Std;</li>
 <li>other columns correspond to factors to analyze;</li>
-<li>each study has at least 2 lines: Author name, Year, Score Name, Number of patients, Raters (Parents or Teachers) repeated twice, 
-Time (pre and post), Mean (at pre-test and post-test), Std (at pre-test and post-test). If Teachers assessments are available,
-two lines must be added;</li>
+<li>each study has at least 2 lines: Author name, Year, Score Name, Number of patients, Raters (Parents or Teachers) repeated twice, Time (pre and post), Mean (at pre-test and post-test), Std (at pre-test and post-test). If Teachers assessments are available, two lines must be added;</li>
 <li>sometimes, for a study, several clinical scales are available, they are all entered in the csv file;</li>
-<li>for each author, the 2 lines of the Raters column have to be filled as follows: Parents, Parents, if teachers&#8217; assessment
-is available 2 more lines are added (Teachers, Teachers);</li>
-<li>for each author, the 2 lines of the Time column have to be filled as follows: pre, post (pattern repeated one more
-time if teachers assessment is available);</li>
+<li>for each author, the 2 lines of the Raters column have to be filled as follows: Parents, Parents, if teachers&#8217; assessment is available 2 more lines are added (Teachers, Teachers);</li>
+<li>for each author, the 2 lines of the Time column have to be filled as follows: pre, post (pattern repeated one more time if teachers assessment is available);</li>
 <li>Mean and Std correspond to the clinical score extracted from studies at pre-test and post-test.</li>
 </ul>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd>
-<dt>Returns:</dt>
-<dd><dl class="first last docutils">
-<dt>df_values_parents (pandas.DataFrame): parents&#8217;s ratings required to perform the SAOB.</dt>
-<dd>Each row corresponds to a study and a specific clinical scale, ADHD symptoms are assessed by parents,
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">df_values_parents: pandas.DataFrame</p>
+<blockquote>
+<div><p>Parents&#8217;s ratings required to perform the SAOB.
+Each row corresponds to a study and a specific clinical scale, ADHD symptoms are assessed by parents,
 Columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
-n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters and factors.</dd>
-<dt>df_values_teachers (pandas.DataFrame): teachers&#8217;s ratings required to perform the SAOB.</dt>
-<dd>Each row correspond to a study and a specific clinical scale,, ADHD symptoms are assessed by teachers,
+n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters and factors.</p>
+</div></blockquote>
+<p>df_values_teachers: pandas.DataFrame</p>
+<blockquote class="last">
+<div><p>Teachers&#8217;s ratings required to perform the SAOB.
+Each row correspond to a study and a specific clinical scale,, ADHD symptoms are assessed by teachers,
 Columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
-n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters and factors.</dd>
-</dl>
-</dd>
-</dl>
+n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters and factors.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
-<div class="section" id="systematic-analysis-of-biases-perform-systematic-analysis-of-bias-module">
-<h2>systematic_analysis_of_biases.perform_systematic_analysis_of_bias module<a class="headerlink" href="#systematic-analysis-of-biases-perform-systematic-analysis-of-bias-module" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Effect sizes computed for each study correspond to the effect sizes within subjects.
-Thus, the effect size is computed from the pre and post test values of the treatment group. So here a control group is not neccessary.</p>
-</div>
-<span class="target" id="module-systematic_analysis_of_biases.perform_systematic_analysis_of_bias"></span><span class="target" id="module-perform_systematic_analysis_of_bias"></span><dl class="function">
+<div class="section" id="module-systematic_analysis_of_biases.perform_systematic_analysis_of_bias">
+<span id="systematic-analysis-of-biases-perform-systematic-analysis-of-bias-module"></span><h2>systematic_analysis_of_biases.perform_systematic_analysis_of_bias module<a class="headerlink" href="#module-systematic_analysis_of_biases.perform_systematic_analysis_of_bias" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-perform_systematic_analysis_of_bias"></span><dl class="function">
 <dt id="systematic_analysis_of_biases.perform_systematic_analysis_of_bias.decision_tree">
 <code class="descclassname">systematic_analysis_of_biases.perform_systematic_analysis_of_bias.</code><code class="descname">decision_tree</code><span class="sig-paren">(</span><em>X_non_standardized</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#systematic_analysis_of_biases.perform_systematic_analysis_of_bias.decision_tree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes a Decision tree.</p>
 <p>Non linear and hierarchical method.</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd><dl class="first docutils">
-<dt>X (pandas.DataFrame): preprocessed dataframe containing all observations in rows and factors in columns (the independent variables). </dt>
-<dd>Factors with too many missing values and with too many identical 
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X: pandas.DataFrame</strong></p>
+<blockquote>
+<div><p>Preprocessed dataframe containing all observations in rows and factors in columns (the independent variables). 
+Factors with too many missing values and with too many identical 
 observations have been removed. Besides, values have been standardized. 
 Categorical variables are coded in dummies.
-This dataframe is obtained thanks to the <code class="docutils literal"><span class="pre">preprocess_factors</span></code> function.</dd>
-</dl>
-<p class="last">y (pandas.Series): effect size within subjects computed for each observation (the dependent variable).</p>
-</dd>
-<dt>Returns:</dt>
-<dd>decision_tree (pdf): decision tree obtained.</dd>
-</dl>
+This dataframe is obtained thanks to the <code class="docutils literal"><span class="pre">preprocess_factors</span></code> function.</p>
+</div></blockquote>
+<p><strong>y: pandas.Series</strong></p>
+<blockquote>
+<div><p>Effect size within subjects computed for each observation (the dependent variable).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">decision_tree: pdf</p>
+<blockquote class="last">
+<div><p>Decision tree obtained.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="systematic_analysis_of_biases.perform_systematic_analysis_of_bias.effect_size_within_subjects">
+<code class="descclassname">systematic_analysis_of_biases.perform_systematic_analysis_of_bias.</code><code class="descname">effect_size_within_subjects</code><span class="sig-paren">(</span><em>mean_post_test_NFB</em>, <em>mean_pre_test_NFB</em>, <em>std_post_test_NFB</em>, <em>std_pre_test_NFB</em><span class="sig-paren">)</span><a class="headerlink" href="#systematic_analysis_of_biases.perform_systematic_analysis_of_bias.effect_size_within_subjects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes effects sizes inside a group, this effect size reflects the evolution inside a group between pre and post test. The
+fomula used comes from Cohen J. (1988), <em>Statistical Power Analysis for the Behavioral Sciences</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>n_NFB: int</strong></p>
+<blockquote>
+<div><p>Number of patients included in the Neurofeedback (NFB) group.</p>
+</div></blockquote>
+<p><strong>mean_post_test_NFB: float</strong></p>
+<blockquote>
+<div><p>Mean score after the treatment (NFB here).</p>
+</div></blockquote>
+<p><strong>mean_pre_test_NFB: float</strong></p>
+<blockquote>
+<div><p>Mean score before the treatment (NFB here).</p>
+</div></blockquote>
+<p><strong>std_pre_test_NFB: float</strong></p>
+<blockquote>
+<div><p>Standard deviation of the mean score before the treatment (Neurofeedback here).</p>
+</div></blockquote>
+<p><strong>std_post_test_NFB: float</strong></p>
+<blockquote>
+<div><p>Standard deviation of the mean score before the treatment (Control here).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">effect_size: float</p>
+<blockquote class="last">
+<div><p>Value estimating the efficacy of NFB.
+If it&#8217;s negative, the result is in favor of NFB.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Effect sizes computed for each study correspond to the effect sizes within subjects. Thus, the effect size is 
+computed from the pre and post test values of the treatment group. So here a control group is not neccessary.</p>
 </dd></dl>
 
 <dl class="function">
@@ -131,24 +184,33 @@ This dataframe is obtained thanks to the <code class="docutils literal"><span cl
 P independent variables and n observations.
 model: XB = y; y (nx1) column vector of dependent variables, X (nxP) matrix
 of independent variables, B (Px1) column vector of coefficients.</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd><dl class="first docutils">
-<dt>X (pandas.DataFrame): preprocessed dataframe containing all observations in rows and factors in columns (the independent variables). </dt>
-<dd>Factors with too many missing values and with too many identical 
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X: pandas.DataFrame</strong></p>
+<blockquote>
+<div><p>Preprocessed dataframe containing all observations in rows and factors in columns (the independent variables). 
+Factors with too many missing values and with too many identical 
 observations have been removed. Besides, values have been standardized. 
 Categorical variables are coded in dummies.
-This dataframe is obtained thanks to the <code class="docutils literal"><span class="pre">preprocess_factors</span></code> function.</dd>
-</dl>
-<p class="last">y (pandas.Series): effect size within subjects computed for each observation (the dependent variable).</p>
-</dd>
-<dt>Returns:</dt>
-<dd><dl class="first last docutils">
-<dt>summary_ols (statsmodels.iolib.summary.Summary): summary of the OLS regression.</dt>
-<dd>In particular values of coefficients, associated pvalues, F-statistics, Prob(Omnibus), skew and kurtosis.</dd>
-</dl>
-</dd>
-</dl>
+This dataframe is obtained thanks to the <code class="docutils literal"><span class="pre">preprocess_factors</span></code> function.</p>
+</div></blockquote>
+<p><strong>y: pandas.Series</strong></p>
+<blockquote>
+<div><p>Effect size within subjects computed for each observation (the dependent variable).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">summary_ols: statsmodels.iolib.summary.Summary</p>
+<blockquote class="last">
+<div><p>Summary of the OLS regression.
+In particular values of coefficients, associated pvalues, F-statistics, Prob(Omnibus), skew and kurtosis.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="function">
@@ -157,26 +219,35 @@ This dataframe is obtained thanks to the <code class="docutils literal"><span cl
 <dd><p>Preprocesses factors before running the SAOB.</p>
 <p>Factors with too many missing values and with too many identical observations will be removed.
 Besides, values can be standardized. The categorial variables will be codded as dummies.</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd><dl class="first last docutils">
-<dt>df (pandas.DataFrame): dataframe containing all observations in rows, factors and also values to compute the effect size within subjects in columns. </dt>
-<dd>It is obtained after the import of the csv file containing all data by <code class="docutils literal"><span class="pre">import_csv_for_factors</span></code>.</dd>
-</dl>
-</dd>
-<dt>Returns:</dt>
-<dd><dl class="first last docutils">
-<dt>X (pandas.DataFrame): preprocessed dataframe containing all observations in rows and factors in columns.</dt>
-<dd>Factors with too many missing values and with too many identical observations have been removed.
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>df: pandas.DataFrame</strong></p>
+<blockquote>
+<div><p>Dataframe containing all observations in rows, factors and also values to compute the effect size within subjects in columns. 
+It is obtained after the import of the csv file containing all data by <code class="docutils literal"><span class="pre">import_csv_for_factors</span></code>.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">X: pandas.DataFrame</p>
+<blockquote>
+<div><p>Preprocessed dataframe containing all observations in rows and factors in columns.
+Factors with too many missing values and with too many identical observations have been removed.
 Categorical variables are coded in dummies.
-Values here are standardized.</dd>
-<dt>X_non_standardized (pandas.DataFrame): preprocessed dataframe containing all observations in rows and factors in columns.</dt>
-<dd>Factors with too many missing values and with too many identical observations have been removed.
+Values here are standardized.</p>
+</div></blockquote>
+<p>X_non_standardized: pandas.DataFrame</p>
+<blockquote class="last">
+<div><p>Preprocessed dataframe containing all observations in rows and factors in columns.
+Factors with too many missing values and with too many identical observations have been removed.
 Categorical variables are coded in dummies.
-Values here are not standardized.</dd>
-</dl>
-</dd>
-</dl>
+Values here are not standardized.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="function">
@@ -187,24 +258,33 @@ Values here are not standardized.</dd>
 P independent variables and n observations.
 model: XB = y; y (nx1) column vector of dependent variables, X (nxP) matrix
 of independent variables, B (Px1) column vector of coefficients.</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd><dl class="first docutils">
-<dt>X (pandas.DataFrame): preprocessed dataframe containing all observations in rows and factors in columns (the independent variables). </dt>
-<dd>Factors with too many missing values and with too many identical 
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X: pandas.DataFrame</strong></p>
+<blockquote>
+<div><p>Preprocessed dataframe containing all observations in rows and factors in columns (the independent variables). 
+Factors with too many missing values and with too many identical 
 observations have been removed. Besides, values have been standardized. 
 Categorical variables are coded in dummies.
-This dataframe is obtained thanks to the <code class="docutils literal"><span class="pre">preprocess_factors</span></code> function.</dd>
-</dl>
-<p class="last">y (pandas.Series): effect size within subjects computed for each observation (the dependent variable).</p>
-</dd>
-<dt>Returns:</dt>
-<dd><dl class="first last docutils">
-<dt>coeff_aic (pandas.DataFrame): results of the Lasso.</dt>
-<dd>Column with coefficients obtained after regularization and the names of the associated factors.</dd>
-</dl>
-</dd>
-</dl>
+This dataframe is obtained thanks to the <code class="docutils literal"><span class="pre">preprocess_factors</span></code> function.</p>
+</div></blockquote>
+<p><strong>y: pandas.Series</strong></p>
+<blockquote>
+<div><p>Effect size within subjects computed for each observation (the dependent variable).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">coeff_aic: pandas.DataFrame</p>
+<blockquote class="last">
+<div><p>Results of the Lasso.
+Column with coefficients obtained after regularization and the names of the associated factors.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="function">
@@ -214,28 +294,46 @@ This dataframe is obtained thanks to the <code class="docutils literal"><span cl
 The best model is selected by cross-validation.</p>
 <p>Dependent variable = effect size within subjects; independent variable = factors. 
 P independent variables and n observations.</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd><dl class="first docutils">
-<dt>X (pandas.DataFrame): preprocessed dataframe containing all observations in rows and factors in columns (the independent variables). </dt>
-<dd>Factors with too many missing values and with too many identical observations have been removed. Besides, values have been standardized. 
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X: pandas.DataFrame</strong></p>
+<blockquote>
+<div><p>Preprocessed dataframe containing all observations in rows and factors in columns (the independent variables). 
+Factors with too many missing values and with too many identical observations have been removed. Besides, values have been standardized. 
 Categorical variables are coded in dummies.
-This dataframe is obtained thanks to the <code class="docutils literal"><span class="pre">preprocess_factors</span></code> function.</dd>
-</dl>
-<p class="last">y (pandas.Series): effect size within subjects computed for each observation (the dependent variable).</p>
-</dd>
-<dt>Returns:</dt>
-<dd><dl class="first docutils">
-<dt>coeff (pandas.DataFrame): results of the Lasso.</dt>
-<dd>Column with coefficients obtained after regularization and the names of the associated factors.</dd>
-<dt>mse_test (numpy.ndarray): mean square error for the test set on each fold, varying alpha.</dt>
-<dd>Shape (n_alphas, n_folds).</dd>
-<dt>alphas (numpy.ndarray): the grid of alphas used for fitting.</dt>
-<dd>Shape (n_alphas).</dd>
-</dl>
-<p class="last">alpha (float): the amount of penalization chosen by cross validation.</p>
-</dd>
-</dl>
+This dataframe is obtained thanks to the <code class="docutils literal"><span class="pre">preprocess_factors</span></code> function.</p>
+</div></blockquote>
+<p><strong>y: pandas.Series</strong></p>
+<blockquote>
+<div><p>Effect size within subjects computed for each observation (the dependent variable).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">coeff: pandas.DataFrame</p>
+<blockquote>
+<div><p>Results of the Lasso.
+Column with coefficients obtained after regularization and the names of the associated factors.</p>
+</div></blockquote>
+<p>mse_test: numpy.ndarray</p>
+<blockquote>
+<div><p>Mean square error for the test set on each fold, varying alpha.
+Shape (n_alphas, n_folds).</p>
+</div></blockquote>
+<p>alphas: numpy.ndarray</p>
+<blockquote>
+<div><p>The grid of alphas used for fitting.
+Shape (n_alphas).</p>
+</div></blockquote>
+<p>alpha: float</p>
+<blockquote class="last">
+<div><p>The amount of penalization chosen by cross validation.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="function">
@@ -247,25 +345,37 @@ P independent variables and n observations.
 model: WXB = Wy; W (nxn) diagonal matrix of weights, y (nx1) column vector
 of dependent variables, X (nxP) matrix of independent variables, B (Px1) 
 column vector of coefficients.</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd><dl class="first docutils">
-<dt>df (pandas.DataFrame): dataframe containing all observations in rows, factors in columns and also values to compute the effect size within subjects. </dt>
-<dd>It is obtained after the import of the csv file containing all data by <code class="docutils literal"><span class="pre">import_csv_for_factors</span></code>.</dd>
-<dt>X (pandas.DataFrame): preprocessed dataframe containing all observations in rows and factors in columns (the independent variables). </dt>
-<dd>Factors with too many missing values and with too many identical observations have been removed. Besides, values have been standardized. 
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>df: pandas.DataFrame</strong></p>
+<blockquote>
+<div><p>Dataframe containing all observations in rows, factors in columns and also values to compute the effect size within subjects. 
+It is obtained after the import of the csv file containing all data by <code class="docutils literal"><span class="pre">import_csv_for_factors</span></code>.</p>
+</div></blockquote>
+<p><strong>X: pandas.DataFrame</strong></p>
+<blockquote>
+<div><p>Preprocessed dataframe containing all observations in rows and factors in columns (the independent variables). 
+Factors with too many missing values and with too many identical observations have been removed. Besides, values have been standardized. 
 Categorical variables are coded in dummies.
-This dataframe is obtained thanks to the <code class="docutils literal"><span class="pre">preprocess_factors</span> <span class="pre">function</span></code>.</dd>
-</dl>
-<p class="last">y (pandas.Series): effect size within subjects computed for each observation (the dependent variable).</p>
-</dd>
-<dt>Returns:</dt>
-<dd><dl class="first last docutils">
-<dt>summary (statsmodels.iolib.summary.Summary): summary of the WLS regression.</dt>
-<dd>In particular values of coefficients, associated pvalues, F-statistics, Prob(Omnibus), skew and kurtosis.</dd>
-</dl>
-</dd>
-</dl>
+This dataframe is obtained thanks to the <code class="docutils literal"><span class="pre">preprocess_factors</span> <span class="pre">function</span></code>.</p>
+</div></blockquote>
+<p><strong>y: pandas.Series</strong></p>
+<blockquote>
+<div><p>Effect size within subjects computed for each observation (the dependent variable).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">summary: statsmodels.iolib.summary.Summary</p>
+<blockquote class="last">
+<div><p>Summary of the WLS regression.
+In particular values of coefficients, associated pvalues, F-statistics, Prob(Omnibus), skew and kurtosis.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <div class="admonition note">
@@ -285,7 +395,7 @@ This dataframe is obtained thanks to the <code class="docutils literal"><span cl
   <ul>
 <li><a class="reference internal" href="#">systematic_analysis_of_biases package</a><ul>
 <li><a class="reference internal" href="#module-systematic_analysis_of_biases.import_csv_for_factors">systematic_analysis_of_biases.import_csv_for_factors module</a></li>
-<li><a class="reference internal" href="#systematic-analysis-of-biases-perform-systematic-analysis-of-bias-module">systematic_analysis_of_biases.perform_systematic_analysis_of_bias module</a></li>
+<li><a class="reference internal" href="#module-systematic_analysis_of_biases.perform_systematic_analysis_of_bias">systematic_analysis_of_biases.perform_systematic_analysis_of_bias module</a></li>
 </ul>
 </li>
 </ul>

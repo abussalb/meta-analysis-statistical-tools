@@ -55,84 +55,88 @@
 <code class="descclassname">meta_analysis.import_csv_for_meta_analysis.</code><code class="descname">import_csv</code><span class="sig-paren">(</span><em>csv_file</em>, <em>raters=''</em><span class="sig-paren">)</span><a class="headerlink" href="#meta_analysis.import_csv_for_meta_analysis.import_csv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Imports data from a csv file containing parents and sometimes teachers&#8217; severity assessments of ADHD in children. This csv file 
 contains all the data required to perform a meta-analysis. It is possible to import parents&#8217; ratings or teachers&#8217; only but also both.</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd><dl class="first last docutils">
-<dt>csv_file (str): name or localisation of the csv file that contains all the values of RCT with a pretest posttest design required to perform a meta analysis.</dt>
-<dd><dl class="first last docutils">
-<dt>The csv file must have a specific form: </dt>
-<dd><ul class="first last simple">
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>csv_file: str</strong></p>
+<blockquote>
+<div><p>Name or localisation of the csv file that contains all the values of RCT with a pretest posttest design required to perform a meta analysis.
+The csv file must have a specific form:</p>
+<ul class="simple">
 <li>nine columns: Author, Year, Group, Score Name, Number of patients, Raters, Time, Mean, Std;</li>
-<li>each study has 4 lines if only parent assessments are available, 8 if teacher assessments are provided too: the Author 
-name (repeated 4 or 8 times), Year (repeated 4 or 8 times), Group (NFB or control), Score Name, Raters (Parents or Teachers), Time 
-(pre and post), Mean and Std;</li>
-<li>for each author, the 4 lines of the Group column have to be filled as follows: NFB, NFB, Control, Control (pattern repeated one more
-time if teachers assessment is available);</li>
-<li>for each author, the 4 lines of the Raters column have to be filled as follows: Parents, Parents, Parents, Parents and if teachers&#8217; assessment
-is available 4 more lines are added (Teachers, Teachers, Teachers, Teachers);</li>
-<li>for each author, the 4 lines of the Time column have to be filled as follows: pre, post, pre, post (pattern repeated one more
-time if teachers assessment is available);</li>
+<li>each study has 4 lines if only parent assessments are available, 8 if teacher assessments are provided too: the Author name (repeated 4 or 8 times), Year (repeated 4 or 8 times), Group (NFB or control), Score Name, Raters (Parents or Teachers), Time (pre and post), Mean and Std;</li>
+<li>for each author, the 4 lines of the Group column have to be filled as follows: NFB, NFB, Control, Control (pattern repeated one more time if teachers assessment is available);</li>
+<li>for each author, the 4 lines of the Raters column have to be filled as follows: Parents, Parents, Parents, Parents and if teachers&#8217; assessment is available 4 more lines are added (Teachers, Teachers, Teachers, Teachers);</li>
+<li>for each author, the 4 lines of the Time column have to be filled as follows: pre, post, pre, post (pattern repeated one moretime if teachers assessment is available);</li>
 <li>Mean and Std correspond to the clinical score extracted from studies.</li>
 </ul>
-</dd>
-</dl>
-</dd>
-<dt>raters (str): optional &#8216;Teachers&#8217; or &#8216;Parents&#8217;.</dt>
-<dd>Person assessing ADHD symptoms, if no raters are precised then all values will be returned.</dd>
-</dl>
-</dd>
-<dt>Returns:</dt>
-<dd><dl class="first docutils">
-<dt>df_values_parents (pandas.DataFrame): parents&#8217;s ratings required to perform the meta-analysis.</dt>
-<dd>It will be returned if <code class="docutils literal"><span class="pre">raters</span> <span class="pre">=</span> <span class="pre">'Parents'</span></code>.
+</div></blockquote>
+<p><strong>raters: str, optional &#8216;Teachers&#8217; or &#8216;Parents&#8217;</strong></p>
+<blockquote>
+<div><p>Person assessing ADHD symptoms, if no raters are precised then all values will be returned.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">df_values_parents: pandas.DataFrame</p>
+<blockquote>
+<div><p>Parents&#8217;s ratings required to perform the meta-analysis.
+It will be returned if <code class="docutils literal"><span class="pre">raters</span> <span class="pre">=</span> <span class="pre">'Parents'</span></code>.
 Each row corresponds to a study, ADHD symptoms are assessed by parents
 columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
-n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters for each study.</dd>
-<dt>df_values_teachers (pandas.DataFrame): teachers&#8217;s ratings required to perform the meta-analysis.</dt>
-<dd>It will be returned if <code class="docutils literal"><span class="pre">raters</span> <span class="pre">=</span> <span class="pre">'Teachers'</span></code>.
+n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters for each study.</p>
+</div></blockquote>
+<p>df_values_teachers: pandas.DataFrame</p>
+<blockquote class="last">
+<div><p>Teachers&#8217;s ratings required to perform the meta-analysis.
+It will be returned if <code class="docutils literal"><span class="pre">raters</span> <span class="pre">=</span> <span class="pre">'Teachers'</span></code>.
 Each row corresponds to a study, ADHD symptoms are assessed by teachers
 columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
-n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control for each study.</dd>
-</dl>
-<div class="last admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">both dataframes will be returned if no rater is precised.</p>
-</div>
-</dd>
-</dl>
+n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control for each study.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Both dataframes will be returned if no rater is precised.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="meta-analysis-perform-meta-analysis-module">
-<h2>meta_analysis.perform_meta_analysis module<a class="headerlink" href="#meta-analysis-perform-meta-analysis-module" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Effect sizes computed for each study correspond to the effect sizes between subjects.
-Thus, the studies included in the meta-analysis must be controlled and provide pre and post scores for treatment and control groups.</p>
-</div>
-<span class="target" id="module-meta_analysis.perform_meta_analysis"></span><span class="target" id="module-perform_meta_analysis"></span><dl class="function">
+<div class="section" id="module-meta_analysis.perform_meta_analysis">
+<span id="meta-analysis-perform-meta-analysis-module"></span><h2>meta_analysis.perform_meta_analysis module<a class="headerlink" href="#module-meta_analysis.perform_meta_analysis" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-perform_meta_analysis"></span><dl class="function">
 <dt id="meta_analysis.perform_meta_analysis.forest_plot">
 <code class="descclassname">meta_analysis.perform_meta_analysis.</code><code class="descname">forest_plot</code><span class="sig-paren">(</span><em>df_results_per_study</em>, <em>df_results</em><span class="sig-paren">)</span><a class="headerlink" href="#meta_analysis.perform_meta_analysis.forest_plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a forest plot.</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd><dl class="first last docutils">
-<dt>df_results_per_study (pandas.DataFrame): results per study.</dt>
-<dd>Dataframe obtained after performing the meta-analysis with <code class="docutils literal"><span class="pre">run_meta_analysis</span></code>.
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>df_results_per_study: pandas.DataFrame</strong></p>
+<blockquote>
+<div><p>Results per study.
+Dataframe obtained after performing the meta-analysis with <code class="docutils literal"><span class="pre">run_meta_analysis</span></code>.
 Rows of the dataframe correspond to the studies, columns correspond to the effect size of the study, its standard 
-error, its 95% confidence interval, and the weight of the study.</dd>
-<dt>df_results (pandas.DataFrame): global results.</dt>
-<dd>It contains the summary effect, its 95% confidence interval, its variance, its standard error, its p-value, 
-the between studies variance (Tau²), the heterogeneity (I²), its p-value, and the Chi2 value.</dd>
-</dl>
-</dd>
-<dt>Returns:</dt>
-<dd><dl class="first last docutils">
-<dt>forest_plot (matplotlib.figure): graphical representation of the meta-analysis&#8217; results.</dt>
-<dd>Representation of the effect size and its 95% confidence interval for each study.</dd>
-</dl>
-</dd>
-</dl>
+error, its 95% confidence interval, and the weight of the study.</p>
+</div></blockquote>
+<p><strong>df_results: pandas.DataFrame</strong></p>
+<blockquote>
+<div><p>Global results.
+It contains the summary effect, its 95% confidence interval, its variance, its standard error, its p-value, 
+the between studies variance (Tau²), the heterogeneity (I²), its p-value, and the Chi2 value.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">forest_plot: matplotlib.figure</p>
+<blockquote class="last">
+<div><p>Graphical representation of the meta-analysis&#8217; results.
+Representation of the effect size and its 95% confidence interval for each study.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="function">
@@ -140,39 +144,54 @@ the between studies variance (Tau²), the heterogeneity (I²), its p-value, and 
 <code class="descclassname">meta_analysis.perform_meta_analysis.</code><code class="descname">run_meta_analysis</code><span class="sig-paren">(</span><em>df</em>, <em>scale_to_reverse=[]</em>, <em>pre_post_correlation=0.5</em><span class="sig-paren">)</span><a class="headerlink" href="#meta_analysis.perform_meta_analysis.run_meta_analysis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs a meta analysis with the formulae described in Scott B. Morris (2008) &#8220;Estimating Effect Sizes From Pretest-
 Posttest Control Group Designs and under a random effects model&#8221;, <em>Organizational Research Methods</em> and in Borenstein (2009)
-<em>Introduction to meta-analysis</em>. These formulae are the same as the ones used in Cortese et al., 2016. 
-A negative effect size favours NFB treatment.</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd><dl class="first docutils">
-<dt>df (pandas.DataFrame): parents or teachers ratings required to perform the meta-analysis.</dt>
-<dd>This dataframe corresponds to one of those obtained with the <code class="docutils literal"><span class="pre">import_csv_for_meta_analysis</span></code> module.
+<em>Introduction to meta-analysis</em>. These formulae are the same as the ones used in Cortese et al., 2016.</p>
+<p>A negative effect size favours NFB treatment.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>df: pandas.DataFrame</strong></p>
+<blockquote>
+<div><p>Parents or teachers ratings required to perform the meta-analysis.
+This dataframe corresponds to one of those obtained with the <code class="docutils literal"><span class="pre">import_csv_for_meta_analysis</span></code> module.
 If you want to run the meta-analysis on parents assessments enter <code class="docutils literal"><span class="pre">df_values_parents</span></code>, otherwise 
 enter <code class="docutils literal"><span class="pre">df_values_teachers</span></code>.
 Each row corresponds to a study, ADHD symptoms are assessed by parents or teachers,
 columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
-n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters for each study.</dd>
-</dl>
-<p>scale_to_reverse (list of str): optional, list of strings listing the clinical scales having a positive correlation with symptoms of the disease; 
+n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters for each study.</p>
+</div></blockquote>
+<p><strong>scale_to_reverse: list of str, optional</strong></p>
+<blockquote>
+<div><p>List of strings listing the clinical scales having a positive correlation with symptoms of the disease; 
 i.e increasing when a patient gets better.</p>
-<dl class="last docutils">
-<dt>pre_post_correlation (float): default = 0.5.</dt>
-<dd>Pearson correlation of the pre-test and post-test values (i.e the pooled within-groups Pearson correlation). Set to 0.5 by
+</div></blockquote>
+<p><strong>pre_post_correlation: float, default = 0.5</strong></p>
+<blockquote>
+<div><p>Pearson correlation of the pre-test and post-test values (i.e the pooled within-groups Pearson correlation). Set to 0.5 by
 default (see Cuijpers et al., 2016 and Balk et al., 2012 &#8220;Empirical Assessment of Within-Arm Correlation Imputation in Trials 
-of Continuous Outcomes&#8221;).</dd>
-</dl>
-</dd>
-<dt>Returns:</dt>
-<dd><dl class="first last docutils">
-<dt>df_results_per_study (pandas.DataFrame): results per study.</dt>
-<dd>Rows of the dataframe correspond to the studies, columns correspond to the effect size of the study, its standard 
-error, its 95% confidence interval, and the weight of the study.</dd>
-<dt>df_results (pandas.DataFrame): global results.</dt>
-<dd>It contains the summary effect, its 95% confidence interval, its variance, its standard error, its p-value, 
-the between studies variance (Tau²), the heterogeneity (I²), its p-value, and the Chi2 value.</dd>
-</dl>
-</dd>
-</dl>
+of Continuous Outcomes&#8221;).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">df_results_per_study: pandas.DataFrame</p>
+<blockquote>
+<div><p>Results per study.
+Rows of the dataframe correspond to the studies, columns correspond to the effect size of the study, its standard 
+error, its 95% confidence interval, and the weight of the study.</p>
+</div></blockquote>
+<p>df_results: pandas.DataFrame</p>
+<blockquote class="last">
+<div><p>Global results.
+It contains the summary effect, its 95% confidence interval, its variance, its standard error, its p-value, 
+the between studies variance (Tau²), the heterogeneity (I²), its p-value, and the Chi2 value.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Effect sizes computed for each study correspond to the effect sizes between subjects. Thus, the studies included in the meta-analysis 
+must be controlled and provide pre and post scores for treatment and control groups.</p>
 </dd></dl>
 
 <div class="admonition note">
@@ -192,7 +211,7 @@ the between studies variance (Tau²), the heterogeneity (I²), its p-value, and 
   <ul>
 <li><a class="reference internal" href="#">meta_analysis package</a><ul>
 <li><a class="reference internal" href="#module-meta_analysis.import_csv_for_meta_analysis">meta_analysis.import_csv_for_meta_analysis module</a></li>
-<li><a class="reference internal" href="#meta-analysis-perform-meta-analysis-module">meta_analysis.perform_meta_analysis module</a></li>
+<li><a class="reference internal" href="#module-meta_analysis.perform_meta_analysis">meta_analysis.perform_meta_analysis module</a></li>
 </ul>
 </li>
 </ul>
