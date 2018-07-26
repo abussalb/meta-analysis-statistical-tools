@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>meta_analysis package &#8212; Assess Neurofeedback efficacy  documentation</title>
+    <title>source_assess_NFB_efficacy.meta_analysis package &#8212; Assess Neurofeedback efficacy  documentation</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -46,13 +46,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="meta-analysis-package">
-<h1>meta_analysis package<a class="headerlink" href="#meta-analysis-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-meta_analysis.import_csv_for_meta_analysis">
-<span id="meta-analysis-import-csv-for-meta-analysis-module"></span><h2>meta_analysis.import_csv_for_meta_analysis module<a class="headerlink" href="#module-meta_analysis.import_csv_for_meta_analysis" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="source-assess-nfb-efficacy-meta-analysis-package">
+<h1>source_assess_NFB_efficacy.meta_analysis package<a class="headerlink" href="#source-assess-nfb-efficacy-meta-analysis-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-source_assess_NFB_efficacy.meta_analysis.import_csv_for_meta_analysis">
+<span id="source-assess-nfb-efficacy-meta-analysis-import-csv-for-meta-analysis-module"></span><h2>source_assess_NFB_efficacy.meta_analysis.import_csv_for_meta_analysis module<a class="headerlink" href="#module-source_assess_NFB_efficacy.meta_analysis.import_csv_for_meta_analysis" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-import_csv_for_meta_analysis"></span><dl class="function">
-<dt id="meta_analysis.import_csv_for_meta_analysis.import_csv">
-<code class="descclassname">meta_analysis.import_csv_for_meta_analysis.</code><code class="descname">import_csv</code><span class="sig-paren">(</span><em>csv_file</em>, <em>raters=''</em><span class="sig-paren">)</span><a class="headerlink" href="#meta_analysis.import_csv_for_meta_analysis.import_csv" title="Permalink to this definition">¶</a></dt>
+<dt id="source_assess_NFB_efficacy.meta_analysis.import_csv_for_meta_analysis.import_csv">
+<code class="descclassname">source_assess_NFB_efficacy.meta_analysis.import_csv_for_meta_analysis.</code><code class="descname">import_csv</code><span class="sig-paren">(</span><em>csv_file</em>, <em>raters=''</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_NFB_efficacy.meta_analysis.import_csv_for_meta_analysis.import_csv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Imports data from a csv file containing parents and sometimes teachers&#8217; severity assessments of ADHD in children. This csv file 
 contains all the data required to perform a meta-analysis. It is possible to import parents&#8217; ratings or teachers&#8217; only but also both.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -65,9 +65,12 @@ contains all the data required to perform a meta-analysis. It is possible to imp
 The csv file must have a specific form:</p>
 <ul class="simple">
 <li>nine columns: Author, Year, Group, Score Name, Number of patients, Raters, Time, Mean, Std;</li>
-<li>each study has 4 lines if only parent assessments are available, 8 if teacher assessments are provided too: the Author name (repeated 4 or 8 times), Year (repeated 4 or 8 times), Group (NFB or control), Score Name, Raters (Parents or Teachers), Time (pre and post), Mean and Std;</li>
-<li>for each author, the 4 lines of the Group column have to be filled as follows: NFB, NFB, Control, Control (pattern repeated one more time if teachers assessment is available);</li>
-<li>for each author, the 4 lines of the Raters column have to be filled as follows: Parents, Parents, Parents, Parents and if teachers&#8217; assessment is available 4 more lines are added (Teachers, Teachers, Teachers, Teachers);</li>
+<li>each study has 4 lines if only parent assessments are available, 8 if teacher assessments are provided too: the Author name (repeated 4 or 8 times),
+Year (repeated 4 or 8 times), Group (NFB or control), Score Name, Raters (Parents or Teachers), Time (pre and post), Mean and Std;</li>
+<li>for each author, the 4 lines of the Group column have to be filled as follows: NFB, NFB, Control, Control (pattern repeated one more time
+if teachers assessment is available);</li>
+<li>for each author, the 4 lines of the Raters column have to be filled as follows: Parents, Parents, Parents, Parents and if teachers&#8217; assessment 
+is available 4 more lines are added (Teachers, Teachers, Teachers, Teachers);</li>
 <li>for each author, the 4 lines of the Time column have to be filled as follows: pre, post, pre, post (pattern repeated one moretime if teachers assessment is available);</li>
 <li>Mean and Std correspond to the clinical score extracted from studies.</li>
 </ul>
@@ -103,11 +106,11 @@ n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_t
 </dd></dl>
 
 </div>
-<div class="section" id="module-meta_analysis.perform_meta_analysis">
-<span id="meta-analysis-perform-meta-analysis-module"></span><h2>meta_analysis.perform_meta_analysis module<a class="headerlink" href="#module-meta_analysis.perform_meta_analysis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis">
+<span id="source-assess-nfb-efficacy-meta-analysis-perform-meta-analysis-module"></span><h2>source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis module<a class="headerlink" href="#module-source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-perform_meta_analysis"></span><dl class="function">
-<dt id="meta_analysis.perform_meta_analysis.forest_plot">
-<code class="descclassname">meta_analysis.perform_meta_analysis.</code><code class="descname">forest_plot</code><span class="sig-paren">(</span><em>df_results_per_study</em>, <em>df_results</em><span class="sig-paren">)</span><a class="headerlink" href="#meta_analysis.perform_meta_analysis.forest_plot" title="Permalink to this definition">¶</a></dt>
+<dt id="source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis.forest_plot">
+<code class="descclassname">source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis.</code><code class="descname">forest_plot</code><span class="sig-paren">(</span><em>df_results_per_study</em>, <em>df_results</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis.forest_plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a forest plot.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -140,8 +143,8 @@ Representation of the effect size and its 95% confidence interval for each study
 </dd></dl>
 
 <dl class="function">
-<dt id="meta_analysis.perform_meta_analysis.run_meta_analysis">
-<code class="descclassname">meta_analysis.perform_meta_analysis.</code><code class="descname">run_meta_analysis</code><span class="sig-paren">(</span><em>df</em>, <em>scale_to_reverse=[]</em>, <em>pre_post_correlation=0.5</em><span class="sig-paren">)</span><a class="headerlink" href="#meta_analysis.perform_meta_analysis.run_meta_analysis" title="Permalink to this definition">¶</a></dt>
+<dt id="source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis.run_meta_analysis">
+<code class="descclassname">source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis.</code><code class="descname">run_meta_analysis</code><span class="sig-paren">(</span><em>df</em>, <em>scale_to_reverse=[]</em>, <em>pre_post_correlation=0.5</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis.run_meta_analysis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs a meta analysis with the formulae described in Scott B. Morris (2008) &#8220;Estimating Effect Sizes From Pretest-
 Posttest Control Group Designs and under a random effects model&#8221;, <em>Organizational Research Methods</em> and in Borenstein (2009)
 <em>Introduction to meta-analysis</em>. These formulae are the same as the ones used in Cortese et al., 2016.</p>
@@ -209,9 +212,9 @@ must be controlled and provide pre and post scores for treatment and control gro
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">meta_analysis package</a><ul>
-<li><a class="reference internal" href="#module-meta_analysis.import_csv_for_meta_analysis">meta_analysis.import_csv_for_meta_analysis module</a></li>
-<li><a class="reference internal" href="#module-meta_analysis.perform_meta_analysis">meta_analysis.perform_meta_analysis module</a></li>
+<li><a class="reference internal" href="#">source_assess_NFB_efficacy.meta_analysis package</a><ul>
+<li><a class="reference internal" href="#module-source_assess_NFB_efficacy.meta_analysis.import_csv_for_meta_analysis">source_assess_NFB_efficacy.meta_analysis.import_csv_for_meta_analysis module</a></li>
+<li><a class="reference internal" href="#module-source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis">source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis module</a></li>
 </ul>
 </li>
 </ul>
@@ -219,7 +222,7 @@ must be controlled and provide pre and post scores for treatment and control gro
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/meta_analysis.rst.txt"
+      <li><a href="_sources/source_assess_NFB_efficacy.meta_analysis.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>

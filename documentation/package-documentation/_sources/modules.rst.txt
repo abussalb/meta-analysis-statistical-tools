@@ -1,8 +1,0 @@
-source
-======
-
-.. toctree::
-   :maxdepth: 4
-
-   meta_analysis
-   systematic_analysis_of_biases
