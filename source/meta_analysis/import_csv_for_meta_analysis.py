@@ -16,30 +16,34 @@ def _common_read(csv_file, raters):
     """Reads data from a csv file containing parents and sometimes teachers' severity assessments of ADHD in children. This csv file 
     contains all the data required to perform a meta-analysis.     
     
-    Args:
-        csv_file (str): name or localisation of the csv file that contains all the values of RCT with a pretest posttest design
+    Parameters
+    ----------
+    csv_file: str
+        Name or localisation of the csv file that contains all the values of RCT with a pretest posttest design
         required to perform a meta analysis.
-            The csv file must have a specific form: 
-            - nine columns: Author, Year, Group, Score Name, Number of patients, Raters, Time, Mean, Std;
-            - each study has 4 lines if only parent assessments are available, 8 if teacher assessments are provided too: the Author 
-            name (repeated 4 or 8 times), Year (repeated 4 or 8 times), Group (NFB or control), Score Name, Raters (Parents or Teachers), Time 
-            (pre and post), Mean and Std;
-            - for each author, the 4 lines of the Group column have to be filled as follows: NFB, NFB, Control, Control (pattern repeated one more
-            time if teachers assessment is available);
-            - for each author, the 4 lines of the Raters column have to be filled as follows: Parents, Parents, Parents, Parents and if teachers' assessment
-            is available 4 more lines are added (Teachers, Teachers, Teachers, Teachers);
-            - for each author, the 4 lines of the Time column have to be filled as follows: pre, post, pre, post (pattern repeated one more
-            time if teachers assessment is available);
-            - Mean and Std correspond to the clinical score extracted from studies.
-               
-        raters (str): 'Teachers' or 'Parents'.
-            Person assessing ADHD symptoms.
+        The csv file must have a specific form: 
+        - nine columns: Author, Year, Group, Score Name, Number of patients, Raters, Time, Mean, Std;
+        - each study has 4 lines if only parent assessments are available, 8 if teacher assessments are provided too: the Author 
+        name (repeated 4 or 8 times), Year (repeated 4 or 8 times), Group (NFB or control), Score Name, Raters (Parents or Teachers), Time 
+        (pre and post), Mean and Std;
+        - for each author, the 4 lines of the Group column have to be filled as follows: NFB, NFB, Control, Control (pattern repeated one more
+        time if teachers assessment is available);
+        - for each author, the 4 lines of the Raters column have to be filled as follows: Parents, Parents, Parents, Parents and if teachers' assessment
+        is available 4 more lines are added (Teachers, Teachers, Teachers, Teachers);
+        - for each author, the 4 lines of the Time column have to be filled as follows: pre, post, pre, post (pattern repeated one more
+        time if teachers assessment is available);
+        - Mean and Std correspond to the clinical score extracted from studies.
+           
+    raters: str, 'Teachers' or 'Parents'
+        Person assessing ADHD symptoms.
                            
-    Returns:
-        df_values (pandas.DataFrame): dataframe used to perform the meta-analysis.
-            Each row corresponds to a study
-            columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
-            n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters for each study. 
+    Returns
+    -------
+    df_values: pandas.DataFrame
+        Dataframe used to perform the meta-analysis.
+        Each row corresponds to a study
+        columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
+        n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters for each study. 
         
     """
     
@@ -121,38 +125,46 @@ def import_csv(csv_file, raters=''):
     """Imports data from a csv file containing parents and sometimes teachers' severity assessments of ADHD in children. This csv file 
     contains all the data required to perform a meta-analysis. It is possible to import parents' ratings or teachers' only but also both.
     
-    Args:
-        csv_file (str): name or localisation of the csv file that contains all the values of RCT with a pretest posttest design required to perform a meta analysis.
-            The csv file must have a specific form: 
-             - nine columns: Author, Year, Group, Score Name, Number of patients, Raters, Time, Mean, Std;
-             - each study has 4 lines if only parent assessments are available, 8 if teacher assessments are provided too: the Author 
-               name (repeated 4 or 8 times), Year (repeated 4 or 8 times), Group (NFB or control), Score Name, Raters (Parents or Teachers), Time 
-               (pre and post), Mean and Std;
-             - for each author, the 4 lines of the Group column have to be filled as follows: NFB, NFB, Control, Control (pattern repeated one more
-               time if teachers assessment is available);
-             - for each author, the 4 lines of the Raters column have to be filled as follows: Parents, Parents, Parents, Parents and if teachers' assessment
-               is available 4 more lines are added (Teachers, Teachers, Teachers, Teachers);
-             - for each author, the 4 lines of the Time column have to be filled as follows: pre, post, pre, post (pattern repeated one more
-               time if teachers assessment is available);
-             - Mean and Std correspond to the clinical score extracted from studies.
-               
-        raters (str): optional 'Teachers' or 'Parents'.
-            Person assessing ADHD symptoms, if no raters are precised then all values will be returned. 
-                           
-    Returns:
-        df_values_parents (pandas.DataFrame): parents's ratings required to perform the meta-analysis.
-            It will be returned if ``raters = 'Parents'``.
-            Each row corresponds to a study, ADHD symptoms are assessed by parents
-            columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
-            n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters for each study.  
-    
-        df_values_teachers (pandas.DataFrame): teachers's ratings required to perform the meta-analysis.
-            It will be returned if ``raters = 'Teachers'``.
-            Each row corresponds to a study, ADHD symptoms are assessed by teachers
-            columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
-            n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control for each study. 
+    Parameters
+    ----------
+    csv_file: str
+        Name or localisation of the csv file that contains all the values of RCT with a pretest posttest design required to perform a meta analysis.
+        The csv file must have a specific form: 
 
-        .. note:: both dataframes will be returned if no rater is precised.
+        - nine columns: Author, Year, Group, Score Name, Number of patients, Raters, Time, Mean, Std;
+        - each study has 4 lines if only parent assessments are available, 8 if teacher assessments are provided too: the Author 
+        name (repeated 4 or 8 times), Year (repeated 4 or 8 times), Group (NFB or control), Score Name, Raters (Parents or Teachers), 
+        Time (pre and post), Mean and Std;
+        - for each author, the 4 lines of the Group column have to be filled as follows: NFB, NFB, Control, Control (pattern repeated
+         one more time if teachers assessment is available);
+        - for each author, the 4 lines of the Raters column have to be filled as follows: Parents, Parents, Parents, Parents and if 
+        teachers' assessment is available 4 more lines are added (Teachers, Teachers, Teachers, Teachers);
+        - for each author, the 4 lines of the Time column have to be filled as follows: pre, post, pre, post (pattern repeated one
+         more time if teachers assessment is available);
+        - Mean and Std correspond to the clinical score extracted from studies.
+           
+    raters: str, optional 'Teachers' or 'Parents'
+        Person assessing ADHD symptoms, if no raters are precised then all values will be returned. 
+                           
+    Returns
+    -------
+    df_values_parents: pandas.DataFrame
+        Parents's ratings required to perform the meta-analysis.
+        It will be returned if ``raters = 'Parents'``.
+        Each row corresponds to a study, ADHD symptoms are assessed by parents
+        columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
+        n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters for each study.  
+
+    df_values_teachers: pandas.DataFrame
+        Teachers's ratings required to perform the meta-analysis.
+        It will be returned if ``raters = 'Teachers'``.
+        Each row corresponds to a study, ADHD symptoms are assessed by teachers
+        columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
+        n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control for each study. 
+
+    Notes
+    -----   
+        Both dataframes will be returned if no rater is precised.
         
     """
     

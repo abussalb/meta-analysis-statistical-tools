@@ -19,26 +19,37 @@ def _effect_size_ppc(n_NFB, n_control, mean_post_test_NFB, mean_pre_test_NFB, me
     """Computes the pre post control effect size (Scott B. Morris (2008) "Estimating Effect Sizes From Pretest-Posttest Control Group Designs 
     and under a random effects model", Organizational Research Methods (Equation 8)).
     
-    Args:
-        n_NFB (int): number of patients included in the treatment group (Neurofeedback (NFB) here).
+    Parameters
+    ----------
+    n_NFB: int
+        Number of patients included in the treatment group (Neurofeedback (NFB) here).
 
-        n_control (int): number of patients included in the control group.
-    
-        mean_post_test_NFB (float): mean score after the treatment (NFB here).
-    
-        mean_pre_test_NFB (float): mean score before the treatment (NFB here).
+    n_control: int
+        Number of patients included in the control group.
 
-        mean_pre_test_control (float): mean score before the treatment in the control group.
-    
-        mean_post_test_control (float): mean score after the treatment in the control group.
-               
-        std_pre_test_NFB (float): standard deviation of the mean score before the treatment (NFB here).
+    mean_post_test_NFB: float
+        Mean score after the treatment (NFB here).
 
-        std_post_test_NFB (float): standard deviation of the mean score after the treatment in the control group.
+    mean_pre_test_NFB: float
+        Mean score before the treatment (NFB here).
 
-    Returns:
-        effect_size (float): value estimating the efficacy of NFB
-            If it's negative, the result is in favor of NFB.
+    mean_pre_test_control: float
+        Mean score before the treatment in the control group.
+
+    mean_post_test_control: float
+        Mean score after the treatment in the control group.
+           
+    std_pre_test_NFB: float
+        Standard deviation of the mean score before the treatment (NFB here).
+
+    std_post_test_NFB: float
+        Standard deviation of the mean score after the treatment in the control group.
+
+    Returns
+    -------
+    effect_size: float
+        Value estimating the efficacy of NFB.
+        If it's negative, the result is in favor of NFB.
         
     """     
 
@@ -62,20 +73,28 @@ def _standard_error_effect_size(n_NFB, n_control, effect_size, pre_post_correlat
     """Scott B. Morris (2008) "Estimating Effect Sizes From Pretest-Posttest Control Group Designs and under 
     a random effects model", Organizational Research Methods (Equation 25).
     
-    Args:
-        n_NFB (int): number of patients included in the Neurofeedback (NFB) group.
+    Parameters
+    ----------
+    n_NFB: int
+        Number of patients included in the Neurofeedback (NFB) group.
 
-        n_control (int): number of patients included in the control group.
-    
-        effect_size (float): value estimating the efficacy of NFB.
-            If it's negative, the result is in favor of NFB.
+    n_control: int
+    Number of patients included in the control group.
 
-        pre_post_correlation (float): Pearson correlation of the pre-test and post-test values (i.e the pooled within-groups Pearson correlation).
+    effect_size: float
+        Value estimating the efficacy of NFB.
+        If it's negative, the result is in favor of NFB.
+
+    pre_post_correlation: float
+        Pearson correlation of the pre-test and post-test values (i.e the pooled within-groups Pearson correlation.
      
-    Returns:
-        standard_error_ES (float): standard error of the effect size.
-    
-        variance_ES (float): variance of the effect size.     
+    Returns
+    -------
+    standard_error_ES: float 
+        Standard error of the effect size.
+
+    variance_ES: float
+        Variance of the effect size.     
         
     """
     
@@ -103,37 +122,48 @@ def run_meta_analysis(df, scale_to_reverse=[], pre_post_correlation=0.5):
     """Performs a meta analysis with the formulae described in Scott B. Morris (2008) "Estimating Effect Sizes From Pretest-
     Posttest Control Group Designs and under a random effects model", *Organizational Research Methods* and in Borenstein (2009)
     *Introduction to meta-analysis*. These formulae are the same as the ones used in Cortese et al., 2016. 
+
     A negative effect size favours NFB treatment. 
   
-    Args:
-        df (pandas.DataFrame): parents or teachers ratings required to perform the meta-analysis.
-            This dataframe corresponds to one of those obtained with the ``import_csv_for_meta_analysis`` module.
-            If you want to run the meta-analysis on parents assessments enter ``df_values_parents``, otherwise 
-            enter ``df_values_teachers``.
-            Each row corresponds to a study, ADHD symptoms are assessed by parents or teachers,
-            columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
-            n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters for each study.  
-    
-        scale_to_reverse (list of str): optional, list of strings listing the clinical scales having a positive correlation with symptoms of the disease; 
-        i.e increasing when a patient gets better.
-        
-        pre_post_correlation (float): default = 0.5.
-            Pearson correlation of the pre-test and post-test values (i.e the pooled within-groups Pearson correlation). Set to 0.5 by
-            default (see Cuijpers et al., 2016 and Balk et al., 2012 "Empirical Assessment of Within-Arm Correlation Imputation in Trials 
-            of Continuous Outcomes").                  
+    Parameters
+    ----------
+    df: pandas.DataFrame
+        Parents or teachers ratings required to perform the meta-analysis.
+        This dataframe corresponds to one of those obtained with the ``import_csv_for_meta_analysis`` module.
+        If you want to run the meta-analysis on parents assessments enter ``df_values_parents``, otherwise 
+        enter ``df_values_teachers``.
+        Each row corresponds to a study, ADHD symptoms are assessed by parents or teachers,
+        columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
+        n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters for each study.  
 
-    Returns:
-        df_results_per_study (pandas.DataFrame): results per study.
-            Rows of the dataframe correspond to the studies, columns correspond to the effect size of the study, its standard 
-            error, its 95% confidence interval, and the weight of the study.
+    scale_to_reverse: list of str, optional
+        List of strings listing the clinical scales having a positive correlation with symptoms of the disease; 
+        i.e increasing when a patient gets better.
     
-        df_results (pandas.DataFrame): global results.
-            It contains the summary effect, its 95% confidence interval, its variance, its standard error, its p-value, 
-            the between studies variance (Tau²), the heterogeneity (I²), its p-value, and the Chi2 value.
+    pre_post_correlation: float, default = 0.5
+        Pearson correlation of the pre-test and post-test values (i.e the pooled within-groups Pearson correlation). Set to 0.5 by
+        default (see Cuijpers et al., 2016 and Balk et al., 2012 "Empirical Assessment of Within-Arm Correlation Imputation in Trials 
+        of Continuous Outcomes").                  
+
+    Returns
+    -------
+    df_results_per_study: pandas.DataFrame 
+        Results per study.
+        Rows of the dataframe correspond to the studies, columns correspond to the effect size of the study, its standard 
+        error, its 95% confidence interval, and the weight of the study.
+
+    df_results: pandas.DataFrame
+        Global results.
+        It contains the summary effect, its 95% confidence interval, its variance, its standard error, its p-value, 
+        the between studies variance (Tau²), the heterogeneity (I²), its p-value, and the Chi2 value.
+
+    Notes
+    -----
+        Effect sizes computed for each study correspond to the effect sizes between subjects. Thus, the studies included in the meta-analysis 
+        must be controlled and provide pre and post scores for treatment and control groups.
         
     """
-
-        
+   
     # Creation of the dataframe for total results
     index = ['Results']
     df_results = pd.DataFrame(index=index)
@@ -244,19 +274,24 @@ if __name__ == '__main__':
 def forest_plot(df_results_per_study, df_results):
     """Creates a forest plot.
     
-    Args:
-        df_results_per_study (pandas.DataFrame): results per study.
-            Dataframe obtained after performing the meta-analysis with ``run_meta_analysis``.
-            Rows of the dataframe correspond to the studies, columns correspond to the effect size of the study, its standard 
-            error, its 95% confidence interval, and the weight of the study.
-    
-        df_results (pandas.DataFrame): global results.
-            It contains the summary effect, its 95% confidence interval, its variance, its standard error, its p-value, 
-            the between studies variance (Tau²), the heterogeneity (I²), its p-value, and the Chi2 value.
+    Parameters
+    ----------
+    df_results_per_study: pandas.DataFrame
+        Results per study.
+        Dataframe obtained after performing the meta-analysis with ``run_meta_analysis``.
+        Rows of the dataframe correspond to the studies, columns correspond to the effect size of the study, its standard 
+        error, its 95% confidence interval, and the weight of the study.
+
+    df_results: pandas.DataFrame
+        Global results.
+        It contains the summary effect, its 95% confidence interval, its variance, its standard error, its p-value, 
+        the between studies variance (Tau²), the heterogeneity (I²), its p-value, and the Chi2 value.
         
-    Returns:
-        forest_plot (matplotlib.figure): graphical representation of the meta-analysis' results.
-            Representation of the effect size and its 95% confidence interval for each study.
+    Returns
+    -------
+    forest_plot: matplotlib.figure
+        Graphical representation of the meta-analysis' results.
+        Representation of the effect size and its 95% confidence interval for each study.
         
     """
 

@@ -18,24 +18,37 @@ from sklearn import tree
 import graphviz
 
 
-def _effect_size_within_subjects(mean_post_test_NFB, mean_pre_test_NFB, std_post_test_NFB, std_pre_test_NFB):
+def effect_size_within_subjects(mean_post_test_NFB, mean_pre_test_NFB, std_post_test_NFB, std_pre_test_NFB):
     """Computes effects sizes inside a group, this effect size reflects the evolution inside a group between pre and post test. The
     fomula used comes from Cohen J. (1988), *Statistical Power Analysis for the Behavioral Sciences*. 
     
-    Args:
-        n_NFB (int): number of patients included in the Neurofeedback (NFB) group.
-        
-        mean_post_test_NFB (float): mean score after the treatment (NFB here).
-        
-        mean_pre_test_NFB (float): mean score before the treatment (NFB here).
-                   
-        std_pre_test_NFB (float): standard deviation of the mean score before the treatment (Neurofeedback here).
+    Parameters
+    ----------
+    n_NFB: int
+        Number of patients included in the Neurofeedback (NFB) group.
+    
+    mean_post_test_NFB: float
+        Mean score after the treatment (NFB here).
+    
+    mean_pre_test_NFB: float
+        Mean score before the treatment (NFB here).
+               
+    std_pre_test_NFB: float
+        Standard deviation of the mean score before the treatment (Neurofeedback here).
 
-        std_post_test_NFB (float): standard deviation of the mean score before the treatment (Control here).                         
+    std_post_test_NFB: float
+        Standard deviation of the mean score before the treatment (Control here).                         
 
-    Returns:
-        effect_size (float): value estimating the efficacy of NFB.
-            If it's negative, the result is in favor of NFB.
+    Returns
+    -------
+    effect_size: float
+        Value estimating the efficacy of NFB.
+        If it's negative, the result is in favor of NFB.
+
+    Notes
+    -----
+        Effect sizes computed for each study correspond to the effect sizes within subjects. Thus, the effect size is 
+        computed from the pre and post test values of the treatment group. So here a control group is not neccessary.
     
     """
 
@@ -50,20 +63,25 @@ def preprocess_factors(df):
     Factors with too many missing values and with too many identical observations will be removed.
     Besides, values can be standardized. The categorial variables will be codded as dummies.
 
-    Args:
-        df (pandas.DataFrame): dataframe containing all observations in rows, factors and also values to compute the effect size within subjects in columns. 
-            It is obtained after the import of the csv file containing all data by ``import_csv_for_factors``.
+    Parameters
+    ----------
+    df: pandas.DataFrame
+        Dataframe containing all observations in rows, factors and also values to compute the effect size within subjects in columns. 
+        It is obtained after the import of the csv file containing all data by ``import_csv_for_factors``.
 
-    Returns:
-        X (pandas.DataFrame): preprocessed dataframe containing all observations in rows and factors in columns.
-            Factors with too many missing values and with too many identical observations have been removed.
-            Categorical variables are coded in dummies.
-            Values here are standardized. 
+    Returns
+    -------
+    X: pandas.DataFrame
+        Preprocessed dataframe containing all observations in rows and factors in columns.
+        Factors with too many missing values and with too many identical observations have been removed.
+        Categorical variables are coded in dummies.
+        Values here are standardized. 
 
-        X_non_standardized (pandas.DataFrame): preprocessed dataframe containing all observations in rows and factors in columns.
-            Factors with too many missing values and with too many identical observations have been removed.
-            Categorical variables are coded in dummies.
-            Values here are not standardized. 
+    X_non_standardized: pandas.DataFrame
+        Preprocessed dataframe containing all observations in rows and factors in columns.
+        Factors with too many missing values and with too many identical observations have been removed.
+        Categorical variables are coded in dummies.
+        Values here are not standardized. 
 
     """
 
@@ -108,20 +126,26 @@ def weighted_linear_regression(df, X, y):
     of dependent variables, X (nxP) matrix of independent variables, B (Px1) 
     column vector of coefficients.
 
-    Args:
-        df (pandas.DataFrame): dataframe containing all observations in rows, factors in columns and also values to compute the effect size within subjects. 
-            It is obtained after the import of the csv file containing all data by ``import_csv_for_factors``.
+    Parameters
+    ----------
+    df: pandas.DataFrame
+        Dataframe containing all observations in rows, factors in columns and also values to compute the effect size within subjects. 
+        It is obtained after the import of the csv file containing all data by ``import_csv_for_factors``.
 
-        X (pandas.DataFrame): preprocessed dataframe containing all observations in rows and factors in columns (the independent variables). 
-            Factors with too many missing values and with too many identical observations have been removed. Besides, values have been standardized. 
-            Categorical variables are coded in dummies.
-            This dataframe is obtained thanks to the ``preprocess_factors function``.
+    X: pandas.DataFrame
+        Preprocessed dataframe containing all observations in rows and factors in columns (the independent variables). 
+        Factors with too many missing values and with too many identical observations have been removed. Besides, values have been standardized. 
+        Categorical variables are coded in dummies.
+        This dataframe is obtained thanks to the ``preprocess_factors function``.
 
-        y (pandas.Series): effect size within subjects computed for each observation (the dependent variable).
+    y: pandas.Series
+        Effect size within subjects computed for each observation (the dependent variable).
 
-    Returns:
-        summary (statsmodels.iolib.summary.Summary): summary of the WLS regression.
-            In particular values of coefficients, associated pvalues, F-statistics, Prob(Omnibus), skew and kurtosis.
+    Returns
+    -------
+    summary: statsmodels.iolib.summary.Summary
+        Summary of the WLS regression.
+        In particular values of coefficients, associated pvalues, F-statistics, Prob(Omnibus), skew and kurtosis.
 
     """
 
@@ -164,18 +188,23 @@ def ordinary_linear_regression(X, y):
     model: XB = y; y (nx1) column vector of dependent variables, X (nxP) matrix
     of independent variables, B (Px1) column vector of coefficients.
 
-    Args:
-        X (pandas.DataFrame): preprocessed dataframe containing all observations in rows and factors in columns (the independent variables). 
-            Factors with too many missing values and with too many identical 
-            observations have been removed. Besides, values have been standardized. 
-            Categorical variables are coded in dummies.
-            This dataframe is obtained thanks to the ``preprocess_factors`` function.
+    Parameters
+    ----------
+    X: pandas.DataFrame
+        Preprocessed dataframe containing all observations in rows and factors in columns (the independent variables). 
+        Factors with too many missing values and with too many identical 
+        observations have been removed. Besides, values have been standardized. 
+        Categorical variables are coded in dummies.
+        This dataframe is obtained thanks to the ``preprocess_factors`` function.
 
-        y (pandas.Series): effect size within subjects computed for each observation (the dependent variable).
+    y: pandas.Series
+        Effect size within subjects computed for each observation (the dependent variable).
 
-    Returns:
-        summary_ols (statsmodels.iolib.summary.Summary): summary of the OLS regression.
-            In particular values of coefficients, associated pvalues, F-statistics, Prob(Omnibus), skew and kurtosis.
+    Returns
+    -------
+    summary_ols: statsmodels.iolib.summary.Summary
+        Summary of the OLS regression.
+        In particular values of coefficients, associated pvalues, F-statistics, Prob(Omnibus), skew and kurtosis.
 
     """
 
@@ -208,25 +237,33 @@ def regularization_lassocv(X, y):
     Dependent variable = effect size within subjects; independent variable = factors. 
     P independent variables and n observations.
 
-    Args:
-        X (pandas.DataFrame): preprocessed dataframe containing all observations in rows and factors in columns (the independent variables). 
-            Factors with too many missing values and with too many identical observations have been removed. Besides, values have been standardized. 
-            Categorical variables are coded in dummies.
-            This dataframe is obtained thanks to the ``preprocess_factors`` function.
+    Parameters
+    ----------
+    X: pandas.DataFrame
+        Preprocessed dataframe containing all observations in rows and factors in columns (the independent variables). 
+        Factors with too many missing values and with too many identical observations have been removed. Besides, values have been standardized. 
+        Categorical variables are coded in dummies.
+        This dataframe is obtained thanks to the ``preprocess_factors`` function.
 
-        y (pandas.Series): effect size within subjects computed for each observation (the dependent variable).
+    y: pandas.Series
+        Effect size within subjects computed for each observation (the dependent variable).
 
-    Returns:
-        coeff (pandas.DataFrame): results of the Lasso.
-            Column with coefficients obtained after regularization and the names of the associated factors.
+    Returns
+    -------
+    coeff: pandas.DataFrame
+        Results of the Lasso.
+        Column with coefficients obtained after regularization and the names of the associated factors.
 
-        mse_test (numpy.ndarray): mean square error for the test set on each fold, varying alpha.
-            Shape (n_alphas, n_folds). 
+    mse_test: numpy.ndarray
+        Mean square error for the test set on each fold, varying alpha.
+        Shape (n_alphas, n_folds). 
 
-        alphas (numpy.ndarray): the grid of alphas used for fitting.
-            Shape (n_alphas).
+    alphas: numpy.ndarray
+        The grid of alphas used for fitting.
+        Shape (n_alphas).
 
-        alpha (float): the amount of penalization chosen by cross validation.
+    alpha: float
+        The amount of penalization chosen by cross validation.
 
     """
 
@@ -255,18 +292,23 @@ def regularization_lassoAIC(X, y):
     model: XB = y; y (nx1) column vector of dependent variables, X (nxP) matrix
     of independent variables, B (Px1) column vector of coefficients.
 
-    Args:
-        X (pandas.DataFrame): preprocessed dataframe containing all observations in rows and factors in columns (the independent variables). 
-            Factors with too many missing values and with too many identical 
-            observations have been removed. Besides, values have been standardized. 
-            Categorical variables are coded in dummies.
-            This dataframe is obtained thanks to the ``preprocess_factors`` function.
+    Parameters
+    ----------
+    X: pandas.DataFrame
+        Preprocessed dataframe containing all observations in rows and factors in columns (the independent variables). 
+        Factors with too many missing values and with too many identical 
+        observations have been removed. Besides, values have been standardized. 
+        Categorical variables are coded in dummies.
+        This dataframe is obtained thanks to the ``preprocess_factors`` function.
 
-        y (pandas.Series): effect size within subjects computed for each observation (the dependent variable).
+    y: pandas.Series
+        Effect size within subjects computed for each observation (the dependent variable).
 
-    Returns:
-        coeff_aic (pandas.DataFrame): results of the Lasso.
-            Column with coefficients obtained after regularization and the names of the associated factors.
+    Returns
+    -------
+    coeff_aic: pandas.DataFrame
+        Results of the Lasso.
+        Column with coefficients obtained after regularization and the names of the associated factors.
 
     """
     
@@ -282,17 +324,22 @@ def decision_tree(X_non_standardized, y):
 
     Non linear and hierarchical method.
 
-    Args:
-        X (pandas.DataFrame): preprocessed dataframe containing all observations in rows and factors in columns (the independent variables). 
-            Factors with too many missing values and with too many identical 
-            observations have been removed. Besides, values have been standardized. 
-            Categorical variables are coded in dummies.
-            This dataframe is obtained thanks to the ``preprocess_factors`` function.
+    Parameters
+    ----------
+    X: pandas.DataFrame
+        Preprocessed dataframe containing all observations in rows and factors in columns (the independent variables). 
+        Factors with too many missing values and with too many identical 
+        observations have been removed. Besides, values have been standardized. 
+        Categorical variables are coded in dummies.
+        This dataframe is obtained thanks to the ``preprocess_factors`` function.
 
-        y (pandas.Series): effect size within subjects computed for each observation (the dependent variable).
+    y: pandas.Series
+        Effect size within subjects computed for each observation (the dependent variable).
 
-    Returns:
-        decision_tree (pdf): decision tree obtained.
+    Returns
+    -------
+    decision_tree: pdf
+        Decision tree obtained.
 
     """  
 

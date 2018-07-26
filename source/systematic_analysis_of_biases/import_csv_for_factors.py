@@ -15,29 +15,33 @@ def _common_read(csv_file, raters):
     """Reads data from a csv file containing parents and sometimes teachers' severity assessments of ADHD in children and factor values. 
     This csv file contains all the data required to perform the SAOB. 
    
-    Args:
-        csv_file (str): name or localisation of the csv file that contains all the values of clinical trials required to perform teh SAOB.
-            The csv file must have a specific form: 
-             - eight first columns: Author, Year, Score Name, Number of patients, Raters (Parents or Teachers), Time (pre and post), Mean, Std;
-             - other columns correspond to factors to analyze;
-             - each study has at least 2 lines: Author name, Year, Score Name, Number of patients, Raters (Parents or Teachers) repeated twice, 
-               Time (pre and post), Mean (at pre-test and post-test), Std (at pre-test and post-test). If Teachers assessments are available,
-               two lines must be added;
-             - sometimes, for a study, several clinical scales are available, they are all entered in the csv file;
-             - for each author, the 2 lines of the Raters column have to be filled as follows: Parents, Parents, if teachers' assessment
-               is available 2 more lines are added (Teachers, Teachers);
-             - for each author, the 2 lines of the Time column have to be filled as follows: pre, post (pattern repeated one more
-               time if teachers assessment is available);
-             - Mean and Std correspond to the clinical score extracted from studies at pre-test and post-test.
+    Parameters
+    ----------
+    csv_file: str
+        Name or localisation of the csv file that contains all the values of clinical trials required to perform teh SAOB.
+        The csv file must have a specific form: 
+        - eight first columns: Author, Year, Score Name, Number of patients, Raters (Parents or Teachers), Time (pre and post), Mean, Std;
+        - other columns correspond to factors to analyze;
+        - each study has at least 2 lines: Author name, Year, Score Name, Number of patients, Raters (Parents or Teachers) repeated twice, 
+        Time (pre and post), Mean (at pre-test and post-test), Std (at pre-test and post-test). If Teachers assessments are available,
+        two lines must be added;
+        - sometimes, for a study, several clinical scales are available, they are all entered in the csv file;
+        - for each author, the 2 lines of the Raters column have to be filled as follows: Parents, Parents, if teachers' assessment
+        is available 2 more lines are added (Teachers, Teachers);
+        - for each author, the 2 lines of the Time column have to be filled as follows: pre, post (pattern repeated one more
+        time if teachers assessment is available);
+        - Mean and Std correspond to the clinical score extracted from studies at pre-test and post-test.
                
-    raters (str): 'Teachers' or 'Parents'. 
+    raters: str, 'Teachers' or 'Parents'
         Person assessing ADHD symptoms.
                            
-    Returns:
-        df_values (pandas.DataFrame): dataframe used to perform the SAOB.
-            Each row corresponds to a study rated by a specific rater on a specific scale.
-            Columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
-            n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters for each study.    
+    Returns
+    -------
+    df_values: pandas.DataFrame
+        Dataframe used to perform the SAOB.
+        Each row corresponds to a study rated by a specific rater on a specific scale.
+        Columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
+        n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters for each study.    
 
     """
     
@@ -130,31 +134,37 @@ def import_csv(csv_file):
     """Imports data from a csv file containing parents and sometimes teachers' severity assessments of ADHD in children and factor values. 
     This csv file contains all the data required to perform the SAOB. 
     
-    Args:
-        csv_file (str): name or localisation of the csv file that contains all the values of clinical trials required to perform teh SAOB.
-            The csv file must have a specific form: 
-             - eight first columns: Author, Year, Score Name, Number of patients, Raters (Parents or Teachers), Time (pre and post), Mean, Std;
-             - other columns correspond to factors to analyze;
-             - each study has at least 2 lines: Author name, Year, Score Name, Number of patients, Raters (Parents or Teachers) repeated twice, 
-               Time (pre and post), Mean (at pre-test and post-test), Std (at pre-test and post-test). If Teachers assessments are available,
-               two lines must be added;
-             - sometimes, for a study, several clinical scales are available, they are all entered in the csv file;
-             - for each author, the 2 lines of the Raters column have to be filled as follows: Parents, Parents, if teachers' assessment
-               is available 2 more lines are added (Teachers, Teachers);
-             - for each author, the 2 lines of the Time column have to be filled as follows: pre, post (pattern repeated one more
-               time if teachers assessment is available);
-             - Mean and Std correspond to the clinical score extracted from studies at pre-test and post-test.
+    Parameters
+    ----------
+    csv_file: str
+        Name or localisation of the csv file that contains all the values of clinical trials required to perform teh SAOB.
+        The csv file must have a specific form: 
 
-    Returns:
-        df_values_parents (pandas.DataFrame): parents's ratings required to perform the SAOB.
-            Each row corresponds to a study and a specific clinical scale, ADHD symptoms are assessed by parents,
-            Columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
-            n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters and factors. 
-    
-        df_values_teachers (pandas.DataFrame): teachers's ratings required to perform the SAOB.
-            Each row correspond to a study and a specific clinical scale,, ADHD symptoms are assessed by teachers,
-            Columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
-            n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters and factors. 
+        - eight first columns: Author, Year, Score Name, Number of patients, Raters (Parents or Teachers), Time (pre and post), Mean, Std;
+        - other columns correspond to factors to analyze;
+        - each study has at least 2 lines: Author name, Year, Score Name, Number of patients, Raters (Parents or Teachers)
+         repeated twice, Time (pre and post), Mean (at pre-test and post-test), Std (at pre-test and post-test). If Teachers assessments
+         are available, two lines must be added;
+        - sometimes, for a study, several clinical scales are available, they are all entered in the csv file;
+        - for each author, the 2 lines of the Raters column have to be filled as follows: Parents, Parents, if teachers'
+         assessment is available 2 more lines are added (Teachers, Teachers);
+        - for each author, the 2 lines of the Time column have to be filled as follows: pre, post (pattern repeated one more time 
+        if teachers assessment is available);
+        - Mean and Std correspond to the clinical score extracted from studies at pre-test and post-test.
+
+    Returns
+    -------
+    df_values_parents: pandas.DataFrame
+        Parents's ratings required to perform the SAOB.
+        Each row corresponds to a study and a specific clinical scale, ADHD symptoms are assessed by parents,
+        Columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
+        n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters and factors. 
+
+    df_values_teachers: pandas.DataFrame
+        Teachers's ratings required to perform the SAOB.
+        Each row correspond to a study and a specific clinical scale,, ADHD symptoms are assessed by teachers,
+        Columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
+        n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters and factors. 
         
     """
         
