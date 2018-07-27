@@ -1,6 +1,6 @@
 # meta-analysis-statistical-tools
 
-This repository describes and offers a module for running traditional meta-analysis of randomized controlled trials (RCT) and an systematic analysis of biases (SAOB) an approach meant to identify the individual contribution of methodological and technical biases to the intervention efficacy. 
+This repository describes and offers a module for running traditional meta-analysis of randomized controlled trials (RCT) and a systematic analysis of biases (SAOB), an approach meant to identify the individual contribution of methodological and technical biases to the intervention efficacy. 
 
 # Description
 
@@ -10,8 +10,8 @@ The repository has the following structure:
   * systematic_analysis_of_biaises: package to perform systematic analysis of biaises
 * tests: unitary tests and validation compatible with pytest
 * documentation
-  * package-documentation: html package documentation
-  * article-html: html of the original article 
+  * package-documentation: package documentation in html
+  * article-html: original article in html 
   * article-latex-source: tex source of original article
 * example
   * meta-analysis: notebook that uses the meta_analysis package
@@ -30,7 +30,7 @@ Obtain a local copy of this repository:
 
 ## Install requirements
 
-Install the requirements noted in the ```requirements.txt``` file in the virtual environment assess-NFB-efficacy-env:
+Install the requirements noted in the ```requirements.txt``` file in the virtual environment ```NFB-efficacy-env```:
 
 ```conda env create -f environment.yml``` 
 
