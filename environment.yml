@@ -9,3 +9,4 @@ dependencies:
   - seaborn>=0.7.1
   - statsmodels>=0.8.0
   - Cython>=0.25.2
+  - ipykernel>=6.5.0
