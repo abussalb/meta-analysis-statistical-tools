@@ -113,8 +113,7 @@ def _common_read(csv_file, raters):
                             'mean_pre_test_NFB': mean_pre_test_NFB,
                             'mean_post_test_NFB': mean_post_test_NFB,
                             'std_pre_test_NFB': std_pre_test_NFB,
-                            'std_post_test_NFB': std_post_test_NFB,
-                            'raters' : raters},
+                            'std_post_test_NFB': std_post_test_NFB},
                             index=[name_studies])
     
     return df_values
