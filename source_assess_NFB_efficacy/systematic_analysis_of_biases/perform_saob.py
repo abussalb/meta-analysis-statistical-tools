@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 """
-.. module:: perform_systematic_analysis_of_bias
-    :synopsis: module performing a SAOB
+.. module:: perform_saob
+    :synopsis: module performing a Systematic Analysis Of Biases
  
 .. moduleauthor:: Aurore Bussalb <aurore.bussalb@mensiatech.com>
 """
