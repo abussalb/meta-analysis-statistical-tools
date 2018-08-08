@@ -31,7 +31,7 @@ Obtain a local copy of this repository:
 
 Install the requirements noted in the ```requirements.txt``` file in the virtual environment ```NFB-efficacy-env```:
 
-```conda env create -f environment.yml``` (if graphviz has not been not installed, run ```pip install graphviz``` after activating the environment) 
+```conda env create -f environment.yml``` (if graphviz has not been installed, run ```pip install graphviz``` after activating the environment) 
 
 or create an environment:
 
