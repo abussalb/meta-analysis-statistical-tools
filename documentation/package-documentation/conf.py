@@ -153,6 +153,3 @@ texinfo_documents = [
      author, 'AssessNeurofeedbackefficacy', 'One line description of project.',
      'Miscellaneous'),
 ]
-
-
-

@@ -48,6 +48,9 @@
             
   <div class="section" id="source-assess-nfb-efficacy-systematic-analysis-of-biases-package">
 <h1>source_assess_NFB_efficacy.systematic_analysis_of_biases package<a class="headerlink" href="#source-assess-nfb-efficacy-systematic-analysis-of-biases-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="module-source_assess_NFB_efficacy.systematic_analysis_of_biases.import_csv_for_factors">
 <span id="source-assess-nfb-efficacy-systematic-analysis-of-biases-import-csv-for-factors-module"></span><h2>source_assess_NFB_efficacy.systematic_analysis_of_biases.import_csv_for_factors module<a class="headerlink" href="#module-source_assess_NFB_efficacy.systematic_analysis_of_biases.import_csv_for_factors" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-import_csv_for_factors"></span><dl class="function">
@@ -100,11 +103,11 @@ n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_t
 </dd></dl>
 
 </div>
-<div class="section" id="module-source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias">
-<span id="source-assess-nfb-efficacy-systematic-analysis-of-biases-perform-systematic-analysis-of-bias-module"></span><h2>source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias module<a class="headerlink" href="#module-source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="module-perform_systematic_analysis_of_bias"></span><dl class="function">
-<dt id="source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias.decision_tree">
-<code class="descclassname">source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias.</code><code class="descname">decision_tree</code><span class="sig-paren">(</span><em>X_non_standardized</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias.decision_tree" title="Permalink to this definition">¶</a></dt>
+<div class="section" id="module-source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob">
+<span id="source-assess-nfb-efficacy-systematic-analysis-of-biases-perform-saob-module"></span><h2>source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob module<a class="headerlink" href="#module-source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-perform_saob"></span><dl class="function">
+<dt id="source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob.decision_tree">
+<code class="descclassname">source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob.</code><code class="descname">decision_tree</code><span class="sig-paren">(</span><em>X_non_standardized</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob.decision_tree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes a Decision tree.</p>
 <p>Non linear and hierarchical method.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -136,8 +139,8 @@ This dataframe is obtained thanks to the <code class="docutils literal"><span cl
 </dd></dl>
 
 <dl class="function">
-<dt id="source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias.effect_size_within_subjects">
-<code class="descclassname">source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias.</code><code class="descname">effect_size_within_subjects</code><span class="sig-paren">(</span><em>mean_post_test_NFB</em>, <em>mean_pre_test_NFB</em>, <em>std_post_test_NFB</em>, <em>std_pre_test_NFB</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias.effect_size_within_subjects" title="Permalink to this definition">¶</a></dt>
+<dt id="source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob.effect_size_within_subjects">
+<code class="descclassname">source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob.</code><code class="descname">effect_size_within_subjects</code><span class="sig-paren">(</span><em>mean_post_test_NFB</em>, <em>mean_pre_test_NFB</em>, <em>std_post_test_NFB</em>, <em>std_pre_test_NFB</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob.effect_size_within_subjects" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes effects sizes inside a group, this effect size reflects the evolution inside a group between pre and post test. The
 fomula used comes from Cohen J. (1988), <em>Statistical Power Analysis for the Behavioral Sciences</em>.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -181,8 +184,8 @@ computed from the pre and post test values of the treatment group. So here a con
 </dd></dl>
 
 <dl class="function">
-<dt id="source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias.ordinary_linear_regression">
-<code class="descclassname">source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias.</code><code class="descname">ordinary_linear_regression</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias.ordinary_linear_regression" title="Permalink to this definition">¶</a></dt>
+<dt id="source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob.ordinary_linear_regression">
+<code class="descclassname">source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob.</code><code class="descname">ordinary_linear_regression</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob.ordinary_linear_regression" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs Ordinary Least Squares.</p>
 <p>Dependent variable = effect size within subjects; independent variable = factors. 
 P independent variables and n observations.
@@ -218,8 +221,8 @@ In particular values of coefficients, associated pvalues, F-statistics, Prob(Omn
 </dd></dl>
 
 <dl class="function">
-<dt id="source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias.preprocess_factors">
-<code class="descclassname">source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias.</code><code class="descname">preprocess_factors</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias.preprocess_factors" title="Permalink to this definition">¶</a></dt>
+<dt id="source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob.preprocess_factors">
+<code class="descclassname">source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob.</code><code class="descname">preprocess_factors</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob.preprocess_factors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Preprocesses factors before running the SAOB.</p>
 <p>Factors with too many missing values and with too many identical observations will be removed.
 Besides, values can be standardized. The categorial variables will be codded as dummies.</p>
@@ -255,8 +258,8 @@ Values here are not standardized.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias.regularization_lassoAIC">
-<code class="descclassname">source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias.</code><code class="descname">regularization_lassoAIC</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias.regularization_lassoAIC" title="Permalink to this definition">¶</a></dt>
+<dt id="source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob.regularization_lassoAIC">
+<code class="descclassname">source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob.</code><code class="descname">regularization_lassoAIC</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob.regularization_lassoAIC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs Lasso model fit with Lars using AIC for model selection.</p>
 <p>Dependent variable = effect size within subjects; independent variable = factors. 
 P independent variables and n observations.
@@ -292,8 +295,8 @@ Column with coefficients obtained after regularization and the names of the asso
 </dd></dl>
 
 <dl class="function">
-<dt id="source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias.regularization_lassocv">
-<code class="descclassname">source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias.</code><code class="descname">regularization_lassocv</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias.regularization_lassocv" title="Permalink to this definition">¶</a></dt>
+<dt id="source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob.regularization_lassocv">
+<code class="descclassname">source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob.</code><code class="descname">regularization_lassocv</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob.regularization_lassocv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs Lasso linear model with iterative fitting along a regularization path.
 The best model is selected by cross-validation.</p>
 <p>Dependent variable = effect size within subjects; independent variable = factors. 
@@ -341,8 +344,8 @@ Shape (n_alphas).</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias.weighted_linear_regression">
-<code class="descclassname">source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias.</code><code class="descname">weighted_linear_regression</code><span class="sig-paren">(</span><em>df</em>, <em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias.weighted_linear_regression" title="Permalink to this definition">¶</a></dt>
+<dt id="source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob.weighted_linear_regression">
+<code class="descclassname">source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob.</code><code class="descname">weighted_linear_regression</code><span class="sig-paren">(</span><em>df</em>, <em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob.weighted_linear_regression" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs Weighted Least Squares.</p>
 <p>Dependent variable = effect size within subjects; independent variable = factors. 
 P independent variables and n observations.
@@ -398,8 +401,9 @@ In particular values of coefficients, associated pvalues, F-statistics, Prob(Omn
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">source_assess_NFB_efficacy.systematic_analysis_of_biases package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
 <li><a class="reference internal" href="#module-source_assess_NFB_efficacy.systematic_analysis_of_biases.import_csv_for_factors">source_assess_NFB_efficacy.systematic_analysis_of_biases.import_csv_for_factors module</a></li>
-<li><a class="reference internal" href="#module-source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias">source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_systematic_analysis_of_bias module</a></li>
+<li><a class="reference internal" href="#module-source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob">source_assess_NFB_efficacy.systematic_analysis_of_biases.perform_saob module</a></li>
 </ul>
 </li>
 </ul>

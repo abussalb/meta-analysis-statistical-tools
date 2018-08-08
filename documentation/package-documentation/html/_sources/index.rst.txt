@@ -1,5 +1,5 @@
 .. Assess Neurofeedback efficacy documentation master file, created by
-   sphinx-quickstart on Thu Jul 26 18:29:05 2018.
+   sphinx-quickstart on Wed Aug  8 13:36:40 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 

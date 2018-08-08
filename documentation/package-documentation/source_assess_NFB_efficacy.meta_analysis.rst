@@ -1,6 +1,8 @@
 source\_assess\_NFB\_efficacy\.meta\_analysis package
 =====================================================
 
+Submodules
+----------
 
 source\_assess\_NFB\_efficacy\.meta\_analysis\.import\_csv\_for\_meta\_analysis module
 --------------------------------------------------------------------------------------
@@ -18,6 +20,5 @@ source\_assess\_NFB\_efficacy\.meta\_analysis\.perform\_meta\_analysis module
     :undoc-members:
     :show-inheritance:
 
-	
-.. note:: An example of the use of this package is proposed in ``example\meta-analysis``. Data is available to review and update the work presented in *Bussalb et al.*.
 
+.. note:: An example of the use of this package is proposed in ``example\meta-analysis``. Data is available to review and update the work presented in *Bussalb et al.*.
