@@ -8,83 +8,103 @@
 
 \subsection{Studies selected}
 
-Search terms entered in Pubmed returned 152 results during the last check on December 14, 2017 and 28 articles included in previous
-meta-analysis on \gls{nfb} were identified. After the selection process illustrated in \ref{Figure:systematic_review_workflow}, 
-31 studies were included in the \gls{saob} and 15 in the meta-analysis as summarized in \ref{Table:table_factors_analysis_meta_analysis_list_studies}.
-The 31 studies selected for the \gls{saob} followed the \citeauthor{Cortese2016}'s criteria to the exception of the control group point. 
-Indeed, since we computed the effect size within the \gls{nfb} group, we did not need a control group.
+Search terms entered in Pubmed returned 152 results during the last check on February 12, 2018 including 28 
+articles included in previous meta-analysis on \gls{nfb}. After the selection process illustrated 
+in~\ref{Figure:systematic_review_workflow}, 31 studies were included in the \gls{saob} and 15 in the meta-analysis 
+as summarized in~\ref{Table:table_factors_analysis_meta_analysis_list_studies}. The 31 studies selected for the \gls{saob} 
+followed the \citeauthor{Cortese2016}'s criteria to the exception of the requirement for a control group. 
+Indeed, since within \gls{es} were considered in this analysis, a control group was not required.
 
-\subsection{Perform the meta-analysis}
+\subsection{Meta-analysis}
 
-The Python module created in order to perform a meta-analysis was successfully validated as describes in the Supplemental Materials and made available online.
-So all the following results were computed with the Python code. 
+The validation of the Python module used for this work was successful (details available in Supplemental Materials) 
+and the code was made available online \citep{Bussalb2018}.
 
-The replication and the update of \citeauthor{Cortese2016}'s study was conducted by applying the choices described in the Materials and Methods part 
-and the results obtained are presented in \ref{Table:meta_review_comparison_revman_and_python_with_choices}:
+The replication and the update of \citeauthor{Cortese2016}'s study was conducted by applying the choices described 
+in the Materials and Methods part and the results obtained are presented 
+in~\ref{Table:meta_review_comparison_revman_and_python_with_choices}:
 
 \begin{itemize}
-    \item when computing the \gls{es} for \citet{Arnold2014} with the values after 40 sessions of \gls{nfb}, we found smaller \gls{es} than \citet{Cortese2016};  
-    \item when relying on the teachers' ratings from the Conners-3 to compute the \gls{es} of \citet{Steiner2014}, we found higher \gls{se} in attention but not 
-		in total and hyperactivity. Moreover, this different choice of scale did not affect the significance of the \glspl{se}.
+    \item when computing the \gls{es} for \citet{Arnold2014} with the values after 40 sessions of \gls{nfb}, 
+      smaller \gls{es} were found than \citet{Cortese2016}, which is someone counter intuitive as one expect 
+			the clinical efficacy to increase with the number of \gls{nfb} session;  
+    \item when relying on the teachers' ratings from the Conners-3 to compute the \gls{es} of \citet{Steiner2014}, 
+		higher \gls{se} were found in attention but not in total and hyperactivity. However, this different choice of 
+		scale did not affect the significance of the \glspl{se}.
 \end{itemize}
 
-The next step consisted in extend \citeauthor{Cortese2016} meta-analysis by adding the two new articles \citep{Strehl2017, Baumeister2016} found 
-during the systematic review. \citet{Baumeister2016} provided results only for parents total outcome whereas \citet{Strehl2017} gave teachers 
-and parents' assessments for all outcomes. In spite of favorable results for \gls{nfb}, particularly on parents' assessments, adding these two 
-new studies did not change either the magnitude or the significance of the \gls{se} for any outcome whatever the raters
-as illustrated in \ref{Figure:meta_review_forest_plots_update_meta_analysis_our_choices_no_colors_2-columns_fitting_image}. 
+The meta-analysis was then extended by adding two new articles \citep{Strehl2017, Baumeister2016} found 
+by applying the same search criteria and finding more recent matches. \citet{Baumeister2016} provided results 
+only for parents total outcome whereas \citet{Strehl2017} gave teachers and parents' assessments for all outcomes. 
+Despite favorable results for \gls{nfb}, particularly on parents' assessments, adding these two new studies did not 
+change neither the magnitude nor the significance of the \gls{se} for any outcome whatever the raters
+as illustrated in~\ref{Figure:meta_review_forest_plots_update_meta_analysis_our_choices_no_colors_2-columns_fitting_image}. 
  
-We then ran the analysis on two specific subgroups: one gathering studies following the standard protocol defined by \citet{Arns2014}
-and a second one only studies including participants without drug during the clinical trial. 
+As initially suggested by \citeauthor{Cortese2016}, the analysis was ran on two subgroups of studies: one gathering 
+studies following the standard protocol defined by \citet{Arns2014} and a second only including participants without 
+drug during the clinical trial. 
 
-Regarding the standard protocol subgroup, \citet{Cortese2016} found all the outcomes significant except for the hyperactivity symptoms 
-rated by teachers (p-value = 0.11). However, when adding \citep{Strehl2017} results, we found no significance for the inattention symptoms assessed by 
-teachers as well (p-value = 0.11). The \gls{se} for the total outcome assessed by teachers remained significant even with the addition of the two new
-\glspl{rct} (p-value = 0.043).
+Regarding the `standard protocol' subgroup, \citet{Cortese2016} found all the outcomes significant except for the 
+hyperactivity symptoms rated by teachers, which only showed a statistical trend (p-value = 0.11). Similar results 
+was obtained when adding the most recent studies meeting this definition \citep{Strehl2017} (p-value = 0.11). 
+The \gls{se} for the total outcome assessed by teachers remained significant with the addition of the two new
+\glspl{rct} (p-value = 0.043) giving more weight to this result given that it now is based on 4 studies including 283
+patients.
 
-As for the no drug subgroup, \glspl{se} were not significant except for the inattention symptoms assessed by parents (p-value = 0.013). 
-Besides, the differences in \citet{Arnold2014} values caused a loss of significance in hyperactivity outcome for parents (p-value = 0.066)
-compared to \citet{Cortese2016} (p-value = 0.016). The two new studies were not 
-included in this subgroup because subjects were taking psychostimulants during the trial.
+As for the no-drug subgroup, \glspl{se} were found significant for the inattention symptoms assessed by parents (p-value = 0.013). 
+Besides, the differences in \citet{Arnold2014} values caused a loss of significance in hyperactivity outcome for parents 
+(p-value = 0.066) compared to \citet{Cortese2016} (p-value = 0.016). The two new studies were not included in this 
+subgroup because subjects were taking psychostimulants during the trial.
 
-All the scales used to compute the \gls{es} following our choices are summarized in the Supplemental Materials.
+All the clinical scales used to compute the \gls{es} following our choices are summarized in the Supplemental Materials.
 
-\subsection{Detect factors influencing the Neurofeedback}
+\subsection{Factors influencing the Neurofeedback}
 
-The analysis was performed on 31 trials assessing the efficacy of \gls{nfb} as presented in \ref{Table:table_factors_analysis_meta_analysis_list_studies}. 
-Among the 25 factors selected, 6 were removed for too many missing or too homogeneous observations: beta up in frontal areas, 
-the use of a transfer card, the type of threshold for the rewards (incremental or fixed), the EEG quality equal to 3 and the presence of a control group. 
+This analysis was performed on 31 trials assessing the efficacy of \gls{nfb} as presented 
+in~\ref{Table:table_factors_analysis_meta_analysis_list_studies}. Among the 25 factors selected, 6 were 
+removed for missing too many observations or being too homogeneous: beta up in frontal areas, 
+the use of a transfer card, the type of threshold for the rewards (incremental or fixed), the EEG quality equal of 3
+(meaning that the electrodes used were either \gls{agcl}/Gel or \gls{au}/Gel, a check of electrode contact quality was
+performed, and the hardware used was CE marked), and the presence of a control group. 
 
-The \gls{es} within subjects was computed for all available clinical scales of each study and then factors were associated with the computed \gls{es}
-thanks to three different methods: the \gls{wls}, the \gls{lasso} and the decision tree. The global results were presented in \ref{Table:table_factors_analysis_results_summary},
-which highlighted the fact that the techniques used did not select similar factors. Thus, the more methods identified a factor, the more confident we could be in
-the results.  
+The \gls{es} within subjects was computed for all available clinical scales of each study and then factors were 
+associated with the computed \gls{es} using three different methods: the \gls{wls}, the \gls{lasso}, and the decision tree. 
+The global results were presented in~\ref{Table:table_factors_analysis_results_summary}. These results highlight require a 
+careful interpretation since each technique provides with slightly different results. Understandably, these differences 
+steered from the variations in hypothesis of each model. Yet, the more methods identified a factor, the more confident 
+one could be in its contribution to explain the \gls{es} under different modeling hypothesis.
 
-With the \gls{wls}, we found that 8 factors were significantly different from zero for an adjusted R-squared of 0.74. 
-When applying the \gls{ols}, the same factors were significant except the transfer phase, the protocol theta down and the artifact correction
-based on amplitude with an adjusted R-squared of 0.42. The \gls{lasso} regression selected significant factors by setting to 0 the factors that did
-not explain the model, here 12 factors better predicted the model. With these two methods, a negative coefficient meant that the factor was in favor of the \gls{nfb}.
+The \gls{wls} technique identified 8 factors significantly different from zero for an adjusted R-squared of 0.74
+which is rather satisfying. When applying the \gls{ols}, the same factors were significant except the presence of 
+a transfer phase, the protocol theta down, and the artifact correction based on amplitude with an lower adjusted R-squared 
+(0.42). The \gls{lasso} regression selected significant factors by setting to 0 the factors that did not explain the model, 
+here 12 factors contributed to the model. With these two methods, a negative coefficient meant that the factor was in favor 
+of the \gls{nfb}.
 
-Eventually, the decision tree presented in \ref{Figure:factors_analysis_decision_tree_results} split the dataset based on the factor leading to the
-smallest \gls{mse}. The best predictor was the one at the top of the tree: in our case it was the \gls{pblind}. Five other factors also split the subsets,  
-however, the lower we got into the tree, the less samples were available, so results were less and less reliable.
+Eventually, the decision tree presented in~\ref{Figure:factors_analysis_decision_tree_results} split the dataset
+with a threshold value on the factor representing each node. From top to bottom, each factor is chosen to provide with a
+split minimizing an \gls{mse} function. The best predictor is naturally the one at the top of the tree: in our case it was 
+the \gls{pblind}. Five other factors also split the subsets, however, the lower we got into the tree, the less samples were 
+available, making interpretation harder and harder.  
 
-Several factors were common to the three methods we used, in particular the treatment length, the assessment 
-by a blind rater and \gls{eeg} quality of 2 that were all three returned by the three methods. Besides, 
+Several factors were common to the three methods used, in particular the treatment length, the assessment 
+by a blind rater, and \gls{eeg} quality of 2 (meaning that either the type of electrode used, the check of the electrode 
+contacts, or the use of CE marked hardware was satisfied) that were all three returned by the three methods. Besides, 
 the methods agreed on the direction of the influence of these factors. So, a shorter treatment and recording the \gls{eeg} 
 with a good system seemed preferable, whereas teachers' assessment appeared less favorable.
 
-It was more difficult to interpret the influence of the factors returned by only one or two methods. Indeed, it was not clear if they were
-selected due to an imprecision of the method or if they really had an impact on \gls{nfb} efficacy.
-For instance, both \gls{wls} and \gls{lasso} found that relying on the amplitude of the signal to correct artifacts, and including a 
-transfer phase seemed not to improve \gls{adhd} symptoms. Conversely, the \gls{irb} approval, a theta down protocol, and a high number 
-of sessions per week appeared to positively influence the results. The decision tree and \gls{lasso} had in common the protocol \gls{smr}:
-it was associated with lower \gls{es}. Five factors were returned by only one of the methods: the minimal age of the children, being on drugs 
-during \gls{nfb} treatment, randomizing the groups and the \glspl{scp} protocol. So it was complicated to conclude if they had an influence or not
-on the \gls{nfb} efficacy.
+It was more difficult to interpret the influence of the factors returned by only one or two methods. Indeed, it was not clear 
+if they were selected due to an imprecision of the method or if they really had an impact on \gls{nfb} efficacy. For instance, 
+both \gls{wls} and \gls{lasso} found that relying on the amplitude of the signal to correct artifacts, and including a transfer 
+phase seemed not to improve \gls{adhd} symptoms. Conversely, the \gls{irb} approval, a theta down protocol, and a high number 
+of sessions per week appeared to positively influence the results. The decision tree and \gls{lasso} had in common the protocol 
+\gls{smr}: it was associated with lower \gls{es}. Five factors were returned by only one of the methods: the minimal age of the 
+children, being on drugs during \gls{nfb} treatment, randomizing the groups and the \glspl{scp} protocol.  
 
-Eventually, five factors were selected by no method: the correction for the ocular artifact, the children maximum age, the number of sessions,
-the protocol beta up in central areas and the presence of more than one active electrode. Thus, these factors appeared not to have an influence on
-\gls{nfb} efficacy.   
+Eventually, five factors were selected by no method: the correction for the ocular artifact, the children maximum age, the number 
+of sessions, the protocol beta up in central areas and the presence of more than one active electrode. Thus, these factors appeared 
+not to have an influence on \gls{nfb} efficacy.  
+
+To avoid over interpreting results we only discuss below the factors that were selected by at least 2 of three methods. 
 
 % words number = 1032
