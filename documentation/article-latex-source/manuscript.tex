@@ -26,8 +26,6 @@
 \input{acknowledgments}
 
 \printglossary[title=List of abbreviations, type=\acronymtype]
-\section*{List of abbreviations} 
-\todo{Since you are using gls, please use the gls command to generate the list of abbreviations}
 
 \clearpage
 
@@ -40,80 +38,5 @@
 \clearpage
 
 \input{table_captions}
-
-\section*{Figure captions}
-\todo{I am sure there is a function to list figures with there captions without having to replicate the code.}
-
-\begin{figure}[h!]
-  \centering
-	\includegraphics[width=1.0\linewidth]{figures/meta_review_factors_analysis_how_studies_are_included_no_colors_2-columns_fitting_ima.jpg} 
-  \caption{Flow diagram of selection of studies (last search on December 14, 2017).  
-	The subset (a) corresponds to the \citeauthor{Cortese2016}'s inclusion criteria without the requirement for the presence of a control group. The number
-	of patients is only equal to the subjects in the \gls{nfb} groups.
-	The subset (b) exactly corresponds to the studies included in \citet{Cortese2016} and more recent work meeting the same criteria. Here, the number of patients includes all patients
-	whatever their treatment group.}
-  \label{Figure:systematic_review_workflow}
-\end{figure}
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=1.0\linewidth]{figures/meta_review_forest_plots_update_meta_analysis_our_choices_no_colors_2-columns_fitting_image.jpg}
-  \caption{Forest plots obtained on the dataset "Update meta-analysis" with the Python code. The \gls{es} presented here correspond to
-	the between subject effect size. A negative \gls{es} is in favor of \gls{nfb}. 
-	The blue squares correspond to the \gls{es}, the blue diamond to the \gls{se} and the green line to the 95\% confidence interval.}
-  \label{Figure:meta_review_forest_plots_update_meta_analysis_our_choices_no_colors_2-columns_fitting_image}
-\end{figure}
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=1.0\linewidth]{figures/factors_analysis_decision_tree_results_no_colors_2-columns_fitting_image.jpg}
-  \caption{Decision Tree obtained: \gls{es} corresponds to the within subject effect size and k to the number of studies. 
-	The criteria to minimize was the \gls{mse}. The importance of nodes and leafs is decreasing
-	from the root node.}
-  \label{Figure:factors_analysis_decision_tree_results}
-\end{figure}
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=1.0\linewidth]{figures/discussion_on_placebo_effect_colors_2-columns_fitting_image.jpg}
-  \caption{Pre-test and post-test scores ($\pm$ standard error) given by Parents (\gls{mprox}) in blue and teachers (\gls{pblind}) in green. Two configurations: \textbf{(A)} teachers don’t see the symptoms at 
-	pre-test so they can’t see any improvement at post-test, \textbf{(B)} teachers see the symptoms at pre-test and don’t see any improvement at post-test. \textbf{(C)} Evolution of parents and teachers' scores
-	between pre and post-test on studies that satisfy \citeauthor{Cortese2016}'s inclusion criteria and that provide teachers and parents scores on the same scale.}
-  \label{Figure:discussion_on_placebo_effect_colors_2-columns_fitting_image}
-\end{figure} 
-
-\clearpage
-
-\todo{if you need to keep all these, please place this code in a different file and use input}
-
-\section*{Table captions}
-\todo{same comments for table as for Figures}
-\begin{table}[h!]
-  \centering
-  \caption{List of all studies included in the three different analysis. $^a$ Studies originally included in \citet{Cortese2016}
-	(search on August 30, 2015), $^b$ studies satisfying \citet{Cortese2016}'s criteria (search on December 14, 2017), $^c$ studies 
-	satisfying \citet{Cortese2016}'s criteria to the exception of the part relative to the control group (search on December 14, 2017).}
-  \input{tables/table_factors_analysis_meta_analysis_list_studies}
-  \label{Table:table_factors_analysis_meta_analysis_list_studies}
-\end{table}
-
-\begin{table}[h!]
-  \centering
-  \caption{Comparison between \citet{Cortese2016} results obtained with RevMan \citep{RevMan} and those obtained with the Python code with our 
-	choices applied ($^a$ post-test values for \citeauthor{Arnold2014} are obtained after 40 sessions of \gls{nfb} and Conners scale is used for \citeauthor{Steiner2014}
-	teachers' outcomes). \glspl{se} and their corresponding p-value (in parenthesis) are presented. With the Python program, a negative \gls{se}
-	is in favor of \gls{nfb} unlike \citeauthor{Cortese2016}.}
-\input{tables/table_meta_review_comparison_revman_and_python_with_choices}
-  \label{Table:meta_review_comparison_revman_and_python_with_choices}
-\end{table}
-
-\begin{table}[h!]
-  \centering
-  \caption{Results of the \gls{wls}, \gls{lasso} and decision tree. For the \gls{wls}, a p-value $<$ 0.05 (in bold) means that the coefficient of 
-	the corresponding factor is significantly different from 0. For the \gls{lasso}, factors not set to 0 (in bold) are selected. For the decision tree,
-	the place of the factor in the tree is precised. When the value of the coefficient is negative, the corresponding factor may lead to better \gls{nfb} results.}
-  \input{tables/table_factors_analysis_results_summary}
-  \label{Table:table_factors_analysis_results_summary}
-\end{table}
 
 \end{document}
