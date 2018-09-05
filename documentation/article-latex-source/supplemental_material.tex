@@ -85,7 +85,7 @@
 
 \subsection{Studies selection}
 
-Search terms entered in Pubmed (last check on 14/12/2017) were: 
+Search terms entered in Pubmed (last check on 12/02/2018) were: 
 \guillemotleft ADHD OR adhd OR attention deficit disorder with hyperactivity OR minimal brain disorders OR syndrome hyperkinetic OR hyperkinetic
 syndrome OR hyperactivity disorder OR hyperactive child syndrome OR childhood hyperkinetic syndrome OR attention deficit hyperactivity disorders
 OR attention deficit hyperactivity disorder OR adhd attention deficit hyperactivity disorder OR addh OR overactive child syndrome OR attention deficit hyperkinetic 
@@ -138,7 +138,6 @@ in the control group ($M_{\text{pre},C}$, $M_{\text{post},C}$), divided by the p
 \label{eq:stats_metareview_std_pre}
 \sigma_{\text{pre}} = \sqrt{\frac{(n_T - 1)\sigma_{\text{pre},T}^2 + (n_C - 1)\sigma_{\text{pre},C}^2} {n_T + n_C - 2}},
 \end{equation}
-
 where $\sigma_{t,G}$ indicates the standard deviation for group $G$ at time $t$ and $n_G$ defines the sample size of each group; 
 $c_p$ is a bias adjustment typically used for small sample sizes
 
@@ -162,18 +161,18 @@ To compute the variance of the \gls{es}, the pooled within-group Pearson correla
 \label{eq:metareview_within_group_pearson_correlation}
 \rho =  \frac{ \sum_{i=1}^{n} (\text{pre}_i - \mu_{\text{pre}})(\text{post}_i - \mu_{\text{post}}) } { \sqrt{ \sum_{i=1}^{n} (\text{pre}_i - \mu_{\text{pre}})^2} \sqrt{\sum_{i=1}^{n} (\text{post}_i - \mu_{\text{post}})^2} }, 
 \end{equation}
-where $n$ is the number of patients included in a study, $pre_i$, $post_i$ are score values for patient $i$ at pre- and post-test 
+where $n$ is the number of patients included in a study, $\text{pre}_i$, $\text{post}_i$ are score values for patient $i$ at pre- and post-test 
 respectively, and $\mu_{pre}$, $\mu_{post}$ the mean scores over all patients. It is a measure of linear correlation between two variables. 
 A value of 1 means that there is a positive correlation whereas a value of -1 means a negative correlation. When $\rho=0$, there is no
 linear correlation. In our case, this correlation was not known and the raw data were not available so we took an
 approximation: \citet{Balk2012} found that a value of 0.5 yielded values close to those computed with the right value of the correlation. 
 
-Once variances were obtained with \ref{eq:metareview_variance_ES}, we could compute the standard error and the 95\% confidence interval of each \gls{es}. 
+Once variances were obtained with \cref{eq:metareview_variance_ES}, we could compute the standard error and the 95\% confidence interval of each \gls{es}. 
 
 \subsection{Compute the weight of each study}
 
 To compute the \gls{se} a weight must be assigned to each study. To obtain them several steps must be followed. At first, the fixed-effects model 
-weight $w_{fixed}$ of each study $k$ was computed as defined in \citet{Borenstein2009}: 
+weight $w_{\text{fixed}_k}$ of each study $k$ was computed as defined in \citet{Borenstein2009}: 
 
 \begin{equation}
 \label{eq:metareview_weight_fixed_study}
@@ -181,7 +180,7 @@ w_{\text{fixed}_k} = \frac{1}{\sigma^2(\text{ES}_k)}.
 \end{equation} 
 
 Nevertheless, we chose to use the random effects model, so the weights associated to this model are different. To compute them, the between-studies 
-variance $\tau^2$ is required. It was calculated in three steps described in \ref{eq:metareview_Q}, \ref{eq:metareview_C} and \ref{eq:metareview_Tau} 
+variance $\tau^2$ is required. It was calculated in three steps described in \cref{eq:metareview_Q}, \cref{eq:metareview_C} and \cref{eq:metareview_Tau} 
 \citep{Borenstein2009}:
 
 \begin{equation}
@@ -193,8 +192,7 @@ Q = \sum_{k=1}^{K} (w_{\text{fixed}_k} \text{ES}_k^2),
 \label{eq:metareview_C}
 C = \sum_{k=1}^{K} w_{\text{fixed}_k} - \frac{ \sum_{k=1}^{K} (w_{\text{fixed}_k})^2 } { \sum_{k=1}^{K} w_{\text{fixed}_k} },
 \end{equation}
-with $K$ the total number of included studies.
-
+with $K$ the total number of included studies, and
 \begin{equation}
 \label{eq:metareview_Tau}
 \tau^2 = \frac{Q - \text{df}}{C},
@@ -202,7 +200,7 @@ with $K$ the total number of included studies.
 with $\text{df} = K - 1$ the degrees of freedom.
 
 The random-effects model takes into account the differences between the studies, so the weights are equal to the inverse of the addition between the 
-within-study variance (the variance of the \gls{es}) and the between-studies variance
+within-study variance (the variance of the \gls{es}) and the between-studies variance:
 
 \begin{equation}
 \label{eq:metareview_weight_study}
@@ -212,7 +210,7 @@ w_k = \frac{1}{\sigma^2(\text{ES}_k) + \tau^2}.
 \subsection{Compute the summary effect}
 
 Eventually, the weighted average of the $K$ \gls{es} was computed to obtain the \gls{se} as described in 
-\ref{eq:metareview_summary_effect} \citep{Borenstein2009}:
+\cref{eq:metareview_summary_effect} \citep{Borenstein2009}:
 
 \begin{equation}
 \label{eq:metareview_summary_effect}
@@ -220,11 +218,11 @@ Eventually, the weighted average of the $K$ \gls{es} was computed to obtain the 
 \end{equation} 
 
 Once the \gls{se}  is obtained, we can compute its variance, its standard error, its 95\% confidence interval, its p-value, 
-and $I^2$ estimating effects size's between studies heterogeneity. 
+and $I^2$ estimating \gls{es}'s between studies heterogeneity. 
 
 \subsection{Scales used for the meta-analysis}
 
-All scales used for the meta-analysis are summarized here in order to facilitate the replication of this work \ref{Table:Table_mr_clinical_scales_update_cortese}.
+All scales used for the meta-analysis are summarized here in order to facilitate the replication of this work \cref{Table:Table_mr_clinical_scales_update_cortese}.
 
 \subsection{Associate independent factors to effect sizes}
 
@@ -235,19 +233,16 @@ Three different methods were used to perform the \gls{saob}:
 	\item decision tree \citep{Quinlan1986}.
 \end{itemize}
 
-We first applied the \gls{wls} as described in \ref{eq:factors_model_WLS}: 
-
+We first applied the \gls{wls} as described in \cref{eq:factors_model_WLS}: 
 \begin{equation}
 \label{eq:factors_model_WLS}
 \textbf{W}y = \textbf{WX}\beta + \epsilon.
 \end{equation}
-
 $\textbf{X}$ is a $(n \times p)$ full rank matrix and represents $n$ observations on each $p-1$ independent variables and an 
 intercept term, $\beta$ is a $(p \times 1)$ vector of associated regression coefficients, $\textbf{W}$ is a $(n \times n)$ diagonal 
 matrix with weights, $y$ is a $(n \times 1)$ vector of dependent variables and $\epsilon$ is a $(n \times 1)$ vector of errors.
 
 The aim of the \gls{wls} is to estimate the vector of coefficients $\beta$ by minimizing the \gls{wrss}
-
 \begin{equation}
 \label{eq:factors_WRSS}
 \text{WRSS} = \sum_{i=1}^{n} w_i \Big(y_i - \beta_{0} - \sum_{j=1}^{p}\beta_{j}x_{ij}\Big)^2.
@@ -257,8 +252,7 @@ A significant coefficient (meaning significantly different from 0) indicates tha
 of the coefficient indicates the direction of the effect.
 
 The second method applied was the \gls{lasso} that naturally incorporates variable selection 
-in the linear model thanks to $\ell-1$-norm applied on the coefficients. The coefficients $\hat{\beta}_j$ are obtained by minimizing the term
-
+in the linear model thanks to L1-norm applied on the coefficients. The coefficients $\hat{\beta}_j$ are obtained by minimizing the term
 \begin{equation}
 \label{eq:factors_lasso-minimization}
 \hat{\beta} = \argmin_\beta \sum_{i=1}^{n} \Big(y_i - \beta_{0} - \sum_{j=1}^{p}\beta_{j}x_{ij}\Big)^2 + \lambda \sum_{j=1}^{p}\abs{\beta_{j}},
@@ -275,12 +269,10 @@ the sign of the coefficient indicates the direction of the effect.
 
 Eventually, the last method used to determine factors influencing \gls{nfb} was the decision tree \citep{Quinlan1986}, a non linear method. It brakes down a dataset into smaller
 and smaller subsets using at each iteration a variable and a threshold chosen to optimize a simple \gls{mse} criteria 
-
 \begin{equation}
 \label{eq:factors_decision_tree_mse}
 \text{MSE} = \frac{1}{n}\sum_{i=1}^{n} \Big(\hat{y}_i - {y}_i\Big)^2,
 \end{equation}
-
 with $\hat{y}$ the predicted values.
 
 No weights were applied when running the \gls{lasso} and the decision tree.
@@ -301,9 +293,9 @@ use this code to perform our meta-analysis.
 
 \subsection{Detect factors influencing the Neurofeedback}
 		
-To assess the variability of each factor, box plots of their standardized values were displayed in \ref{Figure:factors_analysis_boxplots}: treatment length, 
-session length and number of sessions were more variable across studies than session pace, minimum and maximum age.  
-
+To assess the variability of each factor, box plots of their standardized values were displayed in \cref{Figure:factors_analysis_boxplots}: 
+the variability in treatment and sessions length as well as the number of sessions is more important from one study to another
+than the number of sessions per week and the age bounds.  
 
 \subsection{Assumptions for applying linear regression}
 
