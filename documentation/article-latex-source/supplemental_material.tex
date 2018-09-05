@@ -167,7 +167,7 @@ A value of 1 means that there is a positive correlation whereas a value of -1 me
 linear correlation. In our case, this correlation was not known and the raw data were not available so we took an
 approximation: \citet{Balk2012} found that a value of 0.5 yielded values close to those computed with the right value of the correlation. 
 
-Once variances were obtained with \cref{eq:metareview_variance_ES}, we could compute the standard error and the 95\% confidence interval of each \gls{es}. 
+Once variances were obtained with Eq~\ref{eq:metareview_variance_ES}, we could compute the standard error and the 95\% confidence interval of each \gls{es}. 
 
 \subsection{Compute the weight of each study}
 
@@ -180,7 +180,7 @@ w_{\text{fixed}_k} = \frac{1}{\sigma^2(\text{ES}_k)}.
 \end{equation} 
 
 Nevertheless, we chose to use the random effects model, so the weights associated to this model are different. To compute them, the between-studies 
-variance $\tau^2$ is required. It was calculated in three steps described in \cref{eq:metareview_Q}, \cref{eq:metareview_C} and \cref{eq:metareview_Tau} 
+variance $\tau^2$ is required. It was calculated in three steps described in Eq~\ref{eq:metareview_Q}, Eq~\ref{eq:metareview_C} and Eq~\ref{eq:metareview_Tau} 
 \citep{Borenstein2009}:
 
 \begin{equation}
@@ -210,7 +210,7 @@ w_k = \frac{1}{\sigma^2(\text{ES}_k) + \tau^2}.
 \subsection{Compute the summary effect}
 
 Eventually, the weighted average of the $K$ \gls{es} was computed to obtain the \gls{se} as described in 
-\cref{eq:metareview_summary_effect} \citep{Borenstein2009}:
+Eq~\ref{eq:metareview_summary_effect} \citep{Borenstein2009}:
 
 \begin{equation}
 \label{eq:metareview_summary_effect}
@@ -222,7 +222,7 @@ and $I^2$ estimating \gls{es}'s between studies heterogeneity.
 
 \subsection{Scales used for the meta-analysis}
 
-All scales used for the meta-analysis are summarized here in order to facilitate the replication of this work \cref{Table:Table_mr_clinical_scales_update_cortese}.
+All scales used for the meta-analysis are summarized here in order to facilitate the replication of this work Table~\ref{Table:Table_mr_clinical_scales_update_cortese}.
 
 \subsection{Associate independent factors to effect sizes}
 
@@ -233,7 +233,7 @@ Three different methods were used to perform the \gls{saob}:
 	\item decision tree \citep{Quinlan1986}.
 \end{itemize}
 
-We first applied the \gls{wls} as described in \cref{eq:factors_model_WLS}: 
+We first applied the \gls{wls} as described in Eq~\ref{eq:factors_model_WLS}: 
 \begin{equation}
 \label{eq:factors_model_WLS}
 \textbf{W}y = \textbf{WX}\beta + \epsilon.
@@ -293,7 +293,7 @@ use this code to perform our meta-analysis.
 
 \subsection{Detect factors influencing the Neurofeedback}
 		
-To assess the variability of each factor, box plots of their standardized values were displayed in \cref{Figure:factors_analysis_boxplots}: 
+To assess the variability of each factor, box plots of their standardized values were displayed in Figure~\ref{Figure:factors_analysis_boxplots}: 
 the variability in treatment and sessions length as well as the number of sessions is more important from one study to another
 than the number of sessions per week and the age bounds.  
 
