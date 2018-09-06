@@ -162,7 +162,7 @@ To compute the variance of the \gls{es}, the pooled within-group Pearson correla
 \rho =  \frac{ \sum_{i=1}^{n} (\text{pre}_i - \mu_{\text{pre}})(\text{post}_i - \mu_{\text{post}}) } { \sqrt{ \sum_{i=1}^{n} (\text{pre}_i - \mu_{\text{pre}})^2} \sqrt{\sum_{i=1}^{n} (\text{post}_i - \mu_{\text{post}})^2} }, 
 \end{equation}
 where $n$ is the number of patients included in a study, $\text{pre}_i$, $\text{post}_i$ are score values for patient $i$ at pre- and post-test 
-respectively, and $\mu_{pre}$, $\mu_{post}$ the mean scores over all patients. It is a measure of linear correlation between two variables. 
+respectively, and $\mu_{\text{pre}}$, $\mu_{\text{post}}$ the mean scores over all patients. It is a measure of linear correlation between two variables. 
 A value of 1 means that there is a positive correlation whereas a value of -1 means a negative correlation. When $\rho=0$, there is no
 linear correlation. In our case, this correlation was not known and the raw data were not available so we took an
 approximation: \citet{Balk2012} found that a value of 0.5 yielded values close to those computed with the right value of the correlation. 
@@ -179,8 +179,9 @@ weight $w_{\text{fixed}_k}$ of each study $k$ was computed as defined in \citet{
 w_{\text{fixed}_k} = \frac{1}{\sigma^2(\text{ES}_k)}.
 \end{equation} 
 
-Nevertheless, we chose to use the random effects model, so the weights associated to this model are different. To compute them, the between-studies 
-variance $\tau^2$ is required. It was calculated in three steps described in Eq~\ref{eq:metareview_Q}, Eq~\ref{eq:metareview_C} and Eq~\ref{eq:metareview_Tau} 
+Nevertheless, we chose to use the random effects model, so the weights associated to this model are different. 
+To compute them, the between-studies variance $\tau^2$ is required. It was calculated in three steps described 
+in Eq~\ref{eq:metareview_Q}, Eq~\ref{eq:metareview_C} and Eq~\ref{eq:metareview_Tau} 
 \citep{Borenstein2009}:
 
 \begin{equation}
@@ -222,7 +223,8 @@ and $I^2$ estimating \gls{es}'s between studies heterogeneity.
 
 \subsection{Scales used for the meta-analysis}
 
-All scales used for the meta-analysis are summarized here in order to facilitate the replication of this work Table~\ref{Table:Table_mr_clinical_scales_update_cortese}.
+All scales used for the meta-analysis are summarized here in order to facilitate the replication of this work 
+Table~\ref{Table:Table_mr_clinical_scales_update_cortese}.
 
 \subsection{Associate independent factors to effect sizes}
 
@@ -248,8 +250,8 @@ The aim of the \gls{wls} is to estimate the vector of coefficients $\beta$ by mi
 \text{WRSS} = \sum_{i=1}^{n} w_i \Big(y_i - \beta_{0} - \sum_{j=1}^{p}\beta_{j}x_{ij}\Big)^2.
 \end{equation}
 
-A significant coefficient (meaning significantly different from 0) indicates that the associated factor had probably an influence on \gls{nfb} efficacy and the sign 
-of the coefficient indicates the direction of the effect.
+A significant coefficient (meaning significantly different from 0) indicates that the associated factor had probably an 
+influence on \gls{nfb} efficacy and the sign of the coefficient indicates the direction of the effect.
 
 The second method applied was the \gls{lasso} that naturally incorporates variable selection 
 in the linear model thanks to L1-norm applied on the coefficients. The coefficients $\hat{\beta}_j$ are obtained by minimizing the term
@@ -267,8 +269,9 @@ value of the \gls{mse} on the mean fold computed for a large range of $\lambda$ 
 A coefficient not set at zero means that the associated factor may have an influence on \gls{nfb} and once again,
 the sign of the coefficient indicates the direction of the effect.
 
-Eventually, the last method used to determine factors influencing \gls{nfb} was the decision tree \citep{Quinlan1986}, a non linear method. It brakes down a dataset into smaller
-and smaller subsets using at each iteration a variable and a threshold chosen to optimize a simple \gls{mse} criteria 
+Eventually, the last method used to determine factors influencing \gls{nfb} was the decision tree \citep{Quinlan1986}, a non linear method. 
+It brakes down a dataset into smaller and smaller subsets using at each iteration a variable and a threshold chosen to optimize a simple 
+\gls{mse} criteria 
 \begin{equation}
 \label{eq:factors_decision_tree_mse}
 \text{MSE} = \frac{1}{n}\sum_{i=1}^{n} \Big(\hat{y}_i - {y}_i\Big)^2,
