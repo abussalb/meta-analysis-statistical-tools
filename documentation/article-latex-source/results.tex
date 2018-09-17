@@ -69,26 +69,25 @@ performed, and the hardware used was CE marked), and the presence of a control g
 
 All results are presented in Table~\ref{Table:table_factors_analysis_results_summary}. These results require a 
 careful interpretation since each technique provided with slightly different results. These differences 
-may depend on the different assumptions of the model and several other factors. Anyway, 
-we hold that consistent across methods are more robust.
+may depend on the different assumptions of the model and several other factors. In any case, we are inclined to 
+trust those findings that are consistent across methods. 
 
 The \gls{wls} technique identified eight significant factors for an adjusted R-squared of 0.74. 
 When applying the \gls{ols}, the same factors were significant, except the presence of 
 a transfer phase, the protocol theta down, and the artifact correction based on amplitude, with a lower adjusted R-squared 
-(0.42). The \gls{lasso} regression selected 12 significant factors.  With these methods, a negative coefficient means 
+(0.42). The \gls{lasso} regression selected 12 significant factors. With these methods, a negative coefficient means 
 that the factor was in favor  of the efficacy of \gls{nfb}. The decision tree is presented in Figure~\ref{Figure:factors_analysis_decision_tree_results}. 
 The best predictor is at the top of the tree: in our case it was 
 the \gls{pblind}. Five other factors also split the subsets, however, the lower we get into the tree, the less samples are 
 available, making the interpretation more and more doubtful.  
 
 Several factors were common to the three methods used. In particular; the treatment length, the assessment 
-by a blind rater, and an \gls{eeg} quality score equal to 2 (meaning that two of three quality criteria had to be fulfilled). 
+by a blind rater, and an \gls{eeg} quality score equal to 2 (meaning that at least one of the three quality criteria had to be fulfilled).
 The methods also agreed on the direction of the effect for these factors: 
-a shorter treatment and recording the \gls{eeg} with a good system seems preferable, whereas teachers' assessment appears less favorable
+a shorter treatment and recording the \gls{eeg} with a good-quality system seems preferable, whereas teachers' assessment appears less favorable
 as compared to parents' assessment.
 
-It is more doubtful the influence of the factors returned by only one or two methods. Indeed, it was not clear 
-if they were selected due to an imprecision of the method or if they really had an impact on \gls{nfb} efficacy. In particular: 
+It is more doubtful the influence of the factors returned by only one or two methods. In particular: 
 both \gls{wls} and \gls{lasso} found that relying on the amplitude of the signal to correct artifacts and including a transfer 
 phase seems not to improve \gls{adhd} symptoms. Conversely, the \gls{irb} approval, a theta down protocol, and a higher number 
 of sessions per week appears to positively influence the efficacy of the \gls{nfb} treatment. The decision tree and \gls{lasso} had in common the protocol 
@@ -101,4 +100,4 @@ not to have an influence on \gls{nfb} efficacy.
 
 In the next section we discuss only the factors that were selected by at least two of the three methods. 
 
-% words number = 1136
+% words number = 1017

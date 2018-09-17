@@ -86,19 +86,19 @@
 \subsection{Studies selection}
 
 Search terms entered in Pubmed (last check on 12/02/2018) were: 
-\guillemotleft ADHD OR adhd OR attention deficit disorder with hyperactivity OR minimal brain disorders OR syndrome hyperkinetic OR hyperkinetic
+\guillemotleft (ADHD OR adhd OR attention deficit disorder with hyperactivity OR minimal brain disorders OR syndrome hyperkinetic OR hyperkinetic
 syndrome OR hyperactivity disorder OR hyperactive child syndrome OR childhood hyperkinetic syndrome OR attention deficit hyperactivity disorders
 OR attention deficit hyperactivity disorder OR adhd attention deficit hyperactivity disorder OR addh OR overactive child syndrome OR attention deficit hyperkinetic 
 disorder OR hyperkinetic disorder OR attention deficit disorder hyperactivity OR attention deficit disorders hyperactivity OR child attention deficit disorder 
 OR hyperkinetic syndromes OR syndromes hyperkinetic OR hyperkinetic syndrome childhood) AND (randomized control trial OR RCT OR randomized control study OR Pilot
-Study OR Study OR Trial OR randomized trial) AND (neurofeedback OR “EEG biofeedback” OR neurotherapy OR SCP OR “slow cortical potentials OR Theta Beta Ratio or TBR”\guillemotright.
+Study OR Study OR Trial OR randomized trial) AND (neurofeedback OR “EEG biofeedback” OR neurotherapy OR SCP OR “slow cortical potentials OR Theta Beta Ratio or TBR)”\guillemotright.
 
 
 \subsection{Perform a meta analysis}
 
 To conduct meta-analysis, different software exist: for instance \citet{Cortese2016} used RevMan 5.3 \citep{RevMan} that computes the \gls{es} and its 
 variance of each included study by applying the formula presented in \citet{Morris2008}. However, in order to compute the variance of the \gls{es}, 
-the pooled within-group Pearson correlation $\rho$ (i.e the pre-post correlation) was required 
+the pooled within-group Pearson correlation $\rho$ (\textit{i.e} the pre-post correlation) was required 
 \citep{James2013}. In our case, this correlation was not known and the raw data were not available so we took an
  approximation: \citet{Balk2012} found that a value of 0.5 yields values closer to those computed with the right value of the correlation. 
 
@@ -118,8 +118,8 @@ statistical models \citep{Borenstein2009}:
 		\glspl{es} are due to sampling errors but also to the various designs of the studies (for instance the number of participants or the implementation).
 \end{itemize}
 
-In the present case, although the studies included into the meta-analysis met the same criteria, they remained different from each other 
-on various points, so the random effects model was more appropriate than the fixed-effect model.  
+In the present case, although the studies included into the meta-analysis met the same criteria, they remained different from each other on various points,
+so the random effects model was more appropriate than the fixes-effect model. 
 
 \subsection{Compute the effect size of each study}
 
@@ -130,16 +130,16 @@ was computed
 \label{eq:metareview_effect_size}
 \text{ES} = c_p \left[ \frac{(M_{\text{post},T} - M_{\text{pre},T}) - (M_{\text{post},C} - M_{\text{pre},C}) }{\sigma_{\text{pre}}} \right ].
 \end{equation} 
-An \gls{es} is exactly equivalent to a z-score of a standard normal distribution, it is computed as mean pre- to post-treatment 
+\noindent An \gls{es} is exactly equivalent to a z-score of a standard normal distribution, it is computed as mean pre- to post-treatment 
 score change in the \gls{nfb} group ($M_{\text{pre},T}$, $M_{\text{post},T}$) minus the mean pre- to post- treatment score change 
-in the control group ($M_{\text{pre},C}$, $M_{\text{post},C}$), divided by the pooled pre-test standard deviation ($\sigma_{\text{pre}}$) 
+in the control group ($M_{\text{pre},C}$, $M_{\text{post},C}$), divided by the pooled pre-test standard deviation ($\sigma_{\text{pre}}$):
 
 \begin{equation}
 \label{eq:stats_metareview_std_pre}
 \sigma_{\text{pre}} = \sqrt{\frac{(n_T - 1)\sigma_{\text{pre},T}^2 + (n_C - 1)\sigma_{\text{pre},C}^2} {n_T + n_C - 2}},
 \end{equation}
-where $\sigma_{t,G}$ indicates the standard deviation for group $G$ at time $t$ and $n_G$ defines the sample size of each group; 
-$c_p$ is a bias adjustment typically used for small sample sizes
+\noindent where $\sigma_{t,G}$ indicates the standard deviation for group $G$ at time $t$ and $n_G$ defines the sample size of each group; 
+$c_p$ is a bias adjustment typically used for small sample sizes:
 
 \begin{equation}
 \label{eq:metareview_correction_factor}
@@ -154,18 +154,18 @@ Then, the variance of each \gls{es} was computed \citep{Morris2008}
 \sigma^2(\text{ES}) = c_p^2 \left (\frac{n_T + n_C - 2} {n_T + n_C - 4} \right ) \left  [ \frac{2(1-\rho)(n_T + n_C)} {n_Tn_C} + \text{ES}^2 \right ] - \text{ES}^2.
 \end{equation} 
 
-To compute the variance of the \gls{es}, the pooled within-group Pearson correlation $\rho$ (i.e the pre-post correlation) is required 
+To compute the variance of the \gls{es}, the pooled within-group Pearson correlation $\rho$ (\textit{i.e} the pre-post correlation) is required 
 \citep{James2013}:
 
 \begin{equation}
 \label{eq:metareview_within_group_pearson_correlation}
 \rho =  \frac{ \sum_{i=1}^{n} (\text{pre}_i - \mu_{\text{pre}})(\text{post}_i - \mu_{\text{post}}) } { \sqrt{ \sum_{i=1}^{n} (\text{pre}_i - \mu_{\text{pre}})^2} \sqrt{\sum_{i=1}^{n} (\text{post}_i - \mu_{\text{post}})^2} }, 
 \end{equation}
-where $n$ is the number of patients included in a study, $\text{pre}_i$, $\text{post}_i$ are score values for patient $i$ at pre- and post-test 
+\noindent where $n$ is the number of patients included in a study, $\text{pre}_i$, $\text{post}_i$ are score values for patient $i$ at pre- and post-test 
 respectively, and $\mu_{\text{pre}}$, $\mu_{\text{post}}$ the mean scores over all patients. It is a measure of linear correlation between two variables. 
 A value of 1 means that there is a positive correlation whereas a value of -1 means a negative correlation. When $\rho=0$, there is no
 linear correlation. In our case, this correlation was not known and the raw data were not available so we took an
-approximation: \citet{Balk2012} found that a value of 0.5 yielded values close to those computed with the right value of the correlation. 
+approximation following \citet{Balk2012}, who found that a value of 0.5 yielded values close to those computed with the actual value of the correlation. 
 
 Once variances were obtained with Eq~\ref{eq:metareview_variance_ES}, we could compute the standard error and the 95\% confidence interval of each \gls{es}. 
 
@@ -179,7 +179,7 @@ weight $w_{\text{fixed}_k}$ of each study $k$ was computed as defined in \citet{
 w_{\text{fixed}_k} = \frac{1}{\sigma^2(\text{ES}_k)}.
 \end{equation} 
 
-Nevertheless, we chose to use the random effects model, so the weights associated to this model are different. 
+\noindent Nevertheless, we chose to use the random effects model, so the weights associated to this model are different. 
 To compute them, the between-studies variance $\tau^2$ is required. It was calculated in three steps described 
 in Eq~\ref{eq:metareview_Q}, Eq~\ref{eq:metareview_C} and Eq~\ref{eq:metareview_Tau} 
 \citep{Borenstein2009}:
@@ -193,14 +193,14 @@ Q = \sum_{k=1}^{K} (w_{\text{fixed}_k} \text{ES}_k^2),
 \label{eq:metareview_C}
 C = \sum_{k=1}^{K} w_{\text{fixed}_k} - \frac{ \sum_{k=1}^{K} (w_{\text{fixed}_k})^2 } { \sum_{k=1}^{K} w_{\text{fixed}_k} },
 \end{equation}
-with $K$ the total number of included studies, and
+\noindent with $K$ the total number of included studies, and
 \begin{equation}
 \label{eq:metareview_Tau}
 \tau^2 = \frac{Q - \text{df}}{C},
 \end{equation}
-with $\text{df} = K - 1$ the degrees of freedom.
+\noindent with $\text{df} = K - 1$ the degrees of freedom.
 
-The random-effects model takes into account the differences between the studies, so the weights are equal to the inverse of the addition between the 
+\noindent The random-effects model takes into account the differences between the studies, so the weights are equal to the inverse of the addition between the 
 within-study variance (the variance of the \gls{es}) and the between-studies variance:
 
 \begin{equation}
@@ -210,7 +210,7 @@ w_k = \frac{1}{\sigma^2(\text{ES}_k) + \tau^2}.
 
 \subsection{Compute the summary effect}
 
-Eventually, the weighted average of the $K$ \gls{es} was computed to obtain the \gls{se} as described in 
+\noindent Eventually, the weighted average of the $K$ \gls{es} was computed to obtain the \gls{se} as described in 
 Eq~\ref{eq:metareview_summary_effect} \citep{Borenstein2009}:
 
 \begin{equation}
@@ -218,7 +218,7 @@ Eq~\ref{eq:metareview_summary_effect} \citep{Borenstein2009}:
 \text{SE} = \frac{\sum_{k=1}^{K} w_k \text{ES}_k} {\sum_{k=1}^{K} w_k}.
 \end{equation} 
 
-Once the \gls{se}  is obtained, we can compute its variance, its standard error, its 95\% confidence interval, its p-value, 
+\noindent Once the \gls{se}  is obtained, we can compute its variance, its standard error, its 95\% confidence interval, its p-value, 
 and $I^2$ estimating \gls{es}'s between studies heterogeneity. 
 
 \subsection{Scales used for the meta-analysis}
@@ -235,16 +235,16 @@ Three different methods were used to perform the \gls{saob}:
 	\item decision tree \citep{Quinlan1986}.
 \end{itemize}
 
-We first applied the \gls{wls} as described in Eq~\ref{eq:factors_model_WLS}: 
+\noindent We first applied the \gls{wls} as described in Eq~\ref{eq:factors_model_WLS}: 
 \begin{equation}
 \label{eq:factors_model_WLS}
 \textbf{W}y = \textbf{WX}\beta + \epsilon.
 \end{equation}
-$\textbf{X}$ is a $(n \times p)$ full rank matrix and represents $n$ observations on each $p-1$ independent variables and an 
+\noindent $\textbf{X}$ is a $(n \times p)$ full rank matrix and represents $n$ observations on each $p-1$ independent variables and an 
 intercept term, $\beta$ is a $(p \times 1)$ vector of associated regression coefficients, $\textbf{W}$ is a $(n \times n)$ diagonal 
 matrix with weights, $y$ is a $(n \times 1)$ vector of dependent variables and $\epsilon$ is a $(n \times 1)$ vector of errors.
 
-The aim of the \gls{wls} is to estimate the vector of coefficients $\beta$ by minimizing the \gls{wrss}
+\noindent The aim of the \gls{wls} is to estimate the vector of coefficients $\beta$ by minimizing the \gls{wrss}
 \begin{equation}
 \label{eq:factors_WRSS}
 \text{WRSS} = \sum_{i=1}^{n} w_i \Big(y_i - \beta_{0} - \sum_{j=1}^{p}\beta_{j}x_{ij}\Big)^2.
@@ -260,7 +260,7 @@ in the linear model thanks to L1-norm applied on the coefficients. The coefficie
 \hat{\beta} = \argmin_\beta \sum_{i=1}^{n} \Big(y_i - \beta_{0} - \sum_{j=1}^{p}\beta_{j}x_{ij}\Big)^2 + \lambda \sum_{j=1}^{p}\abs{\beta_{j}},
 \end{equation} 
 
-where $\lambda$ is the regularization parameter setting more coefficients to zero as it increases. The optimal tuning parameter was determined 
+\noindent where $\lambda$ is the regularization parameter setting more coefficients to zero as it increases. The optimal tuning parameter was determined 
 by a leave-one-out cross-validation. This method retains 1 observation as the validation data for testing the model and the 
 remaining $n$ - 1 observations are used as training data. The cross-validation process is then repeated $n$ times with each of the observation 
 used exactly once as the testing data. For each fold, the \gls{mse} on the test set was computed and eventually, the $n$ results can 
@@ -269,14 +269,14 @@ value of the \gls{mse} on the mean fold computed for a large range of $\lambda$ 
 A coefficient not set at zero means that the associated factor may have an influence on \gls{nfb} and once again,
 the sign of the coefficient indicates the direction of the effect.
 
-Eventually, the last method used to determine factors influencing \gls{nfb} was the decision tree \citep{Quinlan1986}, a non linear method. 
+The last method used to determine factors influencing \gls{nfb} was the decision tree \citep{Quinlan1986}, a non linear method. 
 It brakes down a dataset into smaller and smaller subsets using at each iteration a variable and a threshold chosen to optimize a simple 
 \gls{mse} criteria 
 \begin{equation}
 \label{eq:factors_decision_tree_mse}
 \text{MSE} = \frac{1}{n}\sum_{i=1}^{n} \Big(\hat{y}_i - {y}_i\Big)^2,
 \end{equation}
-with $\hat{y}$ the predicted values.
+\noindent with $\hat{y}$ the predicted values.
 
 No weights were applied when running the \gls{lasso} and the decision tree.
 
@@ -304,10 +304,10 @@ than the number of sessions per week and the age bounds.
 
 The first method used to detect the influencing factors was the \gls{wls}. The assumptions inherent to this method were checked: 
 \begin{itemize}
-	\item the moment matrix ${\textbf{X}}^{T}\textbf{W}^{T}\textbf{WX}$ was invertible;
-  \item no apparent correlation between the continuous independent variables was found; 
-  \item the fit was significant as shown by the F-statistic (prob(F-statistic) = 2.81e-10); 
-  \item the residuals were normally distributed as demonstrated by the skew (-0.15), kurtosis (2.81) and the Omnibus test (prob(Omnibus) = 0.87).
+	\item the moment matrix ${\textbf{X}}^{T}\textbf{W}^{T}\textbf{WX}$ is invertible;
+  \item no apparent correlation between the continuous independent variables is found; 
+  \item the fit is significant as shown by the F-statistic (prob(F-statistic) = 2.81e-10); 
+  \item the residuals are normally distributed as demonstrated by the skew (-0.15), kurtosis (2.81) and the Omnibus test (prob(Omnibus) = 0.87).
 \end{itemize} 
 
 These assumptions were also satisfied for the \gls{ols}.
