@@ -254,7 +254,7 @@ A significant coefficient (meaning significantly different from 0) indicates tha
 influence on \gls{nfb} efficacy and the sign of the coefficient indicates the direction of the effect.
 
 The second method applied was the \gls{lasso} that naturally incorporates variable selection 
-in the linear model thanks to L1-norm applied on the coefficients. The coefficients $\hat{\beta}_j$ are obtained by minimizing the term
+in the linear model thanks to $\ell_1$-norm applied on the coefficients. The coefficients $\hat{\beta}_j$ are obtained by minimizing the term
 \begin{equation}
 \label{eq:factors_lasso-minimization}
 \hat{\beta} = \argmin_\beta \sum_{i=1}^{n} \Big(y_i - \beta_{0} - \sum_{j=1}^{p}\beta_{j}x_{ij}\Big)^2 + \lambda \sum_{j=1}^{p}\abs{\beta_{j}},
