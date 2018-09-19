@@ -1,0 +1,35 @@
+\section*{Table captions}
+
+\begin{table}[h!]
+  \centering
+  \caption{List of all studies included in the three different analysis.}
+  \input{tables/table_factors_analysis_meta_analysis_list_studies}
+	\begin{tablenotes}
+	\item $^a$ Studies originally included in \citet{Cortese2016}
+	(search on August 30, 2015), $^b$ studies satisfying \citet{Cortese2016}'s criteria (search on February 12, 2018), $^c$ studies 
+	satisfying \citet{Cortese2016}'s criteria to the exception of the part relative to the control group (search on February 12, 2018).
+	\end{tablenotes}
+  \label{Table:table_factors_analysis_meta_analysis_list_studies}
+\end{table}
+
+\begin{table}[h!]
+  \centering
+  \caption{Comparison between \citet{Cortese2016} results obtained with RevMan \citep{RevMan} and those obtained with the Python code with our 
+	choices applied. $\glspl{se}$ and their corresponding p-value (in parenthesis) are presented. With the Python program, a negative $\gls{se}$
+	is in favor of \gls{nfb} unlike \citeauthor{Cortese2016}.}
+  \input{tables/table_meta_review_comparison_revman_and_python_with_choices}
+	\begin{tablenotes}
+	\item $^a$ post-test values for \citeauthor{Arnold2014} are obtained after 40 sessions of \gls{nfb} and Conners scale is used for \citeauthor{Steiner2014}
+	teachers' outcomes.
+	\end{tablenotes}
+  \label{Table:meta_review_comparison_revman_and_python_with_choices}
+\end{table}
+
+\begin{table}[h!]
+  \centering
+  \caption{Results of the \gls{wls}, \gls{lasso} and decision tree. For the \gls{wls}, a p-value $<$ 0.05 (in bold) means that the coefficient of 
+	the corresponding factor is significantly different from 0. For the \gls{lasso}, factors not set to 0 (in bold) are selected. For the decision tree,
+	the place of the factor in the tree is precised. When the value of the coefficient is negative, the corresponding factor may lead to better \gls{nfb} results.}
+  \input{tables/table_factors_analysis_results_summary}
+  \label{Table:table_factors_analysis_results_summary}
+\end{table}

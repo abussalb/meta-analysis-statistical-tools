@@ -1,0 +1,2315 @@
+<!DOCTYPE html> 
+<html> 
+<head> <title>Supplemental material</title> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<link rel="stylesheet" type="text/css" href="supplemental_material.css" /> 
+<script type="text/javascript" 
+src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" 
+></script> 
+<style type="text/css"> 
+.MathJax_MathML {text-indent: 0;} 
+</style> 
+</head><body 
+>
+   <div class="maketitle">
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                            
+
+<h2 class="titleHead">Supplemental material</h2>
+<div class="author" ></div><br />
+<div class="date" ></div>
+   </div>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Materials and methods</h3>
+<!--l. 86--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">1.1   </span> <a 
+ id="x1-20001.1"></a>Studies selection</h4>
+<!--l. 88--><p class="noindent" >Search terms entered in Pubmed (last check on 12/02/2018) were: «(ADHD OR adhd OR attention deﬁcit
+disorder with hyperactivity OR minimal brain disorders OR syndrome hyperkinetic OR hyperkinetic
+syndrome OR hyperactivity disorder OR hyperactive child syndrome OR childhood hyperkinetic syndrome
+OR attention deﬁcit hyperactivity disorders OR attention deﬁcit hyperactivity disorder OR adhd attention
+deﬁcit hyperactivity disorder OR addh OR overactive child syndrome OR attention deﬁcit hyperkinetic
+disorder OR hyperkinetic disorder OR attention deﬁcit disorder hyperactivity OR attention deﬁcit disorders
+hyperactivity OR child attention deﬁcit disorder OR hyperkinetic syndromes OR syndromes hyperkinetic
+OR hyperkinetic syndrome childhood) AND (randomized control trial OR RCT OR randomized control
+study OR Pilot Study OR Study OR Trial OR randomized trial) AND (neurofeedback OR “EEG
+biofeedback” OR neurotherapy OR SCP OR “slow cortical potentials OR Theta Beta Ratio or
+TBR)”».
+                                                                                            
+                                                                                            
+</p><!--l. 97--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">1.2   </span> <a 
+ id="x1-30001.2"></a>Perform a meta analysis</h4>
+<!--l. 99--><p class="noindent" >To conduct meta-analysis, diﬀerent software exist: for instance <a 
+href="#XCortese2016">Cortese et al.</a> [<a 
+href="#XCortese2016">2016</a>] used RevMan
+5.3 [<a 
+href="#XRevMan">Cochrane Collaboration</a>, <a 
+href="#XRevMan">2011</a>] that computes the <a 
+href="#glo:es">Eﬀect Size (ES)</a> and its variance
+of each included study by applying the formula presented in <a 
+href="#XMorris2008">Morris</a> [<a 
+href="#XMorris2008">2008</a>]. However, in
+order to compute the variance of the <a 
+href="#glo:es">ES</a>, the pooled within-group Pearson correlation
+<!--l. 101--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>ρ</mi></math> (<span 
+class="ecsi-1200">i.e </span>the
+pre-post correlation) was required [<a 
+href="#XJames2013">James et al.</a>, <a 
+href="#XJames2013">2013</a>]. In our case, this correlation was not
+known and the raw data were not available so we took an approximation: <a 
+href="#XBalk2012">Balk et al.</a> [<a 
+href="#XBalk2012">2012</a>]
+found that a value of 0.5 yields values closer to those computed with the right value of the
+correlation.
+</p><!--l. 105--><p class="indent" >   In this replication of the work of <a 
+href="#XCortese2016">Cortese et al.</a>, the same formulas were used [<a 
+href="#XBorenstein2009">Borenstein et al.</a>, <a 
+href="#XBorenstein2009">2009</a>]
+but instead of using RevMan, a Python code was developed in order to perform the meta-analysis. To
+increase replicability and transparency and promote open science, we provide the full raw data used for this
+research as well as the Python code on a GitHub repository [<a 
+href="#XBussalb2018">Bussalb</a>, <a 
+href="#XBussalb2018">2018</a>]; it was tested
+with <a 
+href="#XCortese2016">Cortese et al.</a> [<a 
+href="#XCortese2016">2016</a>] raw data to show that same results were found and could be used
+for replication and expansion of this work. The toolbox could also be used to run any similar
+meta-analysis.
+</p><!--l. 111--><p class="indent" >   To perform the meta-analysis several steps must be followed. First the choice of the model: this
+analysis is based on either one of the following statistical models [<a 
+href="#XBorenstein2009">Borenstein et al.</a>, <a 
+href="#XBorenstein2009">2009</a>]:
+</p>
+      <ul class="itemize1">
+      <li class="itemize"><span 
+class="ecsi-1200">the ﬁxed-eﬀect model</span>: the true <a 
+href="#glo:es">ES</a> (i.e the <a 
+href="#glo:es">ES</a> that would be observed with an inﬁnitely large
+      sample size) is the same for all the studies in the analysis. The diﬀerences between the actually
+      observed <a 
+href="#glo:es">ES</a>s are due to sampling errors;
+      </li>
+      <li class="itemize"><span 
+class="ecsi-1200">the random-eﬀects model</span>: the true <a 
+href="#glo:es">ES</a> could vary from study to study. The diﬀerences between
+      the observed <a 
+href="#glo:es">ESs</a> are due to sampling errors but also to the various designs of the studies (for
+      instance the number of participants or the implementation).</li></ul>
+<!--l. 121--><p class="indent" >   In the present case, although the studies included into the meta-analysis met the same criteria, they
+                                                                                            
+                                                                                            
+remained diﬀerent from each other on various points, so the random eﬀects model was more appropriate
+than the ﬁxes-eﬀect model.
+</p><!--l. 124--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">1.3   </span> <a 
+ id="x1-40001.3"></a>Compute the eﬀect size of each study</h4>
+<!--l. 126--><p class="noindent" >First, the scores presented in the articles were extracted and the <a 
+href="#glo:es">ES</a> of each study as deﬁned in
+<a 
+href="#XMorris2008">Morris</a> [<a 
+href="#XMorris2008">2008</a>] was computed
+</p>
+   <table class="equation"><tr><td> <a 
+ id="x1-4001r1"></a>
+<!--l. 129--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                    <mstyle 
+class="text"><mtext  >ES</mtext></mstyle> <mo 
+class="MathClass-rel">=</mo> <msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mi 
+>p</mi></mrow></msub 
+> <mfenced separators="" 
+open="["  close="]" ><mrow><mfrac><mrow 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>M</mi></mrow><mrow 
+><mstyle 
+class="text"><mtext  >post</mtext></mstyle><mo 
+class="MathClass-punc">,</mo><mi 
+>T</mi> </mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>M</mi></mrow><mrow 
+><mstyle 
+class="text"><mtext  >pre</mtext></mstyle><mo 
+class="MathClass-punc">,</mo><mi 
+>T</mi> </mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-bin">−</mo> <mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>M</mi></mrow><mrow 
+><mstyle 
+class="text"><mtext  >post</mtext></mstyle><mo 
+class="MathClass-punc">,</mo><mi 
+>C</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>M</mi></mrow><mrow 
+><mstyle 
+class="text"><mtext  >pre</mtext></mstyle><mo 
+class="MathClass-punc">,</mo><mi 
+>C</mi></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow>
+                         <mrow 
+><msub><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mstyle 
+class="text"><mtext  >pre</mtext></mstyle></mrow></msub 
+></mrow></mfrac>                          </mrow></mfenced> <mo 
+class="MathClass-punc">.</mo>
+</math></td><td class="eq-no">(1)</td></tr></table>
+<!--l. 133--><p class="noindent" >An <a 
+href="#glo:es">ES</a> is exactly equivalent to a z-score of a standard normal distribution, it is computed
+as mean pre- to post-treatment score change in the <a 
+href="#glo:nfb">Neurofeedback (NFB)</a> group
+(<!--l. 134--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>M</mi></mrow><mrow 
+><mstyle 
+class="text"><mtext  >pre</mtext></mstyle><mo 
+class="MathClass-punc">,</mo><mi 
+>T</mi> </mrow></msub 
+></math>,
+<!--l. 134--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>M</mi></mrow><mrow 
+><mstyle 
+class="text"><mtext  >post</mtext></mstyle><mo 
+class="MathClass-punc">,</mo><mi 
+>T</mi> </mrow></msub 
+></math>)
+minus the mean pre- to post- treatment score change in the control group
+(<!--l. 135--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>M</mi></mrow><mrow 
+><mstyle 
+class="text"><mtext  >pre</mtext></mstyle><mo 
+class="MathClass-punc">,</mo><mi 
+>C</mi></mrow></msub 
+></math>,
+<!--l. 135--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>M</mi></mrow><mrow 
+><mstyle 
+class="text"><mtext  >post</mtext></mstyle><mo 
+class="MathClass-punc">,</mo><mi 
+>C</mi></mrow></msub 
+></math>), divided by the pooled
+pre-test standard deviation (<!--l. 135--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mstyle 
+class="text"><mtext  >pre</mtext></mstyle></mrow></msub 
+></math>):
+</p>
+   <table class="equation"><tr><td> <a 
+ id="x1-4002r2"></a>
+                                                                                            
+                                                                                            
+<!--l. 137--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                        <msub><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mstyle 
+class="text"><mtext  >pre</mtext></mstyle></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <msqrt><mrow><mfrac><mrow 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mi 
+>T</mi> </mrow> </msub 
+> <mo 
+class="MathClass-bin">−</mo> <mn>1</mn></mrow><mo 
+class="MathClass-close">)</mo></mrow><msubsup><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mstyle 
+class="text"><mtext  >pre</mtext></mstyle> <mo 
+class="MathClass-punc">,</mo><mi 
+>T</mi> </mrow> <mrow 
+>  <mn>2</mn> </mrow> </msubsup 
+> <mo 
+class="MathClass-bin">+</mo> <mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mi 
+>C</mi> </mrow> </msub 
+> <mo 
+class="MathClass-bin">−</mo> <mn>1</mn></mrow><mo 
+class="MathClass-close">)</mo></mrow><msubsup><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mstyle 
+class="text"><mtext  >pre</mtext></mstyle> <mo 
+class="MathClass-punc">,</mo><mi 
+>C</mi> </mrow> <mrow 
+>  <mn>2</mn> </mrow> </msubsup 
+></mrow>
+                    <mrow 
+><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mi 
+>T</mi> </mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mi 
+>C</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <mn>2</mn></mrow></mfrac></mrow></msqrt>              <mo 
+class="MathClass-punc">,</mo>
+</math></td><td class="eq-no">(2)</td></tr></table>
+<!--l. 141--><p class="noindent" >where <!--l. 141--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mi 
+>t</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>G</mi></mrow></msub 
+></math> indicates the
+standard deviation for group <!--l. 141--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>G</mi></math>
+at time <!--l. 141--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>t</mi></math> and
+<!--l. 141--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mi 
+>G</mi></mrow></msub 
+></math> deﬁnes the sample
+size of each group; <!--l. 142--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mi 
+>p</mi></mrow></msub 
+></math>
+is a bias adjustment typically used for small sample sizes:
+</p>
+   <table class="equation"><tr><td> <a 
+ id="x1-4003r3"></a>
+<!--l. 144--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                                <msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mi 
+>p</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <mn>1</mn> <mo 
+class="MathClass-bin">−</mo>     <mfrac><mrow 
+><mn>3</mn></mrow> 
+<mrow 
+><mn>4</mn><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mi 
+>T</mi> </mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mi 
+>C</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <mn>2</mn></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-bin">−</mo> <mn>1</mn></mrow></mfrac><mo 
+class="MathClass-punc">.</mo>
+</math></td><td class="eq-no">(3)</td></tr></table>
+<!--l. 149--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">1.4   </span> <a 
+ id="x1-50001.4"></a>Compute the variance of each eﬀect size</h4>
+<!--l. 151--><p class="noindent" >Then, the variance of each <a 
+href="#glo:es">ES</a> was computed [<a 
+href="#XMorris2008">Morris</a>, <a 
+href="#XMorris2008">2008</a>] </p><table class="equation"><tr><td> <a 
+ id="x1-5001r4"></a>
+                                                                                            
+                                                                                            
+<!--l. 152--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                 <msup><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>2</mn></mrow></msup 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mstyle 
+class="text"><mtext  >ES</mtext></mstyle></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-rel">=</mo> <msubsup><mrow 
+><mi 
+>c</mi></mrow><mrow 
+>
+<mi 
+>p</mi></mrow><mrow 
+><mn>2</mn></mrow></msubsup 
+> <mfenced separators="" 
+open="("  close=")" ><mrow><mfrac><mrow 
+><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mi 
+>T</mi> </mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mi 
+>C</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <mn>2</mn></mrow>
+<mrow 
+><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mi 
+>T</mi> </mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mi 
+>C</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <mn>4</mn></mrow></mfrac></mrow></mfenced> <mfenced separators="" 
+open="["  close="]" ><mrow><mfrac><mrow 
+><mn>2</mn><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mn>1</mn> <mo 
+class="MathClass-bin">−</mo> <mi 
+>ρ</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mi 
+>T</mi> </mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mi 
+>C</mi></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow>
+        <mrow 
+><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mi 
+>T</mi> </mrow></msub 
+><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mi 
+>C</mi></mrow></msub 
+></mrow></mfrac>           <mo 
+class="MathClass-bin">+</mo><msup><mrow 
+> <mstyle 
+class="text"><mtext  >ES</mtext></mstyle></mrow><mrow 
+><mn>2</mn></mrow></msup 
+></mrow></mfenced> <mo 
+class="MathClass-bin">−</mo><msup><mrow 
+><mstyle 
+class="text"><mtext  >ES</mtext></mstyle></mrow><mrow 
+><mn>2</mn></mrow></msup 
+><mo 
+class="MathClass-punc">.</mo>
+</math></td><td class="eq-no">(4)</td></tr></table>
+<!--l. 157--><p class="indent" >   To compute the variance of the <a 
+href="#glo:es">ES</a>, the pooled within-group Pearson correlation
+<!--l. 157--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>ρ</mi></math> (<span 
+class="ecsi-1200">i.e </span>the
+pre-post correlation) is required [<a 
+href="#XJames2013">James et al.</a>, <a 
+href="#XJames2013">2013</a>]:
+</p>
+   <table class="equation"><tr><td> <a 
+ id="x1-5002r5"></a>
+<!--l. 160--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                    <mi 
+>ρ</mi> <mo 
+class="MathClass-rel">=</mo>          <mfrac><mrow 
+><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+> ∑</mo>
+  </mrow><mrow 
+><mi 
+>i</mi><mo 
+class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
+><mi 
+>n</mi></mrow></munderover 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mstyle 
+class="text"><mtext  >pre</mtext></mstyle></mrow><mrow 
+>
+<mi 
+>i</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mstyle 
+class="text"><mtext  >pre</mtext></mstyle></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mstyle 
+class="text"><mtext  >post</mtext></mstyle></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mstyle 
+class="text"><mtext  >post</mtext></mstyle></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow> 
+<mrow 
+><msqrt><mrow><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+>∑</mo>
+  </mrow><mrow 
+><mi 
+>i</mi><mo 
+class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
+><mi 
+>n</mi></mrow></munderover 
+><msup><mrow 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mstyle 
+class="text"><mtext  >pre</mtext></mstyle></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mstyle 
+class="text"><mtext  >pre</mtext></mstyle></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow><mrow 
+><mn>2</mn></mrow></msup 
+></mrow></msqrt><msqrt><mrow><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+>∑</mo>
+  </mrow><mrow 
+><mi 
+>i</mi><mo 
+class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
+><mi 
+>n</mi></mrow></munderover 
+><msup><mrow 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mstyle 
+class="text"><mtext  >post</mtext></mstyle></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mstyle 
+class="text"><mtext  >post</mtext></mstyle></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow><mrow 
+><mn>2</mn></mrow></msup 
+></mrow></msqrt></mrow></mfrac><mo 
+class="MathClass-punc">,</mo>
+</math></td><td class="eq-no">(5)</td></tr></table>
+<!--l. 164--><p class="noindent" >where <!--l. 164--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>n</mi></math> is the number of
+patients included in a study, <!--l. 164--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mstyle 
+class="text"><mtext  >pre</mtext></mstyle></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+></math>,
+<!--l. 164--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mstyle 
+class="text"><mtext  >post</mtext></mstyle></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+></math> are score values for
+patient <!--l. 164--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>i</mi></math> at pre- and
+post-test respectively, and <!--l. 165--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mstyle 
+class="text"><mtext  >pre</mtext></mstyle></mrow></msub 
+></math>,
+<!--l. 165--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mstyle 
+class="text"><mtext  >post</mtext></mstyle></mrow></msub 
+></math> the
+mean scores over all patients. It is a measure of linear correlation between two variables. A value of 1
+means that there is a positive correlation whereas a value of -1 means a negative correlation. When
+<!--l. 166--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>ρ</mi> <mo 
+class="MathClass-rel">=</mo> <mn>0</mn></math>, there
+is no linear correlation. In our case, this correlation was not known and the raw data were not available so
+we took an approximation following <a 
+href="#XBalk2012">Balk et al.</a> [<a 
+href="#XBalk2012">2012</a>], who found that a value of 0.5 yielded values close
+to those computed with the actual value of the correlation.
+</p><!--l. 170--><p class="indent" >   Once variances were obtained with Eq <a 
+href="#x1-5001r4">4<!--tex4ht:ref: eq:metareview_variance_ES --></a>, we could compute the standard error and the 95% conﬁdence
+interval of each <a 
+href="#glo:es">ES</a>.
+                                                                                            
+                                                                                            
+</p><!--l. 172--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">1.5   </span> <a 
+ id="x1-60001.5"></a>Compute the weight of each study</h4>
+<!--l. 174--><p class="noindent" >To compute the <a 
+href="#glo:se">Summary Eﬀect (SE)</a> a weight must be assigned to each study. To
+obtain them several steps must be followed. At ﬁrst, the ﬁxed-eﬀects model weight
+<!--l. 175--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>w</mi></mrow><mrow 
+><msub><mrow 
+><mstyle 
+class="text"><mtext  >ﬁxed</mtext></mstyle></mrow><mrow 
+>
+<mi 
+>k</mi></mrow></msub 
+></mrow></msub 
+></math> of each
+study <!--l. 175--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>k</mi></math>
+was computed as deﬁned in <a 
+href="#XBorenstein2009">Borenstein et al.</a> [<a 
+href="#XBorenstein2009">2009</a>]:
+</p>
+   <table class="equation"><tr><td> <a 
+ id="x1-6001r6"></a>
+<!--l. 177--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                                     <msub><mrow 
+><mi 
+>w</mi></mrow><mrow 
+><msub><mrow 
+><mstyle 
+class="text"><mtext  >ﬁxed</mtext></mstyle></mrow><mrow 
+>
+<mi 
+>k</mi></mrow></msub 
+></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo>     <mfrac><mrow 
+><mn>1</mn></mrow> 
+<mrow 
+><msup><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>2</mn></mrow></msup 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mstyle 
+class="text"><mtext  >ES</mtext></mstyle></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow></mfrac><mo 
+class="MathClass-punc">.</mo>
+</math></td><td class="eq-no">(6)</td></tr></table>
+<!--l. 182--><p class="noindent" >Nevertheless, we chose to use the random eﬀects model, so the weights associated
+to this model are diﬀerent. To compute them, the between-studies variance
+<!--l. 183--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msup><mrow 
+><mi 
+>τ</mi></mrow><mrow 
+><mn>2</mn></mrow></msup 
+></math>
+is required. It was calculated in three steps described in Eq <a 
+href="#x1-6002r7">7<!--tex4ht:ref: eq:metareview_Q --></a>, Eq <a 
+href="#x1-6003r8">8<!--tex4ht:ref: eq:metareview_C --></a> and Eq <a 
+href="#x1-6004r9">9<!--tex4ht:ref: eq:metareview_Tau --></a> [<a 
+href="#XBorenstein2009">Borenstein
+et al.</a>, <a 
+href="#XBorenstein2009">2009</a>]:
+</p>
+   <table class="equation"><tr><td> <a 
+ id="x1-6002r7"></a>
+<!--l. 187--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                                 <mi 
+>Q</mi> <mo 
+class="MathClass-rel">=</mo><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+> ∑</mo>
+  </mrow><mrow 
+><mi 
+>k</mi><mo 
+class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
+><mi 
+>K</mi></mrow></munderover 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>w</mi></mrow><mrow 
+><msub><mrow 
+>
+<mstyle 
+class="text"><mtext  >ﬁxed</mtext></mstyle></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+></mrow></msub 
+><msubsup><mrow 
+><mstyle 
+class="text"><mtext  >ES</mtext></mstyle></mrow><mrow 
+><mi 
+>k</mi></mrow><mrow 
+><mn>2</mn></mrow></msubsup 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow><mo 
+class="MathClass-punc">,</mo>
+</math></td><td class="eq-no">(7)</td></tr></table>
+                                                                                            
+                                                                                            
+   <table class="equation"><tr><td> <a 
+ id="x1-6003r8"></a>
+<!--l. 192--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                         <mi 
+>C</mi> <mo 
+class="MathClass-rel">=</mo><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+> ∑</mo>
+  </mrow><mrow 
+><mi 
+>k</mi><mo 
+class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
+><mi 
+>K</mi></mrow></munderover 
+><msub><mrow 
+><mi 
+>w</mi></mrow><mrow 
+><msub><mrow 
+>
+<mstyle 
+class="text"><mtext  >ﬁxed</mtext></mstyle></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo><mfrac><mrow 
+><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+>∑</mo>
+  </mrow><mrow 
+><mi 
+>k</mi><mo 
+class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
+><mi 
+>K</mi></mrow></munderover 
+><msup><mrow 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>w</mi></mrow><mrow 
+><msub><mrow 
+>
+<mstyle 
+class="text"><mtext  >ﬁxed</mtext></mstyle></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow><mrow 
+><mn>2</mn></mrow></msup 
+></mrow> 
+  <mrow 
+><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+> ∑</mo>
+  </mrow><mrow 
+><mi 
+>k</mi><mo 
+class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
+><mi 
+>K</mi></mrow></munderover 
+><msub><mrow 
+><mi 
+>w</mi></mrow><mrow 
+><msub><mrow 
+><mstyle 
+class="text"><mtext  >ﬁxed</mtext></mstyle></mrow><mrow 
+>
+<mi 
+>k</mi></mrow></msub 
+></mrow></msub 
+></mrow></mfrac>   <mo 
+class="MathClass-punc">,</mo>
+</math></td><td class="eq-no">(8)</td></tr></table>
+<!--l. 196--><p class="noindent" >with <!--l. 196--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>K</mi></math>
+the total number of included studies, and </p><table class="equation"><tr><td> <a 
+ id="x1-6004r9"></a>
+<!--l. 197--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                                        <msup><mrow 
+><mi 
+>τ</mi></mrow><mrow 
+><mn>2</mn></mrow></msup 
+> <mo 
+class="MathClass-rel">=</mo> <mfrac><mrow 
+><mi 
+>Q</mi> <mo 
+class="MathClass-bin">−</mo><mstyle 
+class="text"><mtext  >df</mtext></mstyle></mrow> 
+   <mrow 
+><mi 
+>C</mi></mrow></mfrac>   <mo 
+class="MathClass-punc">,</mo>
+</math></td><td class="eq-no">(9)</td></tr></table>
+<!--l. 201--><p class="noindent" >with <!--l. 201--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle 
+class="text"><mtext  >df</mtext></mstyle> <mo 
+class="MathClass-rel">=</mo> <mi 
+>K</mi> <mo 
+class="MathClass-bin">−</mo> <mn>1</mn></math>
+the degrees of freedom.
+</p><!--l. 203--><p class="noindent" >The random-eﬀects model takes into account the diﬀerences between the studies, so the weights are equal
+to the inverse of the addition between the within-study variance (the variance of the <a 
+href="#glo:es">ES</a>) and the
+between-studies variance:
+</p>
+   <table class="equation"><tr><td> <a 
+ id="x1-6005r10"></a>
+                                                                                            
+                                                                                            
+<!--l. 206--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                                    <msub><mrow 
+><mi 
+>w</mi></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo>         <mfrac><mrow 
+><mn>1</mn></mrow> 
+<mrow 
+><msup><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>2</mn></mrow></msup 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mstyle 
+class="text"><mtext  >ES</mtext></mstyle></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-bin">+</mo> <msup><mrow 
+><mi 
+>τ</mi></mrow><mrow 
+><mn>2</mn></mrow></msup 
+></mrow></mfrac><mo 
+class="MathClass-punc">.</mo>
+</math></td><td class="eq-no">(10)</td></tr></table>
+<!--l. 211--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">1.6   </span> <a 
+ id="x1-70001.6"></a>Compute the summary eﬀect</h4>
+<!--l. 213--><p class="noindent" >Eventually, the weighted average of the <!--l. 213--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>K</mi></math>
+<a 
+href="#glo:es">ES</a> was computed to obtain the <a 
+href="#glo:se">SE</a> as described in Eq <a 
+href="#x1-7001r11">11<!--tex4ht:ref: eq:metareview_summary_effect --></a> [<a 
+href="#XBorenstein2009">Borenstein et al.</a>, <a 
+href="#XBorenstein2009">2009</a>]:
+</p>
+   <table class="equation"><tr><td> <a 
+ id="x1-7001r11"></a>
+<!--l. 216--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                                    <mstyle 
+class="text"><mtext  >SE</mtext></mstyle> <mo 
+class="MathClass-rel">=</mo> <mfrac><mrow 
+><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+> ∑</mo>
+  </mrow><mrow 
+><mi 
+>k</mi><mo 
+class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
+><mi 
+>K</mi></mrow></munderover 
+><msub><mrow 
+><mi 
+>w</mi></mrow><mrow 
+>
+<mi 
+>k</mi></mrow></msub 
+><msub><mrow 
+><mstyle 
+class="text"><mtext  >ES</mtext></mstyle></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+></mrow> 
+   <mrow 
+><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+> ∑</mo>
+  </mrow><mrow 
+><mi 
+>k</mi><mo 
+class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
+><mi 
+>K</mi></mrow></munderover 
+><msub><mrow 
+><mi 
+>w</mi></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+></mrow></mfrac>   <mo 
+class="MathClass-punc">.</mo>
+</math></td><td class="eq-no">(11)</td></tr></table>
+<!--l. 221--><p class="noindent" >Once the <a 
+href="#glo:se">SE</a> is obtained, we can compute its variance, its standard error, its 95% conﬁdence interval, its p-value,
+and <!--l. 222--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msup><mrow 
+><mi 
+>I</mi></mrow><mrow 
+><mn>2</mn></mrow></msup 
+></math>
+estimating <a 
+href="#glo:es">ES</a>’s between studies heterogeneity.
+</p><!--l. 224--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">1.7   </span> <a 
+ id="x1-80001.7"></a>Scales used for the meta-analysis</h4>
+<!--l. 226--><p class="noindent" >All scales used for the meta-analysis are summarized here in order to facilitate the replication of this work
+Table <a 
+href="#x1-160011">1<!--tex4ht:ref: Table:Table_mr_clinical_scales_update_cortese --></a>.
+                                                                                            
+                                                                                            
+</p><!--l. 229--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">1.8   </span> <a 
+ id="x1-90001.8"></a>Associate independent factors to eﬀect sizes</h4>
+<!--l. 231--><p class="noindent" >Three diﬀerent methods were used to perform the <a 
+href="#glo:saob">Systematic Analysis of Biases (SAOB)</a>:
+</p>
+      <ul class="itemize1">
+      <li class="itemize">weighted   multiple   linear   regression   (<a 
+href="#glo:wls">Weighted   Least   Squares   (WLS)</a>)   [<a 
+href="#XMontgomery2012">Montgomery
+      et al.</a>, <a 
+href="#XMontgomery2012">2012</a>];
+      </li>
+      <li class="itemize">sparsity-regularized linear regression with <a 
+href="#glo:lasso">Least Absolute Shrinkage and Selection Operator
+      (LASSO)</a> [<a 
+href="#XTibshirani1996">Tibshirani</a>, <a 
+href="#XTibshirani1996">1996</a>];
+      </li>
+      <li class="itemize">decision tree [<a 
+href="#XQuinlan1986">Quinlan</a>, <a 
+href="#XQuinlan1986">1986</a>].</li></ul>
+<!--l. 238--><p class="noindent" >We ﬁrst applied the <a 
+href="#glo:wls">WLS</a> as described in Eq <a 
+href="#x1-9001r12">12<!--tex4ht:ref: eq:factors_model_WLS --></a>: </p><table class="equation"><tr><td> <a 
+ id="x1-9001r12"></a>
+<!--l. 239--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                                      <mstyle 
+class="text"><mtext class="textbf" mathvariant="bold" >W</mtext></mstyle><mi 
+>y</mi> <mo 
+class="MathClass-rel">=</mo> <mstyle 
+class="text"><mtext class="textbf" mathvariant="bold" >WX</mtext></mstyle><mi 
+>β</mi> <mo 
+class="MathClass-bin">+</mo> <mi 
+>𝜖</mi><mo 
+class="MathClass-punc">.</mo>
+</math></td><td class="eq-no">(12)</td></tr></table>
+<!--l. 243--><p class="noindent" ><!--l. 243--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle 
+class="text"><mtext class="textbf" mathvariant="bold" >X</mtext></mstyle></math> is a
+<!--l. 243--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>n</mi> <mo 
+class="MathClass-bin">×</mo> <mi 
+>p</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math> full rank matrix and
+represents <!--l. 243--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>n</mi></math> observations on
+each <!--l. 243--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>p</mi> <mo 
+class="MathClass-bin">−</mo> <mn>1</mn></math> independent variables
+and an intercept term, <!--l. 244--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>β</mi></math>
+is a <!--l. 244--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>p</mi> <mo 
+class="MathClass-bin">×</mo> <mn>1</mn></mrow><mo 
+class="MathClass-close">)</mo></mrow></math> vector of associated
+regression coeﬃcients, <!--l. 244--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle 
+class="text"><mtext class="textbf" mathvariant="bold" >W</mtext></mstyle></math>
+is a <!--l. 244--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>n</mi> <mo 
+class="MathClass-bin">×</mo> <mi 
+>n</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math> diagonal matrix
+with weights, <!--l. 245--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>y</mi></math> is a
+<!--l. 245--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>n</mi> <mo 
+class="MathClass-bin">×</mo> <mn>1</mn></mrow><mo 
+class="MathClass-close">)</mo></mrow></math> vector of dependent
+                                                                                            
+                                                                                            
+variables and <!--l. 245--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>𝜖</mi></math>
+is a <!--l. 245--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>n</mi> <mo 
+class="MathClass-bin">×</mo> <mn>1</mn></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>
+vector of errors.
+</p><!--l. 247--><p class="noindent" >The aim of the <a 
+href="#glo:wls">WLS</a> is to estimate the vector of coeﬃcients
+<!--l. 247--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>β</mi></math> by
+minimizing the <a 
+href="#glo:wrss">Weighted Residual Sum of Squares (WRSS)</a> </p><table class="equation"><tr><td> <a 
+ id="x1-9002r13"></a>
+<!--l. 248--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                         <mstyle 
+class="text"><mtext  >WRSS</mtext></mstyle> <mo 
+class="MathClass-rel">=</mo><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+> ∑</mo>
+  </mrow><mrow 
+><mi 
+>i</mi><mo 
+class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
+><mi 
+>n</mi></mrow></munderover 
+><msub><mrow 
+><mi 
+>w</mi></mrow><mrow 
+>
+<mi 
+>i</mi></mrow></msub 
+><mstyle mathsize="1.61em"><mfenced separators="" 
+open="("  close="" ><mrow></mrow></mfenced></mstyle><msub><mrow 
+><mi 
+>y</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>β</mi></mrow><mrow 
+><mn>0</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+>∑</mo>
+  </mrow><mrow 
+><mi 
+>j</mi><mo 
+class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
+><mi 
+>p</mi></mrow></munderover 
+><msub><mrow 
+><mi 
+>β</mi></mrow><mrow 
+>
+<mi 
+>j</mi></mrow></msub 
+><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mi 
+>i</mi><mi 
+>j</mi></mrow></msub 
+><msup><mrow 
+><mstyle mathsize="1.61em"><mfenced separators="" 
+open=")"  close="" ><mrow></mrow></mfenced></mstyle></mrow><mrow 
+><mn>2</mn></mrow></msup 
+><mo 
+class="MathClass-punc">.</mo>
+</math></td><td class="eq-no">(13)</td></tr></table>
+<!--l. 253--><p class="indent" >   A signiﬁcant coeﬃcient (meaning signiﬁcantly diﬀerent from 0) indicates that the associated factor had
+probably an inﬂuence on <a 
+href="#glo:nfb">NFB</a> eﬃcacy and the sign of the coeﬃcient indicates the direction of the
+eﬀect.
+</p><!--l. 256--><p class="indent" >   The second method applied was the <a 
+href="#glo:lasso">LASSO</a> that naturally incorporates variable
+selection in the linear model thanks to L1-norm applied on the coeﬃcients. The coeﬃcients
+<!--l. 257--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>β</mi></mrow><mo 
+class="MathClass-op">̂</mo></mover></mrow><mrow 
+><mi 
+>j</mi></mrow></msub 
+></math> are
+obtained by minimizing the term </p><table class="equation"><tr><td> <a 
+ id="x1-9003r14"></a>
+<!--l. 258--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+               <mover 
+accent="true"><mrow 
+><mi 
+>β</mi></mrow><mo 
+class="MathClass-op">̂</mo></mover> <mo 
+class="MathClass-rel">=</mo><munder class="msub"><mrow 
+><mo class="qopname"> argmin</mo> </mrow><mrow 
+><mi 
+>β</mi></mrow></munder 
+><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+> ∑</mo>
+  </mrow><mrow 
+><mi 
+>i</mi><mo 
+class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
+><mi 
+>n</mi></mrow></munderover 
+><mstyle mathsize="1.61em"><mfenced separators="" 
+open="("  close="" ><mrow></mrow></mfenced></mstyle><msub><mrow 
+><mi 
+>y</mi></mrow><mrow 
+>
+<mi 
+>i</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>β</mi></mrow><mrow 
+><mn>0</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+>∑</mo>
+  </mrow><mrow 
+><mi 
+>j</mi><mo 
+class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
+><mi 
+>p</mi></mrow></munderover 
+><msub><mrow 
+><mi 
+>β</mi></mrow><mrow 
+>
+<mi 
+>j</mi></mrow></msub 
+><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mi 
+>i</mi><mi 
+>j</mi></mrow></msub 
+><msup><mrow 
+><mstyle mathsize="1.61em"><mfenced separators="" 
+open=")"  close="" ><mrow></mrow></mfenced></mstyle></mrow><mrow 
+><mn>2</mn></mrow></msup 
+> <mo 
+class="MathClass-bin">+</mo> <mi 
+>λ</mi><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+>∑</mo>
+</mrow><mrow 
+><mi 
+>j</mi><mo 
+class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
+><mi 
+>p</mi></mrow></munderover 
+><mrow class="mathinner"><mspace width="0.3em" class="thinspace"/> <mfenced separators="" 
+open="|"  close="|" ><mrow><msub><mrow 
+><mi 
+>β</mi></mrow><mrow 
+>
+<mi 
+>j</mi></mrow></msub 
+></mrow></mfenced> </mrow><mo 
+class="MathClass-punc">,</mo>
+</math></td><td class="eq-no">(14)</td></tr></table>
+<!--l. 263--><p class="noindent" >where <!--l. 263--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>λ</mi></math>
+is the regularization parameter setting more coeﬃcients to zero as it increases. The
+optimal tuning parameter was determined by a leave-one-out cross-validation. This method
+retains 1 observation as the validation data for testing the model and the remaining
+                                                                                            
+                                                                                            
+<!--l. 265--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>n</mi></math> -
+1 observations are used as training data. The cross-validation process is then repeated
+<!--l. 265--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>n</mi></math>
+times with each of the observation used exactly once as the testing data. For each
+fold, the <a 
+href="#glo:mse">Mean Square Error (MSE)</a> on the test set was computed and eventually, the
+<!--l. 266--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>n</mi></math>
+results can be averaged to produce a single observation that enables to ﬁnd the optimal
+<!--l. 267--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>λ</mi></math>: it
+corresponds to the abscissa of the minimum value of the <a 
+href="#glo:mse">MSE</a> on the mean fold computed for a large range
+of <!--l. 268--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>λ</mi></math>
+[<a 
+href="#XJames2013">James et al.</a>, <a 
+href="#XJames2013">2013</a>]. A coeﬃcient not set at zero means that the associated factor may have an
+inﬂuence on <a 
+href="#glo:nfb">NFB</a> and once again, the sign of the coeﬃcient indicates the direction of the
+eﬀect.
+</p><!--l. 272--><p class="indent" >   The last method used to determine factors inﬂuencing <a 
+href="#glo:nfb">NFB</a> was the decision tree [<a 
+href="#XQuinlan1986">Quinlan</a>, <a 
+href="#XQuinlan1986">1986</a>], a
+non linear method. It brakes down a dataset into smaller and smaller subsets using at each iteration a
+variable and a threshold chosen to optimize a simple <a 
+href="#glo:mse">MSE</a> criteria </p><table class="equation"><tr><td> <a 
+ id="x1-9004r15"></a>
+<!--l. 275--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                                 <mstyle 
+class="text"><mtext  >MSE</mtext></mstyle> <mo 
+class="MathClass-rel">=</mo> <mfrac><mrow 
+><mn>1</mn></mrow> 
+<mrow 
+><mi 
+>n</mi></mrow></mfrac><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+>∑</mo>
+  </mrow><mrow 
+><mi 
+>i</mi><mo 
+class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
+><mi 
+>n</mi></mrow></munderover 
+><mstyle mathsize="1.61em"><mfenced separators="" 
+open="("  close="" ><mrow></mrow></mfenced></mstyle><msub><mrow 
+><mi 
+>ŷ</mi></mrow><mrow 
+>
+<mi 
+>i</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>y</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+><msup><mrow 
+><mstyle mathsize="1.61em"><mfenced separators="" 
+open=")"  close="" ><mrow></mrow></mfenced></mstyle></mrow><mrow 
+><mn>2</mn></mrow></msup 
+><mo 
+class="MathClass-punc">,</mo>
+</math></td><td class="eq-no">(15)</td></tr></table>
+<!--l. 279--><p class="noindent" >with <!--l. 279--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>ŷ</mi></math>
+the predicted values.
+</p><!--l. 281--><p class="indent" >   No weights were applied when running the <a 
+href="#glo:lasso">LASSO</a> and the decision tree.
+</p><!--l. 283--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-100002"></a>Results</h3>
+                                                                                            
+                                                                                            
+<!--l. 285--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">2.1   </span> <a 
+ id="x1-110002.1"></a>Perform a meta-analysis</h4>
+<!--l. 287--><p class="noindent" >First, when using the <a 
+href="#glo:es">ES</a> found by <a 
+href="#XCortese2016">Cortese et al.</a> [<a 
+href="#XCortese2016">2016</a>] thanks to RevMan [<a 
+href="#XRevMan">Cochrane Collaboration</a>, <a 
+href="#XRevMan">2011</a>],
+and then performed the following steps of meta-analysis with the Python code, we observed no major
+diﬀerences between these results and those obtained with RevMan [<a 
+href="#XRevMan">Cochrane Collaboration</a>, <a 
+href="#XRevMan">2011</a>] as listed
+in <a 
+href="#x1-160022">2<!--tex4ht:ref: Table:meta_review_comparison_between_revman_python --></a>. The minor discrepancies, especially observed at the p-values level, were due to our choice to always
+use a pre-post correlation of 0.5 when computing the variance of each <a 
+href="#glo:es">ES</a>. Moreover, a sensitivity analysis
+was conducted to ensure the minor impact of the pre-post correlation value: when it varied between 0.2
+and 0.8 the signiﬁcance of the <a 
+href="#glo:se">SE</a> did not change.
+</p><!--l. 294--><p class="indent" >   Thanks to the previous step, we could conclude that the Python code yielded results close to those
+returned by RevMan <a 
+href="#XRevMan">Cochrane Collaboration</a> [<a 
+href="#XRevMan">2011</a>], so we decided to use this code to perform our
+meta-analysis.
+</p><!--l. 297--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">2.2   </span> <a 
+ id="x1-120002.2"></a>Detect factors inﬂuencing the Neurofeedback</h4>
+<!--l. 299--><p class="noindent" >To assess the variability of each factor, box plots of their standardized values were displayed in
+Figure <a 
+href="#x1-150011">1<!--tex4ht:ref: Figure:factors_analysis_boxplots --></a>: the variability in treatment and sessions length as well as the number of sessions is
+more important from one study to another than the number of sessions per week and the age
+bounds.
+</p><!--l. 303--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">2.3   </span> <a 
+ id="x1-130002.3"></a>Assumptions for applying linear regression</h4>
+<!--l. 305--><p class="noindent" >The ﬁrst method used to detect the inﬂuencing factors was the <a 
+href="#glo:wls">WLS</a>. The assumptions inherent to this
+method were checked: </p>
+      <ul class="itemize1">
+      <li class="itemize">the moment matrix <!--l. 307--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msup><mrow 
+><mstyle 
+class="text"><mtext class="textbf" mathvariant="bold" >X</mtext></mstyle></mrow><mrow 
+><mi 
+>T</mi> </mrow></msup 
+><msup><mrow 
+><mstyle 
+class="text"><mtext class="textbf" mathvariant="bold" >W</mtext></mstyle></mrow><mrow 
+><mi 
+>T</mi> </mrow></msup 
+><mstyle 
+class="text"><mtext class="textbf" mathvariant="bold" >WX</mtext></mstyle></math>
+      is invertible;
+      </li>
+                                                                                            
+                                                                                            
+      <li class="itemize">no apparent correlation between the continuous independent variables is found;
+      </li>
+      <li class="itemize">the ﬁt is signiﬁcant as shown by the F-statistic (prob(F-statistic) = 2.81e-10);
+      </li>
+      <li class="itemize">the residuals are normally distributed as demonstrated by the skew (-0.15), kurtosis (2.81)
+      and the Omnibus test (prob(Omnibus) = 0.87).</li></ul>
+<!--l. 313--><p class="indent" >   These assumptions were also satisﬁed for the <a 
+href="#glo:ols">Ordinary Least Squares (OLS)</a>.
+                                                                                            
+                                                                                            
+</p>
+   <h3 class="likesectionHead"><a 
+ id="x1-140002.3"></a>References</h3>
+<!--l. 1--><p class="noindent" >
+  </p><div class="thebibliography">
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XArnold2014"></a><span class="bibsp">   </span></span>L. E.  Arnold,  N. Lofthouse,  S. Hersch,  X. Pan,  E. Hurt,  B. Bates,  K. Kassouf,  S. Moone,
+  and C. Grantier.   Eeg neurofeedback for attention-deﬁcit/hyperactivity disorder: Double-blind
+  sham-controlled  randomized  pilot  feasibility  trial.   <span 
+class="ecsi-1200">Journal  of  Atention  Disorder</span>,  2014.   doi:
+  <span 
+class="ecrm-1200">https://doi.org/10.1177/1087054712446173</span>.
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XBakhshayesh2011"></a><span class="bibsp">   </span></span>A. R. Bakhshayesh, S. Hänsch, A. Wyschkon, M. J. Rezai, and G. Esser.  Neurofeedback in
+  adhd: a single-blind randomized controlled trial. <span 
+class="ecsi-1200">European child &#x0026; adolescent psychiatry</span>, 20(9):
+  481, 2011. doi: <span 
+class="ecrm-1200">https://doi.org/10.1007/s00787-011-0208-y</span>.
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XBalk2012"></a><span class="bibsp">   </span></span>E. M. Balk, A. Earley, K. Patel, T. A. Trikalinos, and I. J. Dahabreh. Empirical assessment of
+  within-arm correlation imputation in trials of continuous outcomes. 2012.
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XBaumeister2016"></a><span class="bibsp">   </span></span>S. Baumeister,  I. Wolf,  N. Holz,  R. Boecker-Schlier,  N. Adamo,  M. Holtmann,  M. Ruf,
+  T. Banaschewski, S. Hohmann, and D. Brandeis.  Neurofeedback training eﬀects on inhibitory
+  brain activation in adhd: A matter of learning?  <span 
+class="ecsi-1200">Neuroscience</span>, 2016.  doi: <span 
+class="ecrm-1200">https://doi.org/10.</span>
+  <span 
+class="ecrm-1200">1016/j.neuroscience.2016.09.025</span>.
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XBeauregard2006"></a><span class="bibsp">   </span></span>M. Beauregard  and  J. Levesque.    Functional  magnetic  resonance  imaging  investigation  of
+  the eﬀects of neurofeedback training on the neural bases of selective attention and response
+  inhibition in children with attention-deﬁcit/hyperactivity disorder. <span 
+class="ecsi-1200">Applied psychophysiology and</span>
+  <span 
+class="ecsi-1200">biofeedback</span>, 31(1):3–20, 2006. doi: <span 
+class="ecrm-1200">https://doi.org/10.1007/s10484-006-9001-y</span>.
+                                                                                            
+                                                                                            
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XBink2014"></a><span class="bibsp">   </span></span>M. Bink, C. van Nieuwenhuizen, A. Popma, I. L. Bongers, and G. J. M. van Boxtel. Behavioral
+  eﬀects of neurofeedback in adolescents with adhd: a randomized controlled trial. <span 
+class="ecsi-1200">European Child</span>
+  <span 
+class="ecsi-1200">and Adolescent Psychiatry</span>, 2014. doi: <span 
+class="ecrm-1200">https://doi.org/10.1007/s00787-014-0655-3</span>.
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XBorenstein2009"></a><span class="bibsp">   </span></span>M. Borenstein, L. V. Hedges, J. Higgins, and H. R. Rothstein.  <span 
+class="ecsi-1200">Introduction to meta-analysis</span>.
+  Wiley, 2009.
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XBussalb2018"></a><span class="bibsp">   </span></span>A. Bussalb.                                              Factors                inﬂuencing                nfb.
+  <a 
+href="https://github.com/AuroreBussalb/meta-analysis-statistical-tools" class="url" ><span 
+class="ectt-1200">https://github.com/AuroreBussalb/meta-analysis-statistical-tools</span></a>, 2018.
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XChristiansen2014"></a><span class="bibsp">   </span></span>H. Christiansen, V. Reh, M. H. Schmidt, and W. Rief.  Slow cortical potential neurofeedback
+  and self-management training in outpatient care for children with adhd: study protocol and ﬁrst
+  preliminary results of a randomized controlled trial.  <span 
+class="ecsi-1200">Frontiers in human neuroscience</span>, 8, 2014.
+  doi: <span 
+class="ecrm-1200">https://doi.org/10.3389/fnhum.2014.00943</span>.
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XRevMan"></a><span class="bibsp">   </span></span>Cochrane                Collaboration.                                             Revman                5.1.
+  <a 
+href="https://community.cochrane.org/help/tools-and-software/revman-5" class="url" ><span 
+class="ectt-1200">https://community.cochrane.org/help/tools-and-software/revman-5</span></a>, 2011.
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XCortese2016"></a><span class="bibsp">   </span></span>S. Cortese,  M. Ferrin,  D. Brandeis,  M. Holtmann,  P. Aggensteiner,  D. Daley,  P. Santosh,
+  E. Simonoﬀ, J. Stevenson, A. Stringaris, et al. Neurofeedback for attention-deﬁcit/hyperactivity
+  disorder: meta-analysis of clinical and neuropsychological outcomes from randomized controlled
+  trials. <span 
+class="ecsi-1200">Journal of the American Academy of Child &#x0026; Adolescent Psychiatry</span>, 55(6):444–455, 2016.
+  doi: <span 
+class="ecrm-1200">https://doi.org/10.1016/j.jaac.2016.03.007</span>.
+  </p>
+                                                                                            
+                                                                                            
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XGevensleben2009"></a><span class="bibsp">   </span></span>H. Gevensleben,   B. Holl,   B. Albrecht,   C. Vogel,   D. Schlamp,   O. Kratz,   P. Studer,
+  A. Rothenberger, G. H. Moll, and H. Heinrich.  Is neurofeedback an eﬃcacious treatment for
+  adhd? a randomised controlled clinical trial. <span 
+class="ecsi-1200">Journal of Child Psychology and Psychiatry</span>, 50(7):
+  780–789, 2009. doi: <span 
+class="ecrm-1200">https://doi.org/10.1111/j.1469-7610.2008.02033.x</span>.
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XHeinrich2004"></a><span class="bibsp">   </span></span>H. Heinrich, H. Gevensleben, F. J. Freisleder, G. H. Moll, and A. Rothenberger.  Training of
+  slow cortical potentials in attention-deﬁcit/hyperactivity disorder: evidence for positive behavioral
+  and neurophysiological eﬀects. <span 
+class="ecsi-1200">Biological psychiatry</span>, 55(7):772–775, 2004. doi: <span 
+class="ecrm-1200">https://doi.org/</span>
+  <span 
+class="ecrm-1200">10.1016/j.biopsych.2003.11.013</span>.
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XHoltmann2009"></a><span class="bibsp">   </span></span>M. Holtmann, D. Grasmann, E. Cionek-Szpak, V. Hager, N. Panzner, A. Beyer, F. Poustka,
+  and C. Stadler. Speziﬁsche wirksamkeit von neurofeedback auf die impulsivität bei adhs. <span 
+class="ecsi-1200">Kindheit</span>
+  <span 
+class="ecsi-1200">und Entwicklung</span>, 18(2):95–104, 2009. doi: <span 
+class="ecrm-1200">https://doi.org/10.1026/0942-5403.18.2.95</span>.
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XJames2013"></a><span class="bibsp">   </span></span>G. James, D. Witten, T. Hastie, and R. Tibshirani.   An introduction to statistical learning.
+  volume 112, chapter 8, pages 303–332. Springer, 2013.
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XLinden1996"></a><span class="bibsp">   </span></span>M. Linden, T. Habib, and V. Radojevic. A controlled study of the eﬀects of eeg biofeedback on
+  cognition and behavior of children with attention deﬁcit disorder and learning disabilities. <span 
+class="ecsi-1200">Applied</span>
+  <span 
+class="ecsi-1200">Psychophysiology and Biofeedback</span>, 21(1):35–49, 1996.
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XMaurizio2014"></a><span class="bibsp">   </span></span>S. Maurizio,   M. D.   Liechti,   H. Heinrich,   L. Jäncke,   H.-C.   Steinhausen,   S. Walitza,
+  D. Brandeis, and R. Drechsler. Comparing tomographic eeg neurofeedback and emg biofeedback
+  in children with attention-deﬁcit/hyperactivity disorder.  <span 
+class="ecsi-1200">Biological psychology</span>, 95:31–44, 2014.
+  doi: <span 
+class="ecrm-1200">https://doi.org/10.1016/j.biopsycho.2013.10.008</span>.
+                                                                                            
+                                                                                            
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XMontgomery2012"></a><span class="bibsp">   </span></span>D. C. Montgomery, E. A. Peck, and G. G. Vining.  Introduction to linear regression analysis.
+  volume 821, chapter 5, pages 190–191. John Wiley &#x0026; Sons, 2012.
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XMorris2008"></a><span class="bibsp">   </span></span>S. B. Morris. Estimating eﬀect sizes from pretest-posttest-control group designs. <span 
+class="ecsi-1200">Organizational</span>
+  <span 
+class="ecsi-1200">Research Methods</span>, 11(2):364–386, 2008. doi: <span 
+class="ecrm-1200">https://doi.org/10.1177/1094428106291059</span>.
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XQuinlan1986"></a><span class="bibsp">   </span></span>J. R. Quinlan. Induction of decision trees. <span 
+class="ecsi-1200">Machine learning</span>, 1(1):81–106, 1986.
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XSteiner2011"></a><span class="bibsp">   </span></span>N. J. Steiner, R. C. Sheldrick, D. Gotthelf, and E. C. Perrin. Computer-based attention training
+  in the schools for children with attention deﬁcit/hyperactivity disorder: a preliminary trial. <span 
+class="ecsi-1200">Clinical</span>
+  <span 
+class="ecsi-1200">pediatrics</span>, 50(7):615–622, 2011. doi: <span 
+class="ecrm-1200">https://doi.org/10.1177/0009922810397887</span>.
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XSteiner2014"></a><span class="bibsp">   </span></span>N. J. Steiner, E. C. Frenette, K. M. Rene, R. T. Brennan, and E. C. Perrin.  Neurofeedback
+  and  cognitive  attention  training  for  children  with  attention-deﬁcit  hyperactivity  disorder  in
+  schools.   <span 
+class="ecsi-1200">Journal of Developmental &#x0026; Behavioral Pediatrics</span>, 35(1):18–27, 2014.   doi: <span 
+class="ecrm-1200">https:</span>
+  <span 
+class="ecrm-1200">//doi.org/10.1097/DBP.0000000000000009</span>.
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XStrehl2017"></a><span class="bibsp">   </span></span>U. Strehl,  P. Aggensteiner,  D. Wachtlin,  D. Brandeis,  B. Albrecht,  M. Arana,  C. Bach,
+  T. Banaschewski, T. Bogen, A. Flaig-Rohr, et al.  Neurofeedback of slow cortical potentials in
+  children with attention-deﬁcit/hyperactivity disorder: A multicenter randomized trial controlling
+  for unspeciﬁc eﬀects. <span 
+class="ecsi-1200">Frontiers in human neuroscience</span>, 11, 2017. doi: <span 
+class="ecrm-1200">https://doi.org/10.3389/</span>
+  <span 
+class="ecrm-1200">fnhum.2017.00135</span>.
+  </p>
+                                                                                            
+                                                                                            
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XTibshirani1996"></a><span class="bibsp">   </span></span>R. Tibshirani. Regression shrinkage and selection via the lasso. <span 
+class="ecsi-1200">Journal of the Royal Statistical</span>
+  <span 
+class="ecsi-1200">Society. Series B (Methodological)</span>, pages 267–288, 1996.
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+<a 
+ id="XVanDongen2013"></a><span class="bibsp">   </span></span>M. van  Dongen-Boomsma,  M. A.  Vollebregt,  D. Slaats-Willemse,  and  J. K.  Buitelaar.    A
+  randomized placebo-controlled trial of electroencephalographic (eeg) neurofeedback in children
+  with  attention-deﬁcit/hyperactivity  disorder.   <span 
+class="ecsi-1200">J  Clin  Psychiatry</span>,  74(8):821–827,  2013.   doi:
+  <span 
+class="ecrm-1200">https://doi.org/10.4088/JCP.12m08321</span>.
+</p>
+  </div>
+                                                                                            
+                                                                                            
+   <h3 class="likesectionHead"><a 
+ id="x1-150002.3"></a>Figure captions</h3>
+   <hr class="figure" /><div class="figure" 
+>
+                                                                                            
+                                                                                            
+<a 
+ id="x1-150011"></a>
+                                                                                            
+                                                                                            
+<!--l. 325--><p class="noindent" ><img 
+src="figures/factors_analysis_boxplot_no_colors_no_two_columns.png" alt="PIC"  
+ />
+<br /> </p><div class="caption" 
+><span class="id">Figure 1: </span><span  
+class="content">Boxplots of the standardized values of each continuous factor.</span></div><!--tex4ht:label?: x1-150011 -->
+                                                                                            
+                                                                                            
+   </div><hr class="endfigure" />
+   <h3 class="likesectionHead"><a 
+ id="x1-160002.3"></a>Table captions</h3>
+   <div class="table">
+                                                                                            
+                                                                                            
+<!--l. 332--><p class="indent" >   <a 
+ id="x1-160011"></a></p><hr class="float" /><div class="float" 
+>
+                                                                                            
+                                                                                            
+ <div class="caption" 
+><span class="id">Table 1: </span><span  
+class="content">Clinical scales used to update <a 
+href="#XCortese2016">Cortese et al.</a> [<a 
+href="#XCortese2016">2016</a>] with our choices and the two new
+articles.</span></div><!--tex4ht:label?: x1-160011 -->
+<div class="tabular">
+ <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1" /><col 
+id="TBL-2-2" /><col 
+id="TBL-2-3" /><col 
+id="TBL-2-4" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-1-1"  
+class="td11">          <span 
+class="ecsx-0800">Study              </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-1-2"  
+class="td11"> <span 
+class="ecsx-0800">Outcome  </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-1-3"  
+class="td11"><span 
+class="ecsx-0800">Score Names - Parents ratings</span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-1-4"  
+class="td11"><span 
+class="ecsx-0800">Score Names - Teachers ratings</span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-2-1"  
+class="td11">       <div class="multirow"><!-- rows=0 -->
+ <a 
+href="#XArnold2014"><span 
+class="ecss-0800">Arnold et</span><span 
+class="ecss-0800"> al.</span></a> </div>          </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-2-2"  
+class="td11">   <span 
+class="ecss-0800">Total     </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-2-3"  
+class="td11">          <span 
+class="ecss-0800">SNAP IV               </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-2-4"  
+class="td11">          <span 
+class="ecss-0800">SNAP IV               </span></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-3-1"  
+class="td11"> </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-3-2"  
+class="td11"> <span 
+class="ecss-0800">Inattention </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-3-3"  
+class="td11"> <span 
+class="ecss-0800">SNAP IV </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-3-4"  
+class="td11"> <span 
+class="ecss-0800">SNAP IV</span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-4-1"  
+class="td11">                         </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-4-2"  
+class="td11"><span 
+class="ecss-0800">Hyperactivity</span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-4-3"  
+class="td11">          <span 
+class="ecss-0800">SNAP IV               </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-4-4"  
+class="td11">          <span 
+class="ecss-0800">SNAP IV               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-5-1"  
+class="td11">    <div class="multirow"><!-- rows=0 -->
+ <a 
+href="#XBakhshayesh2011"><span 
+class="ecss-0800">Bakhshayesh et</span><span 
+class="ecss-0800"> al.</span></a> </div>      </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-5-2"  
+class="td11">   <span 
+class="ecss-0800">Total     </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-5-3"  
+class="td11">      <span 
+class="ecss-0800">German ADHD-RS        </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-5-4"  
+class="td11">      <span 
+class="ecss-0800">German ADHD-RS         </span></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-6-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-6-1"  
+class="td11"> </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-6-2"  
+class="td11"> <span 
+class="ecss-0800">Inattention </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-6-3"  
+class="td11"> <span 
+class="ecss-0800">German ADHD-RS </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-6-4"  
+class="td11"> <span 
+class="ecss-0800">German ADHD-RS</span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-7-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-7-1"  
+class="td11">                         </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-7-2"  
+class="td11"><span 
+class="ecss-0800">Hyperactivity</span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-7-3"  
+class="td11">      <span 
+class="ecss-0800">German ADHD-RS        </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-7-4"  
+class="td11">      <span 
+class="ecss-0800">German ADHD-RS         </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-8-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-8-1"  
+class="td11">     <div class="multirow"><!-- rows=0 -->
+ <a 
+href="#XBaumeister2016"><span 
+class="ecss-0800">Baumeister et</span><span 
+class="ecss-0800"> al.</span></a> </div>       </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-8-2"  
+class="td11">   <span 
+class="ecss-0800">Total     </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-8-3"  
+class="td11">          <span 
+class="ecss-0800">DISYPS               </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-8-4"  
+class="td11">              <span 
+class="ecss-0800">-                     </span></td>
+</tr><tr 
+class="vspace" style="font-size:7.10938pt"><td 
+> </td><td 
+> </td><td 
+> </td><td 
+> </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-9-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-9-1"  
+class="td11"> <div class="multirow"><!-- rows=0 -->
+ <a 
+href="#XBeauregard2006"><span 
+class="ecss-0800">Beauregard and Levesque</span></a> </div>  </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-9-2"  
+class="td11">   <span 
+class="ecss-0800">Total     </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-9-3"  
+class="td11">           <span 
+class="ecss-0800">CPRS                 </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-9-4"  
+class="td11">              <span 
+class="ecss-0800">-                     </span></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-10-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-10-1"  
+class="td11"> </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-10-2"  
+class="td11"> <span 
+class="ecss-0800">Inattention </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-10-3"  
+class="td11"> <span 
+class="ecss-0800">CPRS </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-10-4"  
+class="td11"> <span 
+class="ecss-0800">-</span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-11-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-11-1"  
+class="td11">                         </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-11-2"  
+class="td11"><span 
+class="ecss-0800">Hyperactivity</span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-11-3"  
+class="td11">           <span 
+class="ecss-0800">CPRS                 </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-11-4"  
+class="td11">              <span 
+class="ecss-0800">-                     </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-12-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-12-1"  
+class="td11">        <div class="multirow"><!-- rows=0 -->
+ <a 
+href="#XBink2014"><span 
+class="ecss-0800">Bink et</span><span 
+class="ecss-0800"> al.</span></a> </div>           </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-12-2"  
+class="td11">   <span 
+class="ecss-0800">Total     </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-12-3"  
+class="td11">     <span 
+class="ecss-0800">ADHD-RS self report       </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-12-4"  
+class="td11">              <span 
+class="ecss-0800">-                     </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-13-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-13-1"  
+class="td11">                         </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-13-2"  
+class="td11"> <span 
+class="ecss-0800">Inattention </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-13-3"  
+class="td11">     <span 
+class="ecss-0800">ADHD-RS self report       </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-13-4"  
+class="td11">              <span 
+class="ecss-0800">-                     </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-14-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-14-1"  
+class="td11">                         </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-14-2"  
+class="td11"><span 
+class="ecss-0800">Hyperactivity</span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-14-3"  
+class="td11">     <span 
+class="ecss-0800">ADHD-RS self report       </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-14-4"  
+class="td11">              <span 
+class="ecss-0800">-                     </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-15-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-15-1"  
+class="td11">    <div class="multirow"><!-- rows=0 -->
+ <a 
+href="#XChristiansen2014"><span 
+class="ecss-0800">Christiansen et</span><span 
+class="ecss-0800"> al.</span></a> </div>       </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-15-2"  
+class="td11">   <span 
+class="ecss-0800">Total     </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-15-3"  
+class="td11">      <span 
+class="ecss-0800">Conners-3 Parents         </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-15-4"  
+class="td11">      <span 
+class="ecss-0800">Conners-3 Teachers         </span></td>
+</tr><tr 
+class="vspace" style="font-size:7.10938pt"><td 
+> </td><td 
+> </td><td 
+> </td><td 
+> </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-16-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-16-1"  
+class="td11">    <div class="multirow"><!-- rows=0 -->
+ <a 
+href="#XGevensleben2009"><span 
+class="ecss-0800">Gevensleben et</span><span 
+class="ecss-0800"> al.</span></a> </div>       </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-16-2"  
+class="td11">   <span 
+class="ecss-0800">Total     </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-16-3"  
+class="td11">      <span 
+class="ecss-0800">German ADHD-RS        </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-16-4"  
+class="td11">      <span 
+class="ecss-0800">German ADHD-RS         </span></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-17-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-17-1"  
+class="td11"> </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-17-2"  
+class="td11"> <span 
+class="ecss-0800">Inattention </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-17-3"  
+class="td11"> <span 
+class="ecss-0800">German ADHD-RS </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-17-4"  
+class="td11"> <span 
+class="ecss-0800">German ADHD-RS</span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-18-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-18-1"  
+class="td11">                         </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-18-2"  
+class="td11"><span 
+class="ecss-0800">Hyperactivity</span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-18-3"  
+class="td11">      <span 
+class="ecss-0800">German ADHD-RS        </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-18-4"  
+class="td11">      <span 
+class="ecss-0800">German ADHD-RS         </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-19-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-19-1"  
+class="td11">      <div class="multirow"><!-- rows=0 -->
+ <a 
+href="#XHeinrich2004"><span 
+class="ecss-0800">Heinrich et</span><span 
+class="ecss-0800"> al.</span></a> </div>         </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-19-2"  
+class="td11">   <span 
+class="ecss-0800">Total     </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-19-3"  
+class="td11">      <span 
+class="ecss-0800">German ADHD-RS        </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-19-4"  
+class="td11">              <span 
+class="ecss-0800">-                     </span></td>
+</tr><tr 
+class="vspace" style="font-size:7.10938pt"><td 
+> </td><td 
+> </td><td 
+> </td><td 
+> </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-20-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-20-1"  
+class="td11">     <div class="multirow"><!-- rows=0 -->
+ <a 
+href="#XHoltmann2009"><span 
+class="ecss-0800">Holtmann et</span><span 
+class="ecss-0800"> al.</span></a> </div>        </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-20-2"  
+class="td11">   <span 
+class="ecss-0800">Total     </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-20-3"  
+class="td11">      <span 
+class="ecss-0800">German ADHD-RS        </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-20-4"  
+class="td11">              <span 
+class="ecss-0800">-                     </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-21-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-21-1"  
+class="td11">                         </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-21-2"  
+class="td11"> <span 
+class="ecss-0800">Inattention </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-21-3"  
+class="td11">      <span 
+class="ecss-0800">German ADHD-RS        </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-21-4"  
+class="td11">              <span 
+class="ecss-0800">-                     </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-22-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-22-1"  
+class="td11">                         </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-22-2"  
+class="td11"><span 
+class="ecss-0800">Hyperactivity</span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-22-3"  
+class="td11">      <span 
+class="ecss-0800">German ADHD-RS        </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-22-4"  
+class="td11">              <span 
+class="ecss-0800">-                     </span></td>
+
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-23-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-23-1"  
+class="td11">       <div class="multirow"><!-- rows=0 -->
+ <a 
+href="#XLinden1996"><span 
+class="ecss-0800">Linden et</span><span 
+class="ecss-0800"> al.</span></a> </div>          </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-23-2"  
+class="td11">   <span 
+class="ecss-0800">Total     </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-23-3"  
+class="td11">       <span 
+class="ecss-0800">IOWA Conners           </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-23-4"  
+class="td11">              <span 
+class="ecss-0800">-                     </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-24-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-24-1"  
+class="td11">                         </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-24-2"  
+class="td11"> <span 
+class="ecss-0800">Inattention </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-24-3"  
+class="td11">       <span 
+class="ecss-0800">IOWA Conners           </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-24-4"  
+class="td11">              <span 
+class="ecss-0800">-                     </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-25-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-25-1"  
+class="td11">      <div class="multirow"><!-- rows=0 -->
+ <a 
+href="#XMaurizio2014"><span 
+class="ecss-0800">Maurizio et</span><span 
+class="ecss-0800"> al.</span></a> </div>         </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-25-2"  
+class="td11">   <span 
+class="ecss-0800">Total     </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-25-3"  
+class="td11">           <span 
+class="ecss-0800">CPRS                 </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-25-4"  
+class="td11">            <span 
+class="ecss-0800">CTRS                 </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-26-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-26-1"  
+class="td11">                         </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-26-2"  
+class="td11"> <span 
+class="ecss-0800">Inattention </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-26-3"  
+class="td11">           <span 
+class="ecss-0800">CPRS                 </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-26-4"  
+class="td11">            <span 
+class="ecss-0800">CTRS                 </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-27-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-27-1"  
+class="td11">                         </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-27-2"  
+class="td11"><span 
+class="ecss-0800">Hyperactivity</span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-27-3"  
+class="td11">           <span 
+class="ecss-0800">CPRS                 </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-27-4"  
+class="td11">            <span 
+class="ecss-0800">CTRS                 </span></td>
+
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-28-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-28-1"  
+class="td11">       <div class="multirow"><!-- rows=0 -->
+ <a 
+href="#XSteiner2011"><span 
+class="ecss-0800">Steiner et</span><span 
+class="ecss-0800"> al.</span></a> </div>          </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-28-2"  
+class="td11">   <span 
+class="ecss-0800">Total     </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-28-3"  
+class="td11"> <span 
+class="ecss-0800">Conners Rating Scales Revised </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-28-4"  
+class="td11"> <span 
+class="ecss-0800">Conners Rating Scales Revised  </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-29-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-29-1"  
+class="td11">                         </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-29-2"  
+class="td11"> <span 
+class="ecss-0800">Inattention </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-29-3"  
+class="td11"> <span 
+class="ecss-0800">Conners Rating Scales Revised </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-29-4"  
+class="td11"> <span 
+class="ecss-0800">Conners Rating Scales Revised  </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-30-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-30-1"  
+class="td11">                         </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-30-2"  
+class="td11"><span 
+class="ecss-0800">Hyperactivity</span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-30-3"  
+class="td11"> <span 
+class="ecss-0800">Conners Rating Scales Revised </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-30-4"  
+class="td11"> <span 
+class="ecss-0800">Conners Rating Scales Revised  </span></td>
+
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-31-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-31-1"  
+class="td11">       <div class="multirow"><!-- rows=0 -->
+ <a 
+href="#XSteiner2014"><span 
+class="ecss-0800">Steiner et</span><span 
+class="ecss-0800"> al.</span></a> </div>          </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-31-2"  
+class="td11">   <span 
+class="ecss-0800">Total     </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-31-3"  
+class="td11">      <span 
+class="ecss-0800">Conners-3 Parents         </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-31-4"  
+class="td11">      <span 
+class="ecss-0800">Conners-3 Teachers         </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-32-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-32-1"  
+class="td11">                         </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-32-2"  
+class="td11"> <span 
+class="ecss-0800">Inattention </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-32-3"  
+class="td11">      <span 
+class="ecss-0800">Conners-3 Parents         </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-32-4"  
+class="td11">      <span 
+class="ecss-0800">Conners-3 Teachers         </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-33-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-33-1"  
+class="td11">                         </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-33-2"  
+class="td11"><span 
+class="ecss-0800">Hyperactivity</span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-33-3"  
+class="td11">      <span 
+class="ecss-0800">Conners-3 Parents         </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-33-4"  
+class="td11">      <span 
+class="ecss-0800">Conners-3 Teachers         </span></td>
+
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-34-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-34-1"  
+class="td11">       <div class="multirow"><!-- rows=0 -->
+ <a 
+href="#XStrehl2017"><span 
+class="ecss-0800">Strehl et</span><span 
+class="ecss-0800"> al.</span></a> </div>           </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-34-2"  
+class="td11">   <span 
+class="ecss-0800">Total     </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-34-3"  
+class="td11">      <span 
+class="ecss-0800">German ADHD-RS        </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-34-4"  
+class="td11">      <span 
+class="ecss-0800">German ADHD-RS         </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-35-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-35-1"  
+class="td11">                         </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-35-2"  
+class="td11"> <span 
+class="ecss-0800">Inattention </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-35-3"  
+class="td11">      <span 
+class="ecss-0800">German ADHD-RS        </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-35-4"  
+class="td11">      <span 
+class="ecss-0800">German ADHD-RS         </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-36-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-36-1"  
+class="td11">                         </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-36-2"  
+class="td11"><span 
+class="ecss-0800">Hyperactivity</span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-36-3"  
+class="td11">      <span 
+class="ecss-0800">German ADHD-RS        </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-36-4"  
+class="td11">      <span 
+class="ecss-0800">German ADHD-RS         </span></td>
+
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-37-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-37-1"  
+class="td11"><div class="multirow"><!-- rows=0 -->
+ <a 
+href="#XVanDongen2013"><span 
+class="ecss-0800">van Dongen-Boomsma et</span><span 
+class="ecss-0800"> al.</span></a> </div></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-37-2"  
+class="td11">   <span 
+class="ecss-0800">Total     </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-37-3"  
+class="td11">         <span 
+class="ecss-0800">ADHD RS              </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-37-4"  
+class="td11">          <span 
+class="ecss-0800">ADHD RS               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-38-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-38-1"  
+class="td11">                         </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-38-2"  
+class="td11"> <span 
+class="ecss-0800">Inattention </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-38-3"  
+class="td11">         <span 
+class="ecss-0800">ADHD RS              </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-38-4"  
+class="td11">          <span 
+class="ecss-0800">ADHD RS               </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-39-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-39-1"  
+class="td11">                         </td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-39-2"  
+class="td11"><span 
+class="ecss-0800">Hyperactivity</span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-39-3"  
+class="td11">         <span 
+class="ecss-0800">ADHD RS              </span></td><td  style="text-align:center; white-space:nowrap;" id="TBL-2-39-4"  
+class="td11">          <span 
+class="ecss-0800">ADHD RS               </span></td>
+
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-40-"><td  style="text-align:center; white-space:nowrap;" id="TBL-2-40-1"  
+class="td11">                         </td></tr></table></div>
+   <span 
+class="ecss-1000">SNAP: Wanson, Nolan and Pelham Questionnaire, ADHD-RS: ADHD Rating Scale, CPRS: Conners Parent Rating</span>
+   <span 
+class="ecss-1000">Scale, CTRS: Conners Teacher Rating Scale, BOSS Classroom Observation: Behavioral Observation of Students</span>
+   <span 
+class="ecss-1000">in Schools, DISYPS: Diagnostic System of Mental Disorders in Children and Adolescents.</span>
+                                                                                            
+                                                                                            
+   </div><hr class="endfloat" />
+   </div>
+   <div class="table">
+                                                                                            
+                                                                                            
+<!--l. 339--><p class="indent" >   <a 
+ id="x1-160022"></a></p><hr class="float" /><div class="float" 
+>
+                                                                                            
+                                                                                            
+ <div class="caption" 
+><span class="id">Table 2:  </span><span  
+class="content">Comparison  between  <a 
+href="#XCortese2016">Cortese  et al.</a> [<a 
+href="#XCortese2016">2016</a>]  results  obtained  with  RevMan  [<a 
+href="#XRevMan">Cochrane
+Collaboration</a>, <a 
+href="#XRevMan">2011</a>]  and  those  obtained  with  the  Python  code.  Summary  eﬀects  and  their
+corresponding p-value in parenthesis are presented. With the Python program, a negative summary
+eﬀect is in favor of <a 
+href="#glo:nfb">NFB</a>.</span></div><!--tex4ht:label?: x1-160022 -->
+<div class="tabular">
+ <table id="TBL-3" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-3-1g"><col 
+id="TBL-3-1" /><col 
+id="TBL-3-2" /><col 
+id="TBL-3-3" /><col 
+id="TBL-3-4" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-3-1-"><td colspan="2" style="text-align:center; white-space:nowrap;" id="TBL-3-1-1"  
+class="td11">      <div class="multicolumn"  style="text-align:center; white-space:nowrap;">Input data</div>       </td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-1-3"  
+class="td11">                                        <!--l. 4--><p class="noindent" ><img 
+src="supplemental_material0x.png" alt="   Results from
+Cortese et al. [2016]  "  class="pic-halign"  />                                                                                                                                                                </p></td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-1-4"  
+class="td11">                                        <!--l. 4--><p class="noindent" ><img 
+src="supplemental_material1x.png" alt="                                                                                                                                                                        Eﬀect sizes from
+                                                                                                                                                                      Cortese et al. [2016]  "  class="pic-halign"  />                                                                                                                                                                </p></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-2-"><td colspan="2" style="text-align:center; white-space:nowrap;" id="TBL-3-2-1"  
+class="td11">    <div class="multicolumn"  style="text-align:center; white-space:nowrap;">Implementation</div>     </td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-2-3"  
+class="td11">                                        <!--l. 6--><p class="noindent" ><img 
+src="supplemental_material2x.png" alt="          RevMan
+Cochrane Collaboration [2011]  "  class="pic-halign"  />                                                                                                                                                   </p></td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-2-4"  
+class="td11">                                                                         Python program                                                                                                                   </td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-3-"><td  style="text-align:center; white-space:nowrap;" id="TBL-3-3-1"  
+class="td11"> <div class="multirow"><!-- rows=0 -->
+ <span 
+class="ecsi-1200">Parents</span> </div> </td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-3-2"  
+class="td11">   Total     </td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-3-3"  
+class="td11"><!--l. 8--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>3</mn><mn>5</mn></math> (<!--l. 8--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>0</mn><mn>0</mn><mn>4</mn></math>)</td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-3-4"  
+class="td11"><!--l. 8--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mo 
+class="MathClass-bin">−</mo> <mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>3</mn><mn>4</mn></math> (<!--l. 8--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>0</mn><mn>0</mn><mn>4</mn></math>)</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-4-"><td  style="text-align:center; white-space:nowrap;" id="TBL-3-4-1"  
+class="td11">        </td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-4-2"  
+class="td11"> Inattention </td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-4-3"  
+class="td11"><!--l. 9--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>3</mn><mn>6</mn></math> (<!--l. 9--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>0</mn><mn>0</mn><mn>9</mn></math>)</td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-4-4"  
+class="td11"><!--l. 9--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mo 
+class="MathClass-bin">−</mo> <mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>3</mn><mn>5</mn></math> (<!--l. 9--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>0</mn><mn>1</mn><mn>1</mn></math>)</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-5-"><td  style="text-align:center; white-space:nowrap;" id="TBL-3-5-1"  
+class="td11">        </td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-5-2"  
+class="td11">Hyperactivity</td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-5-3"  
+class="td11"><!--l. 10--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>2</mn><mn>6</mn></math> (<!--l. 10--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>0</mn><mn>0</mn><mn>4</mn></math>)</td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-5-4"  
+class="td11"><!--l. 10--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mo 
+class="MathClass-bin">−</mo> <mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>2</mn><mn>4</mn></math> (<!--l. 10--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>0</mn><mn>2</mn></math>)</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-6-"><td  style="text-align:center; white-space:nowrap;" id="TBL-3-6-1"  
+class="td11"><div class="multirow"><!-- rows=0 -->
+ <span 
+class="ecsi-1200">Teachers</span> </div></td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-6-2"  
+class="td11">   Total     </td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-6-3"  
+class="td11"><!--l. 11--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>1</mn><mn>5</mn></math> (<!--l. 11--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>2</mn><mn>0</mn></math>)</td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-6-4"  
+class="td11"><!--l. 11--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mo 
+class="MathClass-bin">−</mo> <mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>1</mn><mn>3</mn></math> (<!--l. 11--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>2</mn><mn>5</mn></math>)</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-7-"><td  style="text-align:center; white-space:nowrap;" id="TBL-3-7-1"  
+class="td11">        </td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-7-2"  
+class="td11"> Inattention </td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-7-3"  
+class="td11"><!--l. 12--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>0</mn><mn>6</mn></math> (<!--l. 12--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>7</mn><mn>0</mn></math>)</td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-7-4"  
+class="td11"><!--l. 12--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mo 
+class="MathClass-bin">−</mo> <mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>0</mn><mn>9</mn></math> (<!--l. 12--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>5</mn><mn>0</mn></math>)</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-8-"><td  style="text-align:center; white-space:nowrap;" id="TBL-3-8-1"  
+class="td11">        </td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-8-2"  
+class="td11">Hyperactivity</td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-8-3"  
+class="td11"><!--l. 13--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>1</mn><mn>7</mn></math> (<!--l. 13--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>1</mn><mn>3</mn></math>)</td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-8-4"  
+class="td11"><!--l. 13--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mo 
+class="MathClass-bin">−</mo> <mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>1</mn><mn>5</mn></math> (<!--l. 13--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>2</mn><mn>1</mn></math>)</td>
+
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-9-"><td  style="text-align:center; white-space:nowrap;" id="TBL-3-9-1"  
+class="td11">        </td></tr></table>
+</div>
+                                                                                            
+                                                                                            
+   </div><hr class="endfloat" />
+   </div>
+    
+</body> 
+</html>
+                                                                                            
+                                                                                            
+                                                                                            
+
+

@@ -1,0 +1,189 @@
+% adding the line below for Multifile document support with LatexTools Sublime package 
+%!TEX root = manuscript.tex
+
+% Materials and Methods
+
+\section{Materials and Methods}
+
+\subsection{Inclusion criteria}
+
+Search terms were directly taken from \citet{Cortese2016} to the exception of the need for a control arm, 
+which is detailed in Supplemental Materials \citep{Supplementalmaterial}. The requirements included:
+\begin{itemize}
+	\item studies have to assess \gls{nfb} efficacy; 
+	\item subjects must have received a diagnosis of \gls{adhd} based on DSM-IV \citep{DSM-4}, DSM-V \citep{DSM-5}, 
+	ICD-10 \citep{ICD101993} criteria or by an expert psychiatrist; 
+	\item studies have to be written in English, German, Spanish, or French;
+	\item studies have to include at least eight subjects in each group;
+	\item patients must be younger than 25 years old;
+  \item the publication (or subsequently their corresponding author) have to disclose sufficient details on the data
+	to compute required metrics for the ensuing analysis.
+\end{itemize} 
+The studies satisfying all these points were included in the \gls{saob}.
+In order to replicate and update \citeauthor{Cortese2016}'s meta-analysis, we applied the original inclusion criteria of 
+their meta-analysis to our search (the main difference being the presence of a control group). 
+
+\subsection{Outcome definition} 
+
+In the included studies, the severity of \gls{adhd} symptoms have been assessed by parents and, whenever available, 
+by teachers. \citet{Cortese2016} and \citet{Micoulaud2014} defined parents as \gls{mprox} raters who were 
+not blind to the treatment, as opposed to teachers who were considered as \gls{pblind} raters. 
+This distinction is meant to assess the amplitude of the placebo effect, where it is hypothesized that teachers, 
+who are presumed more blind to the intervention, are less influenced in their assessment. 
+Efficacy of \gls{nfb} was measured with clinical scales, such as the \gls{adhd}-RS \citep{Pappas2006}, 
+on the following outcomes: inattention, hyperactivity/impulsivity, and total scores. The factor analysis was 
+performed using the total score.
+
+\subsection{Meta-analysis}
+
+The goal of a meta-analysis is to aggregate results from different clinical investigations and offer a 
+consolidated state of evidence. To do so, it is necessary to assume 
+some level of homogeneity in the design of the studies: inclusion criteria, and the presence and type of control 
+(active, semi-active, or non-active). Because studies occasionally 
+use slight variations of a clinical scales and because of the clinical heterogeneity of patients and control, 
+the scores are standardized before being pooled into a \gls{se}. The between-\gls{es} is one of such standardized metrics, 
+which we have implemented in this paper (see Supplemental Materials \citep{Supplementalmaterial}). 
+
+The meta-analysis was performed with a Python package developed for this work. The package offers a transparent 
+approach to the choice of parameters, in an effort to ease replicability. We have benchmarked it against RevMan version 5.1 
+\citep[UK, London]{RevMan} by replicating \citet{Cortese2016}'s work. 
+The code is made fully available on a GitHub repository \citep{Bussalb2018}, including all raw data we have used
+in the present study so as to allow peers to review its implementation, update it, or use it for different projects. 
+ 
+Before updating the \citet{Cortese2016}'s work with recently published studies
+\citep{Strehl2017, Baumeister2016}, we decided to run a sensitivity analysis investigating the choices 
+that later proved controversial \citep{Micoulaud2016}. Altogether, the changes investigated included:
+\begin{itemize}
+\item the \gls{es} of \citeauthor{Arnold2014}'s study was computed from the post-test clinical values taken 
+after the completion of the 40 sessions, in contrast to \citet{Cortese2016}'s report which used the results 
+after only 12 sessions because the end point values were not available at the time of his study;
+\item the \gls{es} computed from the teachers' assessment reported by \citet{Steiner2014} relied on the BOSS 
+Classroom Observation \citep{Shapiro2010}. This is an atypical scale to quantify \gls{adhd} symptoms since 
+the Conners Rating Scale Revised \citep{Conners1998, Christiansen2014, Bluschke2016}, a well-defined
+\citep{Collett2003, Epstein2012}, and broadly used metric, was available in this study. Thus, we decided 
+to compute the \gls{es} based on the Conners-3, already used in this study to compute the 
+parents' \gls{es}.  
+\end{itemize} 
+
+We also performed two subgroups analysis with the two choices described above: 
+first, including only studies following standard protocol as defined by \citet{Arns2014} and then with studies 
+whose participants took low-dose or no medication during the trial.  
+
+\subsection{Identify factors influencing the Neurofeedback}
+
+While revisiting the existing meta-analyses, it became apparent to us that the studies pooled together were highly heterogeneous 
+in terms of methodological and practical implementation. For instance, all \gls{nfb} 
+interventions were pooled together regardless the quality of the acquisition, the quality of EEG data, and the trained 
+neuromarker. Likewise, the methodological implementations varied significantly, requiring the 
+'subgroup' analysis (gathering studies following standard protocols for instance) that are somewhat arbitrary. To circumvent these limitations, we 
+implemented a novel approach: the \gls{saob}. With this method, the within-\gls{es} of each intervention was considered 
+as a dependent variable to be explained by methodological and technical factors. The results 
+of such analysis should enable to identify known methodological biases (e.g.\ blind assessments negatively associated 
+with \gls{es}) and possibly technical factors (e.g.\ a good control on real time data quality influences positively the 
+treatment outcome). 
+
+\subsubsection{Identify and pre-process factors}
+
+We classified the factors influencing the efficacy of \gls{nfb} in five categories: methodological, technical,
+demographics, and quality of the signal acquisition. 
+Factors were chosen based on what has been reported in the literature, presumed to influence \gls{es}, 
+and categorized as follow:
+
+\begin{itemize}
+  \item \emph{the signal quality}: correction of ocular and generic (amplitude based) artifacts;
+  \item \emph{the population}: intake of psychostimulants during \gls{nfb} treatment and the age range of children
+  included;
+  \item \emph{the methodological biases}: the presence of a control group, the blindness of assessors, 
+  the randomization of subjects in controlled trials, and the approval of the study by an \gls{irb};
+  \item \emph{the \gls{nfb} implementation}: the protocol used (\gls{scp}, \gls{smr}, 
+  theta up, beta up in central areas, theta down), the presence of a transfer phase during \gls{nfb} training, the 
+	possibility to train at home or at school with a transfer card, 
+  the type of thresholding for discrete reward, the number of \gls{nfb} sessions, the length and frequency of the sessions, and the length of
+  the treatment;
+  \item \emph{the acquisition quality}: the presence of one or more active electrodes and the \gls{eeg} data quality. 
+  This latter was coded as an indicator between 1 and 3, using the following criteria:   
+	\begin{description}
+	  \item[\emph{the type of electrodes used}:] \gls{agcl}/Gel or \gls{au}/Gel;
+    \item[\emph{the use of impedance mode}:] a quality check of electrode contacts
+		ensuring an inter-electrode impedance smaller than $40k\Omega$;  
+    \item[\emph{the level of hardware certificate}:] compliance with ISO-60601-2-26 \citep{ISO-60601-2-26:2012}.
+	\end{description}
+	A quality score equal to 3 was assigned if all the above criteria were satisfied. If at least one was satisfied
+	the quality score was set to 2, otherwise the score was set to 1.
+\end{itemize}	
+
+We provide in a GitHub repository \citep{Bussalb2018} the raw data extracted from the publications. To prevent any
+bias in the analysis, the name of the factors was hidden during the entire analysis so that the data scientists (AB, QB,
+DO, and LM) were fully blind to them. The names were revealed only once the data analysis and results were accepted as valid: 
+this included choice of variable normalization and validation of model hypothesis as detailed below.
+
+The pre-processing of factors for the analysis included the following steps: factors for which there were too many 
+missing observations, arbitrarily set to more than 20\% of the total of observations, were removed from the analysis. 
+Furthermore, if a factor had more than 80\% similar observations it was removed as well. Categorical variables were 
+coded as dummies meaning that the presence of the factor was represented with 1 and its absence 0. All variables 
+were standardized by subtracting the mean and then dividing by the standard deviation (not applied before the decision tree).
+
+\subsubsection{Explaining effect sizes with factors}
+
+To compute the within-\gls{es}, the  means of total \gls{adhd} scores given by parents and teachers were used. Besides, 
+in case studies providing results for more than one behavioral scale, the \gls{es} scores were computed for each one as 
+
+\begin{equation*}
+\label{eq:factors_effect_size_within_subject}
+\text{ES} = \frac{M_{\text{post,T}} - M_{\text{pre,T}}}{\sqrt{\frac{\sigma_{\text{pre,T}}^2 + \sigma_{\text{post,T}}^2}{2}}},
+\end{equation*} 
+\noindent where $M_{\text{t,T}}$ is the mean of clinical scale, for treatment T, taken at time t (pre-test or post-test) and $\sigma$ represents 
+its standard deviation.
+
+With this definition, we focused on the effect of the treatment within a group \citep{Cohen1988} as commonly reported 
+in the literature \citep{Arns2009, Maurizio2014, Strehl2017}. This \gls{es} enables to quantify 
+the efficacy of \gls{nfb} inside the treatment group. 
+
+The \gls{es} was then considered as a dependent variable to be explained by the factors (the independent variables). 
+The following three methods, implemented with the Scikit-Learn Python \citep[version 0.18.1]{Pedregosa2011} and the Statsmodels Python
+\citep[version 0.8.0]{Seabold2010} libraries, were used to perform the regression:
+\begin{itemize}
+  \item weighted multiple linear regression (\gls{wls}) \citep{Montgomery2012};
+	\item sparsity-regularized linear regression with \gls{lasso} \citep{Tibshirani1996};
+	\item decision tree \citep{Quinlan1986}.
+\end{itemize}
+
+The aim of the linear regression is to estimate the regression coefficients linking the factors
+to the \gls{es}. A significant coefficient (here and hereafter meaning significantly different from zero) indicates
+that the associated factor has an influence on \gls{nfb} efficacy and its sign the direction of the effect.
+
+The \gls{wls} differs from a traditional linear regression estimated with \gls{ols} in that a weight is assigned 
+to each observation so as to account for the multiplicity of reported clinical endpoints in some studies. Besides, the 
+weight was also set as a function of the sample size to account for variations in sample sizes. Specifically, the weight of each study 
+was taken as the ratio between the experiment group's sample size and the number of behavioral scales available.
+We also ran the analysis with \gls{ols} method to assess the impact of the weights on the results. 
+
+The second linear method applied was the \gls{lasso}, which naturally incorporates variable selection 
+to the linear model thanks to $\ell_1$-norm applied on the coefficients. A coefficient not set to zero means that 
+the associated factor has an influence on \gls{nfb} efficacy and its sign indicates the direction of the effect.
+
+The last method used to determine factors influencing \gls{nfb} is the decision tree \citep{Quinlan1986}, a hierarchical 
+and non-linear method. It breaks down a dataset into smaller and smaller subsets using, at each iteration, a variable and 
+a threshold chosen to optimize a simple \gls{mse} criterion \citep{James2013}. A tree is composed of several nodes and leafs, 
+the importance of which is decreasing from the top node, called the root node, downward. 
+
+These methods are intrinsically different from each others, so we compared their results. For instance, the decision
+tree captures variable interactions and can relate factors to \gls{es} in a non-linear fashion. On the other hand, the
+\gls{lasso} offers an elegant mathematical framework to variable selection. Further details are given in the Supplemental Material
+\citep{Supplementalmaterial}.
+
+
+%1636
+
+
+
+
+
+
+
+
+
+
+
+
+
