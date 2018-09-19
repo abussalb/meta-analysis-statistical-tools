@@ -112,9 +112,9 @@ and categorized as follow:
 	the quality score was set to 2, otherwise the score was set to 1.
 \end{itemize}	
 
-We provide in a Github repository \citep{Bussalb2018} the raw data extracted from the publications. To prevent any
+We provide in a GitHub repository \citep{Bussalb2018} the raw data extracted from the publications. To prevent any
 bias in the analysis, the name of the factors was hidden during the entire analysis so that the data scientists (AB, QB,
-DO, and LM) were fully blind to them. The names were revealed only once the data  analysis and results were accepted as valid: 
+DO, and LM) were fully blind to them. The names were revealed only once the data analysis and results were accepted as valid: 
 this included choice of variable normalization and validation of model hypothesis as detailed below.
 
 The pre-processing of factors for the analysis included the following steps: factors for which there were too many 
@@ -132,7 +132,7 @@ in case studies providing results for more than one behavioral scale, the \gls{e
 \label{eq:factors_effect_size_within_subject}
 \text{ES} = \frac{M_{\text{post,T}} - M_{\text{pre,T}}}{\sqrt{\frac{\sigma_{\text{pre,T}}^2 + \sigma_{\text{post,T}}^2}{2}}},
 \end{equation*} 
-where $M_{\text{t,T}}$ is the mean of clinical scale, for treatment T, taken at time t (pre-test or post-test) and $\sigma$ represents 
+\noindent where $M_{\text{t,T}}$ is the mean of clinical scale, for treatment T, taken at time t (pre-test or post-test) and $\sigma$ represents 
 its standard deviation.
 
 With this definition, we focused on the effect of the treatment within a group \citep{Cohen1988} as commonly reported 
@@ -159,7 +159,7 @@ was taken as the ratio between the experiment group's sample size and the number
 We also ran the analysis with \gls{ols} method to assess the impact of the weights on the results. 
 
 The second linear method applied was the \gls{lasso}, which naturally incorporates variable selection 
-to the linear model thanks to L1-norm applied on the coefficients. A coefficient not set to zero means that 
+to the linear model thanks to $\ell_1$-norm applied on the coefficients. A coefficient not set to zero means that 
 the associated factor has an influence on \gls{nfb} efficacy and its sign indicates the direction of the effect.
 
 The last method used to determine factors influencing \gls{nfb} is the decision tree \citep{Quinlan1986}, a hierarchical 
