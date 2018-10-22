@@ -17,18 +17,18 @@ Indeed, since within-\gls{es} were considered in this analysis, a control group 
 
 \subsection{Meta-analysis}
 
-The Python module developed and used for this work was validated (details available in Supplemental Materials) 
-and the code was made available online \citep{Bussalb2018}.
+\textcolor{red}{\sout{The Python module developed and used for this work was validated (details available in Supplemental Materials) 
+and the code was made available online}} \citep{Bussalb2018}.
 
-The replication and the update of \citeauthor{Cortese2016}'s study was conducted by applying the choices described 
-in the Materials and Methods section and the results obtained are presented 
+The replication and the update of \citeauthor{Cortese2016}'s \textcolor{red}{\sout{study was conducted by applying the choices described 
+in the Materials and Methods section and the}} results obtained are presented 
 in Table~\ref{Table:meta_review_comparison_revman_and_python_with_choices}:
 
 \begin{itemize}
-    \item when computing the \gls{es} for \citet{Arnold2014} with the values after 40 sessions of \gls{nfb}, 
-      smaller \gls{es} were found than \citet{Cortese2016}. This was unexpected as  
+    \item when computing the between-\gls{es} for \citet{Arnold2014} with the values after 40 sessions of \gls{nfb}, 
+      smaller between-\gls{es} were found than \citet{Cortese2016}. This was unexpected as  
 			the clinical efficacy might be supposed to increase with the number of \gls{nfb} sessions;  
-    \item when relying on the teachers' ratings from the Conners-3 to compute the \gls{es} of \citet{Steiner2014}, 
+    \item when relying on the teachers' ratings from the Conners-3 to compute the between-\gls{es} of \citet{Steiner2014}, 
 		higher \gls{se} were found in attention but not for total and hyperactivity score. However, this different choice of 
 		scale did not affect the statistical significance of the \glspl{se}.
 \end{itemize}
@@ -40,9 +40,9 @@ Despite favorable results for \gls{nfb}, particularly on parents' assessments, a
 change neither the magnitude nor the significance of the \gls{se}, for any outcome whatever the raters,
 as illustrated in Figure~\ref{Figure:meta_review_forest_plots_update_meta_analysis_our_choices_no_colors_2-columns_fitting_image}. 
  
-As initially suggested by \citeauthor{Cortese2016}, the analysis was ran on two subgroups of studies: one gathering 
+\textcolor{red}{\sout{As initially suggested by \citeauthor{Cortese2016}, the analysis was ran on two subgroups of studies: one gathering 
 studies following the standard protocol defined by \citet{Arns2014} and a second including only participants not taking medications 
-during the clinical trial. 
+during the clinical trial. }}
 
 Regarding the `standard protocol' subgroup, \citet{Cortese2016} found all the outcomes significant except for the 
 hyperactivity symptoms rated by teachers, which only showed a statistical trend (p-value = 0.11). Similar results 
@@ -56,7 +56,7 @@ Besides, the differences in \citet{Arnold2014} values caused a loss of significa
 (p-value = 0.066) compared to \citet{Cortese2016} (p-value = 0.016). The two new studies were not included in this 
 subgroup because subjects were taking psychostimulants during the trial.
 
-All the clinical scales used to compute the \gls{es} following our choices are summarized in the Supplemental Materials.
+All the clinical scales used to compute the between-\gls{es} following our choices are summarized in the Supplemental Materials.
 
 \subsection{Factors influencing Neurofeedback}
 
@@ -77,12 +77,11 @@ When applying the \gls{ols}, the same factors were significant, except the prese
 a transfer phase, the protocol theta down, and the artifact correction based on amplitude, with a lower adjusted R-squared 
 (0.42). The \gls{lasso} regression selected 12 significant factors. With these methods, a negative coefficient means 
 that the factor was in favor  of the efficacy of \gls{nfb}. The decision tree is presented in Figure~\ref{Figure:factors_analysis_decision_tree_results}. 
-The best predictor is at the top of the tree: in our case it was 
-the \gls{pblind}. Five other factors also split the subsets, however, the lower we get into the tree, the less samples are 
-available, making the interpretation more and more doubtful.  
+The best predictor in our case was the \gls{pblind}. Five other factors also split the subsets, however, 
+the lower we get into the tree, the less samples are available, making the interpretation more and more doubtful.  
 
 Several factors were common to the three methods used. In particular; the treatment length, the assessment 
-by a blind rater, and an \gls{eeg} quality score equal to 2 (meaning that at least one of the three quality criteria had to be fulfilled).
+by a blind rater, and an \gls{eeg} quality score equal to 2 \textcolor{red}{\sout{(meaning that at least one of the three quality criteria had to be fulfilled)}}.
 The methods also agreed on the direction of the effect for these factors: 
 a shorter treatment and recording the \gls{eeg} with a good-quality system seems preferable, whereas teachers' assessment appears less favorable
 as compared to parents' assessment.
@@ -91,7 +90,7 @@ It is more doubtful the influence of the factors returned by only one or two met
 both \gls{wls} and \gls{lasso} found that relying on the amplitude of the signal to correct artifacts and including a transfer 
 phase seems not to improve \gls{adhd} symptoms. Conversely, the \gls{irb} approval, a theta down protocol, and a higher number 
 of sessions per week appears to positively influence the efficacy of the \gls{nfb} treatment. The decision tree and \gls{lasso} had in common the protocol 
-\gls{smr}: it was associated with lower \gls{es}. Five factors were returned by only one of the methods: the minimal age of the 
+\gls{smr}: it was associated with lower within-\gls{es}. Five factors were returned by only one of the methods: the minimal age of the 
 children, being on drugs during \gls{nfb} treatment, randomizing the groups and the \glspl{scp} protocol.  
 
 Five factors were never selected by the three methods: the correction for the ocular artifact, the children maximum age, the number 
