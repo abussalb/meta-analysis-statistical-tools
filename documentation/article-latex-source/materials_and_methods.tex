@@ -54,20 +54,20 @@ Before updating the \citet{Cortese2016}'s work with recently published studies
 \citep{Strehl2017, Baumeister2016}, we decided to run a sensitivity analysis investigating the choices 
 that later proved controversial \citep{Micoulaud2016}. Altogether, the changes investigated included:
 \begin{itemize}
-\item the \gls{es} of \citeauthor{Arnold2014}'s study was computed from the post-test clinical values taken 
+\item the between-\gls{es} of \citeauthor{Arnold2014}'s study was computed from the post-test clinical values taken 
 after the completion of the 40 sessions, in contrast to \citet{Cortese2016}'s report which used the results 
 after only 12 sessions because the end point values were not available at the time of his study;
-\item the \gls{es} computed from the teachers' assessment reported by \citet{Steiner2014} relied on the BOSS 
+\item the between-\gls{es} computed from the teachers' assessment reported by \citet{Steiner2014} relied on the BOSS 
 Classroom Observation \citep{Shapiro2010}. This is an atypical scale to quantify \gls{adhd} symptoms since 
 the Conners Rating Scale Revised \citep{Conners1998, Christiansen2014, Bluschke2016}, a well-defined
 \citep{Collett2003, Epstein2012}, and broadly used metric, was available in this study. Thus, we decided 
-to compute the \gls{es} based on the Conners-3, already used in this study to compute the 
-parents' \gls{es}.  
+to compute the between-\gls{es} based on the Conners-3, already used in this study to compute the 
+parents' between-\gls{es}.  
 \end{itemize} 
 
-We also performed two subgroups analysis with the two choices described above: 
-first, including only studies following standard protocol as defined by \citet{Arns2014} and then with studies 
-whose participants took low-dose or no medication during the trial.  
+As initially suggested by \citeauthor{Cortese2016}, the analysis was ran on two subgroups of studies 
+with the two choices described above: one gathering studies following the standard protocol defined by 
+\citet{Arns2014} and a second including only participants not taking medications during the clinical trial.
 
 \subsection{Identify factors influencing the Neurofeedback}
 
@@ -79,7 +79,7 @@ neuromarker. Likewise, the methodological implementations varied significantly, 
 implemented a novel approach: the \gls{saob}. With this method, the within-\gls{es} of each intervention was considered 
 as a dependent variable to be explained by methodological and technical factors. The results 
 of such analysis should enable to identify known methodological biases (e.g.\ blind assessments negatively associated 
-with \gls{es}) and possibly technical factors (e.g.\ a good control on real time data quality influences positively the 
+with within-\gls{es}) and possibly technical factors (e.g.\ a good control on real time data quality influences positively the 
 treatment outcome). 
 
 \subsubsection{Identify and pre-process factors}
@@ -126,7 +126,7 @@ were standardized by subtracting the mean and then dividing by the standard devi
 \subsubsection{Explaining effect sizes with factors}
 
 To compute the within-\gls{es}, the  means of total \gls{adhd} scores given by parents and teachers were used. Besides, 
-in case studies providing results for more than one behavioral scale, the \gls{es} scores were computed for each one as 
+in case studies providing results for more than one behavioral scale, the within-\gls{es} scores were computed for each one as 
 
 \begin{equation*}
 \label{eq:factors_effect_size_within_subject}
@@ -136,10 +136,10 @@ in case studies providing results for more than one behavioral scale, the \gls{e
 its standard deviation.
 
 With this definition, we focused on the effect of the treatment within a group \citep{Cohen1988} as commonly reported 
-in the literature \citep{Arns2009, Maurizio2014, Strehl2017}. This \gls{es} enables to quantify 
+in the literature \citep{Arns2009, Maurizio2014, Strehl2017}. This within-\gls{es} enables to quantify 
 the efficacy of \gls{nfb} inside the treatment group. 
 
-The \gls{es} was then considered as a dependent variable to be explained by the factors (the independent variables). 
+The within-\gls{es} was then considered as a dependent variable to be explained by the factors (the independent variables). 
 The following three methods, implemented with the Scikit-Learn Python \citep[version 0.18.1]{Pedregosa2011} and the Statsmodels Python
 \citep[version 0.8.0]{Seabold2010} libraries, were used to perform the regression:
 \begin{itemize}
@@ -149,7 +149,7 @@ The following three methods, implemented with the Scikit-Learn Python \citep[ver
 \end{itemize}
 
 The aim of the linear regression is to estimate the regression coefficients linking the factors
-to the \gls{es}. A significant coefficient (here and hereafter meaning significantly different from zero) indicates
+to the within-\gls{es}. A significant coefficient (here and hereafter meaning significantly different from zero) indicates
 that the associated factor has an influence on \gls{nfb} efficacy and its sign the direction of the effect.
 
 The \gls{wls} differs from a traditional linear regression estimated with \gls{ols} in that a weight is assigned 
@@ -168,7 +168,7 @@ a threshold chosen to optimize a simple \gls{mse} criterion \citep{James2013}. A
 the importance of which is decreasing from the top node, called the root node, downward. 
 
 These methods are intrinsically different from each others, so we compared their results. For instance, the decision
-tree captures variable interactions and can relate factors to \gls{es} in a non-linear fashion. On the other hand, the
+tree captures variable interactions and can relate factors to within-\gls{es} in a non-linear fashion. On the other hand, the
 \gls{lasso} offers an elegant mathematical framework to variable selection. Further details are given in the Supplemental Material
 \citep{Supplementalmaterial}.
 
