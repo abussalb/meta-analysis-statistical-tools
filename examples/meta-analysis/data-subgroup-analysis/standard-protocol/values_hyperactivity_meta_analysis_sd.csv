@@ -1,0 +1,33 @@
+Author,Year,Group,Score Name,Number of patients,Raters,Time,Mean,Std
+Bakhshayesh,2011,NFB,German ADHD rating scale,18,Parents,pre,1.29,0.76
+Bakhshayesh,2011,NFB,German ADHD rating scale,18,Parents,post,0.64,0.44
+Bakhshayesh,2011,Control,German ADHD rating scale,17,Parents,pre,1.15,0.56
+Bakhshayesh,2011,Control,German ADHD rating scale,17,Parents,post,0.8,0.6
+Bakhshayesh,2011,NFB,German ADHD rating scale,18,Teachers,pre,1.17,0.96
+Bakhshayesh,2011,NFB,German ADHD rating scale,18,Teachers,post,0.69,0.64
+Bakhshayesh,2011,Control,German ADHD rating scale,17,Teachers,pre,1.01,0.81
+Bakhshayesh,2011,Control,German ADHD rating scale,17,Teachers,post,0.86,0.59
+Gevenlesben,2009,NFB,FBB HKS,59,Parents,pre,1.14,0.66
+Gevenlesben,2009,NFB,FBB HKS,59,Parents,post,0.83,0.44
+Gevenlesben,2009,Control,FBB HKS,35,Parents,pre,1.25,0.68
+Gevenlesben,2009,Control,FBB HKS,35,Parents,post,1.13,0.42
+Gevenlesben,2009,NFB,FBB HKS,59,Teachers,pre,0.87,0.82
+Gevenlesben,2009,NFB,FBB HKS,59,Teachers,post,0.66,0.42
+Gevenlesben,2009,Control,FBB HKS,35,Teachers,pre,1.9,0.89
+Gevenlesben,2009,Control,FBB HKS,35,Teachers,post,1.91,0.59
+Beauregard,2006,NFB,Conners Parent Rating Scale,15,Parents,pre,79.4,10.8
+Beauregard,2006,NFB,Conners Parent Rating Scale,15,Parents,post,64.3,18.9
+Beauregard,2006,Control,Conners Parent Rating Scale,5,Parents,pre,75.8,9.9
+Beauregard,2006,Control,Conners Parent Rating Scale,5,Parents,post,73.8,9.3
+Holtmann,2009,NFB,FBB HKS,20,Parents,pre,1.2,0.8
+Holtmann,2009,NFB,FBB HKS,20,Parents,post,1,0.7
+Holtmann,2009,Control,FBB HKS,14,Parents,pre,1.1,0.7
+Holtmann,2009,Control,FBB HKS,14,Parents,post,1,0.7
+Strelh,2017,NFB,German ADHD rating scale,72,Parents,pre,1.54,0.63
+Strelh,2017,NFB,German ADHD rating scale,73,Parents,post,1.22,0.71
+Strelh,2017,Control,German ADHD rating scale,67,Parents,pre,1.52,0.67
+Strelh,2017,Control,German ADHD rating scale,68,Parents,post,1.33,0.66
+Strelh,2017,NFB,German ADHD rating scale,68,Teachers,pre,1.15,0.81
+Strelh,2017,NFB,German ADHD rating scale,70,Teachers,post,1.05,0.79
+Strelh,2017,Control,German ADHD rating scale,63,Teachers,pre,1.02,0.85
+Strelh,2017,Control,German ADHD rating scale,64,Teachers,post,1.02,0.77
