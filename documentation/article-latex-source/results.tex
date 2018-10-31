@@ -26,15 +26,18 @@ in Table~\ref{Table:meta_review_comparison_revman_and_python_with_choices}:
 
 \begin{itemize}
     \item when computing the between-\gls{es} for \citet{Arnold2014} with the values after 40 sessions of \gls{nfb}, 
-      smaller between-\gls{es} were found than \citet{Cortese2016}. This was unexpected as  
-			the clinical efficacy might be supposed to increase with the number of \gls{nfb} sessions;  
+      smaller between-\gls{es} were found than \citet{Cortese2016}, \textcolor{red}{which} was unexpected as  
+			the clinical efficacy might be supposed to increase with the number of \gls{nfb} sessions. \textcolor{red}{These lower between-\gls{es}
+			impacted the \gls{se}: they were slightly lower when computed with this choice but they remained significant (see the three first lines 
+			of Table~\ref{Table:meta_review_comparison_revman_and_python_with_choices})};  
     \item when relying on the teachers' ratings from the Conners-3 to compute the between-\gls{es} of \citet{Steiner2014}, 
 		higher \gls{se} were found in attention but not for total and hyperactivity score. However, this different choice of 
-		scale did not affect the statistical significance of the \glspl{se}.
+		scale did not affect the statistical significance of the \glspl{se} \textcolor{red}{(see the three first lines 
+			of Table~\ref{Table:meta_review_comparison_revman_and_python_with_choices})}.
 \end{itemize}
 
-The meta-analysis was then extended by adding two new articles \citep{Strehl2017, Baumeister2016} found 
-by applying the same search criteria and finding more recent matches. \citet{Baumeister2016} provided results 
+The meta-analysis was then extended by adding two new articles \citep{Strehl2017, Baumeister2016} \textcolor{red}{\sout{found 
+by applying the same search criteria and finding more recent matches}}. \citet{Baumeister2016} provided results 
 only for parents total outcome whereas \citet{Strehl2017} gave teachers and parents' assessments for all outcomes. 
 Despite favorable results for \gls{nfb}, particularly on parents' assessments, adding these two new studies did not 
 change neither the magnitude nor the significance of the \gls{se}, for any outcome whatever the raters,
@@ -44,7 +47,7 @@ as illustrated in Figure~\ref{Figure:meta_review_forest_plots_update_meta_analys
 studies following the standard protocol defined by }} \citet{Arns2014} \textcolor{red}{\sout{and a second including only participants not taking medications 
 during the clinical trial. }}
 
-Regarding the `standard protocol' subgroup, \citet{Cortese2016} found all the outcomes significant except for the 
+Regarding the "standard protocol" subgroup, \citet{Cortese2016} found all the outcomes significant except for the 
 hyperactivity symptoms rated by teachers, which only showed a statistical trend (p-value = 0.11). Similar results 
 were obtained when adding the most recent studies meeting this definition \citep{Strehl2017} (p-value = 0.11). 
 The \gls{se} for the total outcome assessed by teachers remained significant with the addition of the two new
@@ -64,36 +67,42 @@ This analysis was performed on 31 trials assessing the efficacy of \gls{nfb} as 
 in Table~\ref{Table:table_factors_analysis_meta_analysis_list_studies}. Among the 25 factors selected, six were 
 removed because there were too many missing observations or because they were too homogeneous: beta up in frontal areas, 
 the use of a transfer card, the type of threshold for the rewards (incremental or fixed), the EEG quality equal of 3
-(meaning that the electrodes used were either \gls{agcl}/Gel or \gls{au}/Gel, a check of electrode contact quality was
-performed, and the hardware used was CE marked), and the presence of a control group. 
+\textcolor{red}{\sout{(meaning that the electrodes used were either \gls{agcl}/Gel or \gls{au}/Gel, a check of electrode contact quality was
+performed, and the hardware used was CE marked)}}, and the presence of a control group. 
 
 All results are presented in Table~\ref{Table:table_factors_analysis_results_summary}. These results require a 
 careful interpretation since each technique provided with slightly different results. These differences 
 may depend on the different assumptions of the model and several other factors. In any case, we are inclined to 
 trust those findings that are consistent across methods. 
 
-The \gls{wls} technique identified eight significant factors for an adjusted R-squared of 0.74. 
+The \gls{wls} technique identified eight significant factors for an adjusted R-squared of 0.74 \textcolor{red}{(see second column of 
+Table~\ref{Table:table_factors_analysis_results_summary})}. 
 When applying the \gls{ols}, the same factors were significant, except the presence of 
 a transfer phase, the protocol theta down, and the artifact correction based on amplitude, with a lower adjusted R-squared 
-(0.42). The \gls{lasso} regression selected 12 significant factors. With these methods, a negative coefficient means 
-that the factor was in favor  of the efficacy of \gls{nfb}. The decision tree is presented in Figure~\ref{Figure:factors_analysis_decision_tree_results}. 
-The best predictor in our case was the \gls{pblind}. Five other factors also split the subsets, however, 
+(0.42). The \gls{lasso} regression selected 12 significant factors \textcolor{red}{(see third column of 
+Table~\ref{Table:table_factors_analysis_results_summary})}. With these methods, a negative coefficient means 
+that the factor was in favor of the efficacy of \gls{nfb}. The decision tree is presented in Figure~\ref{Figure:factors_analysis_decision_tree_results}: 
+the best predictor in our case was the \gls{pblind} \textcolor{red}{(see last column of 
+Table~\ref{Table:table_factors_analysis_results_summary})}. Five other factors also split the subsets, however, 
 the lower we get into the tree, the less samples are available, making the interpretation more and more doubtful.  
 
-Several factors were common to the three methods used. In particular; the treatment length, the assessment 
-by a blind rater, and an \gls{eeg} quality score equal to 2 \textcolor{red}{\sout{(meaning that at least one of the three quality criteria had to be fulfilled)}}.
+Several factors were common to the three methods used. In particular: the assessment 
+by a blind rater, the treatment length, and an \gls{eeg} quality score equal to 2 \textcolor{red}{(see lines 6, 15, and 24 of 
+Table~\ref{Table:table_factors_analysis_results_summary})}\textcolor{red}{\sout{(meaning that at least one of the three quality criteria had to be fulfilled)}}.
 The methods also agreed on the direction of the effect for these factors: 
 a shorter treatment and recording the \gls{eeg} with a good-quality system seems preferable, whereas teachers' assessment appears less favorable
 as compared to parents' assessment.
 
-It is more doubtful the influence of the factors returned by only one or two methods. In particular: 
+It is more doubtful the influence of the factors returned by only one or two methods \textcolor{red}{(see lines 3, 7, 15, 16, 18, and 20 of 
+Table~\ref{Table:table_factors_analysis_results_summary})}. In particular: 
 both \gls{wls} and \gls{lasso} found that relying on the amplitude of the signal to correct artifacts and including a transfer 
 phase seems not to improve \gls{adhd} symptoms. Conversely, the \gls{irb} approval, a theta down protocol, and a higher number 
 of sessions per week appears to positively influence the efficacy of the \gls{nfb} treatment. The decision tree and \gls{lasso} had in common the protocol 
 \gls{smr}: it was associated with lower within-\gls{es}. Five factors were returned by only one of the methods: the minimal age of the 
 children, being on drugs during \gls{nfb} treatment, randomizing the groups and the \glspl{scp} protocol.  
 
-Five factors were never selected by the three methods: the correction for the ocular artifact, the children maximum age, the number 
+Five factors were never selected by the three methods \textcolor{red}{(see lines 1, 9, 13, 18 and 22 of 
+Table~\ref{Table:table_factors_analysis_results_summary})}: the correction for the ocular artifact, the children maximum age, the number 
 of sessions, the protocol beta up in central areas and the presence of more than one active electrode. Thus, these factors definitely appear 
 not to have an influence on \gls{nfb} efficacy.  
 
