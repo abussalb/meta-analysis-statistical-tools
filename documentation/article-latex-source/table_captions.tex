@@ -14,9 +14,9 @@
 
 \begin{table}[h!]
   \centering
-  \caption{Comparison between \citet{Cortese2016} results obtained with RevMan \citep{RevMan} and those obtained with the Python code with our 
-	choices applied. $\glspl{se}$ and their corresponding p-value (in parenthesis) are presented. With the Python program, a negative $\gls{se}$
-	is in favor of \gls{nfb} unlike \citeauthor{Cortese2016}.}
+  \caption{Comparison between \citet{Cortese2016} results obtained with RevMan \citep{RevMan} and those obtained with the \textcolor{red}{meta-analysis package} with our 
+	choices$^a$ applied. \glsentryfirstplural{se} (\glspl{se}) and their corresponding p-value (in parenthesis) are presented. With the \textcolor{red}{meta-analysis package}, a negative \gls{se}
+	is in favor of \glsfirst{nfb} unlike \citeauthor{Cortese2016}.}
   \input{tables/table_meta_review_comparison_revman_and_python_with_choices}
 	\begin{tablenotes}
 	\item $^a$ post-test values for \citeauthor{Arnold2014} are obtained after 40 sessions of \gls{nfb} and Conners scale is used for \citeauthor{Steiner2014}
@@ -27,9 +27,9 @@
 
 \begin{table}[h!]
   \centering
-  \caption{Results of the \gls{wls}, \gls{lasso} and decision tree. For the \gls{wls}, a p-value $<$ 0.05 (in bold) means that the coefficient of 
+  \caption{Results of the \glsfirst{wls}, \gls{lasso} and decision tree. For the \gls{wls}, a p-value $<$ 0.05 (in bold) means that the coefficient of 
 	the corresponding factor is significantly different from 0. For the \gls{lasso}, factors not set to 0 (in bold) are selected. For the decision tree,
-	the place of the factor in the tree is precised. When the value of the coefficient is negative, the corresponding factor may lead to better \gls{nfb} results.}
+	the place of the factor in the tree is \textcolor{red}{indicated}. For the first two columns, when the value of the coefficient is negative, the corresponding factor may lead to better \glsfirst{nfb} results.}
   \input{tables/table_factors_analysis_results_summary}
   \label{Table:table_factors_analysis_results_summary}
 \end{table}
