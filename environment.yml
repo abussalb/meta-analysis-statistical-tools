@@ -1,4 +1,4 @@
-name: NFB-efficacy-env
+name: treatment-efficacy-env
 dependencies:
   - graphviz>=0.8.1
   - numpy>=1.12.1
