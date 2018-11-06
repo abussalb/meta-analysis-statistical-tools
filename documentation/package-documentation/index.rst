@@ -1,10 +1,10 @@
-.. Assess Neurofeedback efficacy documentation master file, created by
-   sphinx-quickstart on Wed Aug  8 13:36:40 2018.
+.. Assess a treatment efficacy documentation master file, created by
+   sphinx-quickstart on Mon Nov  5 12:18:02 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Assess Neurofeedback efficacy's documentation!
-=========================================================
+Welcome to Assess a treatment efficacy's documentation!
+=======================================================
 
 .. toctree::
    :maxdepth: 2
