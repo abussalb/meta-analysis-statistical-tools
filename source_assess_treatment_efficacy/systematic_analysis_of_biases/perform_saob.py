@@ -18,32 +18,32 @@ from sklearn import tree
 import graphviz
 
 
-def effect_size_within_subjects(mean_post_test_NFB, mean_pre_test_NFB, std_post_test_NFB, std_pre_test_NFB):
-    """Computes effects sizes inside a group, this effect size reflects the evolution inside a group between pre and post test. The
+def effect_size_within_subjects(mean_post_test_treatment, mean_pre_test_treatment, std_post_test_treatment, std_pre_test_treatment):
+    """Computes effects sizes inside a treatment group, this effect size reflects the evolution inside a group between pre and post test. The
     fomula used comes from Cohen J. (1988), *Statistical Power Analysis for the Behavioral Sciences*. 
     
     Parameters
     ----------
-    n_NFB: int
-        Number of patients included in the Neurofeedback (NFB) group.
+    n_treatment: int
+        Number of patients included in the treatment group.
     
-    mean_post_test_NFB: float
-        Mean score after the treatment (NFB here).
+    mean_post_test_treatment: float
+        Mean score after the treatment.
     
-    mean_pre_test_NFB: float
-        Mean score before the treatment (NFB here).
+    mean_pre_test_treatment: float
+        Mean score before the treatment.
                
-    std_pre_test_NFB: float
-        Standard deviation of the mean score before the treatment (Neurofeedback here).
+    std_pre_test_treatment: float
+        Standard deviation of the mean score before the treatment.
 
-    std_post_test_NFB: float
-        Standard deviation of the mean score before the treatment (Control here).                         
+    std_post_test_treatment: float
+        Standard deviation of the mean score before the treatment.                         
 
     Returns
     -------
     effect_size: float
-        Value estimating the efficacy of NFB.
-        If it's negative, the result is in favor of NFB.
+        Value estimating the efficacy of the treatment.
+        If it's negative, the result is in favor of the treatment.
 
     Notes
     -----
@@ -52,16 +52,16 @@ def effect_size_within_subjects(mean_post_test_NFB, mean_pre_test_NFB, std_post_
     
     """
 
-    Effect_size_NFB = (mean_post_test_NFB - mean_pre_test_NFB)/np.sqrt((std_pre_test_NFB**2 + std_post_test_NFB**2)/2)
+    Effect_size_treatment = (mean_post_test_treatment - mean_pre_test_treatment)/np.sqrt((std_pre_test_treatment**2 + std_post_test_treatment**2)/2)
     
-    return Effect_size_NFB
+    return Effect_size_treatment
 
 
 def preprocess_factors(df):
     """Preprocesses factors before running the SAOB.
 
     Factors with too many missing values and with too many identical observations will be removed.
-    Besides, values can be standardized. The categorial variables will be codded as dummies.
+    Besides, values can be standardized. The categorical variables will be coded as dummies.
 
     Parameters
     ----------
@@ -91,8 +91,9 @@ def preprocess_factors(df):
     df = df.drop(columns_to_remove_nans.index.values, axis=1)
     
     # Dataframe containing only factors
-    X = df.drop(['mean_post_test_NFB', 'mean_pre_test_NFB','n_NFB', 'raters', 'score_name', 'std_post_test_NFB',
-                 'std_pre_test_NFB', 'effect_size_NFB'], axis=1)
+    X = df.drop(['mean_post_test_treatment', 'mean_pre_test_treatment','n_treatment', 
+                 'raters', 'score_name', 'std_post_test_treatment',
+                 'std_pre_test_treatment', 'effect_size_treatment'], axis=1)
 
     # Turn into dummy variables the categorical variables 
     categorical_factors = list(set(X.columns) - set(X._get_numeric_data().columns))
@@ -152,12 +153,12 @@ def weighted_linear_regression(df, X, y):
     # Find the number of scales per study
     df['number_of_scales'] = df.index.value_counts()
 
-    # Compute the weight of each ES: number_of_NFB_patients_in_the_study/number_of_scales_in_the_study
-    df['weight'] = df['n_NFB']/df['number_of_scales']
+    # Compute the weight of each ES: number_of_treatment_patients_in_the_study/number_of_scales_in_the_study
+    df['weight'] = df['n_treatment']/df['number_of_scales']
     W = np.diag(df['weight'])
 
     # Get rank of the moment matrix and its condition number: it has to be full rank,
-    # to have eigen values > 0  and a high condition number to be invertible
+    # to have eigen values > 0 and a high condition number to be invertible
     rank_X = np.linalg.matrix_rank(X)
     X_transpose = X.transpose()
     W_transpose = W.transpose()
@@ -225,7 +226,7 @@ def ordinary_linear_regression(X, y):
     # Run the OLS 
     regression = sm.OLS(y, sm.add_constant(X))
     regression_fit = regression.fit()
-    summary_ols = regression_fit.summary()     
+    summary_ols = regression_fit.summary()  
      
     return summary_ols
 
@@ -350,6 +351,6 @@ def decision_tree(X_non_standardized, y):
     print('R² decision tree', score_decision_tree)
    
     # Visualization
-    dot_data = tree.export_graphviz(clf, feature_names=X_non_standardized.columns, out_file=None)
+    dot_data = tree.export_graphviz(clf, feature_names=X_non_standardized.columns, out_file=None, rounded=True)
     graph = graphviz.Source(dot_data)
     graph.render('decision_tree', view=True)

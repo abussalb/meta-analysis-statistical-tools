@@ -14,24 +14,24 @@ import warnings
 import matplotlib.pyplot as plt
 
 
-def _effect_size_ppc(n_NFB, n_control, mean_post_test_NFB, mean_pre_test_NFB, mean_pre_test_control, mean_post_test_control,
-                    std_pre_test_NFB, std_pre_test_control):   
-    """Computes the pre post control effect size (Scott B. Morris (2008) "Estimating Effect Sizes From Pretest-Posttest Control Group Designs 
+def _effect_size_ppc(n_treatment, n_control, mean_post_test_treatment, mean_pre_test_treatment, mean_pre_test_control, mean_post_test_control,
+                    std_pre_test_treatment, std_pre_test_control):   
+    """Computes the pre post control effect size (Scott B. Morris (2008), also called the effect size between "Estimating Effect Sizes From Pretest-Posttest Control Group Designs 
     and under a random effects model", Organizational Research Methods (Equation 8)).
     
     Parameters
     ----------
-    n_NFB: int
-        Number of patients included in the treatment group (Neurofeedback (NFB) here).
+    n_treatment: int
+        Number of patients included in the treatment group.
 
     n_control: int
         Number of patients included in the control group.
 
-    mean_post_test_NFB: float
-        Mean score after the treatment (NFB here).
+    mean_post_test_treatment: float
+        Mean score after the treatment.
 
-    mean_pre_test_NFB: float
-        Mean score before the treatment (NFB here).
+    mean_pre_test_treatment: float
+        Mean score before the treatment.
 
     mean_pre_test_control: float
         Mean score before the treatment in the control group.
@@ -39,29 +39,29 @@ def _effect_size_ppc(n_NFB, n_control, mean_post_test_NFB, mean_pre_test_NFB, me
     mean_post_test_control: float
         Mean score after the treatment in the control group.
            
-    std_pre_test_NFB: float
-        Standard deviation of the mean score before the treatment (NFB here).
+    std_pre_test_treatment: float
+        Standard deviation of the mean score before the treatment.
 
-    std_post_test_NFB: float
+    std_post_test_treatment: float
         Standard deviation of the mean score after the treatment in the control group.
 
     Returns
     -------
     effect_size: float
-        Value estimating the efficacy of NFB.
-        If it's negative, the result is in favor of NFB.
+        Value estimating the efficacy of the treatment.
+        If it's negative, the result is in favor of the treatment.
         
     """     
 
-    S_within = np.sqrt(((n_NFB - 1)*std_pre_test_NFB**2 + (n_control - 1)*std_pre_test_control**2)/
-                            (n_NFB + n_control - 2))
-    d = ((mean_post_test_NFB - mean_pre_test_NFB) - (mean_post_test_control - mean_pre_test_control))/S_within
+    S_within = np.sqrt(((n_treatment - 1)*std_pre_test_treatment**2 + (n_control - 1)*std_pre_test_control**2)/
+                            (n_treatment + n_control - 2))
+    d = ((mean_post_test_treatment - mean_pre_test_treatment) - (mean_post_test_control - mean_pre_test_control))/S_within
     
     # Correction factor for small sample size. This correction factor is close to 1 unless the degree of freedom is very
     # small (<10), see Borenstein, Introdution to meta-analysis, 2009.
-    if (n_NFB + n_control - 2) < 10:  
+    if (n_treatment + n_control - 2) < 10:  
         warnings.warn('Since the sample size is too small, a correction factor is applied to the effect size')
-        correction_factor = 1 - (3/(4*(n_NFB + n_control - 2) - 1))
+        correction_factor = 1 - (3/(4*(n_treatment + n_control - 2) - 1))
         effect_size = d*correction_factor 
     else:
         effect_size = d
@@ -69,21 +69,21 @@ def _effect_size_ppc(n_NFB, n_control, mean_post_test_NFB, mean_pre_test_NFB, me
     return effect_size
 
 
-def _standard_error_effect_size(n_NFB, n_control, effect_size, pre_post_correlation):    
+def _standard_error_effect_size(n_treatment, n_control, effect_size, pre_post_correlation):    
     """Scott B. Morris (2008) "Estimating Effect Sizes From Pretest-Posttest Control Group Designs and under 
     a random effects model", Organizational Research Methods (Equation 25).
     
     Parameters
     ----------
-    n_NFB: int
-        Number of patients included in the Neurofeedback (NFB) group.
+    n_treatment: int
+        Number of patients included in the treatment group.
 
     n_control: int
     Number of patients included in the control group.
 
     effect_size: float
-        Value estimating the efficacy of NFB.
-        If it's negative, the result is in favor of NFB.
+        Value estimating the efficacy of the treatment.
+        If it's negative, the result is in favor of the treatment.
 
     pre_post_correlation: float
         Pearson correlation of the pre-test and post-test values (i.e the pooled within-groups Pearson correlation.
@@ -100,17 +100,17 @@ def _standard_error_effect_size(n_NFB, n_control, effect_size, pre_post_correlat
     
     # Correction factor for small sample size. This correction factor is close to 1 unless the degree of freedom is very
     # small (<10), see Borenstein, Introdution to meta-analysis, 2009. 
-    if (n_NFB + n_control - 2) < 10: 
-        correction_factor = 1 - (3/(4*(n_NFB + n_control - 2) - 1))
+    if (n_treatment + n_control - 2) < 10: 
+        correction_factor = 1 - (3/(4*(n_treatment + n_control - 2) - 1))
         warnings.warn('Since the sample size is too small, a correction factor is applied to the variance of the effect size')
     else:
         correction_factor = 1
     
     # Variance 
-    variance_ES = (2*(correction_factor**2)*(1 - pre_post_correlation)*((n_NFB + n_control)/
-                               (n_NFB*n_control))*((n_NFB + n_control - 2)/(n_NFB + n_control - 4))*
-                               (1 + ((effect_size**2)/(2*(1 - pre_post_correlation)*((n_NFB + n_control)/
-                               (n_NFB*n_control))))) - effect_size**2)
+    variance_ES = (2*(correction_factor**2)*(1 - pre_post_correlation)*((n_treatment + n_control)/
+                               (n_treatment*n_control))*((n_treatment + n_control - 2)/(n_treatment + n_control - 4))*
+                               (1 + ((effect_size**2)/(2*(1 - pre_post_correlation)*((n_treatment + n_control)/
+                               (n_treatment*n_control))))) - effect_size**2)
     
     # Standard Error
     standard_error_ES = np.sqrt(variance_ES) 
@@ -123,18 +123,18 @@ def run_meta_analysis(df, scale_to_reverse=[], pre_post_correlation=0.5):
     Posttest Control Group Designs and under a random effects model", *Organizational Research Methods* and in Borenstein (2009)
     *Introduction to meta-analysis*. These formulae are the same as the ones used in Cortese et al., 2016. 
 
-    A negative effect size favours NFB treatment. 
+    A negative effect size favours the treatment. 
   
     Parameters
     ----------
     df: pandas.DataFrame
-        Parents or teachers ratings required to perform the meta-analysis.
+        Parents, teachers or clinicians ratings required to perform the meta-analysis.
         This dataframe corresponds to one of those obtained with the ``import_csv_for_meta_analysis`` module.
-        If you want to run the meta-analysis on parents assessments enter ``df_values_parents``, otherwise 
-        enter ``df_values_teachers``.
-        Each row corresponds to a study, ADHD symptoms are assessed by parents or teachers,
-        columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
-        n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters for each study.  
+        If you want to run the meta-analysis on parent assessments enter ``df_values_parents``, to run it on teacher assessments
+        enter ``df_values_teachers``, and to run on clinicians assessments, run ``df_values_clinicians``
+        Each row corresponds to a study, the disease symptoms are assessed by parents, teachers, or clinicians.
+        Columns are: mean_post_test_treatment, mean_post_test_control, mean_pre_test_treatment, mean_pre_test_control, n_treatment, 
+        n_control, std_post_test_treatment, std_post_test_control, std_pre_test_treatment, std_pre_test_control, raters for each study.  
 
     scale_to_reverse: list of str, optional
         List of strings listing the clinical scales having a positive correlation with symptoms of the disease; 
@@ -170,14 +170,17 @@ def run_meta_analysis(df, scale_to_reverse=[], pre_post_correlation=0.5):
     
     
     # Compute the effect size    
-    df['effect_size'] = df[['n_NFB', 'n_control', 'mean_post_test_NFB', 'mean_pre_test_NFB', 'mean_pre_test_control', 
-                            'mean_post_test_control', 'std_pre_test_NFB', 'std_pre_test_control']].apply(lambda row:
-                                                                                                _effect_size_ppc(**row), axis=1)
+    df['effect_size'] = df[
+                ['n_treatment', 'n_control', 'mean_post_test_treatment', 
+                 'mean_pre_test_treatment', 'mean_pre_test_control', 
+                 'mean_post_test_control', 'std_pre_test_treatment', 'std_pre_test_control']
+                          ].apply(lambda row:_effect_size_ppc(**row), axis=1)
     
     
     # Compute the standard error of the effect size
-    df['standard_error_ES'] = df[['n_NFB', 'n_control', 'effect_size']].apply(lambda row:
-                              _standard_error_effect_size(row['n_NFB'], row['n_control'],
+    df['standard_error_ES'] = df[
+                        ['n_treatment', 'n_control', 'effect_size']
+                                ].apply(lambda row:_standard_error_effect_size(row['n_treatment'], row['n_control'],
                                                          row['effect_size'], pre_post_correlation), axis=1)
 
      
@@ -189,9 +192,10 @@ def run_meta_analysis(df, scale_to_reverse=[], pre_post_correlation=0.5):
     # All the following equations come from M. Borenstein and L. Hedges (2009) Introduction to Meta-Analysis
     
     # 95% Confidence interval (Equations 8.3 and 8.4)    
-    df['confidence_interval_of_the_ES'] = df[['effect_size', 'standard_error_ES']].apply(lambda row: (
-                                        row['effect_size'] - 1.96*row['standard_error_ES'],
-                                        row['effect_size'] + 1.96*row['standard_error_ES']), axis=1)
+    df['confidence_interval_of_the_ES'] = df[
+                                ['effect_size', 'standard_error_ES']].apply(lambda row: (
+                                 row['effect_size'] - 1.96*row['standard_error_ES'],
+                                 row['effect_size'] + 1.96*row['standard_error_ES']), axis=1)
     
     
     # Compute the inverse of the variance = weight under a fixed effect model (Equation 11.2)
@@ -240,9 +244,10 @@ def run_meta_analysis(df, scale_to_reverse=[], pre_post_correlation=0.5):
     df_results['Standard Error Summary Effect'] = np.sqrt(df_results['Variance Summary Effect'])
 
     # 95% Confidence interval (Equations 12.10 and 12.11)
-    df_results['95% Confidence Interval of the Summary Effect'] = df_results[['Summary Effect', 'Standard Error Summary Effect']].apply(lambda row: (
-                    row['Summary Effect'] - 1.96*row['Standard Error Summary Effect'], 
-                    row['Summary Effect'] + 1.96*row['Standard Error Summary Effect']), axis=1)
+    df_results['95% Confidence Interval of the Summary Effect'] = df_results[
+                                         ['Summary Effect', 'Standard Error Summary Effect']].apply(lambda row: (
+                                           row['Summary Effect'] - 1.96*row['Standard Error Summary Effect'], 
+                                           row['Summary Effect'] + 1.96*row['Standard Error Summary Effect']), axis=1)
    
     # P value for the summary effect (Equations 12.12 and 12.14)
     # Null hypothesis: control group and treatment group have no different effect
