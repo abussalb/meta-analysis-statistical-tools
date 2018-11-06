@@ -1,41 +1,41 @@
 Author,Year,Group,Score Name,Number of patients,Raters,Time,Mean,Std
-Beauregard,2006,NFB,Conners Parent Rating Scale,15,Parents,pre,71.6,8.4
-Beauregard,2006,NFB,Conners Parent Rating Scale,15,Parents,post,58.9,7.2
+Beauregard,2006,Treatment,Conners Parent Rating Scale,15,Parents,pre,71.6,8.4
+Beauregard,2006,Treatment,Conners Parent Rating Scale,15,Parents,post,58.9,7.2
 Beauregard,2006,Control,Conners Parent Rating Scale,5,Parents,pre,73.4,9.9
 Beauregard,2006,Control,Conners Parent Rating Scale,5,Parents,post,71.2,12.1
-Gevenlesben,2009,NFB,FBB HKS,59,Parents,pre,1.97,0.51
-Gevenlesben,2009,NFB,FBB HKS,59,Parents,post,1.49,0.47
+Gevenlesben,2009,Treatment,FBB HKS,59,Parents,pre,1.97,0.51
+Gevenlesben,2009,Treatment,FBB HKS,59,Parents,post,1.49,0.47
 Gevenlesben,2009,Control,FBB HKS,35,Parents,pre,1.83,0.52
 Gevenlesben,2009,Control,FBB HKS,35,Parents,post,1.64,0.55
-Gevenlesben,2009,NFB,FBB HKS,59,Teachers,pre,1.71,0.62
-Gevenlesben,2009,NFB,FBB HKS,59,Teachers,post,1.36,0.51
+Gevenlesben,2009,Treatment,FBB HKS,59,Teachers,pre,1.71,0.62
+Gevenlesben,2009,Treatment,FBB HKS,59,Teachers,post,1.36,0.51
 Gevenlesben,2009,Control,FBB HKS,35,Teachers,pre,1.75,0.59
 Gevenlesben,2009,Control,FBB HKS,35,Teachers,post,1.69,0.64
-Bakhshayesh,2011,NFB,German ADHD rating scale,18,Parents,pre,1.98,0.79
-Bakhshayesh,2011,NFB,German ADHD rating scale,18,Parents,post,1.4,0.61
+Bakhshayesh,2011,Treatment,German ADHD rating scale,18,Parents,pre,1.98,0.79
+Bakhshayesh,2011,Treatment,German ADHD rating scale,18,Parents,post,1.4,0.61
 Bakhshayesh,2011,Control,German ADHD rating scale,17,Parents,pre,1.71,0.58
 Bakhshayesh,2011,Control,German ADHD rating scale,17,Parents,post,1.76,0.67
-Bakhshayesh,2011,NFB,German ADHD rating scale,18,Teachers,pre,1.42,1.12
-Bakhshayesh,2011,NFB,German ADHD rating scale,18,Teachers,post,0.92,0.81
+Bakhshayesh,2011,Treatment,German ADHD rating scale,18,Teachers,pre,1.42,1.12
+Bakhshayesh,2011,Treatment,German ADHD rating scale,18,Teachers,post,0.92,0.81
 Bakhshayesh,2011,Control,German ADHD rating scale,17,Teachers,pre,1.06,0.78
 Bakhshayesh,2011,Control,German ADHD rating scale,17,Teachers,post,1.06,0.53
-Arnold,2013,NFB,SNAP-IV,26,Parents,pre,2.36,0.48
-Arnold,2013,NFB,SNAP-IV,26,Parents,post,1.95,0.82
+Arnold,2013,Treatment,SNAP-IV,26,Parents,pre,2.36,0.48
+Arnold,2013,Treatment,SNAP-IV,26,Parents,post,1.95,0.82
 Arnold,2013,Control,SNAP-IV,13,Parents,pre,2.19,0.42
 Arnold,2013,Control,SNAP-IV,13,Parents,post,1.66,0.68
-Arnold,2013,NFB,SNAP-IV,26,Teachers,pre,2.22,0.69
-Arnold,2013,NFB,SNAP-IV,26,Teachers,post,1.91,0.74
+Arnold,2013,Treatment,SNAP-IV,26,Teachers,pre,2.22,0.69
+Arnold,2013,Treatment,SNAP-IV,26,Teachers,post,1.91,0.74
 Arnold,2013,Control,SNAP-IV,13,Teachers,pre,1.81,0.68
 Arnold,2013,Control,SNAP-IV,13,Teachers,post,1.26,0.74
-Linden,1996,NFB,IOWA Conners,9,Parents,pre,11.33,3
-Linden,1996,NFB,IOWA Conners,9,Parents,post,8.11,3
+Linden,1996,Treatment,IOWA Conners,9,Parents,pre,11.33,3
+Linden,1996,Treatment,IOWA Conners,9,Parents,post,8.11,3
 Linden,1996,Control,IOWA Conners,9,Parents,pre,12,3
 Linden,1996,Control,IOWA Conners,9,Parents,post,12.44,3
-Maurizio,2014,NFB,Conners Parent Rating Scale,13,Parents,pre,20.5,4.8
-Maurizio,2014,NFB,Conners Parent Rating Scale,13,Parents,post,15.1,5.6
+Maurizio,2014,Treatment,Conners Parent Rating Scale,13,Parents,pre,20.5,4.8
+Maurizio,2014,Treatment,Conners Parent Rating Scale,13,Parents,post,15.1,5.6
 Maurizio,2014,Control,Conners Parent Rating Scale,12,Parents,pre,18,4.8
 Maurizio,2014,Control,Conners Parent Rating Scale,12,Parents,post,14.4,4.3
-Maurizio,2014,NFB,Conners Teachers Rating Scale,13,Teachers,pre,14.2,4.6
-Maurizio,2014,NFB,Conners Teachers Rating Scale,13,Teachers,post,14.3,5.4
+Maurizio,2014,Treatment,Conners Teachers Rating Scale,13,Teachers,pre,14.2,4.6
+Maurizio,2014,Treatment,Conners Teachers Rating Scale,13,Teachers,post,14.3,5.4
 Maurizio,2014,Control,Conners Teachers Rating Scale,12,Teachers,pre,18.1,6.6
 Maurizio,2014,Control,Conners Teachers Rating Scale,12,Teachers,post,16.8,6.1
