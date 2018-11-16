@@ -43,7 +43,7 @@ def _effect_size_ppc(n_treatment, n_control, mean_post_test_treatment, mean_pre_
         Standard deviation of the mean score before the treatment.
 
     std_post_test_treatment: float
-        Standard deviation of the mean score after the treatment in the control group.
+        Standard deviation of the mean score after the treatment.
 
     Returns
     -------
