@@ -5,7 +5,7 @@ This repository describes and offers a module for running traditional meta-analy
 # Description
 
 The repository has the following structure:
-* source-assess-NFB-efficacy
+* source-assess-treatment-efficacy
   * meta_analysis: package to perform meta-analysis and plots
   * systematic_analysis_of_biaises: package to perform systematic analysis of biaises
 * documentation
@@ -29,17 +29,17 @@ Obtain a local copy of this repository:
 
 ## Install requirements
 
-Install the requirements noted in the ```requirements.txt``` file in the virtual environment ```NFB-efficacy-env```:
+Install the requirements noted in the ```requirements.txt``` file in the virtual environment ```treatment-efficacy-env```:
 
 ```conda env create -f environment.yml``` (if graphviz has not been installed, run ```pip install graphviz``` after activating the environment) 
 
 or create an environment:
 
-```conda create --name NFB-efficacy-env python=3```
+```conda create --name treatment-efficacy-env python=3```
 
 activate the environment: 
 
-```activate NFB-efficacy-env```
+```activate treatment-efficacy-env```
 
 and install the requirements:
 
@@ -49,7 +49,7 @@ and install the requirements:
 
 1. Activate the environment:
 
-```activate NFB-efficacy-env```
+```activate treatment-efficacy-env```
 
 2. Run from a command line from the root directory (where the setup.py file is):
 
@@ -61,5 +61,5 @@ or
 
 3. You can uninstall this package by doing:
 
-```pip uninstall source_assess_NFB_efficacy```
+```pip uninstall source_assess_treatment_efficacy```
 

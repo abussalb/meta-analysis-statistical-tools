@@ -1,4 +1,4 @@
-Author,Year,Score Name,Number of patients,Raters,Time,Mean,Std,Probably Blind,Number of sessions,SMR,Beta up central,Theta up,Theta down,Beta up frontal,SCP,On drugs during NFB/assessments,Age min,Age max,Randomization,Institutional Review Board,Transfer phase,Transfer card,EOG correction,Artifact correction based on amplitude,Thresholding,Session pace (per week),Session length (min),Treatment length (weeks),>1 active electrode,EEG quality,Control group
+Author,Year,Score Name,Number of patients,Raters,Time,Mean,Std,Probably Blind,Number of sessions,SMR,Beta up central,Theta up,Theta down,Beta up frontal,SCP,On drugs during treatment assessments,Age min,Age max,Randomization,Institutional Review Board,Transfer phase,Transfer card,EOG correction,Artifact correction based on amplitude,Thresholding,Session pace (per week),Session length (min),Treatment length (weeks),>1 active electrode,EEG quality,Control group
 Arnold,2013,SNAP IV,26,Parents,pre,1.91,0.51,no,40,yes,yes,no,yes,no,no,no,6,12,yes,no,no,no,no,no,incremental,3,45,13,no,one,yes
 Arnold,2013,SNAP IV,26,Parents,post,1.56,0.7,no,40,yes,yes,no,yes,no,no,no,6,12,yes,no,no,no,no,no,incremental,3,45,13,no,one,yes
 Arnold,2013,SNAP IV,26,Teachers,pre,1.82,0.7,yes,40,yes,yes,no,yes,no,no,no,6,12,yes,no,no,no,no,no,incremental,3,45,13,no,one,yes
@@ -123,3 +123,11 @@ Baumeister,2016,DISYPS questionnaires,8,Parents,pre,1.48,0.53,no,20,no,no,no,no,
 Baumeister,2016,DISYPS questionnaires,8,Parents,post,1.09,0.61,no,20,no,no,no,no,no,yes,yes,9,14,yes,yes,yes,no,no,no,,,60,,no,one,yes
 Holtmann,2009,FBB HKS,20,Parents,pre,1.45,0.66,no,20,no,no,no,no,no,yes,yes,7,10,yes,,,,,,,,60,,,,yes
 Holtmann,2009,FBB HKS,20,Parents,post,1.25,0.61,no,20,no,no,no,no,no,yes,yes,7,10,yes,,,,,,,,60,,,,yes
+Gelade,2016,SDQ,39,Parents,pre,16.9,4.54,no,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes
+Gelade,2016,SDQ,39,Parents,post,14.92,5.98,no,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes
+Gelade,2016,SDQ,39,Teachers,pre,14.51,4.71,yes,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes
+Gelade,2016,SDQ,39,Teachers,post,15.38,5.14,yes,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes
+Gelade,2016,SWAN,39,Parents,pre,2.72,0.87,no,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes
+Gelade,2016,SWAN,39,Parents,post,2.13,1.05,no,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes
+Gelade,2016,SWAN,39,Teachers,pre,2.58,1.29,yes,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes
+Gelade,2016,SWAN,39,Teachers,post,2.46,1.35,yes,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes

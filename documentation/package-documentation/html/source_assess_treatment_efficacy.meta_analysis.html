@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>source_assess_NFB_efficacy.meta_analysis package &#8212; Assess Neurofeedback efficacy  documentation</title>
+    <title>source_assess_treatment_efficacy.meta_analysis package &#8212; Assess a treatment efficacy 0.1 documentation</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '',
+        VERSION:     '0.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -37,7 +37,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Assess Neurofeedback efficacy  documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Assess a treatment efficacy 0.1 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -46,18 +46,19 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="source-assess-nfb-efficacy-meta-analysis-package">
-<h1>source_assess_NFB_efficacy.meta_analysis package<a class="headerlink" href="#source-assess-nfb-efficacy-meta-analysis-package" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="source-assess-treatment-efficacy-meta-analysis-package">
+<h1>source_assess_treatment_efficacy.meta_analysis package<a class="headerlink" href="#source-assess-treatment-efficacy-meta-analysis-package" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="module-source_assess_NFB_efficacy.meta_analysis.import_csv_for_meta_analysis">
-<span id="source-assess-nfb-efficacy-meta-analysis-import-csv-for-meta-analysis-module"></span><h2>source_assess_NFB_efficacy.meta_analysis.import_csv_for_meta_analysis module<a class="headerlink" href="#module-source_assess_NFB_efficacy.meta_analysis.import_csv_for_meta_analysis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-source_assess_treatment_efficacy.meta_analysis.import_csv_for_meta_analysis">
+<span id="source-assess-treatment-efficacy-meta-analysis-import-csv-for-meta-analysis-module"></span><h2>source_assess_treatment_efficacy.meta_analysis.import_csv_for_meta_analysis module<a class="headerlink" href="#module-source_assess_treatment_efficacy.meta_analysis.import_csv_for_meta_analysis" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-import_csv_for_meta_analysis"></span><dl class="function">
-<dt id="source_assess_NFB_efficacy.meta_analysis.import_csv_for_meta_analysis.import_csv">
-<code class="descclassname">source_assess_NFB_efficacy.meta_analysis.import_csv_for_meta_analysis.</code><code class="descname">import_csv</code><span class="sig-paren">(</span><em>csv_file</em>, <em>raters=''</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_NFB_efficacy.meta_analysis.import_csv_for_meta_analysis.import_csv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Imports data from a csv file containing parents and sometimes teachers&#8217; severity assessments of ADHD in children. This csv file 
-contains all the data required to perform a meta-analysis. It is possible to import parents&#8217; ratings or teachers&#8217; only but also both.</p>
+<dt id="source_assess_treatment_efficacy.meta_analysis.import_csv_for_meta_analysis.import_csv">
+<code class="descclassname">source_assess_treatment_efficacy.meta_analysis.import_csv_for_meta_analysis.</code><code class="descname">import_csv</code><span class="sig-paren">(</span><em>csv_file</em>, <em>raters=''</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_treatment_efficacy.meta_analysis.import_csv_for_meta_analysis.import_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imports data from a csv file containing parents and sometimes teachers and clinicians severity assessments of a disease. This csv file 
+contains all the data required to perform a meta-analysis. It is possible to import parents&#8217; ratings, teachers&#8217; or clinicians&#8217; only but also the three
+of them.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -69,51 +70,59 @@ The csv file must have a specific form:</p>
 <ul class="simple">
 <li>nine columns: Author, Year, Group, Score Name, Number of patients, Raters, Time, Mean, Std;</li>
 <li>each study has 4 lines if only parent assessments are available, 8 if teacher assessments are provided too: the Author name (repeated 4 or 8 times),
-Year (repeated 4 or 8 times), Group (NFB or control), Score Name, Raters (Parents or Teachers), Time (pre and post), Mean and Std;</li>
-<li>for each author, the 4 lines of the Group column have to be filled as follows: NFB, NFB, Control, Control (pattern repeated one more time
+Year (repeated 4 or 8 times), Group (Treatment or control), Score Name, Raters (Parents, Teachers, or Clinicians), Time (pre and post), Mean and Std;</li>
+<li>for each author, the 4 lines of the Group column have to be filled as follows: Treatment, Treatment, Control, Control (pattern repeated one more time
 if teachers assessment is available);</li>
 <li>for each author, the 4 lines of the Raters column have to be filled as follows: Parents, Parents, Parents, Parents and if teachers&#8217; assessment 
-is available 4 more lines are added (Teachers, Teachers, Teachers, Teachers);</li>
+is available 4 more lines are added (Teachers, Teachers, Teachers, Teachers), same for clinicians;</li>
 <li>for each author, the 4 lines of the Time column have to be filled as follows: pre, post, pre, post (pattern repeated one moretime if teachers assessment is available);</li>
 <li>Mean and Std correspond to the clinical score extracted from studies.</li>
 </ul>
 </div></blockquote>
-<p><strong>raters: str, optional &#8216;Teachers&#8217; or &#8216;Parents&#8217;</strong></p>
+<p><strong>raters: str, optional &#8216;Teachers&#8217;, &#8216;Parents&#8217; or &#8216;Clinicians&#8217;</strong></p>
 <blockquote>
-<div><p>Person assessing ADHD symptoms, if no raters are precised then all values will be returned.</p>
+<div><p>Person assessing a disease symptoms, if no raters are precised then all values will be returned.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">df_values_parents: pandas.DataFrame</p>
 <blockquote>
-<div><p>Parents&#8217;s ratings required to perform the meta-analysis.
+<div><p>Parents&#8217; ratings required to perform the meta-analysis.
 It will be returned if <code class="docutils literal"><span class="pre">raters</span> <span class="pre">=</span> <span class="pre">'Parents'</span></code>.
-Each row corresponds to a study, ADHD symptoms are assessed by parents
-columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
-n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters for each study.</p>
+Each row corresponds to a study, the disease symptoms are assessed by parents.
+Columns are: mean_post_test_treatment, mean_post_test_control, mean_pre_test_treatment, mean_pre_test_control, n_treatment, 
+n_control, std_post_test_treatment, std_post_test_control, std_pre_test_treatment, std_pre_test_control, raters for each study.</p>
 </div></blockquote>
 <p>df_values_teachers: pandas.DataFrame</p>
-<blockquote class="last">
-<div><p>Teachers&#8217;s ratings required to perform the meta-analysis.
+<blockquote>
+<div><p>Teachers&#8217; ratings required to perform the meta-analysis.
 It will be returned if <code class="docutils literal"><span class="pre">raters</span> <span class="pre">=</span> <span class="pre">'Teachers'</span></code>.
-Each row corresponds to a study, ADHD symptoms are assessed by teachers
-columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
-n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control for each study.</p>
+Each row corresponds to a study, the disease symptoms are assessed by teachers.
+columns correspond to mean_post_test_treatment, mean_post_test_control, mean_pre_test_treatment, mean_pre_test_control, n_treatment, 
+n_control, std_post_test_treatment, std_post_test_control, std_pre_test_treatment, std_pre_test_control for each study.</p>
+</div></blockquote>
+<p>df_values_clinicians: pandas.DataFrame</p>
+<blockquote class="last">
+<div><p>Clinicians&#8217; ratings required to perform the meta-analysis.
+It will be returned if <code class="docutils literal"><span class="pre">raters</span> <span class="pre">=</span> <span class="pre">'Clinicians'</span></code>.
+Each row corresponds to a study, the disease symptoms are assessed by clinicians.
+Columns are: correspond to mean_post_test_treatment, mean_post_test_control, mean_pre_test_treatment, mean_pre_test_control, n_treatment, 
+n_control, std_post_test_treatment, std_post_test_control, std_pre_test_treatment, std_pre_test_control for each study.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>Both dataframes will be returned if no rater is precised.</p>
+<p>The three dataframes will be returned if no rater is precised.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="module-source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis">
-<span id="source-assess-nfb-efficacy-meta-analysis-perform-meta-analysis-module"></span><h2>source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis module<a class="headerlink" href="#module-source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-source_assess_treatment_efficacy.meta_analysis.perform_meta_analysis">
+<span id="source-assess-treatment-efficacy-meta-analysis-perform-meta-analysis-module"></span><h2>source_assess_treatment_efficacy.meta_analysis.perform_meta_analysis module<a class="headerlink" href="#module-source_assess_treatment_efficacy.meta_analysis.perform_meta_analysis" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-perform_meta_analysis"></span><dl class="function">
-<dt id="source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis.forest_plot">
-<code class="descclassname">source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis.</code><code class="descname">forest_plot</code><span class="sig-paren">(</span><em>df_results_per_study</em>, <em>df_results</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis.forest_plot" title="Permalink to this definition">¶</a></dt>
+<dt id="source_assess_treatment_efficacy.meta_analysis.perform_meta_analysis.forest_plot">
+<code class="descclassname">source_assess_treatment_efficacy.meta_analysis.perform_meta_analysis.</code><code class="descname">forest_plot</code><span class="sig-paren">(</span><em>df_results_per_study</em>, <em>df_results</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_treatment_efficacy.meta_analysis.perform_meta_analysis.forest_plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a forest plot.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -146,25 +155,25 @@ Representation of the effect size and its 95% confidence interval for each study
 </dd></dl>
 
 <dl class="function">
-<dt id="source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis.run_meta_analysis">
-<code class="descclassname">source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis.</code><code class="descname">run_meta_analysis</code><span class="sig-paren">(</span><em>df</em>, <em>scale_to_reverse=[]</em>, <em>pre_post_correlation=0.5</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis.run_meta_analysis" title="Permalink to this definition">¶</a></dt>
+<dt id="source_assess_treatment_efficacy.meta_analysis.perform_meta_analysis.run_meta_analysis">
+<code class="descclassname">source_assess_treatment_efficacy.meta_analysis.perform_meta_analysis.</code><code class="descname">run_meta_analysis</code><span class="sig-paren">(</span><em>df</em>, <em>scale_to_reverse=[]</em>, <em>pre_post_correlation=0.5</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_treatment_efficacy.meta_analysis.perform_meta_analysis.run_meta_analysis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs a meta analysis with the formulae described in Scott B. Morris (2008) &#8220;Estimating Effect Sizes From Pretest-
 Posttest Control Group Designs and under a random effects model&#8221;, <em>Organizational Research Methods</em> and in Borenstein (2009)
 <em>Introduction to meta-analysis</em>. These formulae are the same as the ones used in Cortese et al., 2016.</p>
-<p>A negative effect size favours NFB treatment.</p>
+<p>A negative effect size favours the treatment.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>df: pandas.DataFrame</strong></p>
 <blockquote>
-<div><p>Parents or teachers ratings required to perform the meta-analysis.
+<div><p>Parents, teachers or clinicians ratings required to perform the meta-analysis.
 This dataframe corresponds to one of those obtained with the <code class="docutils literal"><span class="pre">import_csv_for_meta_analysis</span></code> module.
-If you want to run the meta-analysis on parents assessments enter <code class="docutils literal"><span class="pre">df_values_parents</span></code>, otherwise 
-enter <code class="docutils literal"><span class="pre">df_values_teachers</span></code>.
-Each row corresponds to a study, ADHD symptoms are assessed by parents or teachers,
-columns correspond to mean_post_test_NFB, mean_post_test_control, mean_pre_test_NFB, mean_pre_test_control, n_NFB, 
-n_control, std_post_test_NFB, std_post_test_control, std_pre_test_NFB, std_pre_test_control, raters for each study.</p>
+If you want to run the meta-analysis on parent assessments enter <code class="docutils literal"><span class="pre">df_values_parents</span></code>, to run it on teacher assessments
+enter <code class="docutils literal"><span class="pre">df_values_teachers</span></code>, and to run on clinicians assessments, run <code class="docutils literal"><span class="pre">df_values_clinicians</span></code>
+Each row corresponds to a study, the disease symptoms are assessed by parents, teachers, or clinicians.
+Columns correspond to mean_post_test_treatment, mean_post_test_control, mean_pre_test_treatment, mean_pre_test_control, n_treatment, 
+n_control, std_post_test_treatment, std_post_test_control, std_pre_test_treatment, std_pre_test_control, raters for each study.</p>
 </div></blockquote>
 <p><strong>scale_to_reverse: list of str, optional</strong></p>
 <blockquote>
@@ -215,10 +224,10 @@ must be controlled and provide pre and post scores for treatment and control gro
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">source_assess_NFB_efficacy.meta_analysis package</a><ul>
+<li><a class="reference internal" href="#">source_assess_treatment_efficacy.meta_analysis package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-source_assess_NFB_efficacy.meta_analysis.import_csv_for_meta_analysis">source_assess_NFB_efficacy.meta_analysis.import_csv_for_meta_analysis module</a></li>
-<li><a class="reference internal" href="#module-source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis">source_assess_NFB_efficacy.meta_analysis.perform_meta_analysis module</a></li>
+<li><a class="reference internal" href="#module-source_assess_treatment_efficacy.meta_analysis.import_csv_for_meta_analysis">source_assess_treatment_efficacy.meta_analysis.import_csv_for_meta_analysis module</a></li>
+<li><a class="reference internal" href="#module-source_assess_treatment_efficacy.meta_analysis.perform_meta_analysis">source_assess_treatment_efficacy.meta_analysis.perform_meta_analysis module</a></li>
 </ul>
 </li>
 </ul>
@@ -226,7 +235,7 @@ must be controlled and provide pre and post scores for treatment and control gro
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/source_assess_NFB_efficacy.meta_analysis.rst.txt"
+      <li><a href="_sources/source_assess_treatment_efficacy.meta_analysis.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -253,11 +262,11 @@ must be controlled and provide pre and post scores for treatment and control gro
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Assess Neurofeedback efficacy  documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Assess a treatment efficacy 0.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2018, Aurore Bussalb.
+        &#169; Copyright Mensia Technologies SA.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
     </div>
   </body>
