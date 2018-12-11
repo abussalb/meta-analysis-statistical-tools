@@ -117,10 +117,12 @@ DO, and LM) were fully blind to them. The names were revealed only when the data
 this included choice of variable normalization and validation of model hypothesis, as detailed below.
 
 The pre-processing of factors for the analysis included the following steps: factors for which there were too many 
-missing observations, arbitrarily set to more than 20\% of the total observations, were removed from the analysis. 
+missing observations arbitrarily set to more than 20\% of the total observations, were removed from the analysis. 
 Furthermore, if a factor had more than 80\% similar observations it was also removed. Categorical variables were 
 coded as dummies, i.e., the presence of the factor was represented with 1 and its absence with 0. All variables 
 were standardized by subtracting the mean and then dividing by the standard deviation (not applied before the decision tree described below).
+\textcolor{red}{(A study did not systematically correspond to an observation: when several clinical scales and/or raters were available in a study, each 
+couple clinical scale/rater was considered as an observation}.
 
 \subsubsection{Explaining within effect sizes with factors}
 
@@ -134,7 +136,8 @@ in case studies providing results for more than one behavioral scale the within-
 \noindent where $M_{\text{t,T}}$ is the mean of clinical scale, for treatment T, taken at time t (pre-test or post-test) and $\sigma_{\text{t,T}}$ represents 
 its standard deviation. With this definition, we focus on the effect of the treatment within a group \citep{Cohen1988} as commonly reported 
 in the literature \citep{Arns2009, Maurizio2014, Strehl2017}. This within-\gls{es} enables us to quantify 
-the efficacy of \gls{nfb} inside the treatment group. 
+the efficacy of \gls{nfb} inside the treatment group. Finally, an outliers rejection was applied on the defining thresholds of acceptance as 
+[mu - 2.5 std; mu+2.5 std], with mu and std being respectively the mean and the standard deviations of all within-\gls{es} computed \citep{Shewhart1931}.
 
 The within-\gls{es} was then considered as a dependent variable to be explained by the factors (the independent variables). 
 The following three methods, implemented with the Scikit-Learn Python \citep[version 0.18.1]{Pedregosa2011} and the Statsmodels Python
