@@ -118,17 +118,16 @@ this included choice of variable normalization and validation of model hypothesi
 
 The pre-processing of factors for the analysis included the following steps: factors for which there were too many 
 missing observations arbitrarily set to more than 20\% of the total observations, were removed from the analysis. 
-Furthermore, if a factor had more than 80\% similar observations it was also removed. Categorical variables were 
-coded as dummies, i.e., the presence of the factor was represented with 1 and its absence with 0. All variables 
+Furthermore, if a factor had more than 80\% similar observations it was also removed. 
+\textcolor{red}{A study did not systematically correspond to an observation: when several clinical scales and/or raters were available in a study,
+each couple clinical scale/rater was considered as an observation}.
+Categorical variables were coded as dummies, i.e., the presence of the factor was represented with 1 and its absence with 0. All variables 
 were standardized by subtracting the mean and then dividing by the standard deviation (not applied before the decision tree described below).
-\textcolor{red}{(A study did not systematically correspond to an observation: when several clinical scales and/or raters were available in a study, each 
-couple clinical scale/rater was considered as an observation}.
 
 \subsubsection{Explaining within effect sizes with factors}
 
 To compute the within-\gls{es}, the  means of total \gls{adhd} scores given by parents and teachers were used. Moreover, 
-in case studies providing results for more than one behavioral scale the within-\gls{es} scores were computed for each one as 
-
+in case studies providing results for more than one behavioral scale the within-\gls{es} scores were computed for each one as:
 \begin{equation*}
 \label{eq:factors_effect_size_within_subject}
 \text{ES} = \frac{M_{\text{post,T}} - M_{\text{pre,T}}}{\sqrt{\frac{\sigma_{\text{pre,T}}^2 + \sigma_{\text{post,T}}^2}{2}}},
@@ -136,22 +135,23 @@ in case studies providing results for more than one behavioral scale the within-
 \noindent where $M_{\text{t,T}}$ is the mean of clinical scale, for treatment T, taken at time t (pre-test or post-test) and $\sigma_{\text{t,T}}$ represents 
 its standard deviation. With this definition, we focus on the effect of the treatment within a group \citep{Cohen1988} as commonly reported 
 in the literature \citep{Arns2009, Maurizio2014, Strehl2017}. This within-\gls{es} enables us to quantify 
-the efficacy of \gls{nfb} inside the treatment group. Finally, an outliers rejection was applied on the defining thresholds of acceptance as 
-[mu - 2.5 std; mu+2.5 std], with mu and std being respectively the mean and the standard deviations of all within-\gls{es} computed \citep{Shewhart1931}.
+the efficacy of \gls{nfb} inside the treatment group. 
+Finally, to avoid to break analysis methods assumptions, an outlier rejection was applied defining thresholds of acceptance as 
+$[\mu - 2.5 \sigma, \mu + 2.5 \sigma]$, with $\mu$ and $\sigma$ being respectively the mean and the standard deviation of all within-\gls{es} computed \citep{Shewhart1931}.
 
 The within-\gls{es} was then considered as a dependent variable to be explained by the factors (the independent variables). 
 The following three methods, implemented with the Scikit-Learn Python \citep[version 0.18.1]{Pedregosa2011} and the Statsmodels Python
 \citep[version 0.8.0]{Seabold2010} libraries, were used to perform the regression:
 \begin{itemize}
-  \item weighted multiple linear regression (\gls{wls}) \citep{Montgomery2012};
+  \item weighted multiple linear regression with \gls{wls} \citep{Montgomery2012};
 	\item sparsity-regularized linear regression with \gls{lasso} \citep{Tibshirani1996};
-	\item decision tree \citep{Quinlan1986}.
+	\item decision tree regression \citep{Quinlan1986}.
 \end{itemize}
 
 The aim of the linear regression is to estimate the regression coefficients linking the factors
 to the within-\gls{es}. A significant coefficient (here and hereafter meaning significantly different from zero) indicates
 that the associated factor has an influence on \gls{nfb} efficacy and its sign the direction of the effect.
-
+%
 The \gls{wls} differs from a traditional linear regression estimated with \gls{ols} in that a weight is assigned 
 to each observation in order to account for the multiplicity of reported clinical endpoints in some studies. In addition, the 
 weight was also set as a function of the sample size to account for variations in sample sizes. Specifically, the weight of each study 
