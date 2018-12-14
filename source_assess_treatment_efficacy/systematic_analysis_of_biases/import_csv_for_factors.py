@@ -68,8 +68,11 @@ def _common_read(csv_file, raters):
             'IRB', 'transfer_phase', 'transfer_card',
             'EOG_correction', 'artifact_correction_based_on_amplitude', 'thresholding',
             'session_pace', 'session_length', 'treatment_length',
-            'more_than_one_active_electrode', 'EEG_quality', 'control_group'],
+            'more_than_one_active_electrode', 'EEG_quality', 
+            'control_group', 'individualisation_iapf', 'EMG_biofeedback'],
             index=[name_studies]) 
+
+        print(name_studies)
 
     else:
 
@@ -114,6 +117,8 @@ def _common_read(csv_file, raters):
         more_than_one_active_electrode = df.loc[treatment_indices_pre, '>1 active electrode']
         EEG_quality = df.loc[treatment_indices_pre, 'EEG quality']
         control_group = df.loc[treatment_indices_pre, 'Control group']
+        individualisation_iapf = df.loc[treatment_indices_pre, 'Indivualisation (iAPF)']
+        EMG_biofeedback = df.loc[treatment_indices_pre, 'EMG biofeedback']
        
         # Creation of the data frame containing the results
         df_values = pd.DataFrame({'n_treatment': n_treatment.tolist(),
@@ -146,7 +151,9 @@ def _common_read(csv_file, raters):
                                 'treatment_length': treatment_length.tolist(),
                                 'more_than_one_active_electrode': more_than_one_active_electrode.tolist(),
                                 'EEG_quality': EEG_quality.tolist(),
-                                'control_group': control_group.tolist()},
+                                'control_group': control_group.tolist(),
+                                'individualisation_iapf': individualisation_iapf.tolist(),
+                                'EMG_biofeedback': EMG_biofeedback.tolist()},
                                  index=[name_studies])
     
     return df_values
