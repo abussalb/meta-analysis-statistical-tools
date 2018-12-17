@@ -78,28 +78,25 @@ neuromarker. Equally, the methodological implementations varied significantly, r
 'subgroup' analysis (for instance, gathering studies following standard protocols) that are somewhat arbitrary. To circumvent these limitations, we 
 implemented a novel approach: the \gls{saob}. With this method, the within-\gls{es} of each intervention was considered 
 as a dependent variable to be explained by methodological and technical factors. Such analysis aims at identifying known methodological 
-biases (e.g.\ blind assessments negatively associated 
-with within-\gls{es}) and possible technical factors (e.g.\ a good control on real time data quality positively influences the 
-treatment outcome). 
+biases (e.g.\ blind assessments negatively associated with within-\gls{es}) and possible technical factors (e.g.\ a good control on real time 
+data quality positively influences the treatment outcome). 
 
 \subsubsection{Identify and pre-process factors}
 
 We classified the factors influencing the efficacy of \gls{nfb} into five categories: methodological, technical,
 demographics, and quality of the signal and acquisition. 
-Factors were chosen based on that reported in the literature as presumed to influence \gls{es}, 
-and categorized as follows:
+Factors were chosen based on that reported in the literature as presumed to influence \gls{es}, and categorized as follows:
 
 \begin{itemize}
-  \item \emph{the signal quality}: online rejection (epoch rejected, feedback not computed) or correction (feedback computed on the denoised epoch) of electrooculogram (EOG) artifacts; and online rejection of generic artifacts using an amplitude-based detection;
-  \item \emph{the population}: intake of psychostimulants during \gls{nfb} treatment and the age range of children
-  included;
   \item \emph{the methodological biases}: the presence of a control group, the blindness of assessors, 
   the randomization of subjects in controlled trials, and the approval of the study by an \gls{irb};
+  \item \emph{the population}: intake of psychostimulants during \gls{nfb} treatment and the age range of children
+  included;
   \item \emph{the \gls{nfb} implementation}: the protocol used (\gls{scp}, \gls{smr}, 
   theta up, beta up in central areas, theta down), the presence of a transfer phase during \gls{nfb} training, the 
 	possibility to train at home or at school with a transfer card, 
-  the type of thresholding for discrete reward, the number of \gls{nfb} sessions, the length and frequency of the sessions, and the length of
-  the treatment;
+  the type of thresholding for discrete reward, the number of \gls{nfb} sessions, the length and frequency of the sessions, the length of
+  the treatment, \textcolor{red}{the individualization of the frequency bands based on the \gls{iapf}, and coupling \gls{nfb} with \gls{emg}-Biofeedback};
   \item \emph{the acquisition quality}: the presence of one or more active electrodes and the \gls{eeg} data quality. 
   The latter was coded as an indicator between 1 and 3, using the following criteria:   
 	\begin{description}
@@ -110,6 +107,8 @@ and categorized as follows:
 	\end{description}
 	A quality score equal to 3 was assigned if all the above criteria were satisfied. If at least one was satisfied
 	the quality score was set to 2, otherwise the score was set to 1.
+  \item \emph{the signal quality}: \textcolor{red}{online rejection (epoch rejected, feedback not computed) or correction (feedback computed on the denoised epoch) of \gls{eog} artifacts},
+	and online rejection of generic artifacts using an amplitude-based detection.
 \end{itemize}	
 
 To prevent any bias in the analysis, the names of the factors were hidden during the entire analysis so that the data scientists (AB, QB,

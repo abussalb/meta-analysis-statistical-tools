@@ -4,9 +4,6 @@
 \toprule
 \multicolumn{2}{c}{ \shortstack{Independent \\ variables (factors)} } & \shortstack{ Coefficients \\ found by \gls{wls} \\ (p-value) } & \shortstack{ Coefficients \\ found by \\ \gls{lasso} } & \shortstack{Place \\ on the \\ Decision \\ Tree} \\
 \midrule
-\multirow{ 2}{*}{ \textit{Signal quality} } & \gls{eog} correction & \hskip 0.08in-0.16 (0.19) &  \hskip 0.12in0.00 & \textbf{2$^{nd}$ node} \\ 
-& artifact correction based on amplitude & \hskip 0.12in0.0031 (0.96) & \hskip 0.12in0.00 & / \\ 
-\midrule
 \multirow{ 3}{*}{ \textit{Methodological} } & \gls{pblind}$^a$ & \hskip 0.12in\textbf{0.13 (0.029)} & \hskip 0.12in\textbf{0.14} & \textbf{root node} \\ 
 & randomization & \hskip 0.12in0.13 (0.11) & \hskip 0.12in\textbf{0.065} & / \\  
 & \gls{irb}$^b$ & \hskip 0.08in\textbf{-0.29 (0.00)} & \hskip 0.08in\textbf{-0.085} & / \\  
@@ -27,6 +24,9 @@
 \midrule
 \multirow{ 2}{*}{ \textit{ \shortstack{Quality of \\ acquisition} } } & more than one active electrode & \hskip 0.08in-0.045 (0.57) & \hskip 0.08in\textbf{-0.041} & / \\ 
 & \gls{eeg} quality 2 & \hskip 0.08in\textbf{-0.35 (0.00)} & \hskip 0.08in\textbf{-0.10} & \textbf{3$^{rd}$ node and 4$^{th}$ } \\  
+\midrule
+\multirow{ 2}{*}{ \textit{Signal quality} } & EOG$^e$ rejection or correction & \hskip 0.08in-0.16 (0.19) &  \hskip 0.12in0.00 & \textbf{2$^{nd}$ node} \\ 
+& amplitude-based artifact rejection & \hskip 0.12in0.0031 (0.96) & \hskip 0.12in0.00 & / \\   
 \bottomrule
 \end{tabular}
 \end{center}
