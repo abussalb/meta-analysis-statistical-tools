@@ -57,6 +57,48 @@ def effect_size_within_subjects(mean_post_test_treatment, mean_pre_test_treatmen
     return Effect_size_treatment
 
 
+def detect_and_reject_outliers(df, y):
+    """Detects and rejects outliers in the distribution of within effect sizes.
+
+    Studies with a within effect size out of the bounds are excluded.
+
+    Parameters
+    ----------
+    df: pandas.DataFrame
+        Dataframe containing all observations in rows, factors and also values to compute the effect size within subjects in columns. 
+        It is obtained after the import of the csv file containing all data by ``import_csv_for_factors``.
+
+    y: pandas.Series
+       Effect size within subjects computed for each observation.
+
+    Returns
+    -------
+    df: pandas.DataFrame
+        Dataframe containing all observations with outliers excluded.
+
+    y: pandas.Series
+       Effect size within subjects with outliers excluded.
+    
+    """
+
+    # Compute mean and standard deviation of all the within effect sizes
+    mean_wES = y.mean()
+    std_wES = y.std()
+
+    # Compute the thresholds of acceptance
+    bound_inf = mean_wES - 2.5*std_wES
+    bound_sup = mean_wES + 2.5*std_wES
+
+    # Detect outliers
+    df_outlier = df[ (y < bound_inf) | (y > bound_sup) ]
+
+    # Reject outlier
+    df = df.drop(df_outlier.index.values, axis=0)
+    y = y.drop(df_outlier.index.values, axis=0)
+
+    return df, y
+
+
 def preprocess_factors(df):
     """Preprocesses factors before running the SAOB.
 
@@ -140,7 +182,7 @@ def weighted_linear_regression(df, X, y):
         This dataframe is obtained thanks to the ``preprocess_factors function``.
 
     y: pandas.Series
-        Effect size within subjects computed for each observation (the dependent variable).
+       Effect size within subjects computed for each observation (the dependent variable).
 
     Returns
     -------
@@ -209,7 +251,7 @@ def ordinary_linear_regression(X, y):
 
     """
 
- 	# Get rank of the moment matrix and its condition number: it has to be full rank,
+    # Get rank of the moment matrix and its condition number: it has to be full rank,
     # to have eigen values > 0  and a high condition number to be invertible
     rank_X = np.linalg.matrix_rank(X)
     X_transpose = X.transpose()
@@ -345,7 +387,7 @@ def decision_tree(X_non_standardized, y):
     """  
 
     # Decision tree (criterion: mean square error)
-    clf = tree.DecisionTreeRegressor(criterion='mse', min_samples_leaf=6)
+    clf = tree.DecisionTreeRegressor(criterion='mse', min_samples_leaf=8)
     clf.fit(X_non_standardized, y)
     score_decision_tree = clf.score(X_non_standardized, y)
     print('R² decision tree', score_decision_tree)
