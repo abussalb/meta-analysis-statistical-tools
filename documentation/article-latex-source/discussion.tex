@@ -29,12 +29,12 @@ than those obtained after 12 sessions; however, these differences did not lead t
 
 To conclude on this meta-analysis, although some points were controversial, the impact on the
 meta-analysis was minimal and did not change the statistical significance of any outcome. 
-The addition of the two new studies \citep{Strehl2017, Baumeister2016} further confirmed the original results. Indeed, the
+The addition of the \textcolor{red}{three} new studies \citep{Strehl2017, Baumeister2016, Bazanova2018} further confirmed the original results. Indeed, the
 significance did not change for any outcome: the \gls{se} remained significant for \gls{mprox} raters and
-non-significant for \gls{pblind}. Adding two more studies increased the significance of the sensitivity analysis run by
+non-significant for \gls{pblind}. Adding \textcolor{red}{three} more studies increased the significance of the sensitivity analysis run by
 \citeauthor{Cortese2016}, most notably the \gls{se} of studies corresponding to \gls{nfb} "standard protocols" \citep{Arns2014}. 
 While \citeauthor{Cortese2016} found that this subset tends to perform better, particularly on the \gls{pblind} outcome, 
-adding two studies also extended this result to the total clinical score as well (p-value < 0.05). Despite the obvious heterogeneity 
+\textcolor{red}{adding two studies confirmed this result on the total clinical score} (p-value < 0.05). Despite the obvious heterogeneity 
 of the studies included in this subset (particularly in terms of protocol used), these results suggest a positive relation 
 between the features of this \emph{standard} design and \gls{nfb} performance. This result is a breakthrough in the demonstration 
 of standard \gls{nfb} protocol efficacy for the treatment of \gls{adhd}. Nonetheless, the  studies 
@@ -48,21 +48,24 @@ Enriquez2017, Vernon2004, Jeunet2018}. \textcolor{red}{However, to the best of o
 clinical endpoints. Some meta-analysis present results of meta-regression, such as \citep{Cortese2016} who aimed at identify if the number of sessions had influence, but 
 they have not enough observations to analyze many factors at the same time.}
 
-Surprisingly, the number of sessions was not found to be significant by any method, which was somewhat
-in contradiction with existing literature. For instance, \citet{Arns2014} stated that performing less than
-20 \gls{nfb} sessions leads to smaller effects. Similarly, \citet{Vernon2004} observed that positive changes in the \gls{eeg}
-and behavioral performance occurred after a minimum of 20 sessions. However, \citet{Enriquez2017} insisted that the number of
-sessions should be carefully chosen in order to avoid "overtraining". The fact that the number of sessions was not identified as a 
-positively contributing factor might be explained by the presence of only one data point with 20 sessions or less. Conceivably, 
-the temporal threshold of efficacy was passed for all included studies, making the identification of this factor unlikely on 
-this dataset. However, regardless of its statistical significance, the coefficient found by the \gls{wls} was negative, meaning 
-that, as expected, the more sessions performed, the more efficient the \gls{nfb} tends to be. 
+\textcolor{red}{Two observations were detected as outliers and so removed from the dataset before performing the \gls{saob}: }\citeauthor{Bazanova2018}'s \textcolor{red}{individualized \gls{nfb} and 
+individualized \gls{nfb} coupled with \gls{emg}-Biofeedback groups. Indeed, these two groups presented very large \gls{es}-within (even bigger than those reported in the literature on medication treating 
+\gls{adhd}} \citep{Luan2017})\textcolor{red}{, which break our working hypothesis. In order to be able to conclude on the results obtained by the \gls{saob}, an outlier rejection was implemented.}
+
+\textcolor{red}{As expected, the number of sessions was found to be significant, even if it was by only two methods, which was in compliance with existing literature}.
+For instance, \citet{Arns2014} stated that performing less than 20 \gls{nfb} sessions leads to smaller effects. Similarly, \citet{Vernon2004} 
+observed that positive changes in the \gls{eeg} and behavioral performance occurred after a minimum of 20 sessions. However, \citet{Enriquez2017} 
+insisted that the number of sessions should be carefully chosen in order to avoid "overtraining". \textcolor{red}{The fact that the number of sessions was not 
+identified by the \gls{lasso}} as a positively contributing factor might be explained by the presence of only two data points with 20 sessions or less. 
+Conceivably, the temporal threshold of efficacy was passed for all included studies, making the identification of this factor by the three methods unlikely on 
+this dataset. \textcolor{red}{However, the two methods that identified this factor both agreed that as expected, the more sessions performed, 
+the more efficient the \gls{nfb} tends to be.}
 
 Interestingly, \citep{Minder2018} suggests that the subject location of the \gls{nfb} training may also be an important contributory 
 factor to clinical effectiveness. However, this has been challenged by a recent study \citep{Minder2018} showing that 
 performing \gls{nfb} at school or at the clinic has no significant impact on treatment response. 
 
-The type of \gls{nfb} protocol was not identified by more than one method, and did not appear to influence the \gls{nfb} results. 
+The type of \gls{nfb} protocol was not identified by \textcolor{red}{any} method, and did not appear to influence the \gls{nfb} results. 
 This minimal importance granted by the methods to the \gls{nfb} protocols is counter-intuitive given the centrality of the 
 protocols in the neurophysiological mode of action and subsequent expected impact on
 therapeutic effectiveness \citep{Vernon2004}. A possible explanation for this result is that these protocols were equally 
@@ -82,7 +85,7 @@ This calls for greater care in future studies, which should strive to assess and
 Next, it appears that the longer the course of treatment, the less efficient it becomes. Arguably, the treatment length is a
 proxy for treatment intensity, suggesting that a shorter period of treatment is more likely to succeed because the frequency of the sessions
 is higher. This hypothesis is supported by the fact that the variable \emph{session pace} (number of
-sessions per week) is also associated with larger within-\gls{es} according to the \gls{wls} and \gls{lasso}. The impact of the
+sessions per week) is also associated with larger within-\gls{es} according to the \gls{lasso} and the decision tree. The impact of the
 intensity of treatment has been investigated by \citep{Rogala2016} on healthy adults: it was observed that studies with
 at least four training sessions completed on consecutive days were all beneficial. Overall, these results suggest adopting a high session pace, 
 which is not common knowledge in the field.
@@ -120,12 +123,12 @@ placebo effect does not appear an appropriate choice.
 
 Another way to highlight a possible placebo effect is to focus on the decision tree illustrated in Figure
 ~\ref{Figure:factors_analysis_decision_tree_results}.
-The top node splits: on the one hand 45 observations corresponding to \gls{mprox} raters and, on the other, 
+The top node splits: on the one hand \textcolor{red}{46} observations corresponding to \gls{mprox} raters and, on the other, 
 21 observations corresponding to \gls{pblind}. If the differences observed between \gls{pblind} and \gls{mprox} raters were 
 due to the placebo effect, one would expect to find in the \gls{mprox} sub-tree some factors linked to the perception
-of the implication in the treatment. This was indeed the case: session and treatment length were found to be significant but not in the
+of the implication in the treatment. This was indeed the case: \textcolor{red}{treatment length was} found to be significant but not in the
 direction corroborating the hypothesis that they are a part of a placebo effect. Indeed, one would expect that the
-longer the session and the treatment, the higher the placebo effect and the greater the within-\gls{es}. Instead, the opposite was found, 
+longer the treatment, the higher the placebo effect and the greater the within-\gls{es}. Instead, the opposite was found, 
 somewhat invalidating the hypothesis. 
 
 Overall, these results suggest that \gls{pblind} assessments could hardly be used to assess placebo effect as they seem to be blinder 
