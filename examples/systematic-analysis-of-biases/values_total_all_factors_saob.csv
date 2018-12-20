@@ -1,133 +1,139 @@
-Author,Year,Score Name,Number of patients,Raters,Time,Mean,Std,Probably Blind,Number of sessions,SMR,Beta up central,Theta up,Theta down,Beta up frontal,SCP,On drugs during treatment assessments,Age min,Age max,Randomization,Institutional Review Board,Transfer phase,Transfer card,EOG correction,Artifact correction based on amplitude,Thresholding,Session pace (per week),Session length (min),Treatment length (weeks),>1 active electrode,EEG quality,Control group
-Arnold,2013,SNAP IV,26,Parents,pre,1.91,0.51,no,40,yes,yes,no,yes,no,no,no,6,12,yes,no,no,no,no,no,incremental,3,45,13,no,one,yes
-Arnold,2013,SNAP IV,26,Parents,post,1.56,0.7,no,40,yes,yes,no,yes,no,no,no,6,12,yes,no,no,no,no,no,incremental,3,45,13,no,one,yes
-Arnold,2013,SNAP IV,26,Teachers,pre,1.82,0.7,yes,40,yes,yes,no,yes,no,no,no,6,12,yes,no,no,no,no,no,incremental,3,45,13,no,one,yes
-Arnold,2013,SNAP IV,26,Teachers,post,1.59,0.69,yes,40,yes,yes,no,yes,no,no,no,6,12,yes,no,no,no,no,no,incremental,3,45,13,no,one,yes
-Arnold,2013,Conners,26,Parents,pre,1.93,0.54,no,40,yes,yes,no,yes,no,no,no,6,12,yes,no,no,no,no,no,incremental,3,45,13,no,one,yes
-Arnold,2013,Conners,26,Parents,post,1.61,0.58,no,40,yes,yes,no,yes,no,no,no,6,12,yes,no,no,no,no,no,incremental,3,45,13,no,one,yes
-Arnold,2013,Conners,26,Teachers,pre,1.71,0.74,yes,40,yes,yes,no,yes,no,no,no,6,12,yes,no,no,no,no,no,incremental,3,45,13,no,one,yes
-Arnold,2013,Conners,26,Teachers,post,1.6,0.7,yes,40,yes,yes,no,yes,no,no,no,6,12,yes,no,no,no,no,no,incremental,3,45,13,no,one,yes
-Bakhshayesh,2011,German ADHD rating scale,18,Parents,pre,1.69,0.64,no,30,no,no,no,yes,yes,no,yes,6,14,yes,yes,no,no,no,no,fixed,2.5,30,15,yes,three,yes
-Bakhshayesh,2011,German ADHD rating scale,18,Parents,post,1.07,0.41,no,30,no,no,no,yes,yes,no,yes,6,14,yes,yes,no,no,no,no,fixed,2.5,30,15,yes,three,yes
-Bakhshayesh,2011,German ADHD rating scale,18,Teachers,pre,1.38,0.74,yes,30,no,no,no,yes,yes,no,yes,6,14,yes,yes,no,no,no,no,fixed,2.5,30,15,yes,three,yes
-Bakhshayesh,2011,German ADHD rating scale,18,Teachers,post,1.04,0.53,yes,30,no,no,no,yes,yes,no,yes,6,14,yes,yes,no,no,no,no,fixed,2.5,30,15,yes,three,yes
-Beauregard,2006,Conners Parent Rating Scale,15,Parents,pre,75.5,9.67,no,40,yes,yes,no,yes,no,no,no,8,12,yes,yes,no,no,no,yes,,3,60,13,no,three,yes
-Beauregard,2006,Conners Parent Rating Scale,15,Parents,post,61.6,14.3,no,40,yes,yes,no,yes,no,no,no,8,12,yes,yes,no,no,no,yes,,3,60,13,no,three,yes
-Bink,2014,ADHD rating scale self reported,45,Parents,pre,7.84,3.27,no,37,yes,no,no,no,no,no,yes,12,24,yes,yes,no,no,no,yes,fixed,2.5,30,25,no,two,yes
-Bink,2014,ADHD rating scale self reported,45,Parents,post,5.2,3.37,no,37,yes,no,no,no,no,no,yes,12,24,yes,yes,no,no,no,yes,fixed,2.5,30,25,no,two,yes
-Bink,2014,YSR,45,Parents,pre,48.5,22.01,no,37,yes,no,no,no,no,no,yes,12,24,yes,yes,no,no,no,yes,fixed,2.5,30,25,no,two,yes
-Bink,2014,YSR,45,Parents,post,40.43,18.24,no,37,yes,no,no,no,no,no,yes,12,24,yes,yes,no,no,no,yes,fixed,2.5,30,25,no,two,yes
-Bink,2014,CBCL,45,Parents,pre,60.81,28.57,no,37,yes,no,no,no,no,no,yes,12,24,yes,yes,no,no,no,yes,fixed,2.5,30,25,no,two,yes
-Bink,2014,CBCL,45,Parents,post,53.35,27.55,no,37,yes,no,no,no,no,no,yes,12,24,yes,yes,no,no,no,yes,fixed,2.5,30,25,no,two,yes
-Bluschke,2016,Conners 3,19,Parents,pre,66.3,1.7,no,16,no,yes,no,yes,no,no,yes,8,14,no,yes,yes,no,yes,no,,2,60,8,no,two,yes
-Bluschke,2016,Conners 3,19,Parents,post,63.3,1.9,no,16,no,yes,no,yes,no,no,yes,8,14,no,yes,yes,no,yes,no,,2,60,8,no,two,yes
-Christiansen ,2014,Conners Parent Rating Scale,14,Parents,pre,10.64,6.35,no,30,no,no,no,no,no,yes,yes,7,11,yes,yes,yes,no,yes,no,incremental,2,60,12,no,two,yes
-Christiansen ,2014,Conners Parent Rating Scale,14,Parents,post,7.71,6.28,no,30,no,no,no,no,no,yes,yes,7,11,yes,yes,yes,no,yes,no,incremental,2,60,12,no,two,yes
-Christiansen ,2014,Conners Teachers Rating Scale,15,Teachers,pre,11.71,4.71,yes,30,no,no,no,no,no,yes,yes,7,11,yes,yes,yes,no,yes,no,incremental,2,60,12,no,two,yes
-Christiansen ,2014,Conners Teachers Rating Scale,15,Teachers,post,7.43,5.04,yes,30,no,no,no,no,no,yes,yes,7,11,yes,yes,yes,no,yes,no,incremental,2,60,12,no,two,yes
-Deilami,2016,Cognitive assessment system test,12,Parents,pre,82.23,15.17,no,30,no,yes,no,yes,no,no,,5,12,no,no,no,no,no,no,,2,60,15,,one,no
-Deilami,2016,Cognitive assessment system test,12,Parents,post,88.81,13.21,no,30,no,yes,no,yes,no,no,,5,12,no,no,no,no,no,no,,2,60,15,,one,no
-Drechsler,2007,Conners Parent Rating Scale,17,Parents,pre,16.1,4.9,no,30,no,no,no,no,no,yes,yes,9.1,12.8,no,no,yes,yes,yes,yes,,6,45,5,no,one,yes
-Drechsler,2007,Conners Parent Rating Scale,17,Parents,post,10.7,4.5,no,30,no,no,no,no,no,yes,yes,9.1,12.8,no,no,yes,yes,yes,yes,,6,45,5,no,one,yes
-Drechsler,2007,Conners Teachers Rating Scale,17,Teachers,pre,10.9,6.2,yes,30,no,no,no,no,no,yes,yes,9.1,12.8,no,no,yes,yes,yes,yes,,6,45,5,no,one,yes
-Drechsler,2007,Conners Teachers Rating Scale,17,Teachers,post,9.6,5.7,yes,30,no,no,no,no,no,yes,yes,9.1,12.8,no,no,yes,yes,yes,yes,,6,45,5,no,one,yes
-Drechsler,2007,FBB HKS (DSM IV),17,Parents,pre,3.28,0.75,no,30,no,no,no,no,no,yes,yes,9.1,12.8,no,no,yes,yes,yes,yes,,6,45,5,no,two,yes
-Drechsler,2007,FBB HKS (DSM IV),17,Parents,post,2.16,0.67,no,30,no,no,no,no,no,yes,yes,9.1,12.8,no,no,yes,yes,yes,yes,,6,45,5,no,two,yes
-Duric,2012,ADHD rating scale,23,Parents,pre,37,4.57,no,30,no,yes,no,yes,no,no,no,6,18,yes,yes,no,no,no,no,,3,40,10,yes,two,yes
-Duric,2012,ADHD rating scale,23,Parents,post,26.7,4.57,no,30,no,yes,no,yes,no,no,no,6,18,yes,yes,no,no,no,no,,3,40,10,yes,two,yes
-Escolano,2014,CPRS-R,20,Parents,pre,74.38,6.5,no,18,no,no,no,no,no,no,no,11.8,11.8,no,yes,no,no,yes,yes,,2.5,20,8,yes,two,no
-Escolano,2014,CPRS-R,20,Parents,post,64.5,6.5,no,18,no,no,no,no,no,no,no,11.8,11.8,no,yes,no,no,yes,yes,,2.5,20,8,yes,two,no
-Fuchs,2003,IOWA Conners,22,Parents,pre,14.3,4.7,no,36,yes,no,no,yes,no,no,no,8,12,no,no,no,no,no,no,incremental,3,45,12,no,one,yes
-Fuchs,2003,IOWA Conners,22,Parents,post,10.8,4.2,no,36,yes,no,no,yes,no,no,no,8,12,no,no,no,no,no,no,incremental,3,45,12,no,one,yes
-Fuchs,2003,IOWA Conners,22,Teachers,pre,15.2,4.8,yes,36,yes,no,no,yes,no,no,no,8,12,no,no,no,no,no,no,incremental,3,45,12,no,one,yes
-Fuchs,2003,IOWA Conners,22,Teachers,post,12.2,4,yes,36,yes,no,no,yes,no,no,no,8,12,no,no,no,no,no,no,incremental,3,45,12,no,one,yes
-Gevenlesben,2009,FBB HKS,59,Parents,pre,1.5,0.45,no,36,no,yes,no,yes,no,yes,no,8,12,yes,yes,yes,no,yes,yes,,2.5,90,8,no,one,yes
-Gevenlesben,2009,FBB HKS,59,Parents,post,1.11,0.37,no,36,no,yes,no,yes,no,yes,no,8,12,yes,yes,yes,no,yes,yes,,2.5,90,8,no,one,yes
-Gevenlesben,2009,FBB HKS,59,Teachers,pre,1.25,0.59,yes,36,no,yes,no,yes,no,yes,no,8,12,yes,yes,yes,no,yes,yes,,2.5,90,8,no,one,yes
-Gevenlesben,2009,FBB HKS,59,Teachers,post,0.96,0.33,yes,36,no,yes,no,yes,no,yes,no,8,12,yes,yes,yes,no,yes,yes,,2.5,90,8,no,one,yes
-Gevenlesben,2009,SDQ,59,Parents,pre,16,4.8,no,36,no,yes,no,yes,no,yes,no,8,12,yes,yes,yes,no,yes,yes,,2.5,90,8,no,one,yes
-Gevenlesben,2009,SDQ,59,Parents,post,13.71,4.95,no,36,no,yes,no,yes,no,yes,no,8,12,yes,yes,yes,no,yes,yes,,2.5,90,8,no,one,yes
-Gevenlesben,2009,SDQ,59,Teachers,pre,13.3,6.1,yes,36,no,yes,no,yes,no,yes,no,8,12,yes,yes,yes,no,yes,yes,,2.5,90,8,no,one,yes
-Gevenlesben,2009,SDQ,59,Teachers,post,11.3,4.3,yes,36,no,yes,no,yes,no,yes,no,8,12,yes,yes,yes,no,yes,yes,,2.5,90,8,no,one,yes
-Heinrich,2004,FBB HKS,13,Parents,pre,1.62,0.35,no,25,no,no,no,no,no,yes,yes,7,13,yes,yes,yes,no,yes,yes,,7,50,3,no,one,yes
-Heinrich,2004,FBB HKS,13,Parents,post,1.23,0.45,no,25,no,no,no,no,no,yes,yes,7,13,yes,yes,yes,no,yes,yes,,7,50,3,no,one,yes
-Kropotov,2005,SNAP IV,86,Parents,pre,1.875,0.3,no,17,yes,yes,no,no,no,no,no,9,14,no,no,no,no,yes,yes,fixed,3,30,6,yes,two,no
-Kropotov,2005,SNAP IV,86,Parents,post,1.425,0.4,no,17,yes,yes,no,no,no,no,no,9,14,no,no,no,no,yes,yes,fixed,3,30,6,yes,two,no
-Lee,2016,ADHD Diagnostic System,18,Parents,pre,78.89,33.55,no,20,yes,yes,no,yes,no,no,yes,6,12,yes,yes,no,no,no,no,incremental,2,60,10,yes,one,yes
-Lee,2016,ADHD Diagnostic System,18,Parents,post,59.06,15.13,no,20,yes,yes,no,yes,no,no,yes,6,12,yes,yes,no,no,no,no,incremental,2,60,10,yes,one,yes
-Lee,2016,ADHD rating scale,18,Parents,pre,14.33,3.4,no,20,yes,yes,no,yes,no,no,yes,6,12,yes,yes,no,no,no,no,incremental,2,60,10,yes,one,yes
-Lee,2016,ADHD rating scale,18,Parents,post,10.78,4.91,no,20,yes,yes,no,yes,no,no,yes,6,12,yes,yes,no,no,no,no,incremental,2,60,10,yes,one,yes
-Lee,2016,Conners Behavior Rating Scale,18,Parents,pre,13.89,7.61,no,20,yes,yes,no,yes,no,no,yes,6,12,yes,yes,no,no,no,no,incremental,2,60,10,yes,one,yes
-Lee,2016,Conners Behavior Rating Scale,18,Parents,post,7.61,4.9,no,20,yes,yes,no,yes,no,no,yes,6,12,yes,yes,no,no,no,no,incremental,2,60,10,yes,one,yes
-Leins,2007,DSM-IV ADHD,19,Parents,pre,7.31,1.66,no,30,no,yes,no,yes,no,no,yes,8,13,yes,yes,yes,yes,yes,no,,5,60,16,no,one,no
-Leins,2007,DSM-IV ADHD,19,Parents,post,6.23,2.36,no,30,no,yes,no,yes,no,no,yes,8,13,yes,yes,yes,yes,yes,no,,5,60,16,no,one,no
-Li,2013,DSM-IV ADHD,32,Parents,pre,42.3,7.5,no,40,yes,no,no,no,no,no,yes,7,16,yes,yes,no,no,no,no,,3,30,12,no,one,yes
-Li,2013,DSM-IV ADHD,32,Parents,post,38.6,7.8,no,40,yes,no,no,no,no,no,yes,7,16,yes,yes,no,no,no,no,,3,30,12,no,one,yes
-Li,2013,DSM-IV ADHD,32,Teachers,pre,44.3,9.5,yes,40,yes,no,no,no,no,no,yes,7,16,yes,yes,no,no,no,no,,3,30,12,no,one,yes
-Li,2013,DSM-IV ADHD,32,Teachers,post,37.9,8.7,yes,40,yes,no,no,no,no,no,yes,7,16,yes,yes,no,no,no,no,,3,30,12,no,one,yes
-Linden,1996,IOWA Conners,9,Parents,pre,8.495,10,no,40,yes,yes,no,yes,no,no,no,5,15,yes,yes,no,no,no,yes,,2,45,24,yes,two,yes
-Linden,1996,IOWA Conners,9,Parents,post,5.555,10,no,40,yes,yes,no,yes,no,no,no,5,15,yes,yes,no,no,no,yes,,2,45,24,yes,two,yes
-Maurizio,2014,Conners Parent Rating Scale,13,Parents,pre,35.5,7.3,no,36,no,no,no,yes,yes,no,yes,8.5,13,yes,yes,yes,no,yes,yes,,,,12,yes,two,yes
-Maurizio,2014,Conners Parent Rating Scale,13,Parents,post,25.5,9.4,no,36,no,no,no,yes,yes,no,yes,8.5,13,yes,yes,yes,no,yes,yes,,,,12,yes,two,yes
-Maurizio,2014,Conners Teachers Rating Scale,13,Teachers,pre,25.1,10.2,yes,36,no,no,no,yes,yes,no,yes,8.5,13,yes,yes,yes,no,yes,yes,,,,12,yes,two,yes
-Maurizio,2014,Conners Teachers Rating Scale,13,Teachers,post,23.5,8.2,yes,36,no,no,no,yes,yes,no,yes,8.5,13,yes,yes,yes,no,yes,yes,,,,12,yes,two,yes
-Maurizio,2014,FBB HKSS,13,Parents,pre,1.88,0.47,no,36,no,no,no,yes,yes,no,yes,8.5,13,yes,yes,yes,no,yes,yes,,,,12,yes,two,yes
-Maurizio,2014,FBB HKSS,13,Parents,post,1.34,0.56,no,36,no,no,no,yes,yes,no,yes,8.5,13,yes,yes,yes,no,yes,yes,,,,12,yes,two,yes
-Maurizio,2014,SDQ,13,Parents,pre,17.38,5.35,no,36,no,no,no,yes,yes,no,yes,8.5,13,yes,yes,yes,no,yes,yes,,,,12,yes,two,yes
-Maurizio,2014,SDQ,13,Parents,post,14.77,5.42,no,36,no,no,no,yes,yes,no,yes,8.5,13,yes,yes,yes,no,yes,yes,,,,12,yes,two,yes
-Meisel,2013,ADHD rating scale,12,Parents,pre,32.25,6.97,no,40,no,yes,no,yes,no,no,no,7,14,yes,yes,no,no,no,yes,incremental,2,35,20,no,two,yes
-Meisel,2013,ADHD rating scale,12,Parents,post,23.08,10.2,no,40,no,yes,no,yes,no,no,no,7,14,yes,yes,no,no,no,yes,incremental,2,35,20,no,two,yes
-Meisel,2013,ADHD rating scale,12,Teachers,pre,31.33,6.34,yes,40,no,yes,no,yes,no,no,no,7,14,yes,yes,no,no,no,yes,incremental,2,35,20,no,two,yes
-Meisel,2013,ADHD rating scale,12,Teachers,post,23.83,8.89,yes,40,no,yes,no,yes,no,no,no,7,14,yes,yes,no,no,no,yes,incremental,2,35,20,no,two,yes
-Mohagheghi,2017,Conners Parent Rating Scale,30,Parents,pre,43.8,5.44,no,40,no,yes,no,yes,no,no,no,7,10,yes,yes,no,no,yes,no,,3,45,13,no,two,no
-Mohagheghi,2017,Conners Parent Rating Scale,30,Parents,post,31.76,5.46,no,40,no,yes,no,yes,no,no,no,7,10,yes,yes,no,no,yes,no,,3,45,13,no,two,no
-Mohammadi,2015,ADHD rating scale,16,Parents,pre,21.87,9.97,no,30,yes,yes,no,yes,no,no,yes,9,15,no,no,no,no,no,no,incremental,2,45,15,yes,two,no
-Mohammadi,2015,ADHD rating scale,16,Parents,post,14.18,8.28,no,30,yes,yes,no,yes,no,no,yes,9,15,no,no,no,no,no,no,incremental,2,45,15,yes,two,no
-Ogrim ,2013,Conners Rating Scales Revised,13,Parents,pre,76,11.59,no,30,yes,yes,no,yes,no,no,no,7,16,yes,yes,no,no,yes,yes,,1,45,30,no,two,yes
-Ogrim ,2013,Conners Rating Scales Revised,13,Parents,post,75.5,13.58,no,30,yes,yes,no,yes,no,no,no,7,16,yes,yes,no,no,yes,yes,,1,45,30,no,two,yes
-Ogrim ,2013,Conners Rating Scales Revised,14,Teachers,pre,70.5,13.04,yes,30,yes,yes,no,yes,no,no,no,7,16,yes,yes,no,no,yes,yes,,1,45,30,no,two,yes
-Ogrim ,2013,Conners Rating Scales Revised,14,Teachers,post,72,19.04,yes,30,yes,yes,no,yes,no,no,no,7,16,yes,yes,no,no,yes,yes,,1,45,30,no,two,yes
-Steiner,2011,Conners Rating Scales Revised,9,Parents,pre,82.1,11.3,no,23,no,yes,no,yes,no,no,yes,8.33,8.33,yes,yes,no,no,no,no,,,45,20,no,one,yes
-Steiner,2011,Conners Rating Scales Revised,9,Parents,post,68.8,10,no,23,no,yes,no,yes,no,no,yes,8.33,8.33,yes,yes,no,no,no,no,,,45,20,no,one,yes
-Steiner,2011,Conners Rating Scales Revised,9,Teachers,pre,59.3,7.9,yes,23,no,yes,no,yes,no,no,yes,8.33,8.33,yes,yes,no,no,no,no,,,45,20,no,one,yes
-Steiner,2011,Conners Rating Scales Revised,9,Teachers,post,58,7.9,yes,23,no,yes,no,yes,no,no,yes,8.33,8.33,yes,yes,no,no,no,no,,,45,20,no,one,yes
-Steiner,2011,BRIEF,9,Parents,pre,73.1,19.9,no,23,no,yes,no,yes,no,no,yes,8.33,8.33,yes,yes,no,no,no,no,,,45,20,no,one,yes
-Steiner,2011,BRIEF,9,Parents,post,68.9,12.8,no,23,no,yes,no,yes,no,no,yes,8.33,8.33,yes,yes,no,no,no,no,,,45,20,no,one,yes
-Steiner,2011,BRIEF,9,Teachers,pre,68.4,13,yes,23,no,yes,no,yes,no,no,yes,8.33,8.33,yes,yes,no,no,no,no,,,45,20,no,one,yes
-Steiner,2011,BRIEF,9,Teachers,post,61.3,12.9,yes,23,no,yes,no,yes,no,no,yes,8.33,8.33,yes,yes,no,no,no,no,,,45,20,no,one,yes
-Steiner2014,2014,Conners 3,34,Parents,pre,78.5,12.84,no,40,no,yes,no,yes,no,no,yes,12.33,12.33,yes,yes,no,no,no,no,,2,45,16,no,one,yes
-Steiner2014,2014,Conners 3,34,Parents,post,72.1,12.71,no,40,no,yes,no,yes,no,no,yes,12.33,12.33,yes,yes,no,no,no,no,,2,45,16,no,one,yes
-Steiner2014,2014,Conners 3,34,Teachers,pre,69.97,14.71,yes,40,no,yes,no,yes,no,no,yes,12.33,12.33,yes,yes,no,no,no,no,,2,45,16,no,one,yes
-Steiner2014,2014,Conners 3,34,Teachers,post,68.9,14.7,yes,40,no,yes,no,yes,no,no,yes,12.33,12.33,yes,yes,no,no,no,no,,2,45,16,no,one,yes
-Steiner2014,2014,SKAMP,34,Teachers,pre,1.69,0.74,yes,40,no,yes,no,yes,no,no,yes,12.33,12.33,yes,yes,no,no,no,no,,2,45,16,no,one,yes
-Steiner2014,2014,SKAMP,34,Teachers,post,1.47,0.75,yes,40,no,yes,no,yes,no,no,yes,12.33,12.33,yes,yes,no,no,no,no,,2,45,16,no,one,yes
-Steiner2014,2014,BRIEF,34,Parents,pre,66.3,10,no,40,no,yes,no,yes,no,no,yes,12.33,12.33,yes,yes,no,no,no,no,,2,45,16,no,one,yes
-Steiner2014,2014,BRIEF,34,Parents,post,62.1,8.9,no,40,no,yes,no,yes,no,no,yes,12.33,12.33,yes,yes,no,no,no,no,,2,45,16,no,one,yes
-Steiner2014,2014,BOSS Classroom,34,Teachers,pre,36.67,12.95,yes,40,no,yes,no,yes,no,no,yes,12.33,12.33,yes,yes,no,no,no,no,,2,45,16,no,one,yes
-Steiner2014,2014,BOSS Classroom,34,Teachers,post,26.4,15.65,yes,40,no,yes,no,yes,no,no,yes,12.33,12.33,yes,yes,no,no,no,no,,2,45,16,no,one,yes
-Strelh,2017,German ADHD rating scale,72,Parents,pre,1.84,0.49,no,25,no,no,no,no,no,yes,yes,7,9,yes,yes,yes,no,yes,yes,,2.5,30,12,no,two,yes
-Strelh,2017,German ADHD rating scale,72,Parents,post,1.49,0.55,no,25,no,no,no,no,no,yes,yes,7,9,yes,yes,yes,no,yes,yes,,2.5,30,12,no,two,yes
-Strelh,2017,German ADHD rating scale,65,Teachers,pre,1.48,0.64,yes,25,no,no,no,no,no,yes,yes,7,9,yes,yes,yes,no,yes,yes,,2.5,30,12,no,two,yes
-Strelh,2017,German ADHD rating scale,69,Teachers,post,1.34,0.68,yes,25,no,no,no,no,no,yes,yes,7,9,yes,yes,yes,no,yes,yes,,2.5,30,12,no,two,yes
-Strelh,2006,Conners Rating Scale,23,Parents,pre,54,3,no,30,no,no,no,no,no,yes,yes,8,13,no,yes,yes,yes,yes,no,,5,30,16,no,two,no
-Strelh,2006,Conners Rating Scale,23,Parents,post,46,6,no,30,no,no,no,no,no,yes,yes,8,13,no,yes,yes,yes,yes,no,,5,30,16,no,two,no
-Strelh,2006,FBB HKS,23,Parents,pre,7.26,1.55,no,30,no,no,no,no,no,yes,yes,8,13,no,yes,yes,yes,yes,no,,5,30,16,no,two,no
-Strelh,2006,FBB HKS,23,Parents,post,6.78,1.96,no,30,no,no,no,no,no,yes,yes,8,13,no,yes,yes,yes,yes,no,,5,30,16,no,two,no
-VanDongen,2013,ADHD rating scale,22,Parents,pre,30.6,7.5,no,30,yes,yes,no,no,no,no,yes,8,15,yes,yes,no,no,no,no,incremental,2,20,15,yes,one,yes
-VanDongen,2013,ADHD rating scale,22,Parents,post,23.4,9.5,no,30,yes,yes,no,no,no,no,yes,8,15,yes,yes,no,no,no,no,incremental,2,20,15,yes,one,yes
-VanDongen,2013,ADHD rating scale,17,Teachers,pre,23.6,14.8,yes,30,yes,yes,no,no,no,no,yes,8,15,yes,yes,no,no,no,no,incremental,2,20,15,yes,one,yes
-VanDongen,2013,ADHD rating scale,17,Teachers,post,19.3,11.4,yes,30,yes,yes,no,no,no,no,yes,8,15,yes,yes,no,no,no,no,incremental,2,20,15,yes,one,yes
-Monastra,2002,Attention deficit disorders evaluation scales,51,Parents,pre,-4.65,2.92,no,43,no,no,no,yes,yes,no,no,6,19,no,no,no,no,no,no,fixed,,35,,,one,yes
-Monastra,2002,Attention deficit disorders evaluation scales,51,Parents,post,-8.265,2.23,no,43,no,no,no,yes,yes,no,no,6,19,no,no,no,no,no,no,fixed,,35,,,one,yes
-Baumeister,2016,DISYPS questionnaires,8,Parents,pre,1.48,0.53,no,20,no,no,no,no,no,yes,yes,9,14,yes,yes,yes,no,no,no,,,60,,no,one,yes
-Baumeister,2016,DISYPS questionnaires,8,Parents,post,1.09,0.61,no,20,no,no,no,no,no,yes,yes,9,14,yes,yes,yes,no,no,no,,,60,,no,one,yes
-Holtmann,2009,FBB HKS,20,Parents,pre,1.45,0.66,no,20,no,no,no,no,no,yes,yes,7,10,yes,,,,,,,,60,,,,yes
-Holtmann,2009,FBB HKS,20,Parents,post,1.25,0.61,no,20,no,no,no,no,no,yes,yes,7,10,yes,,,,,,,,60,,,,yes
-Gelade,2016,SDQ,39,Parents,pre,16.9,4.54,no,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes
-Gelade,2016,SDQ,39,Parents,post,14.92,5.98,no,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes
-Gelade,2016,SDQ,39,Teachers,pre,14.51,4.71,yes,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes
-Gelade,2016,SDQ,39,Teachers,post,15.38,5.14,yes,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes
-Gelade,2016,SWAN,39,Parents,pre,2.72,0.87,no,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes
-Gelade,2016,SWAN,39,Parents,post,2.13,1.05,no,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes
-Gelade,2016,SWAN,39,Teachers,pre,2.58,1.29,yes,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes
-Gelade,2016,SWAN,39,Teachers,post,2.46,1.35,yes,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes
+Author,Year,Score Name,Number of patients,Raters,Time,Mean,Std,Probably Blind,Number of sessions,SMR,Beta up central,Theta up,Theta down,Beta up frontal,SCP,On drugs during treatment assessments,Age min,Age max,Randomization,Institutional Review Board,Transfer phase,Transfer card,EOG correction or rejection,Amplitude based artifact rejection,Thresholding,Session pace (per week),Session length (min),Treatment length (weeks),>1 active electrode,EEG quality,Control group,Indivualisation (iAPF),EMG biofeedback
+Arnold,2013,SNAP IV,26,Parents,pre,1.91,0.51,no,40,no,yes,no,yes,no,no,no,6,12,yes,no,no,no,no,no,incremental,2.5,45,16,no,one,yes,no,no
+Arnold,2013,SNAP IV,26,Parents,post,1.56,0.7,no,40,no,yes,no,yes,no,no,no,6,12,yes,no,no,no,no,no,incremental,2.5,45,16,no,one,yes,no,no
+Arnold,2013,SNAP IV,26,Teachers,pre,1.82,0.7,yes,40,no,yes,no,yes,no,no,no,6,12,yes,no,no,no,no,no,incremental,2.5,45,16,no,one,yes,no,no
+Arnold,2013,SNAP IV,26,Teachers,post,1.59,0.69,yes,40,no,yes,no,yes,no,no,no,6,12,yes,no,no,no,no,no,incremental,2.5,45,16,no,one,yes,no,no
+Arnold,2013,Conners,26,Parents,pre,1.93,0.54,no,40,no,yes,no,yes,no,no,no,6,12,yes,no,no,no,no,no,incremental,2.5,45,16,no,one,yes,no,no
+Arnold,2013,Conners,26,Parents,post,1.61,0.58,no,40,no,yes,no,yes,no,no,no,6,12,yes,no,no,no,no,no,incremental,2.5,45,16,no,one,yes,no,no
+Arnold,2013,Conners,26,Teachers,pre,1.71,0.74,yes,40,no,yes,no,yes,no,no,no,6,12,yes,no,no,no,no,no,incremental,2.5,45,16,no,one,yes,no,no
+Arnold,2013,Conners,26,Teachers,post,1.6,0.7,yes,40,no,yes,no,yes,no,no,no,6,12,yes,no,no,no,no,no,incremental,2.5,45,16,no,one,yes,no,no
+Bakhshayesh,2011,German ADHD rating scale,18,Parents,pre,1.69,0.64,no,30,no,yes,no,yes,no,no,yes,6,14,yes,yes,no,no,no,no,fixed,2.5,30,13,yes,two,yes,no,no
+Bakhshayesh,2011,German ADHD rating scale,18,Parents,post,1.07,0.41,no,30,no,yes,no,yes,no,no,yes,6,14,yes,yes,no,no,no,no,fixed,2.5,30,13,yes,two,yes,no,no
+Bakhshayesh,2011,German ADHD rating scale,18,Teachers,pre,1.38,0.74,yes,30,no,yes,no,yes,no,no,yes,6,14,yes,yes,no,no,no,no,fixed,2.5,30,13,yes,two,yes,no,no
+Bakhshayesh,2011,German ADHD rating scale,18,Teachers,post,1.04,0.53,yes,30,no,yes,no,yes,no,no,yes,6,14,yes,yes,no,no,no,no,fixed,2.5,30,13,yes,two,yes,no,no
+Beauregard,2006,Conners Parent Rating Scale,15,Parents,pre,75.5,9.67,no,40,yes,yes,no,yes,no,no,no,8,12,yes,yes,no,no,no,yes,,3,60,13,no,two,yes,no,no
+Beauregard,2006,Conners Parent Rating Scale,15,Parents,post,61.6,14.3,no,40,yes,yes,no,yes,no,no,no,8,12,yes,yes,no,no,no,yes,,3,60,13,no,two,yes,no,no
+Bink,2014,ADHD rating scale self reported,45,Parents,pre,7.84,3.27,no,37,yes,no,no,no,no,no,yes,12,24,yes,yes,no,no,no,yes,incremental,2.5,30,25,no,two,yes,no,yes
+Bink,2014,ADHD rating scale self reported,45,Parents,post,5.2,3.37,no,37,yes,no,no,no,no,no,yes,12,24,yes,yes,no,no,no,yes,incremental,2.5,30,25,no,two,yes,no,yes
+Bink,2014,YSR,45,Parents,pre,48.5,22.01,no,37,yes,no,no,no,no,no,yes,12,24,yes,yes,no,no,no,yes,incremental,2.5,30,25,no,two,yes,no,yes
+Bink,2014,YSR,45,Parents,post,40.43,18.24,no,37,yes,no,no,no,no,no,yes,12,24,yes,yes,no,no,no,yes,incremental,2.5,30,25,no,two,yes,no,yes
+Bink,2014,CBCL,45,Parents,pre,60.81,28.57,no,37,yes,no,no,no,no,no,yes,12,24,yes,yes,no,no,no,yes,incremental,2.5,30,25,no,two,yes,no,yes
+Bink,2014,CBCL,45,Parents,post,53.35,27.55,no,37,yes,no,no,no,no,no,yes,12,24,yes,yes,no,no,no,yes,incremental,2.5,30,25,no,two,yes,no,yes
+Bluschke,2016,Conners 3,19,Parents,pre,66.3,1.7,no,16,no,yes,no,yes,no,no,yes,8,14,no,yes,yes,no,yes,no,,2,60,8,no,two,yes,no,no
+Bluschke,2016,Conners 3,19,Parents,post,63.3,1.9,no,16,no,yes,no,yes,no,no,yes,8,14,no,yes,yes,no,yes,no,,2,60,8,no,two,yes,no,no
+Christiansen ,2014,Conners Parent Rating Scale,14,Parents,pre,10.64,6.35,no,30,no,no,no,no,no,yes,yes,7,11,yes,yes,yes,no,yes,no,incremental,3,60,12,no,two,yes,no,no
+Christiansen ,2014,Conners Parent Rating Scale,14,Parents,post,7.71,6.28,no,30,no,no,no,no,no,yes,yes,7,11,yes,yes,yes,no,yes,no,incremental,3,60,12,no,two,yes,no,no
+Christiansen ,2014,Conners Teachers Rating Scale,15,Teachers,pre,11.71,4.71,yes,30,no,no,no,no,no,yes,yes,7,11,yes,yes,yes,no,yes,no,incremental,3,60,12,no,two,yes,no,no
+Christiansen ,2014,Conners Teachers Rating Scale,15,Teachers,post,7.43,5.04,yes,30,no,no,no,no,no,yes,yes,7,11,yes,yes,yes,no,yes,no,incremental,3,60,12,no,two,yes,no,no
+Deilami,2016,Cognitive assessment system test,12,Parents,pre,82.23,15.17,no,30,no,yes,no,yes,no,no,,5,12,no,no,no,no,no,no,,2,60,15,,one,no,no,no
+Deilami,2016,Cognitive assessment system test,12,Parents,post,88.81,13.21,no,30,no,yes,no,yes,no,no,,5,12,no,no,no,no,no,no,,2,60,15,,one,no,no,no
+Drechsler,2007,Conners Parent Rating Scale,17,Parents,pre,16.1,4.9,no,15,no,no,no,no,no,yes,yes,9.1,12.8,no,no,yes,yes,yes,yes,,6,90,5,no,one,yes,no,no
+Drechsler,2007,Conners Parent Rating Scale,17,Parents,post,10.7,4.5,no,15,no,no,no,no,no,yes,yes,9.1,12.8,no,no,yes,yes,yes,yes,,6,90,5,no,one,yes,no,no
+Drechsler,2007,Conners Teachers Rating Scale,17,Teachers,pre,10.9,6.2,yes,15,no,no,no,no,no,yes,yes,9.1,12.8,no,no,yes,yes,yes,yes,,6,90,5,no,one,yes,no,no
+Drechsler,2007,Conners Teachers Rating Scale,17,Teachers,post,9.6,5.7,yes,15,no,no,no,no,no,yes,yes,9.1,12.8,no,no,yes,yes,yes,yes,,6,90,5,no,one,yes,no,no
+Drechsler,2007,FBB HKS (DSM IV),17,Parents,pre,3.28,0.75,no,15,no,no,no,no,no,yes,yes,9.1,12.8,no,no,yes,yes,yes,yes,,6,90,5,no,two,yes,no,no
+Drechsler,2007,FBB HKS (DSM IV),17,Parents,post,2.16,0.67,no,15,no,no,no,no,no,yes,yes,9.1,12.8,no,no,yes,yes,yes,yes,,6,90,5,no,two,yes,no,no
+Duric,2012,ADHD rating scale,23,Parents,pre,37,4.57,no,30,no,yes,no,yes,no,no,no,6,18,yes,yes,no,no,no,no,,3,40,10,yes,two,yes,no,yes
+Duric,2012,ADHD rating scale,23,Parents,post,26.7,4.57,no,30,no,yes,no,yes,no,no,no,6,18,yes,yes,no,no,no,no,,3,40,10,yes,two,yes,no,yes
+Escolano,2014,CPRS-R,20,Parents,pre,74.38,6.5,no,18,no,no,no,no,no,no,no,11.8,11.8,no,yes,no,no,yes,yes,,2.5,20,8,yes,two,no,yes,no
+Escolano,2014,CPRS-R,20,Parents,post,64.5,6.5,no,18,no,no,no,no,no,no,no,11.8,11.8,no,yes,no,no,yes,yes,,2.5,20,8,yes,two,no,yes,no
+Fuchs,2003,IOWA Conners,22,Parents,pre,14.3,4.7,no,36,yes,yes,no,yes,no,no,no,8,12,no,no,no,no,no,no,incremental,3,45,12,no,one,yes,no,no
+Fuchs,2003,IOWA Conners,22,Parents,post,10.8,4.2,no,36,yes,yes,no,yes,no,no,no,8,12,no,no,no,no,no,no,incremental,3,45,12,no,one,yes,no,no
+Fuchs,2003,IOWA Conners,22,Teachers,pre,15.2,4.8,yes,36,yes,yes,no,yes,no,no,no,8,12,no,no,no,no,no,no,incremental,3,45,12,no,one,yes,no,no
+Fuchs,2003,IOWA Conners,22,Teachers,post,12.2,4,yes,36,yes,yes,no,yes,no,no,no,8,12,no,no,no,no,no,no,incremental,3,45,12,no,one,yes,no,no
+Gevenlesben,2009,FBB HKS,59,Parents,pre,1.5,0.45,no,18,no,yes,no,yes,no,yes,no,8,12,yes,yes,yes,no,yes,yes,,2.5,90,8,no,one,yes,no,no
+Gevenlesben,2009,FBB HKS,59,Parents,post,1.11,0.37,no,18,no,yes,no,yes,no,yes,no,8,12,yes,yes,yes,no,yes,yes,,2.5,90,8,no,one,yes,no,no
+Gevenlesben,2009,FBB HKS,59,Teachers,pre,1.25,0.59,yes,18,no,yes,no,yes,no,yes,no,8,12,yes,yes,yes,no,yes,yes,,2.5,90,8,no,one,yes,no,no
+Gevenlesben,2009,FBB HKS,59,Teachers,post,0.96,0.33,yes,18,no,yes,no,yes,no,yes,no,8,12,yes,yes,yes,no,yes,yes,,2.5,90,8,no,one,yes,no,no
+Gevenlesben,2009,SDQ,59,Parents,pre,16,4.8,no,18,no,yes,no,yes,no,yes,no,8,12,yes,yes,yes,no,yes,yes,,2.5,90,8,no,one,yes,no,no
+Gevenlesben,2009,SDQ,59,Parents,post,13.71,4.95,no,18,no,yes,no,yes,no,yes,no,8,12,yes,yes,yes,no,yes,yes,,2.5,90,8,no,one,yes,no,no
+Gevenlesben,2009,SDQ,59,Teachers,pre,13.3,6.1,yes,18,no,yes,no,yes,no,yes,no,8,12,yes,yes,yes,no,yes,yes,,2.5,90,8,no,one,yes,no,no
+Gevenlesben,2009,SDQ,59,Teachers,post,11.3,4.3,yes,18,no,yes,no,yes,no,yes,no,8,12,yes,yes,yes,no,yes,yes,,2.5,90,8,no,one,yes,no,no
+Heinrich,2004,FBB HKS,13,Parents,pre,1.62,0.35,no,25,no,no,no,no,no,yes,yes,7,13,yes,yes,yes,no,yes,yes,,7,50,3,no,one,yes,no,no
+Heinrich,2004,FBB HKS,13,Parents,post,1.23,0.45,no,25,no,no,no,no,no,yes,yes,7,13,yes,yes,yes,no,yes,yes,,7,50,3,no,one,yes,no,no
+Kropotov,2005,SNAP IV,86,Parents,pre,1.875,0.3,no,17,yes,yes,no,no,no,no,no,9,14,no,no,no,no,yes,yes,fixed,3,30,6,yes,two,no,no,no
+Kropotov,2005,SNAP IV,86,Parents,post,1.425,0.4,no,17,yes,yes,no,no,no,no,no,9,14,no,no,no,no,yes,yes,fixed,3,30,6,yes,two,no,no,no
+Lee,2016,ADHD Diagnostic System,18,Parents,pre,78.89,33.55,no,20,yes,yes,no,yes,no,no,yes,6,12,yes,yes,no,no,no,no,incremental,2,60,10,yes,one,yes,no,no
+Lee,2016,ADHD Diagnostic System,18,Parents,post,59.06,15.13,no,20,yes,yes,no,yes,no,no,yes,6,12,yes,yes,no,no,no,no,incremental,2,60,10,yes,one,yes,no,no
+Lee,2016,ADHD rating scale,18,Parents,pre,14.33,3.4,no,20,yes,yes,no,yes,no,no,yes,6,12,yes,yes,no,no,no,no,incremental,2,60,10,yes,one,yes,no,no
+Lee,2016,ADHD rating scale,18,Parents,post,10.78,4.91,no,20,yes,yes,no,yes,no,no,yes,6,12,yes,yes,no,no,no,no,incremental,2,60,10,yes,one,yes,no,no
+Lee,2016,Conners Behavior Rating Scale,18,Parents,pre,13.89,7.61,no,20,yes,yes,no,yes,no,no,yes,6,12,yes,yes,no,no,no,no,incremental,2,60,10,yes,one,yes,no,no
+Lee,2016,Conners Behavior Rating Scale,18,Parents,post,7.61,4.9,no,20,yes,yes,no,yes,no,no,yes,6,12,yes,yes,no,no,no,no,incremental,2,60,10,yes,one,yes,no,no
+Leins,2007,DSM-IV ADHD,19,Parents,pre,7.31,1.66,no,30,no,yes,no,yes,no,no,yes,8,13,yes,yes,yes,yes,no,no,,5,60,16,yes,one,no,no,no
+Leins,2007,DSM-IV ADHD,19,Parents,post,6.23,2.36,no,30,no,yes,no,yes,no,no,yes,8,13,yes,yes,yes,yes,no,no,,5,60,16,yes,one,no,no,no
+Li,2013,DSM-IV ADHD,32,Parents,pre,42.3,7.5,no,40,yes,no,no,yes,no,no,yes,7,16,yes,yes,no,no,no,no,,3,30,12,no,one,yes,no,no
+Li,2013,DSM-IV ADHD,32,Parents,post,38.6,7.8,no,40,yes,no,no,yes,no,no,yes,7,16,yes,yes,no,no,no,no,,3,30,12,no,one,yes,no,no
+Li,2013,DSM-IV ADHD,32,Teachers,pre,44.3,9.5,yes,40,yes,no,no,yes,no,no,yes,7,16,yes,yes,no,no,no,no,,3,30,12,no,one,yes,no,no
+Li,2013,DSM-IV ADHD,32,Teachers,post,37.9,8.7,yes,40,yes,no,no,yes,no,no,yes,7,16,yes,yes,no,no,no,no,,3,30,12,no,one,yes,no,no
+Linden,1996,IOWA Conners,9,Parents,pre,8.495,10,no,40,yes,yes,no,yes,no,no,no,5,15,yes,yes,no,no,no,yes,,2,45,24,yes,two,yes,no,no
+Linden,1996,IOWA Conners,9,Parents,post,5.555,10,no,40,yes,yes,no,yes,no,no,no,5,15,yes,yes,no,no,no,yes,,2,45,24,yes,two,yes,no,no
+Maurizio,2014,Conners Parent Rating Scale,13,Parents,pre,35.5,7.3,no,36,no,no,no,yes,yes,no,yes,8.5,13,yes,yes,yes,no,yes,yes,,2.5,,12,yes,two,yes,no,no
+Maurizio,2014,Conners Parent Rating Scale,13,Parents,post,25.5,9.4,no,36,no,no,no,yes,yes,no,yes,8.5,13,yes,yes,yes,no,yes,yes,,2.5,,12,yes,two,yes,no,no
+Maurizio,2014,Conners Teachers Rating Scale,13,Teachers,pre,25.1,10.2,yes,36,no,no,no,yes,yes,no,yes,8.5,13,yes,yes,yes,no,yes,yes,,2.5,,12,yes,two,yes,no,no
+Maurizio,2014,Conners Teachers Rating Scale,13,Teachers,post,23.5,8.2,yes,36,no,no,no,yes,yes,no,yes,8.5,13,yes,yes,yes,no,yes,yes,,2.5,,12,yes,two,yes,no,no
+Maurizio,2014,FBB HKSS,13,Parents,pre,1.88,0.47,no,36,no,no,no,yes,yes,no,yes,8.5,13,yes,yes,yes,no,yes,yes,,2.5,,12,yes,two,yes,no,no
+Maurizio,2014,FBB HKSS,13,Parents,post,1.34,0.56,no,36,no,no,no,yes,yes,no,yes,8.5,13,yes,yes,yes,no,yes,yes,,2.5,,12,yes,two,yes,no,no
+Maurizio,2014,SDQ,13,Parents,pre,17.38,5.35,no,36,no,no,no,yes,yes,no,yes,8.5,13,yes,yes,yes,no,yes,yes,,2.5,,12,yes,two,yes,no,no
+Maurizio,2014,SDQ,13,Parents,post,14.77,5.42,no,36,no,no,no,yes,yes,no,yes,8.5,13,yes,yes,yes,no,yes,yes,,2.5,,12,yes,two,yes,no,no
+Meisel,2013,ADHD rating scale,12,Parents,pre,32.25,6.97,no,40,no,yes,no,yes,no,no,no,7,14,yes,yes,no,no,no,yes,incremental,2,35,20,no,two,yes,no,no
+Meisel,2013,ADHD rating scale,12,Parents,post,23.08,10.2,no,40,no,yes,no,yes,no,no,no,7,14,yes,yes,no,no,no,yes,incremental,2,35,20,no,two,yes,no,no
+Meisel,2013,ADHD rating scale,12,Teachers,pre,31.33,6.34,yes,40,no,yes,no,yes,no,no,no,7,14,yes,yes,no,no,no,yes,incremental,2,35,20,no,two,yes,no,no
+Meisel,2013,ADHD rating scale,12,Teachers,post,23.83,8.89,yes,40,no,yes,no,yes,no,no,no,7,14,yes,yes,no,no,no,yes,incremental,2,35,20,no,two,yes,no,no
+Mohagheghi,2017,Conners Parent Rating Scale,30,Parents,pre,43.8,5.44,no,40,no,yes,no,yes,no,no,no,7,10,yes,yes,no,no,yes,no,,3,45,13,no,two,no,no,no
+Mohagheghi,2017,Conners Parent Rating Scale,30,Parents,post,31.76,5.46,no,40,no,yes,no,yes,no,no,no,7,10,yes,yes,no,no,yes,no,,3,45,13,no,two,no,no,no
+Mohammadi,2015,ADHD rating scale,16,Parents,pre,21.87,9.97,no,30,yes,yes,no,yes,no,no,yes,9,15,no,no,no,no,no,no,incremental,2,45,15,yes,two,no,no,no
+Mohammadi,2015,ADHD rating scale,16,Parents,post,14.18,8.28,no,30,yes,yes,no,yes,no,no,yes,9,15,no,no,no,no,no,no,incremental,2,45,15,yes,two,no,no,no
+Ogrim ,2013,Conners Rating Scales Revised,13,Parents,pre,76,11.59,no,30,yes,yes,no,yes,no,no,no,7,16,yes,yes,no,no,no,no,incremental,1,45,30,no,two,yes,no,no
+Ogrim ,2013,Conners Rating Scales Revised,13,Parents,post,75.5,13.58,no,30,yes,yes,no,yes,no,no,no,7,16,yes,yes,no,no,no,no,incremental,1,45,30,no,two,yes,no,no
+Ogrim ,2013,Conners Rating Scales Revised,14,Teachers,pre,70.5,13.04,yes,30,yes,yes,no,yes,no,no,no,7,16,yes,yes,no,no,no,no,incremental,1,45,30,no,two,yes,no,no
+Ogrim ,2013,Conners Rating Scales Revised,14,Teachers,post,72,19.04,yes,30,yes,yes,no,yes,no,no,no,7,16,yes,yes,no,no,no,no,incremental,1,45,30,no,two,yes,no,no
+Steiner,2011,Conners Rating Scales Revised,9,Parents,pre,82.1,11.3,no,23,no,yes,no,yes,no,no,yes,8.33,8.33,yes,yes,no,no,no,no,,2,45,16,no,one,yes,no,no
+Steiner,2011,Conners Rating Scales Revised,9,Parents,post,68.8,10,no,23,no,yes,no,yes,no,no,yes,8.33,8.33,yes,yes,no,no,no,no,,2,45,16,no,one,yes,no,no
+Steiner,2011,Conners Rating Scales Revised,9,Teachers,pre,59.3,7.9,yes,23,no,yes,no,yes,no,no,yes,8.33,8.33,yes,yes,no,no,no,no,,2,45,16,no,one,yes,no,no
+Steiner,2011,Conners Rating Scales Revised,9,Teachers,post,58,7.9,yes,23,no,yes,no,yes,no,no,yes,8.33,8.33,yes,yes,no,no,no,no,,2,45,16,no,one,yes,no,no
+Steiner,2011,BRIEF,9,Parents,pre,73.1,19.9,no,23,no,yes,no,yes,no,no,yes,8.33,8.33,yes,yes,no,no,no,no,,2,45,16,no,one,yes,no,no
+Steiner,2011,BRIEF,9,Parents,post,68.9,12.8,no,23,no,yes,no,yes,no,no,yes,8.33,8.33,yes,yes,no,no,no,no,,2,45,16,no,one,yes,no,no
+Steiner,2011,BRIEF,9,Teachers,pre,68.4,13,yes,23,no,yes,no,yes,no,no,yes,8.33,8.33,yes,yes,no,no,no,no,,2,45,16,no,one,yes,no,no
+Steiner,2011,BRIEF,9,Teachers,post,61.3,12.9,yes,23,no,yes,no,yes,no,no,yes,8.33,8.33,yes,yes,no,no,no,no,,2,45,16,no,one,yes,no,no
+Steiner2014,2014,Conners 3,34,Parents,pre,78.5,12.84,no,40,no,yes,no,yes,no,no,yes,12.33,12.33,yes,yes,no,no,no,no,,3,45,20,no,one,yes,no,no
+Steiner2014,2014,Conners 3,34,Parents,post,72.1,12.71,no,40,no,yes,no,yes,no,no,yes,12.33,12.33,yes,yes,no,no,no,no,,3,45,20,no,one,yes,no,no
+Steiner2014,2014,Conners 3,34,Teachers,pre,69.97,14.71,yes,40,no,yes,no,yes,no,no,yes,12.33,12.33,yes,yes,no,no,no,no,,3,45,20,no,one,yes,no,no
+Steiner2014,2014,Conners 3,34,Teachers,post,68.9,14.7,yes,40,no,yes,no,yes,no,no,yes,12.33,12.33,yes,yes,no,no,no,no,,3,45,20,no,one,yes,no,no
+Steiner2014,2014,SKAMP,34,Teachers,pre,1.69,0.74,yes,40,no,yes,no,yes,no,no,yes,12.33,12.33,yes,yes,no,no,no,no,,3,45,20,no,one,yes,no,no
+Steiner2014,2014,SKAMP,34,Teachers,post,1.47,0.75,yes,40,no,yes,no,yes,no,no,yes,12.33,12.33,yes,yes,no,no,no,no,,3,45,20,no,one,yes,no,no
+Steiner2014,2014,BRIEF,34,Parents,pre,66.3,10,no,40,no,yes,no,yes,no,no,yes,12.33,12.33,yes,yes,no,no,no,no,,3,45,20,no,one,yes,no,no
+Steiner2014,2014,BRIEF,34,Parents,post,62.1,8.9,no,40,no,yes,no,yes,no,no,yes,12.33,12.33,yes,yes,no,no,no,no,,3,45,20,no,one,yes,no,no
+Steiner2014,2014,BOSS Classroom,34,Teachers,pre,36.67,12.95,yes,40,no,yes,no,yes,no,no,yes,12.33,12.33,yes,yes,no,no,no,no,,3,45,20,no,one,yes,no,no
+Steiner2014,2014,BOSS Classroom,34,Teachers,post,26.4,15.65,yes,40,no,yes,no,yes,no,no,yes,12.33,12.33,yes,yes,no,no,no,no,,3,45,20,no,one,yes,no,no
+Strelh,2017,German ADHD rating scale,72,Parents,pre,1.84,0.49,no,25,no,no,no,no,no,yes,yes,7,9,yes,yes,yes,no,yes,yes,,2.5,30,12,no,two,yes,no,no
+Strelh,2017,German ADHD rating scale,72,Parents,post,1.49,0.55,no,25,no,no,no,no,no,yes,yes,7,9,yes,yes,yes,no,yes,yes,,2.5,30,12,no,two,yes,no,no
+Strelh,2017,German ADHD rating scale,65,Teachers,pre,1.48,0.64,yes,25,no,no,no,no,no,yes,yes,7,9,yes,yes,yes,no,yes,yes,,2.5,30,12,no,two,yes,no,no
+Strelh,2017,German ADHD rating scale,69,Teachers,post,1.34,0.68,yes,25,no,no,no,no,no,yes,yes,7,9,yes,yes,yes,no,yes,yes,,2.5,30,12,no,two,yes,no,no
+Strelh,2006,Conners Rating Scale,23,Parents,pre,54,3,no,30,no,no,no,no,no,yes,yes,8,13,no,yes,yes,yes,yes,no,,5,30,16,no,two,no,no,no
+Strelh,2006,Conners Rating Scale,23,Parents,post,46,6,no,30,no,no,no,no,no,yes,yes,8,13,no,yes,yes,yes,yes,no,,5,30,16,no,two,no,no,no
+Strelh,2006,FBB HKS,23,Parents,pre,7.26,1.55,no,30,no,no,no,no,no,yes,yes,8,13,no,yes,yes,yes,yes,no,,5,30,16,no,two,no,no,no
+Strelh,2006,FBB HKS,23,Parents,post,6.78,1.96,no,30,no,no,no,no,no,yes,yes,8,13,no,yes,yes,yes,yes,no,,5,30,16,no,two,no,no,no
+VanDongen,2013,ADHD rating scale,22,Parents,pre,30.6,7.5,no,30,yes,yes,no,yes,no,no,yes,8,15,yes,yes,no,no,no,no,incremental,2,20,15,yes,one,yes,no,no
+VanDongen,2013,ADHD rating scale,22,Parents,post,23.4,9.5,no,30,yes,yes,no,yes,no,no,yes,8,15,yes,yes,no,no,no,no,incremental,2,20,15,yes,one,yes,no,no
+VanDongen,2013,ADHD rating scale,17,Teachers,pre,23.6,14.8,yes,30,yes,yes,no,yes,no,no,yes,8,15,yes,yes,no,no,no,no,incremental,2,20,15,yes,one,yes,no,no
+VanDongen,2013,ADHD rating scale,17,Teachers,post,19.3,11.4,yes,30,yes,yes,no,yes,no,no,yes,8,15,yes,yes,no,no,no,no,incremental,2,20,15,yes,one,yes,no,no
+Monastra,2002,Attention deficit disorders evaluation scales,51,Parents,pre,-4.65,2.92,no,43,no,no,no,yes,yes,no,no,6,19,no,no,no,no,no,no,fixed,,35,,,one,yes,no,no
+Monastra,2002,Attention deficit disorders evaluation scales,51,Parents,post,-8.265,2.23,no,43,no,no,no,yes,yes,no,no,6,19,no,no,no,no,no,no,fixed,,35,,,one,yes,no,no
+Baumeister,2016,DISYPS questionnaires,8,Parents,pre,1.48,0.53,no,20,no,no,no,no,no,yes,yes,9,14,yes,yes,yes,no,no,no,,,60,,no,one,yes,no,no
+Baumeister,2016,DISYPS questionnaires,8,Parents,post,1.09,0.61,no,20,no,no,no,no,no,yes,yes,9,14,yes,yes,yes,no,no,no,,,60,,no,one,yes,no,no
+Holtmann,2009,FBB HKS,20,Parents,pre,1.45,0.66,no,20,no,no,no,no,no,yes,yes,7,10,yes,,,,,,,,60,,,,yes,,
+Holtmann,2009,FBB HKS,20,Parents,post,1.25,0.61,no,20,no,no,no,no,no,yes,yes,7,10,yes,,,,,,,,60,,,,yes,,
+Gelade,2016,SDQ,39,Parents,pre,16.9,4.54,no,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes,no,no
+Gelade,2016,SDQ,39,Parents,post,14.92,5.98,no,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes,no,no
+Gelade,2016,SDQ,39,Teachers,pre,14.51,4.71,yes,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes,no,no
+Gelade,2016,SDQ,39,Teachers,post,15.38,5.14,yes,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes,no,no
+Gelade,2016,SWAN,39,Parents,pre,2.72,0.87,no,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes,no,no
+Gelade,2016,SWAN,39,Parents,post,2.13,1.05,no,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes,no,no
+Gelade,2016,SWAN,39,Teachers,pre,2.58,1.29,yes,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes,no,no
+Gelade,2016,SWAN,39,Teachers,post,2.46,1.35,yes,33,no,yes,no,yes,no,no,no,7,13,yes,yes,yes,yes,yes,no,,3,20,11,no,two,yes,no,no
+Bazanova sNFB,2018,SNAP-IV,17,Parents,pre,2.145,0.26,no,10,no,yes,no,yes,no,no,no,6,9,yes,yes,no,no,no,no,fixed,2.5,16,,no,two,yes,no,no
+Bazanova sNFB,2018,SNAP-IV,17,Parents,post,2.135,0.26,no,10,no,yes,no,yes,no,no,no,6,9,yes,yes,no,no,no,no,fixed,2.5,16,,no,two,yes,no,no
+Bazanova iNFB,2018,SNAP-IV,31,Parents,pre,2.2,0.12,no,10,no,yes,no,yes,no,no,no,6,9,yes,yes,no,no,no,no,fixed,2.5,16,,no,two,yes,yes,no
+Bazanova iNFB,2018,SNAP-IV,31,Parents,post,1.755,0.14,no,10,no,yes,no,yes,no,no,no,6,9,yes,yes,no,no,no,no,fixed,2.5,16,,no,two,yes,yes,no
+Bazanova EMG+iNFB,2018,SNAP-IV,32,Parents,pre,2.2,0.11,no,10,no,yes,no,yes,no,no,no,6,9,yes,yes,no,no,no,no,fixed,2.5,16,,no,two,yes,yes,yes
+Bazanova EMG+iNFB,2018,SNAP-IV,32,Parents,post,1.765,0.11,no,10,no,yes,no,yes,no,no,no,6,9,yes,yes,no,no,no,no,fixed,2.5,16,,no,two,yes,yes,yes
