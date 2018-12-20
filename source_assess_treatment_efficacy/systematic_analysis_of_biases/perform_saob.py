@@ -86,8 +86,8 @@ def detect_and_reject_outliers(df, y):
     std_wES = y.std()
 
     # Compute the thresholds of acceptance
-    bound_inf = mean_wES - 2.5*std_wES
-    bound_sup = mean_wES + 2.5*std_wES
+    bound_inf = mean_wES - 3*std_wES
+    bound_sup = mean_wES + 3*std_wES
 
     # Detect outliers
     df_outlier = df[ (y < bound_inf) | (y > bound_sup) ]
@@ -109,7 +109,7 @@ def preprocess_factors(df):
     ----------
     df: pandas.DataFrame
         Dataframe containing all observations in rows, factors and also values to compute the effect size within subjects in columns. 
-        It is obtained after the import of the csv file containing all data by ``import_csv_for_factors``.
+        It is obtained after the import of the csv file containing all data by ``import_csv_for_factors`` and the outlier rejection.
 
     Returns
     -------
@@ -173,7 +173,7 @@ def weighted_linear_regression(df, X, y):
     ----------
     df: pandas.DataFrame
         Dataframe containing all observations in rows, factors in columns and also values to compute the effect size within subjects. 
-        It is obtained after the import of the csv file containing all data by ``import_csv_for_factors``.
+        It is obtained after the import of the csv file containing all data by ``import_csv_for_factors`` and the outlier rejection.
 
     X: pandas.DataFrame
         Preprocessed dataframe containing all observations in rows and factors in columns (the independent variables). 
@@ -182,7 +182,7 @@ def weighted_linear_regression(df, X, y):
         This dataframe is obtained thanks to the ``preprocess_factors function``.
 
     y: pandas.Series
-       Effect size within subjects computed for each observation (the dependent variable).
+       Effect size within subjects computed for each observation (the dependent variable) obtained after the outlier rejection.
 
     Returns
     -------
@@ -241,7 +241,7 @@ def ordinary_linear_regression(X, y):
         This dataframe is obtained thanks to the ``preprocess_factors`` function.
 
     y: pandas.Series
-        Effect size within subjects computed for each observation (the dependent variable).
+        Effect size within subjects computed for each observation (the dependent variable) obtained after the outlier rejection.
 
     Returns
     -------
@@ -289,7 +289,7 @@ def regularization_lassocv(X, y):
         This dataframe is obtained thanks to the ``preprocess_factors`` function.
 
     y: pandas.Series
-        Effect size within subjects computed for each observation (the dependent variable).
+        Effect size within subjects computed for each observation (the dependent variable) obtained after the outlier rejection.
 
     Returns
     -------
@@ -345,7 +345,7 @@ def regularization_lassoAIC(X, y):
         This dataframe is obtained thanks to the ``preprocess_factors`` function.
 
     y: pandas.Series
-        Effect size within subjects computed for each observation (the dependent variable).
+        Effect size within subjects computed for each observation (the dependent variable) obtained after the outlier rejection.
 
     Returns
     -------
@@ -377,7 +377,7 @@ def decision_tree(X_non_standardized, y):
         This dataframe is obtained thanks to the ``preprocess_factors`` function.
 
     y: pandas.Series
-        Effect size within subjects computed for each observation (the dependent variable).
+        Effect size within subjects computed for each observation (the dependent variable) obtained after the outlier rejection.
 
     Returns
     -------

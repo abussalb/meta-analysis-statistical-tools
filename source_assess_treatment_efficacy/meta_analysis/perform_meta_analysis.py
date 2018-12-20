@@ -270,7 +270,7 @@ def run_meta_analysis(df, scale_to_reverse=[], pre_post_correlation=0.5):
                                         'Weight': df['percentage_weight']},
                                          index=df.index)
 
-    return df_results_per_study, df_results
+    return df_results_per_study, df_results, df['effect_size']
 
 if __name__ == '__main__':
     meta_analysis('values_total_meta_analysis.csv', 'Parents') 
@@ -338,12 +338,12 @@ def forest_plot(df_results_per_study, df_results):
     y = np.array(range(1,len(names)+1))
     forest_plot = plt.figure()
     plt.yticks(y, names)
-    ## Vertical line in zero
+    # Vertical line in zero
     plt.axvline(0, color = 'k')   
-    ##  Plot Confidence Interval
+    # Plot Confidence Interval
     for i in range(0,len(names)): 
         plt.plot([lower_limit[i], upper_limit[i]], [y[i],y[i]], color = 'g')
-    ## Plot effects size
+    # Plot effect sizes
     plt.scatter(ES[1:len(names)], y[1:len(names)], s=weight[1:len(names)],
                 marker = 's', color = 'b')
     plt.scatter(ES[0], y[0], s=100, marker = 'D', color = 'b')
