@@ -45,15 +45,17 @@ included in this subset are still highly heterogeneous (particularly in terms of
 
 Description and analysis of different types of \gls{nfb} implementation were subject to several studies \citep{Arns2014, 
 Enriquez2017, Vernon2004, Jeunet2018}. \textcolor{red}{However, to the best of our knowledge none used three different statistical tools to quantify their influence on
-clinical endpoints. Some meta-analysis present results of meta-regression, such as \citep{Cortese2016} who aimed at identify if the number of sessions had influence, but 
-they have not enough observations to analyze many factors at the same time.}
+clinical endpoints in a multivariate analysis, reducing the impact of confusion factors. Some meta-analysis present results of meta-regression, such as 
+\citet{Cortese2016, Arns2009} who aimed at identify if the number of sessions had influence, but they had not enough observations to analyze several factors at the same time.}
 
 \textcolor{red}{Two observations were detected as outliers and so removed from the dataset before performing the \gls{saob}: }\citeauthor{Bazanova2018}'s \textcolor{red}{individualized \gls{nfb} and 
-individualized \gls{nfb} coupled with \gls{emg}-Biofeedback groups. Indeed, these two groups presented very large \gls{es}-within (even bigger than those reported in the literature on medication treating 
-\gls{adhd}} \citep{Luan2017})\textcolor{red}{, which break our working hypothesis. In order to be able to conclude on the results obtained by the \gls{saob}, an outlier rejection was implemented.}
+individualized \gls{nfb} coupled with \gls{emg}-Biofeedback groups. Indeed, these two groups presented very large within-\gls{es} (-3.41 and -3.95), even bigger than those reported in the literature on medication treating 
+\gls{adhd}} \citep{Luan2017}\textcolor{red}{. These large values broke our working hypothesis, so in order to be able to conclude on the results obtained by the \gls{saob}, an outlier 
+rejection was implemented.}
 
 \textcolor{red}{As expected, the number of sessions was found to be significant, even if it was by only two methods, which was in compliance with existing literature}.
-For instance, \citet{Arns2014} stated that performing less than 20 \gls{nfb} sessions leads to smaller effects. Similarly, \citet{Vernon2004} 
+\textcolor{red}{For instance, using several univariate regressions without correction for multiple testing} \citet{Arns2009}, 
+\citet{Arns2014} stated that performing less than 20 \gls{nfb} sessions leads to smaller effects. Similarly, \citet{Vernon2004} 
 observed that positive changes in the \gls{eeg} and behavioral performance occurred after a minimum of 20 sessions. However, \citet{Enriquez2017} 
 insisted that the number of sessions should be carefully chosen in order to avoid "overtraining". \textcolor{red}{The fact that the number of sessions was not 
 identified by the \gls{lasso}} as a positively contributing factor might be explained by the presence of only two data points with 20 sessions or less. 
