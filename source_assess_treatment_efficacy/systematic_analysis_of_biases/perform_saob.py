@@ -57,6 +57,29 @@ def effect_size_within_subjects(mean_post_test_treatment, mean_pre_test_treatmen
     return Effect_size_treatment
 
 
+def normalize_severity_at_baseline(mean_pre_test_treatment, maximum_on_clinical_scale):
+    """Normalizes the pre-test scores in order to include them in the SAOB analysis.
+    
+    Parameters
+    ----------    
+    mean_post_test_treatment: float
+        Mean score after the treatment.
+    
+    maximum_on_clinical_scale: int
+        Maximum score possible to be obtained on the clinical scale.
+                                      
+    Returns
+    -------
+    severity_at_baseline: float
+        Normalized pre-test score.
+    
+    """
+
+    severity_at_baseline = mean_pre_test_treatment/maximum_on_clinical_scale
+
+    return severity_at_baseline
+
+
 def detect_and_reject_outliers(df, y):
     """Detects and rejects outliers in the distribution of within effect sizes.
 
@@ -127,15 +150,15 @@ def preprocess_factors(df):
 
     """
 
-    # Remove factors with too few observations    
-    df_number_of_nans = df.isnull().sum()
-    columns_to_remove_nans = df_number_of_nans[(df_number_of_nans > round(len(df)*20/100) + 1)]
-    df = df.drop(columns_to_remove_nans.index.values, axis=1)
-    
     # Dataframe containing only factors
     X = df.drop(['mean_post_test_treatment', 'mean_pre_test_treatment','n_treatment', 
                  'raters', 'score_name', 'std_post_test_treatment',
-                 'std_pre_test_treatment', 'effect_size_treatment'], axis=1)
+                 'std_pre_test_treatment', 'effect_size_treatment', 'maximum_on_clinical_scale'], axis=1)
+
+    # Remove factors with too few observations    
+    X_number_of_nans = X.isnull().sum()
+    columns_to_remove_nans = X_number_of_nans[(X_number_of_nans > round(len(X)*20/100) + 1)]
+    X = X.drop(columns_to_remove_nans.index.values, axis=1)
 
     # Turn into dummy variables the categorical variables 
     categorical_factors = list(set(X.columns) - set(X._get_numeric_data().columns))

@@ -102,6 +102,8 @@ def _common_read(csv_file, raters):
     control_group = df.loc[treatment_indices_pre, 'Control group']
     individualisation_iapf = df.loc[treatment_indices_pre, 'Indivualisation (iAPF)']
     EMG_biofeedback = df.loc[treatment_indices_pre, 'EMG biofeedback']
+    engagement_with_treatment = df.loc[treatment_indices_pre, 'Engagement with treatment']
+    maximum_on_clinical_scale = df.loc[treatment_indices_pre, 'Maximum on clinical scale']
    
     # Creation of the data frame containing the results
     df_values = pd.DataFrame({'n_treatment': n_treatment.tolist(),
@@ -136,7 +138,9 @@ def _common_read(csv_file, raters):
                             'EEG_quality': EEG_quality.tolist(),
                             'control_group': control_group.tolist(),
                             'individualisation_iapf': individualisation_iapf.tolist(),
-                            'EMG_biofeedback': EMG_biofeedback.tolist()},
+                            'EMG_biofeedback': EMG_biofeedback.tolist(),
+                            'engagement_with_treatment': engagement_with_treatment.tolist(),
+                            'maximum_on_clinical_scale': maximum_on_clinical_scale.tolist()},
                              index=[name_studies])
     
     return df_values
