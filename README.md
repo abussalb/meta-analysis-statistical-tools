@@ -17,7 +17,7 @@ The repository has the following structure:
   * systematic_analysis_of_biaises: notebook that uses the systematic_analysis_of_biases package 
 
 Please feel free to re-use, suggest improvement, and contribute. 
-Please cite *Bussalb et al. (complete ref here)*.
+Please cite *Bussalb et al., 2019*.
 
 # Installation 
 
