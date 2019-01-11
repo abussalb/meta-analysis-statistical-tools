@@ -56,7 +56,7 @@
 <span class="target" id="module-import_csv_for_factors"></span><dl class="function">
 <dt id="source_assess_treatment_efficacy.systematic_analysis_of_biases.import_csv_for_factors.import_csv">
 <code class="descclassname">source_assess_treatment_efficacy.systematic_analysis_of_biases.import_csv_for_factors.</code><code class="descname">import_csv</code><span class="sig-paren">(</span><em>csv_file</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_treatment_efficacy.systematic_analysis_of_biases.import_csv_for_factors.import_csv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Imports data from a csv file containing parents and sometimes teachers and clinicians severity assessments of a disease and factor values. 
+<dd><p>Imports data from a csv file containing parents and sometimes teachers severity assessments of a disease and factor values. 
 This csv file contains all the data required to perform the SAOB.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -67,16 +67,16 @@ This csv file contains all the data required to perform the SAOB.</p>
 <div><p>Name or localisation of the csv file that contains all the values of clinical trials required to perform the SAOB.
 The csv file must have a specific form:</p>
 <ul class="simple">
-<li>eight first columns: Author, Year, Score Name, Number of patients, Raters (Parents, Teachers or Clinicians), Time (pre and post), Mean, Std;</li>
+<li>eight first columns: Author, Year, Score Name, Number of patients, Raters (Parents or Teachers), Time (pre and post), Mean, Std;</li>
 <li>other columns correspond to factors to analyze;</li>
 <li>each study has at least 2 lines: Author name, Year, Score Name, Number of patients, Raters (Parents or Teachers) repeated twice, 
 Time (pre and post), Mean (at pre-test and post-test), Std (at pre-test and post-test). If Teachers assessments are available, 
-two lines must be added (same in the case of clinicians);</li>
+two lines must be added;</li>
 <li>sometimes, for a study, several clinical scales are available, they are all entered in the csv file;</li>
 <li>for each author, the 2 lines of the Raters column have to be filled as follows: Parents, Parents, if teachers&#8217; assessment is available
-2 more lines are added (Teachers, Teachers), same in the case of clinicians (Clinicians, Clinicians);</li>
-<li>for each author, the 2 lines of the Time column have to be filled as follows: pre, post (pattern repeated one more time if teacher or
-clinician assessments is available);</li>
+2 more lines are added (Teachers, Teachers);</li>
+<li>for each author, the 2 lines of the Time column have to be filled as follows: pre, post (pattern repeated one more time if teacher
+assessments is available);</li>
 <li>Mean and Std correspond to the clinical score extracted from studies at pre-test and post-test.</li>
 <li>Every additionnal column corresponds to a factor.</li>
 </ul>
@@ -91,17 +91,10 @@ Columns are: mean_post_test_treatment, mean_post_test_control, mean_pre_test_tre
 n_control, std_post_test_treatment, std_post_test_control, std_pre_test_treatment, std_pre_test_control, raters and factors.</p>
 </div></blockquote>
 <p>df_values_teachers: pandas.DataFrame</p>
-<blockquote>
+<blockquote class="last">
 <div><p>Teachers&#8217; ratings required to perform the SAOB.
 Each row corresponds to a study and a specific clinical scale, disease symptoms are assessed by teachers.
-Columns are: correspond to mean_post_test_treatment, mean_post_test_control, mean_pre_test_treatment, mean_pre_test_control, n_treatment, 
-n_control, std_post_test_treatment, std_post_test_control, std_pre_test_treatment, std_pre_test_control, raters and factors.</p>
-</div></blockquote>
-<p>df_values_clinicians: pandas.DataFrame</p>
-<blockquote class="last">
-<div><p>Clinicians&#8217; ratings required to perform the SAOB.
-Each row corresponds to a study and a specific clinical scale, disease symptoms are assessed by clinicians.
-Columns are: correspond to mean_post_test_treatment, mean_post_test_control, mean_pre_test_treatment, mean_pre_test_control, n_treatment, 
+Columns are: mean_post_test_treatment, mean_post_test_control, mean_pre_test_treatment, mean_pre_test_control, n_treatment, 
 n_control, std_post_test_treatment, std_post_test_control, std_pre_test_treatment, std_pre_test_control, raters and factors.</p>
 </div></blockquote>
 </td>
@@ -132,13 +125,47 @@ This dataframe is obtained thanks to the <code class="docutils literal"><span cl
 </div></blockquote>
 <p><strong>y: pandas.Series</strong></p>
 <blockquote>
-<div><p>Effect size within subjects computed for each observation (the dependent variable).</p>
+<div><p>Effect size within subjects computed for each observation (the dependent variable) obtained after the outlier rejection.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">decision_tree: pdf</p>
 <blockquote class="last">
 <div><p>Decision tree obtained.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="source_assess_treatment_efficacy.systematic_analysis_of_biases.perform_saob.detect_and_reject_outliers">
+<code class="descclassname">source_assess_treatment_efficacy.systematic_analysis_of_biases.perform_saob.</code><code class="descname">detect_and_reject_outliers</code><span class="sig-paren">(</span><em>df</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_treatment_efficacy.systematic_analysis_of_biases.perform_saob.detect_and_reject_outliers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detects and rejects outliers in the distribution of within effect sizes.</p>
+<p>Studies with a within effect size out of the bounds are excluded.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>df: pandas.DataFrame</strong></p>
+<blockquote>
+<div><p>Dataframe containing all observations in rows, factors and also values to compute the effect size within subjects in columns. 
+It is obtained after the import of the csv file containing all data by <code class="docutils literal"><span class="pre">import_csv_for_factors</span></code>.</p>
+</div></blockquote>
+<p><strong>y: pandas.Series</strong></p>
+<blockquote>
+<div><p>Effect size within subjects computed for each observation.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">df: pandas.DataFrame</p>
+<blockquote>
+<div><p>Dataframe containing all observations with outliers excluded.</p>
+</div></blockquote>
+<p>y: pandas.Series</p>
+<blockquote class="last">
+<div><p>Effect size within subjects with outliers excluded.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -192,6 +219,34 @@ computed from the pre and post test values of the treatment group. So here a con
 </dd></dl>
 
 <dl class="function">
+<dt id="source_assess_treatment_efficacy.systematic_analysis_of_biases.perform_saob.normalize_severity_at_baseline">
+<code class="descclassname">source_assess_treatment_efficacy.systematic_analysis_of_biases.perform_saob.</code><code class="descname">normalize_severity_at_baseline</code><span class="sig-paren">(</span><em>mean_pre_test_treatment</em>, <em>maximum_on_clinical_scale</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_treatment_efficacy.systematic_analysis_of_biases.perform_saob.normalize_severity_at_baseline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Normalizes the pre-test scores in order to include them in the SAOB analysis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>mean_post_test_treatment: float</strong></p>
+<blockquote>
+<div><p>Mean score after the treatment.</p>
+</div></blockquote>
+<p><strong>maximum_on_clinical_scale: int</strong></p>
+<blockquote>
+<div><p>Maximum score possible to be obtained on the clinical scale.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">severity_at_baseline: float</p>
+<blockquote class="last">
+<div><p>Normalized pre-test score.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
 <dt id="source_assess_treatment_efficacy.systematic_analysis_of_biases.perform_saob.ordinary_linear_regression">
 <code class="descclassname">source_assess_treatment_efficacy.systematic_analysis_of_biases.perform_saob.</code><code class="descname">ordinary_linear_regression</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#source_assess_treatment_efficacy.systematic_analysis_of_biases.perform_saob.ordinary_linear_regression" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs Ordinary Least Squares.</p>
@@ -213,7 +268,7 @@ This dataframe is obtained thanks to the <code class="docutils literal"><span cl
 </div></blockquote>
 <p><strong>y: pandas.Series</strong></p>
 <blockquote>
-<div><p>Effect size within subjects computed for each observation (the dependent variable).</p>
+<div><p>Effect size within subjects computed for each observation (the dependent variable) obtained after the outlier rejection.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -241,7 +296,7 @@ Besides, values can be standardized. The categorical variables will be coded as 
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>df: pandas.DataFrame</strong></p>
 <blockquote>
 <div><p>Dataframe containing all observations in rows, factors and also values to compute the effect size within subjects in columns. 
-It is obtained after the import of the csv file containing all data by <code class="docutils literal"><span class="pre">import_csv_for_factors</span></code>.</p>
+It is obtained after the import of the csv file containing all data by <code class="docutils literal"><span class="pre">import_csv_for_factors</span></code> and the outlier rejection.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -287,7 +342,7 @@ This dataframe is obtained thanks to the <code class="docutils literal"><span cl
 </div></blockquote>
 <p><strong>y: pandas.Series</strong></p>
 <blockquote>
-<div><p>Effect size within subjects computed for each observation (the dependent variable).</p>
+<div><p>Effect size within subjects computed for each observation (the dependent variable) obtained after the outlier rejection.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -322,7 +377,7 @@ This dataframe is obtained thanks to the <code class="docutils literal"><span cl
 </div></blockquote>
 <p><strong>y: pandas.Series</strong></p>
 <blockquote>
-<div><p>Effect size within subjects computed for each observation (the dependent variable).</p>
+<div><p>Effect size within subjects computed for each observation (the dependent variable) obtained after the outlier rejection.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -367,7 +422,7 @@ column vector of coefficients.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>df: pandas.DataFrame</strong></p>
 <blockquote>
 <div><p>Dataframe containing all observations in rows, factors in columns and also values to compute the effect size within subjects. 
-It is obtained after the import of the csv file containing all data by <code class="docutils literal"><span class="pre">import_csv_for_factors</span></code>.</p>
+It is obtained after the import of the csv file containing all data by <code class="docutils literal"><span class="pre">import_csv_for_factors</span></code> and the outlier rejection.</p>
 </div></blockquote>
 <p><strong>X: pandas.DataFrame</strong></p>
 <blockquote>
@@ -378,7 +433,7 @@ This dataframe is obtained thanks to the <code class="docutils literal"><span cl
 </div></blockquote>
 <p><strong>y: pandas.Series</strong></p>
 <blockquote>
-<div><p>Effect size within subjects computed for each observation (the dependent variable).</p>
+<div><p>Effect size within subjects computed for each observation (the dependent variable) obtained after the outlier rejection.</p>
 </div></blockquote>
 </td>
 </tr>

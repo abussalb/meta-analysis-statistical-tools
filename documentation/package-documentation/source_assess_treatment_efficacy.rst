@@ -8,6 +8,3 @@ Subpackages
 
     source_assess_treatment_efficacy.meta_analysis
     source_assess_treatment_efficacy.systematic_analysis_of_biases
-
-
-
