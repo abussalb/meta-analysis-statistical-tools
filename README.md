@@ -55,10 +55,6 @@ and install the requirements:
 
 ```pip install .```
 
-or 
-
-```python setup.py install```
-
 3. You can uninstall this package by doing:
 
 ```pip uninstall source_assess_treatment_efficacy```
