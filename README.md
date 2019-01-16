@@ -1,6 +1,6 @@
 # meta-analysis-statistical-tools
 
-This repository describes and offers a module for running traditional meta-analysis of randomized controlled trials (RCT) and a systematic analysis of biases (SAOB), an approach meant to identify the individual contribution of methodological and technical biases to the intervention efficacy. 
+This repository describes and offers a module for running traditional meta-analysis of randomized controlled trials (RCT) and a systematic analysis of biases (SAOB), an approach meant to identify the individual contribution of methodological and technical biases to the intervention efficacy (see *Bussalb et al., 2019*). 
 
 # Description
 
