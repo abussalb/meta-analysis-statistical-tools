@@ -14,6 +14,8 @@
 .ecss-1200{ font-family: sans-serif;}
 .ecss-1200{ font-family: sans-serif;}
 .ecss-1200{ font-family: sans-serif;}
+.ecss-1200{ font-family: sans-serif;}
+.ecss-1200{ font-family: sans-serif;}
 .cmbsy-10x-x-120{font-weight: bold;}
 .cmbsy-10x-x-120{font-weight: bold;}
 .cmbsy-10x-x-120{font-weight: bold;}
@@ -46,6 +48,8 @@
 .ecss-2074{ font-family: sans-serif;}
 .ecss-2074{ font-family: sans-serif;}
 .ecss-2074{ font-family: sans-serif;}
+.ecss-2074{ font-family: sans-serif;}
+.ecss-2074{ font-family: sans-serif;}
 .ecss-1440{font-size:116%; font-family: sans-serif;}
 .ecss-1440{ font-family: sans-serif;}
 .ecss-1440{ font-family: sans-serif;}
@@ -60,6 +64,10 @@
 .ecss-1440{ font-family: sans-serif;}
 .ecss-1440{ font-family: sans-serif;}
 .ecss-1440{ font-family: sans-serif;}
+.ecss-1440{ font-family: sans-serif;}
+.ecss-1440{ font-family: sans-serif;}
+.ecsx-1200{ font-weight: bold;}
+.ecsx-1200{ font-weight: bold;}
 .ecsx-1200{ font-weight: bold;}
 .ecsx-1200{ font-weight: bold;}
 .ecsx-1200{ font-weight: bold;}
@@ -88,6 +96,8 @@
 .ecss-1095{ font-family: sans-serif;}
 .ecss-1095{ font-family: sans-serif;}
 .ecss-1095{ font-family: sans-serif;}
+.ecss-1095{ font-family: sans-serif;}
+.ecss-1095{ font-family: sans-serif;}
 .ecsx-1095{font-size:83%; font-weight: bold;}
 .ecsx-1095{ font-weight: bold;}
 .ecsx-1095{ font-weight: bold;}
@@ -102,6 +112,9 @@
 .ecsx-1095{ font-weight: bold;}
 .ecsx-1095{ font-weight: bold;}
 .ecsx-1095{ font-weight: bold;}
+.ecsx-1095{ font-weight: bold;}
+.ecsx-1095{ font-weight: bold;}
+.ecsi-1095{font-size:83%;}
 .ectt-1200{ font-family: monospace;}
 .ectt-1200{ font-family: monospace;}
 .ectt-1200{ font-family: monospace;}
@@ -116,7 +129,28 @@
 .ectt-1200{ font-family: monospace;}
 .ectt-1200{ font-family: monospace;}
 .ectt-1200{ font-family: monospace;}
+.ectt-1200{ font-family: monospace;}
+.ectt-1200{ font-family: monospace;}
+.ecss-1000{font-size:83%; font-family: sans-serif;}
+.ecss-1000{ font-family: sans-serif;}
+.ecss-1000{ font-family: sans-serif;}
+.ecss-1000{ font-family: sans-serif;}
+.ecss-1000{ font-family: sans-serif;}
+.ecss-1000{ font-family: sans-serif;}
+.ecss-1000{ font-family: sans-serif;}
+.ecss-1000{ font-family: sans-serif;}
+.ecss-1000{ font-family: sans-serif;}
+.ecss-1000{ font-family: sans-serif;}
+.ecss-1000{ font-family: sans-serif;}
+.ecss-1000{ font-family: sans-serif;}
+.ecss-1000{ font-family: sans-serif;}
+.ecss-1000{ font-family: sans-serif;}
+.ecss-1000{ font-family: sans-serif;}
+.ecss-1000{ font-family: sans-serif;}
+.ecsi-1000{font-size:83%;}
 .ecss-0900{font-size:75%; font-family: sans-serif;}
+.ecss-0900{ font-family: sans-serif;}
+.ecss-0900{ font-family: sans-serif;}
 .ecss-0900{ font-family: sans-serif;}
 .ecss-0900{ font-family: sans-serif;}
 .ecss-0900{ font-family: sans-serif;}
@@ -144,6 +178,8 @@
 .ectt-0900{ font-family: monospace;}
 .ectt-0900{ font-family: monospace;}
 .ectt-0900{ font-family: monospace;}
+.ectt-0900{ font-family: monospace;}
+.ectt-0900{ font-family: monospace;}
 .ectt-1095{font-size:83%; font-family: monospace;}
 .ectt-1095{ font-family: monospace;}
 .ectt-1095{ font-family: monospace;}
@@ -158,7 +194,8 @@
 .ectt-1095{ font-family: monospace;}
 .ectt-1095{ font-family: monospace;}
 .ectt-1095{ font-family: monospace;}
-.ecsi-1095{font-size:83%;}
+.ectt-1095{ font-family: monospace;}
+.ectt-1095{ font-family: monospace;}
 p.noindent { text-indent: 0em }
 td p.noindent { text-indent: 0em; margin-top:0em; }
 p.nopar { text-indent: 0em; }
@@ -276,19 +313,24 @@ table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
 div.longtable{text-align:center;}
 .supertabular {text-align:center}
 .figure img.graphics {margin-left:10%;}
+.uline{ text-decoration:underline; }
+.uuline{ text-decoration:underline; }
+span.sout {text-decoration: line-through }
+span.xout {text-decoration: line-through }
+span.uwave {text-decoration:underline }
 tr#TBL-2-1- td{border-top:0.13156em solid} 
 tr#TBL-2-1- td{border-bottom:0.08223em solid}
 tr#TBL-2-16- td{border-bottom:0.04933em solid}
-tr#TBL-2-20- td{border-bottom:0.04933em solid}
-tr#TBL-2-37- td{border-bottom:0.13156em solid}
+tr#TBL-2-21- td{border-bottom:0.04933em solid}
+tr#TBL-2-39- td{border-bottom:0.13156em solid}
 tr#TBL-3-1- td{border-top:0.13156em solid} 
 tr#TBL-3-1- td{border-bottom:0.08223em solid}
 tr#TBL-3-7- td{border-bottom:0.13156em solid}
 tr#TBL-4-1- td{border-top:0.13156em solid} 
 tr#TBL-4-1- td{border-bottom:0.08223em solid}
-tr#TBL-4-3- td{border-bottom:0.08223em solid}
-tr#TBL-4-6- td{border-bottom:0.08223em solid}
-tr#TBL-4-9- td{border-bottom:0.08223em solid}
+tr#TBL-4-4- td{border-bottom:0.08223em solid}
+tr#TBL-4-7- td{border-bottom:0.08223em solid}
+tr#TBL-4-16- td{border-bottom:0.08223em solid}
 tr#TBL-4-18- td{border-bottom:0.08223em solid}
 tr#TBL-4-20- td{border-bottom:0.13156em solid}
 /* end css.sty */
