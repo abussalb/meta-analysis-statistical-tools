@@ -1,49 +1,61 @@
-Author,Year,Group,Score Name,Number of patients,Raters,Time,Mean,Std
-Beauregard,2006,Treatment,Conners Parent Rating Scale,15,Parents,pre,75.5,9.67
-Beauregard,2006,Treatment,Conners Parent Rating Scale,15,Parents,post,61.6,14.3
-Beauregard,2006,Control,Conners Parent Rating Scale,5,Parents,pre,74.6,9.9
-Beauregard,2006,Control,Conners Parent Rating Scale,5,Parents,post,72.5,10.79
-Gevenlesben,2009,Treatment,FBB HKS,59,Parents,pre,1.5,0.45
-Gevenlesben,2009,Treatment,FBB HKS,59,Parents,post,1.11,0.37
-Gevenlesben,2009,Control,FBB HKS,35,Parents,pre,1.49,0.5
-Gevenlesben,2009,Control,FBB HKS,35,Parents,post,1.35,0.44
-Gevenlesben,2009,Treatment,FBB HKS,59,Teachers,pre,1.25,0.59
-Gevenlesben,2009,Treatment,FBB HKS,59,Teachers,post,0.96,0.33
-Gevenlesben,2009,Control,FBB HKS,35,Teachers,pre,1.37,0.66
-Gevenlesben,2009,Control,FBB HKS,35,Teachers,post,1.34,0.47
-Bakhshayesh,2011,Treatment,German ADHD rating scale,18,Parents,pre,1.69,0.64
-Bakhshayesh,2011,Treatment,German ADHD rating scale,18,Parents,post,1.07,0.41
-Bakhshayesh,2011,Control,German ADHD rating scale,17,Parents,pre,1.51,0.47
-Bakhshayesh,2011,Control,German ADHD rating scale,17,Parents,post,1.33,0.69
-Bakhshayesh,2011,Treatment,German ADHD rating scale,18,Teachers,pre,1.38,0.74
-Bakhshayesh,2011,Treatment,German ADHD rating scale,18,Teachers,post,1.04,0.53
-Bakhshayesh,2011,Control,German ADHD rating scale,17,Teachers,pre,1.38,0.57
-Bakhshayesh,2011,Control,German ADHD rating scale,17,Teachers,post,1.31,0.57
-Arnold,2013,Treatment,SNAP-IV,26,Parents,pre,1.91,0.51
-Arnold,2013,Treatment,SNAP-IV,26,Parents,post,1.56,0.7
-Arnold,2013,Control,SNAP-IV,13,Parents,pre,1.86,0.44
-Arnold,2013,Control,SNAP-IV,13,Parents,post,1.42,0.58
-Arnold,2013,Treatment,SNAP-IV,26,Teachers,pre,1.82,0.7
-Arnold,2013,Treatment,SNAP-IV,26,Teachers,post,1.59,0.69
-Arnold,2013,Control,SNAP-IV,13,Teachers,pre,1.55,0.75
-Arnold,2013,Control,SNAP-IV,13,Teachers,post,1.08,0.69
-Linden,1996,Treatment,IOWA Conners,9,Parents,pre,8.495,2.16
-Linden,1996,Treatment,IOWA Conners,9,Parents,post,5.555,2.16
-Linden,1996,Control,IOWA Conners,9,Parents,pre,10.225,2.16
-Linden,1996,Control,IOWA Conners,9,Parents,post,9.945,2.16
-Christiansen ,2014,Treatment,Conners Parent Rating Scale,14,Parents,pre,10.64,6.35
-Christiansen ,2014,Treatment,Conners Parent Rating Scale,14,Parents,post,7.71,6.28
-Christiansen ,2014,Control,Conners Parent Rating Scale,14,Parents,pre,13.13,4.5
-Christiansen ,2014,Control,Conners Parent Rating Scale,14,Parents,post,7,4.45
-Christiansen ,2014,Treatment,Conners Teachers Rating Scale,15,Teachers,pre,11.71,4.71
-Christiansen ,2014,Treatment,Conners Teachers Rating Scale,15,Teachers,post,7.43,5.04
-Christiansen ,2014,Control,Conners Teachers Rating Scale,15,Teachers,pre,10.06,5.48
-Christiansen ,2014,Control,Conners Teachers Rating Scale,15,Teachers,post,6.69,5.37
-Maurizio,2014,Treatment,Conners Parent Rating Scale,13,Parents,pre,35.5,7.3
-Maurizio,2014,Treatment,Conners Parent Rating Scale,13,Parents,post,25.5,9.4
-Maurizio,2014,Control,Conners Parent Rating Scale,12,Parents,pre,33,9.2
-Maurizio,2014,Control,Conners Parent Rating Scale,12,Parents,post,25.8,7.4
-Maurizio,2014,Treatment,Conners Teachers Rating Scale,13,Teachers,pre,25.1,10.2
-Maurizio,2014,Treatment,Conners Teachers Rating Scale,13,Teachers,post,23.5,8.2
-Maurizio,2014,Control,Conners Teachers Rating Scale,12,Teachers,pre,34.5,10.9
-Maurizio,2014,Control,Conners Teachers Rating Scale,12,Teachers,post,31.8,11.9
+Author,Year,Group,Score Name,Number of patients,Raters,Time,Mean,Std,,,,,,,,,,
+Beauregard,2006,Treatment,Conners Parent Rating Scale,15,Parents,pre,75.5,9.67,,,,,,,,,,
+Beauregard,2006,Treatment,Conners Parent Rating Scale,15,Parents,post,61.6,14.3,,,,,,,,,,
+Beauregard,2006,Control,Conners Parent Rating Scale,5,Parents,pre,74.6,9.9,,,,,,,,,,
+Beauregard,2006,Control,Conners Parent Rating Scale,5,Parents,post,72.5,10.79,,,,,,,,,,
+Gevenlesben,2009,Treatment,FBB HKS,59,Parents,pre,1.5,0.45,,,,,,,,,,
+Gevenlesben,2009,Treatment,FBB HKS,59,Parents,post,1.11,0.37,,,,,,,,,,
+Gevenlesben,2009,Control,FBB HKS,35,Parents,pre,1.49,0.5,,,,,,,,,,
+Gevenlesben,2009,Control,FBB HKS,35,Parents,post,1.35,0.44,,,,,,,,,,
+Gevenlesben,2009,Treatment,FBB HKS,59,Teachers,pre,1.25,0.59,,,,,,,,,,
+Gevenlesben,2009,Treatment,FBB HKS,59,Teachers,post,0.96,0.33,,,,,,,,,,
+Gevenlesben,2009,Control,FBB HKS,35,Teachers,pre,1.37,0.66,,,,,,,,,,
+Gevenlesben,2009,Control,FBB HKS,35,Teachers,post,1.34,0.47,,,,,,,,,,
+Bakhshayesh,2011,Treatment,German ADHD rating scale,18,Parents,pre,1.69,0.64,,,,,,,,,,
+Bakhshayesh,2011,Treatment,German ADHD rating scale,18,Parents,post,1.07,0.41,,,,,,,,,,
+Bakhshayesh,2011,Control,German ADHD rating scale,17,Parents,pre,1.51,0.47,,,,,,,,,,
+Bakhshayesh,2011,Control,German ADHD rating scale,17,Parents,post,1.33,0.69,,,,,,,,,,
+Bakhshayesh,2011,Treatment,German ADHD rating scale,18,Teachers,pre,1.38,0.74,,,,,,,,,,
+Bakhshayesh,2011,Treatment,German ADHD rating scale,18,Teachers,post,1.04,0.53,,,,,,,,,,
+Bakhshayesh,2011,Control,German ADHD rating scale,17,Teachers,pre,1.38,0.57,,,,,,,,,,
+Bakhshayesh,2011,Control,German ADHD rating scale,17,Teachers,post,1.31,0.57,,,,,,,,,,
+Arnold,2013,Treatment,SNAP-IV,26,Parents,pre,1.91,0.51,,,,,,,,,,
+Arnold,2013,Treatment,SNAP-IV,26,Parents,post,1.56,0.7,,,,,,,,,,
+Arnold,2013,Control,SNAP-IV,13,Parents,pre,1.86,0.44,,,,,,,,,,
+Arnold,2013,Control,SNAP-IV,13,Parents,post,1.42,0.58,,,,,,,,,,
+Arnold,2013,Treatment,SNAP-IV,26,Teachers,pre,1.82,0.7,,,,,,,,,,
+Arnold,2013,Treatment,SNAP-IV,26,Teachers,post,1.59,0.69,,,,,,,,,,
+Arnold,2013,Control,SNAP-IV,13,Teachers,pre,1.55,0.75,,,,,,,,,,
+Arnold,2013,Control,SNAP-IV,13,Teachers,post,1.08,0.69,,,,,,,,,,
+Linden,1996,Treatment,IOWA Conners,9,Parents,pre,8.495,2.16,,,,,,,,,,
+Linden,1996,Treatment,IOWA Conners,9,Parents,post,5.555,2.16,,,,,,,,,,
+Linden,1996,Control,IOWA Conners,9,Parents,pre,10.225,2.16,,,,,,,,,,
+Linden,1996,Control,IOWA Conners,9,Parents,post,9.945,2.16,,,,,,,,,,
+Christiansen ,2014,Treatment,Conners Parent Rating Scale,14,Parents,pre,10.64,6.35,,,,,,,,,,
+Christiansen ,2014,Treatment,Conners Parent Rating Scale,14,Parents,post,7.71,6.28,,,,,,,,,,
+Christiansen ,2014,Control,Conners Parent Rating Scale,14,Parents,pre,13.13,4.5,,,,,,,,,,
+Christiansen ,2014,Control,Conners Parent Rating Scale,14,Parents,post,7,4.45,,,,,,,,,,
+Christiansen ,2014,Treatment,Conners Teachers Rating Scale,15,Teachers,pre,11.71,4.71,,,,,,,,,,
+Christiansen ,2014,Treatment,Conners Teachers Rating Scale,15,Teachers,post,7.43,5.04,,,,,,,,,,
+Christiansen ,2014,Control,Conners Teachers Rating Scale,15,Teachers,pre,10.06,5.48,,,,,,,,,,
+Christiansen ,2014,Control,Conners Teachers Rating Scale,15,Teachers,post,6.69,5.37,,,,,,,,,,
+Maurizio,2014,Treatment,Conners Parent Rating Scale,13,Parents,pre,35.5,7.3,,,,,,,,,,
+Maurizio,2014,Treatment,Conners Parent Rating Scale,13,Parents,post,25.5,9.4,,,,,,,,,,
+Maurizio,2014,Control,Conners Parent Rating Scale,12,Parents,pre,33,9.2,,,,,,,,,,
+Maurizio,2014,Control,Conners Parent Rating Scale,12,Parents,post,25.8,7.4,,,,,,,,,,
+Maurizio,2014,Treatment,Conners Teachers Rating Scale,13,Teachers,pre,25.1,10.2,,,,,,,,,,
+Maurizio,2014,Treatment,Conners Teachers Rating Scale,13,Teachers,post,23.5,8.2,,,,,,,,,,
+Maurizio,2014,Control,Conners Teachers Rating Scale,12,Teachers,pre,34.5,10.9,,,,,,,,,,
+Maurizio,2014,Control,Conners Teachers Rating Scale,12,Teachers,post,31.8,11.9,,,,,,,,,,
+Bazanova,2018,Treatment,SNAP-IV,17,Parents,pre,2.145,0.26,,,,,,,,,,
+Bazanova,2018,Treatment,SNAP-IV,17,Parents,post,2.135,0.26,,,,,,,,,,
+Bazanova,2018,Control,SNAP-IV,14,Parents,pre,2.15,0.27,,,,,,,,,,
+Bazanova,2018,Control,SNAP-IV,14,Parents,post,2.17,0.27,,,,,,,,,,
+,,,,,,,,,,Bazanova iNFB,2018,Treatment,SNAP-IV,31,Parents,pre,2.2,0.12
+,,,,,,,,,,Bazanova iNFB,2018,Treatment,SNAP-IV,31,Parents,post,1.755,0.14
+,,,,,,,,,,Bazanova iNFB,2018,Control,SNAP-IV,14,Parents,pre,2.15,0.27
+,,,,,,,,,,Bazanova iNFB,2018,Control,SNAP-IV,14,Parents,post,2.17,0.27
+,,,,,,,,,,Bazanova EMG+iNFB,2018,Treatment,SNAP-IV,32,Parents,pre,2.2,0.11
+,,,,,,,,,,Bazanova EMG+iNFB,2018,Treatment,SNAP-IV,32,Parents,post,1.765,0.11
+,,,,,,,,,,Bazanova EMG+iNFB,2018,Control,SNAP-IV,14,Parents,pre,2.15,0.27
+,,,,,,,,,,Bazanova EMG+iNFB,2018,Control,SNAP-IV,14,Parents,post,2.17,0.27

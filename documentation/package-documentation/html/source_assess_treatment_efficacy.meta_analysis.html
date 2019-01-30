@@ -69,10 +69,12 @@ of them.</p>
 The csv file must have a specific form:</p>
 <ul class="simple">
 <li>nine columns: Author, Year, Group, Score Name, Number of patients, Raters, Time, Mean, Std;</li>
-<li>each study has 4 lines if only parent assessments are available, 8 if teacher assessments are provided too: the Author name (repeated 4 or 8 times),
-Year (repeated 4 or 8 times), Group (Treatment or control), Score Name, Raters (Parents, Teachers, or Clinicians), Time (pre and post), Mean and Std;</li>
-<li>for each author, the 4 lines of the Group column have to be filled as follows: Treatment, Treatment, Control, Control (pattern repeated one more time
-if teachers assessment is available);</li>
+<li>each study has 4 lines if only parent assessments are available, 8 if teacher assessments are provided too, and 12 if clinicians&#8217; 
+are available: the Author name (repeated 4, 8, or 12 times),
+Year (repeated 4 or 8 times), Group (Treatment or control), Score Name, Raters (Parents, Teachers, or Clinicians), Time (pre and post), 
+Mean and Std;</li>
+<li>for each author, the 4 lines of the Group column have to be filled as follows: Treatment, Treatment, Control, Control 
+(pattern repeated one more time if teachers or clinicians assessment is available);</li>
 <li>for each author, the 4 lines of the Raters column have to be filled as follows: Parents, Parents, Parents, Parents and if teachers&#8217; assessment 
 is available 4 more lines are added (Teachers, Teachers, Teachers, Teachers), same for clinicians;</li>
 <li>for each author, the 4 lines of the Time column have to be filled as follows: pre, post, pre, post (pattern repeated one moretime if teachers assessment is available);</li>
@@ -90,7 +92,7 @@ is available 4 more lines are added (Teachers, Teachers, Teachers, Teachers), sa
 <div><p>Parents&#8217; ratings required to perform the meta-analysis.
 It will be returned if <code class="docutils literal"><span class="pre">raters</span> <span class="pre">=</span> <span class="pre">'Parents'</span></code>.
 Each row corresponds to a study, the disease symptoms are assessed by parents.
-Columns are: mean_post_test_treatment, mean_post_test_control, mean_pre_test_treatment, mean_pre_test_control, n_treatment, 
+Columns are: mean_post_test_treatment, mean_post_test_control, mean_pre_test_treatment, mean_pre_test_control, n_treatment.
 n_control, std_post_test_treatment, std_post_test_control, std_pre_test_treatment, std_pre_test_control, raters for each study.</p>
 </div></blockquote>
 <p>df_values_teachers: pandas.DataFrame</p>
@@ -98,7 +100,7 @@ n_control, std_post_test_treatment, std_post_test_control, std_pre_test_treatmen
 <div><p>Teachers&#8217; ratings required to perform the meta-analysis.
 It will be returned if <code class="docutils literal"><span class="pre">raters</span> <span class="pre">=</span> <span class="pre">'Teachers'</span></code>.
 Each row corresponds to a study, the disease symptoms are assessed by teachers.
-columns correspond to mean_post_test_treatment, mean_post_test_control, mean_pre_test_treatment, mean_pre_test_control, n_treatment, 
+Columns are: mean_post_test_treatment, mean_post_test_control, mean_pre_test_treatment, mean_pre_test_control, n_treatment.
 n_control, std_post_test_treatment, std_post_test_control, std_pre_test_treatment, std_pre_test_control for each study.</p>
 </div></blockquote>
 <p>df_values_clinicians: pandas.DataFrame</p>
@@ -106,7 +108,7 @@ n_control, std_post_test_treatment, std_post_test_control, std_pre_test_treatmen
 <div><p>Clinicians&#8217; ratings required to perform the meta-analysis.
 It will be returned if <code class="docutils literal"><span class="pre">raters</span> <span class="pre">=</span> <span class="pre">'Clinicians'</span></code>.
 Each row corresponds to a study, the disease symptoms are assessed by clinicians.
-Columns are: correspond to mean_post_test_treatment, mean_post_test_control, mean_pre_test_treatment, mean_pre_test_control, n_treatment, 
+Columns are: mean_post_test_treatment, mean_post_test_control, mean_pre_test_treatment, mean_pre_test_control, n_treatment. 
 n_control, std_post_test_treatment, std_post_test_control, std_pre_test_treatment, std_pre_test_control for each study.</p>
 </div></blockquote>
 </td>
@@ -172,7 +174,7 @@ This dataframe corresponds to one of those obtained with the <code class="docuti
 If you want to run the meta-analysis on parent assessments enter <code class="docutils literal"><span class="pre">df_values_parents</span></code>, to run it on teacher assessments
 enter <code class="docutils literal"><span class="pre">df_values_teachers</span></code>, and to run on clinicians assessments, run <code class="docutils literal"><span class="pre">df_values_clinicians</span></code>
 Each row corresponds to a study, the disease symptoms are assessed by parents, teachers, or clinicians.
-Columns correspond to mean_post_test_treatment, mean_post_test_control, mean_pre_test_treatment, mean_pre_test_control, n_treatment, 
+Columns are: mean_post_test_treatment, mean_post_test_control, mean_pre_test_treatment, mean_pre_test_control, n_treatment, 
 n_control, std_post_test_treatment, std_post_test_control, std_pre_test_treatment, std_pre_test_control, raters for each study.</p>
 </div></blockquote>
 <p><strong>scale_to_reverse: list of str, optional</strong></p>

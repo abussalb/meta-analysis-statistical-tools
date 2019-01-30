@@ -1,6 +1,6 @@
 # meta-analysis-statistical-tools
 
-This repository describes and offers a module for running traditional meta-analysis of randomized controlled trials (RCT) and a systematic analysis of biases (SAOB), an approach meant to identify the individual contribution of methodological and technical biases to the intervention efficacy. 
+This repository describes and offers a module for running traditional meta-analysis of randomized controlled trials (RCT) and a systematic analysis of biases (SAOB), an approach meant to identify the individual contribution of methodological and technical biases to the intervention efficacy (see *Bussalb et al., 2019*). 
 
 # Description
 
@@ -17,7 +17,7 @@ The repository has the following structure:
   * systematic_analysis_of_biaises: notebook that uses the systematic_analysis_of_biases package 
 
 Please feel free to re-use, suggest improvement, and contribute. 
-Please cite *Bussalb et al. (complete ref here)*.
+Please cite *Bussalb et al., 2019*.
 
 # Installation 
 
@@ -54,10 +54,6 @@ and install the requirements:
 2. Run from a command line from the root directory (where the setup.py file is):
 
 ```pip install .```
-
-or 
-
-```python setup.py install```
 
 3. You can uninstall this package by doing:
 
