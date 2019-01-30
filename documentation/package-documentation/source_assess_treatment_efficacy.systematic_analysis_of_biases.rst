@@ -21,4 +21,4 @@ source\_assess\_treatment\_efficacy\.systematic\_analysis\_of\_biases\.perform\_
     :show-inheritance:
 
 
-.. note:: An example of the use of this package is proposed in ``example\systematic-analysis-of-biases``. Data is available to review and update the work presented in *Bussalb et al.*.
+.. note:: An example of the use of this package is proposed in ``example\systematic-analysis-of-biases``. Data is available to review and update the work presented in *Bussalb et al., 2019*.

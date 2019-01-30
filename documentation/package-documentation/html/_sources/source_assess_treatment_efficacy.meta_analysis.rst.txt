@@ -21,4 +21,4 @@ source\_assess\_treatment\_efficacy\.meta\_analysis\.perform\_meta\_analysis mod
     :show-inheritance:
 
 
-.. note:: An example of the use of this package is proposed in ``example\meta-analysis``. Data is available to review and update the work presented in *Bussalb et al.*.
+.. note:: An example of the use of this package is proposed in ``example\meta-analysis``. Data is available to review and update the work presented in *Bussalb et al., 2019*.
