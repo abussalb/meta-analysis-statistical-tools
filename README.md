@@ -59,3 +59,6 @@ and install the requirements:
 
 ```pip uninstall source_assess_treatment_efficacy```
 
+# References
+
+> Bussalb, A., Congedo, M., Barthélemy, Q., Ojeda, D., Acquaviva, E., Delorme, R., & Mayaud, L. (2019). Clinical and experimental factors influencing the efficacy of neurofeedback in ADHD: a meta-analysis. Frontiers in psychiatry, 10, 35. [link](https://www.frontiersin.org/articles/10.3389/fpsyt.2019.00035/full)
