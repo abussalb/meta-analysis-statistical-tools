@@ -1,6 +1,6 @@
 # meta-analysis-statistical-tools
 
-This repository describes and offers a module for running traditional meta-analysis of randomized controlled trials (RCT) and a systematic analysis of biases (SAOB), an approach meant to identify the individual contribution of methodological and technical biases to the intervention efficacy (see *Bussalb et al., 2019*). 
+This repository describes and offers a module for running traditional meta-analysis of randomized controlled trials (RCT) and a systematic analysis of biases (SAOB), an approach meant to identify the individual contribution of methodological and technical biases to the intervention efficacy (see *Bussalb et al., 2019* [link](https://www.frontiersin.org/articles/10.3389/fpsyt.2019.00035/full))
 
 # Description
 
@@ -59,6 +59,6 @@ and install the requirements:
 
 ```pip uninstall source_assess_treatment_efficacy```
 
-# References
+# Reference
 
 > Bussalb, A., Congedo, M., Barthélemy, Q., Ojeda, D., Acquaviva, E., Delorme, R., & Mayaud, L. (2019). Clinical and experimental factors influencing the efficacy of neurofeedback in ADHD: a meta-analysis. Frontiers in psychiatry, 10, 35. [link](https://www.frontiersin.org/articles/10.3389/fpsyt.2019.00035/full)
